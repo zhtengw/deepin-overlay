@@ -4,11 +4,11 @@
   <repo quality="experimental" status="unofficial">
     <name>aten</name>
     <description>Gentoo overlay for Deepin APPs</description>
-    <homepage>https://github.com/zhtengw/deepn-overlay</homepage>
+    <homepage>https://github.com/zhtengw/deepin-overlay</homepage>
     <owner type="project">
       <email>atenzd@gmail.com</email>
       <name>aten</name>
     </owner>
-    <source type="git">git@github.com:zhtengw/deepn-overlay.git</source>
+    <source type="git">git@github.com:zhtengw/deepin-overlay.git</source>
   </repo>
 </repositories>
