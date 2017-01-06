@@ -2,7 +2,7 @@
 <!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
 <repositories xmlns="" version="1.0">
   <repo quality="experimental" status="unofficial">
-    <name>aten</name>
+    <name>deepin</name>
     <description>Gentoo overlay for Deepin APPs</description>
     <homepage>https://github.com/zhtengw/deepin-overlay</homepage>
     <owner type="project">
