@@ -1,11 +1,9 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI="5"
-GCONF_DEBUG="yes"
-
-inherit eutils gnome2
+EAPI=6
+inherit gnome2 flag-o-matic autotools
 
 DESCRIPTION="Deepin fork version of mutter"
 HOMEPAGE="https://git.gnome.org/browse/mutter/"
@@ -13,20 +11,27 @@ SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="GPL-2+"
 SLOT="0"
+
 IUSE="+introspection +kms test wayland"
+REQUIRED_USE="
+	wayland? ( kms )
+"
+
 KEYWORDS="~amd64 ~x86"
 
+# libXi-1.7.4 or newer needed per:
+# https://bugzilla.gnome.org/show_bug.cgi?id=738944
 COMMON_DEPEND="
 	>=x11-libs/pango-1.2[X,introspection?]
 	>=x11-libs/cairo-1.10[X]
-	>=x11-libs/gtk+-3.9.11:3[X,introspection?]
+	>=x11-libs/gtk+-3.19.8:3[X,introspection?]
 	>=dev-libs/glib-2.36.0:2[dbus]
-	>=media-libs/clutter-1.23.4:1.0[X,introspection?]
+	>=media-libs/clutter-1.25.3:1.0[X,introspection?]
 	>=media-libs/cogl-1.17.1:1.0=[introspection?]
 	>=media-libs/libcanberra-0.26[gtk3]
 	>=x11-libs/startup-notification-0.7
 	>=x11-libs/libXcomposite-0.2
-	>=gnome-base/gsettings-desktop-schemas-3.15.92[introspection?]
+	>=gnome-base/gsettings-desktop-schemas-3.19.3[introspection?]
 	gnome-base/gnome-desktop:3=
 	>sys-power/upower-0.99:=
 
@@ -60,11 +65,11 @@ COMMON_DEPEND="
 		x11-libs/libdrm:= )
 	wayland? (
 		>=dev-libs/wayland-1.6.90
+		>=dev-libs/wayland-protocols-1.1
 		>=media-libs/clutter-1.20[wayland]
 		x11-base/xorg-server[wayland] )
 "
 DEPEND="${COMMON_DEPEND}
-	gnome-base/gnome-common
 	dde-base/deepin-desktop-schemas
 	>=dev-util/intltool-0.41
 	sys-devel/gettext
@@ -77,22 +82,23 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	!x11-misc/expocity
 "
+src_prepare() {
+
+	[[ $(gcc-major-version) < 5 ]] && epatch "${FILESDIR}"/"${PN}-3.20-fix-c99-mode-gcc49.patch" 
+
+	gnome2_src_prepare
+}
 
 src_configure() {
-	gnome-autogen.sh
-	gnome2_src_configure \
+	#append-flags "-std=c99"
+	./autogen.sh  --prefix=/usr \
+		--libexecdir=/usr/lib/deepin-mutter \
 		--disable-static \
+		--disable-schemas-compile \
 		--enable-sm \
-		--enable-startup-notification \
-		--enable-verbose-mode \
 		--with-libcanberra \
+		--enable-compile-warnings=minimum \
 		$(use_enable introspection) \
 		$(use_enable kms native-backend) \
 		$(use_enable wayland)
-}
-
-src_install() {
-	gnome2_src_install
-	rm -r ${D}/usr/libexec
-
 }
