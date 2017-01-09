@@ -7,7 +7,7 @@ EAPI=5
 inherit cmake-utils
 
 DESCRIPTION="Window manager switcher for Deepin"
-HOMEPAGE="https://github.com/linuxdeepin/${PN}"
+HOMEPAGE="https://github.com/linuxdeepin/deepin-wm-switcher"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
@@ -21,4 +21,3 @@ RDEPEND="dde-base/dde-daemon
 
 DEPEND="${RDEPEND}
 	      dev-qt/qtx11extras:5"
-	   
