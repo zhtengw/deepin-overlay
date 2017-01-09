@@ -6,7 +6,7 @@ EAPI=5
 
 
 DESCRIPTION="Go-lang bingdings for dde-daemon"
-HOMEPAGE="https://gitcafe.com/Deepin/dde-api"
+HOMEPAGE="https://github.com/linuxdeepin/dde-api"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
@@ -37,10 +37,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	  export GOPATH="${S}:/usr/share/gocode"
-	  go get -d -f -u -v gopkg.in/alecthomas/kingpin.v2 \
-		  github.com/howeyc/fsnotify 
 }
 
-src_compile() {
-	  make USE_GCCGO=1 || die
+src_install() {
+	  emake DESTDIR=${D} SYSTEMD_LIB_DIR=/usr/lib install
 }
