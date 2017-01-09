@@ -84,13 +84,13 @@ RDEPEND="${COMMON_DEPEND}
 "
 src_prepare() {
 
-	[[ $(gcc-major-version) < 5 ]] && epatch "${FILESDIR}"/"${PN}-3.20-fix-c99-mode-gcc49.patch" 
+#	[[ $(gcc-major-version) < 5 ]] && epatch "${FILESDIR}"/"${PN}-3.20-fix-c99-mode-gcc49.patch" 
 
 	gnome2_src_prepare
 }
 
 src_configure() {
-	#append-flags "-std=c99"
+	[[ $(gcc-major-version) < 5 ]] && append-flags "-std=gnu99"
 	./autogen.sh  --prefix=/usr \
 		--libexecdir=/usr/lib/deepin-mutter \
 		--disable-static \

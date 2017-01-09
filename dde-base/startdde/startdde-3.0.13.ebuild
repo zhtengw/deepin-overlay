@@ -6,7 +6,7 @@ EAPI=5
 
 
 DESCRIPTION="starter of Deepin Desktop Environment"
-HOMEPAGE="https://github.com/linuxdeepin/${PN}"
+HOMEPAGE="https://github.com/linuxdeepin/startdde"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"

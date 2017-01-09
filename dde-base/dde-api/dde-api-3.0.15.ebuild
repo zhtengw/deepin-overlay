@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="sys-devel/gcc[go]
-		x11-wm/metacity
+		x11-wm/deepin-metacity
 		x11-libs/libXi
 		dev-libs/glib:2
 		x11-libs/gtk+:3
@@ -32,14 +32,15 @@ RDEPEND="sys-devel/gcc[go]
 DEPEND="${RDEPEND}
 	      dev-go/go-dbus-generator
 	      dev-go/deepin-go-lib
+		  dev-go/go-gir-generator
 	      dev-go/dbus-factory"
-	   
 
 src_prepare() {
-	  sed -i 's|${GOPATH}:${CURDIR}/${GOBUILD_DIR}|${CURDIR}/${GOBUILD_DIR}:${GOPATH}|g' Makefile
-	  export GOPATH="/usr/share/gocode"
+	  export GOPATH="${S}:/usr/share/gocode"
+	  go get -d -f -u -v gopkg.in/alecthomas/kingpin.v2 \
+		  github.com/howeyc/fsnotify 
 }
 
 src_compile() {
-	  make USE_GCCGO=1
+	  make USE_GCCGO=1 || die
 }

@@ -6,10 +6,8 @@ EAPI=5
 
 
 DESCRIPTION="Daemon handling the DDE session settings"
-HOMEPAGE="https://gitcafe.com/Deepin/dde-daemon"
-SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz
-		http://packages.deepin.com/deepin/pool/main/g/golang-jamslam-freetype-go/golang-jamslam-freetype-go_0.0~git20140903.orig.tar.xz
-		http://packages.deepin.com/deepin/pool/main/g/golang-graphics-go/golang-graphics-go_0.0~git20140903.orig.tar.xz"
+HOMEPAGE="https://github.com/linuxdeepin/dde-daemon"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -41,12 +39,12 @@ DEPEND="${RDEPEND}
 	      "
 	      
 src_prepare() {
-		export GOPATH="${S}:/usr/share/gocode"
+		export GOPATH="/usr/share/gocode"
 		
-		mkdir -p ${S}/src/code.google.com/p/graphics-go/
-		mkdir -p ${S}/src/code.google.com/p/jamslam-freetype-go/
+#		mkdir -p ${S}/src/code.google.com/p/graphics-go/
+#		mkdir -p ${S}/src/code.google.com/p/jamslam-freetype-go/
 		
-		cp -r ${WORKDIR}/graphics ${S}/src/code.google.com/p/graphics-go/
-		cp -r ${WORKDIR}/freetype ${S}/src/code.google.com/p/jamslam-freetype-go/
+#		cp -r ${WORKDIR}/graphics ${S}/src/code.google.com/p/graphics-go/
+#		cp -r ${WORKDIR}/freetype ${S}/src/code.google.com/p/jamslam-freetype-go/
 		
 }
