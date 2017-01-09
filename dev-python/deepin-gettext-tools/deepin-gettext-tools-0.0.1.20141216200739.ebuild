@@ -23,7 +23,7 @@ RDEPEND="dev-lang/python:2.7
 		sys-devel/gettext"
 DEPEND="qt5? ( 
 			dev-qt/qtdeclarative:5
-			dev-qt/qtchooser[qt5]
+			dev-qt/qtchooser
 			)"
 
 S=${WORKDIR}/${PN}-${MY_VER}
