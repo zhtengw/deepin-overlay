@@ -24,13 +24,14 @@ RDEPEND="x11-libs/gtk+:2
 		 dde-base/dde-account-faces
 		 dde-base/dde-dock
 		 dde-base/startdde
+		 dde-base/deepin-desktop-base
 	     "
 DEPEND="${RDEPEND}
 		 dde-base/deepin-tool-kit
 	     "
 
 src_prepare() {
-		eqmake5	PREFIX=/usr
+		eqmake5	PREFIX=/usr WITH_MODULE_GRUB=NO WITH_MODULE_REMOTE_ASSIST=NO WITH_MODULE_SYSINFO_UPDATE=NO
 }
 
 src_install() {

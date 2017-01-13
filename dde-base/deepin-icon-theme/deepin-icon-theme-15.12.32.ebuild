@@ -4,15 +4,21 @@
 
 EAPI=4
 
-DESCRIPTION="GSettings deepin desktop-wide schemas"
-HOMEPAGE="https://github.com/linuxdeepin/deepin-desktop-schemas"
+DESCRIPTION="Deepin Icons"
+HOMEPAGE="https://github.com/linuxdeepin/deepin-icon-theme"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="GPL-3+"
+LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="gnome-base/dconf"
+DEPEND="x11-themes/flattr-icons
+		media-gfx/inkscape
+		dev-lang/python:2.7"
 
 
+src_compile() {
+	mkdir -p build
+	python2 tools/convert.py deepin build
+}

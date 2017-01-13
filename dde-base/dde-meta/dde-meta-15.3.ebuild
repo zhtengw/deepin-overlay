@@ -13,10 +13,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dde-base/deepin-system-settings
-		dde-base/dss-modules-meta
-		dde-base/deepin-desktop-environment
+RDEPEND="dde-base/dde-control-center
+		dde-base/startdde
+		dde-base/dde-file-manager
+		dde-base/dde-desktop
+		dde-base/dde-launcher
+		dde-base/dde-dock
+		dde-base/deepin-desktop-base
+		dde-base/dde-session-ui
 		dde-base/deepin-notifications
-		dde-base/deepin-system-tray
-		dde-base/deepin-session
-		sys-auth/consolekit"
+		"
+

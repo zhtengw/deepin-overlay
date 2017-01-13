@@ -4,8 +4,8 @@
 
 EAPI=4
 
-DESCRIPTION="GSettings deepin desktop-wide schemas"
-HOMEPAGE="https://github.com/linuxdeepin/deepin-desktop-schemas"
+DESCRIPTION="Deepin Wallpapers"
+HOMEPAGE="https://github.com/linuxdeepin/deepin-wallpapers"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3+"
@@ -13,6 +13,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="gnome-base/dconf"
+DEPEND=""
 
+src_install() {
+		insinto /usr/share/wallpapers
+		doins -r deepin
 
+		insinto /var/cache
+		doins -r image-blur
+}
