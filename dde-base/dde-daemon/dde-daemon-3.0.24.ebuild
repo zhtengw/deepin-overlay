@@ -15,7 +15,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="wacom"
 
 RDEPEND="x11-wm/deepin-metacity
-		sys-power/upower
 		x11-libs/libxkbfile
 		app-text/iso-codes
 		sys-apps/accountsservice
@@ -37,14 +36,8 @@ DEPEND="${RDEPEND}
 	      >=dde-base/dde-api-2.92.2
 	      dev-db/sqlite:3
 	      "
-	      
+
 src_prepare() {
 		export GOPATH="/usr/share/gocode"
-		
-#		mkdir -p ${S}/src/code.google.com/p/graphics-go/
-#		mkdir -p ${S}/src/code.google.com/p/jamslam-freetype-go/
-		
-#		cp -r ${WORKDIR}/graphics ${S}/src/code.google.com/p/graphics-go/
-#		cp -r ${WORKDIR}/freetype ${S}/src/code.google.com/p/jamslam-freetype-go/
 		
 }

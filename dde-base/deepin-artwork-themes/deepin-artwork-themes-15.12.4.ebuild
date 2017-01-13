@@ -4,15 +4,15 @@
 
 EAPI=4
 
-DESCRIPTION="GSettings deepin desktop-wide schemas"
-HOMEPAGE="https://github.com/linuxdeepin/deepin-desktop-schemas"
+DESCRIPTION="Deepin artwork themes"
+HOMEPAGE="https://github.com/linuxdeepin/deepin-artwork-themes"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="GPL-3+"
+LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="gnome-base/dconf"
+DEPEND=""
 
 

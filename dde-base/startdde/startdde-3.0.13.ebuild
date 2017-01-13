@@ -25,13 +25,16 @@ DEPEND="${RDEPEND}
 	      dev-util/cmake
 	      dev-go/deepin-go-lib
 	      dev-go/dbus-factory"
-	   
 
 src_prepare() {
 # 	  sed -i 's|${GOPATH}:${CURDIR}/${GOBUILD_DIR}|${CURDIR}/${GOBUILD_DIR}:${GOPATH}|g' Makefile
 	  export GOPATH="/usr/share/gocode"
 }
 
-src_compile() {
-	  make USE_GCCGO=1
+src_install() {
+	  emake DESTDIR="${D}" install
+	  mv ${D}/lib/systemd ${D}/usr/lib/systemd
+	  rm -r ${D}/lib
+	  dosym ../dde-readahead.service /usr/lib/systemd/system/multi-user.target.wants/dde-readahead.service
+
 }
