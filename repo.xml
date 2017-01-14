@@ -9,6 +9,6 @@
       <email>atenzd@gmail.com</email>
       <name>aten</name>
     </owner>
-    <source type="git">git@github.com:zhtengw/deepin-overlay.git</source>
+    <source type="git">git://github.com/zhtengw/deepin-overlay.git</source>
   </repo>
 </repositories>
