@@ -48,6 +48,7 @@ src_prepare() {
 		git clone https://github.com/BurntSushi/freetype-go.git || die
 		git clone https://github.com/BurntSushi/graphics-go.git
 		git clone https://github.com/golang/sys.git || die
+		git clone https://github.com/golang/net.git || die
 
 		find ${S}/ | grep '\.git$' | xargs rm -r
 
@@ -70,6 +71,7 @@ src_prepare() {
 		cp -r ${S}/imaging ${WORKDIR}/src/github.com/disintegration/
 		cp -r ${S}/image ${WORKDIR}/src/golang.org/x/
 		cp -r ${S}/sys ${WORKDIR}/src/golang.org/x/
+		cp -r ${S}/net ${WORKDIR}/src/golang.org/x/
 		cp -r ${S}/fsnotify-0.9.0 ${WORKDIR}/src/github.com/howeyc/fsnotify
 		cp -r ${S}/go-sqlite3-1.2.0 ${WORKDIR}/src/github.com/mattn/go-sqlite3
 #		cp -r ${S}/'~niemeyer'/gocheck/trunk ${WORKDIR}/src/launchpad.net/gocheck
