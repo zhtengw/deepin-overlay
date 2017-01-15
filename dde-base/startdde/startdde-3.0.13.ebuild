@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}
 	      dev-go/go-dbus-generator
 	      dev-util/cmake
 	      dev-go/deepin-go-lib
-	      dev-go/dbus-factory"
+	      <=dev-go/dbus-factory-3.0.7"
 
 src_prepare() {
 # 	  sed -i 's|${GOPATH}:${CURDIR}/${GOBUILD_DIR}|${CURDIR}/${GOBUILD_DIR}:${GOPATH}|g' Makefile
