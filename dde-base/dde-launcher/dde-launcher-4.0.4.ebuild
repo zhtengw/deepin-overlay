@@ -20,11 +20,11 @@ RDEPEND="x11-libs/gtk+:2
 		 dev-qt/qtx11extras:5
 		 >dde-base/deepin-menu-2.90.1
 		 dde-base/dde-daemon
-		 dde-base/dde-qt-dbus-factory
 		 x11-libs/gsettings-qt
 	     "
 DEPEND="${RDEPEND}
-		 dde-base/deepin-tool-kit
+		 dde-base/deepin-tool-kit:=
+		 dde-base/dde-qt-dbus-factory:=
 	     "
 
 src_prepare() {

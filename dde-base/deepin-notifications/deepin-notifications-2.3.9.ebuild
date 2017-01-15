@@ -20,7 +20,7 @@ RDEPEND="x11-libs/gtk+:2
 		 dev-qt/qtdeclarative:5
 	     "
 DEPEND="${RDEPEND}
-		 dde-base/deepin-tool-kit
+		 dde-base/deepin-tool-kit:=
 	     "
 
 src_prepare() {

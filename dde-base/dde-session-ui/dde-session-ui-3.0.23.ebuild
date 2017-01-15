@@ -25,8 +25,8 @@ RDEPEND="x11-libs/gsettings-qt
 		 dde-base/startdde
 	     "
 DEPEND="${RDEPEND}
-		 dde-base/deepin-tool-kit
-		 dde-base/dde-qt-dbus-factory
+		 dde-base/deepin-tool-kit:=
+		 dde-base/dde-qt-dbus-factory:=
 	     "
 
 src_prepare() {

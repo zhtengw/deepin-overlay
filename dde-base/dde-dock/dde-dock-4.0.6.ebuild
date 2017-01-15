@@ -22,7 +22,7 @@ RDEPEND="x11-libs/gtk+:2
 		 dde-base/dde-daemon
 	     "
 DEPEND="${RDEPEND}
-		 dde-base/deepin-tool-kit
+		 dde-base/deepin-tool-kit:=
 	     "
 
 src_prepare() {
