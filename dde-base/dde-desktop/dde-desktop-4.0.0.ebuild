@@ -28,7 +28,7 @@ RDEPEND="x11-libs/gsettings-qt
 		 dde-base/startdde
 	     "
 DEPEND="${RDEPEND}
-		 dde-base/deepin-tool-kit
+		 dde-base/deepin-tool-kit:=
 	     "
 
 src_prepare() {

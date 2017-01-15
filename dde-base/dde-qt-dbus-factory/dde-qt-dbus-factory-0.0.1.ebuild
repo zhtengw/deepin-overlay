@@ -6,23 +6,19 @@ EAPI=5
 
 inherit qmake-utils
 
-DESCRIPTION="Deepin desktop environment - Dock module"
-HOMEPAGE="https://github.com/linuxdeepin/dde-dock"
+DESCRIPTION="A repository stores auto-generated Qt5 dbus code used by DDE"
+HOMEPAGE="https://github.com/linuxdeepin/dde-qt-dbus-factory"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="GPL-3"
+LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="x11-libs/gtk+:2
-		 dev-qt/qtsvg:5
-		 dev-qt/qtx11extras:5
-		 >dde-base/deepin-menu-2.90.1
-		 dde-base/dde-daemon
+RDEPEND="
+		 dev-qt/qtcore:5
 	     "
 DEPEND="${RDEPEND}
-		 dde-base/deepin-tool-kit:=
 	     "
 
 src_prepare() {
