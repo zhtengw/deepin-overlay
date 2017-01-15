@@ -26,6 +26,7 @@ RDEPEND="x11-libs/gsettings-qt
 	     "
 DEPEND="${RDEPEND}
 		 dde-base/deepin-tool-kit
+		 dde-base/dde-qt-dbus-factory
 	     "
 
 src_prepare() {

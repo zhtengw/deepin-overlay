@@ -21,6 +21,8 @@ RDEPEND="
 	>=dev-libs/glib-2.32:2
 	dev-libs/libgee:0.8
 	media-libs/clutter-gtk
+	dev-libs/granite
+	x11-misc/plank
 	>=x11-libs/bamf-0.2.20
 	>=x11-libs/gtk+-3.4:3
 	x11-wm/deepin-mutter
