@@ -14,13 +14,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dde-base/dde-control-center-4.0.0
-		<dde-base/startdde-3.0.14
+		dde-base/startdde
 		dde-base/dde-file-manager
 		<dde-base/dde-desktop-4.0.0
 		dde-base/dde-launcher
 		dde-base/dde-dock
 		dde-base/deepin-desktop-base
-		<dde-base/dde-session-ui-3.0.23
+		dde-base/dde-session-ui
 		dde-base/deepin-notifications
 		"
 

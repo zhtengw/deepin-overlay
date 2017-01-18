@@ -6,4 +6,4 @@ It is a overlay built mainly for Deepin apps.
  
 For user with layman:
   
-     layman -o https://raw.githubusercontent.com/zhtengw/deepin-overlay/master/repo.xml -f -a deepin
+     layman -L && layman -a deepin

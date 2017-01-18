@@ -15,4 +15,6 @@ IUSE=""
 
 RDEPEND="media-sound/deepin-music-player
 		media-video/deepin-media-player
-		media-gfx/deepin-screenshot"
+		media-gfx/deepin-screenshot
+		dde-extra/deepin-image-viewer
+		dde-extra/deepin-shortcut-viewer"

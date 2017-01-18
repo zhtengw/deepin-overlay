@@ -15,7 +15,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="sys-devel/gcc[go]
-		x11-wm/deepin-metacity
 		x11-libs/libXi
 		dev-libs/glib:2
 		x11-libs/gtk+:3
