@@ -2,26 +2,17 @@
 # Distributed under the terms of the GNU General Public License v3
 # $Header: $
 
-EAPI="4"
+EAPI="5"
 
-inherit fdo-mime eutils versionator
+inherit fdo-mime eutils
 
-if [[ ${PV} == 9999* ]]; then
-	EGIT_REPO_URI="git://github.com/linuxdeepin/deepin-screenshot.git"
-	inherit git-2
-	SRC_URI=""
-	#KEYWORDS=""
-else
-	MY_VER="$(get_version_component_range 1-2)+git$(get_version_component_range 3)~8c1ba38453"
-	SRC_URI="http://packages.linuxdeepin.com/deepin/pool/main/d/${PN}/${PN}_${MY_VER}.tar.gz"
-	KEYWORDS="~amd64 ~x86"
-	S=${WORKDIR}/${PN}-${MY_VER}
-fi
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="Snapshot tools for linux deepin."
 HOMEPAGE="https://github.com/linuxdeepin/deepin-screenshot"
 
-LICENSE="LGPL-3"
+LICENSE="LGPL-3+"
 SLOT="2"
 IUSE=""
 
@@ -53,7 +44,7 @@ src_install() {
 	dosym /usr/share/${PN}/src/${PN} /usr/bin/${PN}
 
 	insinto "/usr/share/applications"
-	doins ${FILESDIR}/${PN}.desktop
+	doins ${PN}.desktop
 	
 	rm -r ${D}/usr/share/locale/*.po*
 }

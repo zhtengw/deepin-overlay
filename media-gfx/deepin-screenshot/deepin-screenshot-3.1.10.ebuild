@@ -32,6 +32,7 @@ RDEPEND="dev-lang/python:2.7
 	dev-python/PyQt5[${PY_TAR_VER},multimedia]
 	dde-base/deepin-menu
 	dde-extra/deepin-qml-widgets
+	dev-python/xpybutil
 
 	sharing? ( net-misc/deepin-social-sharing )
 	!media-gfx/deepin-screenshot:2"
