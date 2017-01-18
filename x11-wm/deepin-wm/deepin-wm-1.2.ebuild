@@ -9,7 +9,7 @@ VALA_MIN_API_VERSION=0.22
 inherit gnome2-utils vala autotools-utils
 
 DESCRIPTION="Deepin Window Manager"
-HOMEPAGE="https://gitcafe.com/Deepin/deepin-wm"
+HOMEPAGE="https://github.com/linuxdeepin/deepin-wm"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3+"

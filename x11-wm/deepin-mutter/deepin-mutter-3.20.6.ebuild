@@ -6,7 +6,7 @@ EAPI=6
 inherit gnome2 flag-o-matic autotools
 
 DESCRIPTION="Deepin fork version of mutter"
-HOMEPAGE="https://git.gnome.org/browse/mutter/"
+HOMEPAGE="https://github.com/linuxdeepin/deepin-mutter"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2+"
