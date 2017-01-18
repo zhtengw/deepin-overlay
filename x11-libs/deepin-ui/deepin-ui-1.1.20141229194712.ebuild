@@ -27,6 +27,7 @@ RDEPEND=">=dev-lang/python-2.7.5:2.7
 		sci-libs/scipy
 		dev-python/python-xlib
 		dev-python/deepin-utils
+		dev-python/deepin-gsettings
 		|| ( dev-python/imaging dev-python/pillow )"
 DEPEND="${RDEPEND}
 		dev-python/pycairo
