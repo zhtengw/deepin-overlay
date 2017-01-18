@@ -34,7 +34,7 @@ RDEPEND="dev-lang/python:2.7
 	dde-extra/deepin-qml-widgets
 	dev-python/xpybutil
 
-	sharing? ( net-misc/deepin-social-sharing )
+	sharing? ( dde-extra/deepin-social-sharing )
 	!media-gfx/deepin-screenshot:2"
 DEPEND="${RDEPEND}
 		dde-extra/deepin-gettext-tools"
