@@ -13,8 +13,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="media-sound/deepin-music-player
-		media-video/deepin-media-player
+RDEPEND="media-sound/deepin-music
+		media-video/deepin-movie
 		media-gfx/deepin-screenshot
+		dde-extra/deepin-social-sharing
 		dde-extra/deepin-image-viewer
 		dde-extra/deepin-shortcut-viewer"
