@@ -17,7 +17,7 @@ PY_TAR_VER="python_targets_python2_7"
 DEPEND="media-video/mediainfo
 		dev-python/python-ass[${PY_TAR_VER}]
 		dev-python/dbus-python[${PY_TAR_VER}]
-		dev-python/python-magic[${PY_TAR_VER}]
+		sys-apps/file[python,${PY_TAR_VER}]
 		dev-python/pyopengl[${PY_TAR_VER}]
 		dev-python/peewee[${PY_TAR_VER}]
 		dev-python/xpybutil

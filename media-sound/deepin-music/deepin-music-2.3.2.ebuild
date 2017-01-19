@@ -16,9 +16,7 @@ IUSE="+hotkey"
 
 RDEPEND=">=x11-libs/deepin-ui-1.0.201209101328
 	dev-python/gst-python:0.10
-	media-libs/gst-plugins-bad:0.10
-	media-libs/gst-plugins-good:0.10
-	media-libs/gst-plugins-ugly:0.10
+	media-libs/gst-plugins-meta:0.10[mp3,flac]
 	>=media-libs/mutagen-1.8
 	dev-python/chardet
 	dev-python/cddb-py
