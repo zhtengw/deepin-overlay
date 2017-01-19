@@ -31,6 +31,8 @@ RDEPEND="x11-libs/gtk+:2
 		 dde-base/dde-account-faces
 		 dde-base/dde-dock
 		 dde-base/startdde
+		 dev-util/desktop-file-utils
+		 dev-libs/geoip
 		 dde-base/deepin-desktop-base
 	     "
 DEPEND="${RDEPEND}
@@ -44,4 +46,10 @@ src_prepare() {
 
 src_install() {
 		emake INSTALL_ROOT=${D} install
+}
+
+pkg_postinst() {
+	elog "GeoIP databases are no longer installed by dev-libs/geoip ebuild."
+	elog "You must run 'geoipupdate.sh -f' first to download the databases,"
+	elog "otherwise, dde-control-center will run abnormally."
 }
