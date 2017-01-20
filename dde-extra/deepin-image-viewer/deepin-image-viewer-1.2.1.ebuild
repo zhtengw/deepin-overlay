@@ -30,6 +30,7 @@ DEPEND="${RDEPEND}
 	    "
 
 src_prepare() {
+	sed -i "s|#elif|#else|g" viewer/dirwatcher/scanpathsdialog.cpp
 	eqmake5
 }
 
