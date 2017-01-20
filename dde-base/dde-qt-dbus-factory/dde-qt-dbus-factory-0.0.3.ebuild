@@ -15,12 +15,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="
-		 dev-qt/qtcore:5
-	     "
+RDEPEND="dev-qt/qtdbus:5
+		 dev-qt/qtcore:5"
+
 DEPEND="${RDEPEND}
-		dev-lang/python
-	     "
+		dev-lang/python"
 
 src_prepare() {
 		eqmake5	PREFIX=/usr
