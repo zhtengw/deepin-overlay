@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v3
-# $Header: $
+# Copyright 1999-2017 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="4"
 PYTHON_DEPEND=2:2.7
