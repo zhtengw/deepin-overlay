@@ -15,13 +15,16 @@ SLOT="3"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-qt/qtmultimedia:5
+RDEPEND="dev-qt/qtmultimedia:5[gstreamer]
 		 dev-libs/icu
 		 dev-qt/qtsvg:5
 		 dev-qt/qtconcurrent:5
 		 >dde-base/deepin-menu-2.90.1
 		 sys-devel/bison
 		 media-video/ffmpeg
+		 media-plugins/gst-plugins-taglib
+		 media-plugins/gst-plugins-mpg123
+		 media-plugins/gst-plugins-flac
 	     "
 DEPEND="${RDEPEND}
 		 >=dde-base/deepin-tool-kit-0.2.0:=
