@@ -6,8 +6,8 @@ EAPI=5
 
 inherit qmake-utils
 
-DESCRIPTION="Deepin File Manager"
-HOMEPAGE="https://github.com/linuxdeepin/dde-file-manager"
+DESCRIPTION="Deepin desktop environment - Dock module"
+HOMEPAGE="https://github.com/linuxdeepin/dde-dock"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
@@ -15,18 +15,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="x11-libs/gsettings-qt
-		 x11-libs/gtk+:2
+RDEPEND="x11-libs/gtk+:2
 		 dev-qt/qtsvg:5
 		 dev-qt/qtx11extras:5
-		 dev-qt/qtconcurrent:5
-		 sys-auth/polkit-qt[qt5]
 		 >dde-base/deepin-menu-2.90.1
 		 dde-base/dde-daemon
-		 app-crypt/libsecret
-		 media-video/ffmpegthumbnailer
-		 net-misc/socat
-		 dde-base/startdde
+		 dde-base/dde-qt5integration
 	     "
 DEPEND="${RDEPEND}
 		 dde-base/deepin-tool-kit:=

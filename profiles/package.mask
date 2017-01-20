@@ -1,3 +1,0 @@
-# mask unstable DDE 15.4 packages
-=dde-base/dde-meta-15.4
->=dde-base/dde-control-center-4.0.0

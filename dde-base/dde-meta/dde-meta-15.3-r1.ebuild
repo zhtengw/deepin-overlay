@@ -13,10 +13,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dde-base/dde-control-center-4.0.0
+RDEPEND="=dde-base/dde-control-center-3.0*
 		dde-base/startdde
-		dde-base/dde-file-manager
-		>=dde-base/dde-desktop-4.0.0
+		=dde-base/dde-file-manager-1*
+		=dde-base/dde-desktop-3.0*
 		dde-base/dde-launcher
 		dde-base/dde-dock
 		dde-base/deepin-desktop-base

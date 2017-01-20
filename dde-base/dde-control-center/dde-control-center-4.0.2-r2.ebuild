@@ -34,6 +34,7 @@ RDEPEND="x11-libs/gtk+:2
 		 dev-util/desktop-file-utils
 		 dev-libs/geoip
 		 dde-base/deepin-desktop-base
+		 dde-base/dde-qt5integration
 	     "
 DEPEND="${RDEPEND}
 		 dde-base/deepin-tool-kit:=
