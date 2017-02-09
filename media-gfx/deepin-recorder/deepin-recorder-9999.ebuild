@@ -37,7 +37,6 @@ DEPEND="${RDEPEND}
 	    "
 
 src_prepare() {
-	sed -i "s|image/|/usr/share/${PN}/image/|g" main.cpp
 	sed -i "s|qApp->applicationDirPath()|\"/usr/share/${PN}\"|g" main_window.cpp
 	sed -i "s|qApp->applicationDirPath()|\"/usr/share/${PN}\"|g" record_process.cpp
 	eqmake5
