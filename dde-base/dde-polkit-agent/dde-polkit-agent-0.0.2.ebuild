@@ -18,7 +18,7 @@ IUSE=""
 RDEPEND="dev-qt/qtcore:5
 		 dev-qt/qtgui:5
 	   	 dev-qt/qtdbus:5
-		 dev-qt/qtwidget:5
+		 dev-qt/qtwidgets:5
 		 sys-auth/polkit-qt[qt5(-)]
 	     "
 DEPEND="${RDEPEND}
