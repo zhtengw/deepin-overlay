@@ -14,11 +14,11 @@ if [[ "${PV}" == *9999* ]] ; then
 	EGIT_REPO_URI="https://github.com/manateelazycat/${PN}.git"
 else
 	SRC_URI="https://github.com/manateelazycat/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~x86"
 fi
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE="+gif +mp4"
 
 RDEPEND="dev-qt/qtwidgets:5
