@@ -45,6 +45,7 @@ src_prepare() {
 
 src_install() {
 		emake INSTALL_ROOT=${D} install
+		rm ${D}/usr/share/dbus-1/interfaces/org.freedesktop.FileManager1.xml
 		dobin ${FILESDIR}/dfmterm 
 		dobin ${FILESDIR}/x-terminal-emulator
 }
