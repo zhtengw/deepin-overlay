@@ -26,11 +26,11 @@ RDEPEND="dev-qt/qtsvg:5
 		"
 
 DEPEND="${RDEPEND}
-		dde-base/deepin-tool-kit:=
+		>=dde-base/deepin-tool-kit-0.2.4:=
 	    "
 
 src_prepare() {
-	sed -i "s|#elif|#else|g" viewer/dirwatcher/scanpathsdialog.cpp
+	sed -i 's|-0-2||g' viewer/viewer.pro
 	eqmake5
 }
 

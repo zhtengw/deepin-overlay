@@ -24,7 +24,7 @@ RDEPEND="x11-libs/gsettings-qt
 		 >dde-base/deepin-menu-2.90.1
 		 dde-base/dde-daemon
 		 >dde-base/deepin-desktop-schemas-2.91.2
-		 dde-base/dde-file-manager
+		 >=dde-base/dde-file-manager-1.4.0
 		 dde-base/startdde
 		 dde-base/dde-qt5integration
 	     "
@@ -33,7 +33,8 @@ DEPEND="${RDEPEND}
 	     "
 
 src_prepare() {
-		eqmake5	PREFIX=/usr
+	sed -i 's|-0-2||g' build.pri
+	eqmake5	PREFIX=/usr
 }
 
 src_install() {
