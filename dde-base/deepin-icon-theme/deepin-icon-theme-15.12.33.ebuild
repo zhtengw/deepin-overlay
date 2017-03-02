@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=4
+EAPI=5
 
 DESCRIPTION="Deepin Icons"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-icon-theme"
@@ -15,10 +15,10 @@ IUSE=""
 
 DEPEND="x11-themes/flattr-icons
 		media-gfx/inkscape
-		dev-lang/python:2.7"
+		dev-lang/python"
 
 
-src_compile() {
-	mkdir -p build
-	python2 tools/convert.py deepin build
-}
+#src_compile() {
+#	mkdir -p build
+#	python tools/convert.py deepin build
+#}
