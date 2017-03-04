@@ -27,6 +27,7 @@ RDEPEND="dev-qt/qtwidgets:5
 		dev-qt/qtdbus:5
 		dev-qt/qtx11extras:5
 		>=dde-base/deepin-notifications-2.3.8
+		x11-libs/libXtst
 		gif? ( media-gfx/byzanz )
 		mp4? ( virtual/ffmpeg )
 		"
