@@ -1,0 +1,11 @@
+--- dwidget/dwidget.pro.old	2017-03-06 09:44:12.000000000 +0800
++++ dwidget/dwidget.pro	2017-03-10 09:34:01.353564235 +0800
+@@ -73,7 +73,7 @@
+ SOURCES += \
+     dutility.cpp
+ 
+-!system($$PWD/../tool/translate_generation.sh): error("Failed to generate translation")
++system($$PWD/../tool/translate_generation.sh)
+ 
+ TRANSLATIONS += $$PWD/translations/$${TARGET}.ts \
+                 $$PWD/translations/$${TARGET}_zh_CN.ts

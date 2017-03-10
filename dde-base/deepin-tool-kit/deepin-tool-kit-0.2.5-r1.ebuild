@@ -31,11 +31,12 @@ DEPEND="${RDEPEND}
 	     "
 
 src_prepare() {
-		eqmake5	
+	epatch ${FILESDIR}/${PN}-0.2.2-lrelease.patch
+	eqmake5	
 }
 
 src_install() {
-		emake INSTALL_ROOT=${D} install
-		rm -r ${D}/usr/share
+	emake INSTALL_ROOT=${D} install
+	rm -r ${D}/usr/share
 }
 
