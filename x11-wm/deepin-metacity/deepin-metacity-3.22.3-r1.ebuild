@@ -40,6 +40,7 @@ RDEPEND="x11-libs/gtk+:3
 DEPEND="${RDEPEND}
 	gnome-base/gnome-common
 	>=app-text/gnome-doc-utils-0.8
+	x11-libs/bamf
 	gnome-base/gconf
 	sys-devel/gettext
 	dev-util/itstool
