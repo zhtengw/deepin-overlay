@@ -13,12 +13,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="x11-themes/flattr-icons
-		media-gfx/inkscape
-		dev-lang/python"
+DEPEND="x11-themes/flattr-icons"
 
+src_prepare() {
+	sed -i "s|flattr|Flattr|g" deepin/index.theme
 
-#src_compile() {
-#	mkdir -p build
-#	python tools/convert.py deepin build
-#}
+	default_src_prepare
+}
+

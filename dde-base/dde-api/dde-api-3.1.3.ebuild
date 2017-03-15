@@ -26,6 +26,7 @@ RDEPEND="sys-devel/gcc[go]
 		x11-libs/libXcursor
 		x11-apps/xcur2png
 		gnome-base/librsvg:2
+		media-gfx/blur-effect
 		"
 
 DEPEND="${RDEPEND}

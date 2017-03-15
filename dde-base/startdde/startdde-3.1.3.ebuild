@@ -7,7 +7,12 @@ EAPI=5
 
 DESCRIPTION="starter of Deepin Desktop Environment"
 HOMEPAGE="https://github.com/linuxdeepin/startdde"
-SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+if [[ "${PV}" == *9999* ]] ; then
+    inherit git-r3
+    EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
+else
+	SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+fi
 
 LICENSE="GPL-3"
 SLOT="0"

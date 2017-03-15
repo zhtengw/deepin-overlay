@@ -21,8 +21,8 @@ RESTRICT="binchecks strip"
 S=${WORKDIR}/luv-icon-theme-${PV}
 
 src_install() {
-	insinto /usr/share/icons/flattr
-	doins -r *
+	insinto /usr/share/icons/
+	doins -r Flattr*
 }
 
 pkg_preinst() { gnome2_icon_savelist; }

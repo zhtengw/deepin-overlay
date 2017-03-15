@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 	      dev-go/go-dbus-generator
 	      dev-go/deepin-go-lib
 	      >=dev-go/dbus-factory-3.0.8
-	      >=dde-base/dde-api-2.92.2
+	      >=dde-base/dde-api-3.1.3
 	      dev-db/sqlite:3
 	      "
 

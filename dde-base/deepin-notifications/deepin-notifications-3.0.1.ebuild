@@ -18,6 +18,7 @@ IUSE=""
 RDEPEND="x11-libs/gtk+:2
 		 dev-qt/qtsvg:5
 		 dev-qt/qtdeclarative:5
+		 dev-qt/qtsql:5[sqlite]
 	     "
 DEPEND="${RDEPEND}
 		>=dde-base/deepin-tool-kit-0.2.2:=
