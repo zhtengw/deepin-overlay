@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 
 DESCRIPTION="Daemon handling the DDE session settings"
@@ -38,6 +38,12 @@ DEPEND="${RDEPEND}
 	      "
 
 src_prepare() {
-		export GOPATH="/usr/share/gocode"
-		
+	export GOPATH="/usr/share/gocode"	
+	LIBDIR=$(get_libdir)
+	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" Makefile
+	default_src_prepare
 }
+
+#src_compile() {
+#	emake USE_GCCGO=1
+#}

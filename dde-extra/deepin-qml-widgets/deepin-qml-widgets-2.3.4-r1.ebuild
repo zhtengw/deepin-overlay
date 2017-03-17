@@ -41,13 +41,13 @@ src_compile() {
 	emake
 
 	cd ${S}/dbus-factory-${QML_FACTORY_VER}
-	emake build-qml
+	make build-qml
 }
 
 src_install() {
 	cd ${S}/${P}
 	emake INSTALL_ROOT=${D} install
-
+	
 	cd ${S}/dbus-factory-${QML_FACTORY_VER}
-	emake DESTDIR=${D} install-qml
+	emake DESTDIR=${D} QT5_LIBDIR=$(qt5_get_libdir)/qt5 install-qml
 }

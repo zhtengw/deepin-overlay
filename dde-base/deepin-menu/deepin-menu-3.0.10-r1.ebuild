@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
 
@@ -26,22 +26,25 @@ DEPEND="${RDEPEND}
 		dev-qt/qtdeclarative:5
 	    "
 src_prepare() {
-		distutils-r1_python_prepare_all
-		eqmake5
+	LIBDIR=$(get_libdir)
+	sed -i "s|/usr/lib|/usr/${LIBDIR}|g" ${PN}.pro
+	distutils-r1_python_prepare_all
+	eqmake5
+	default_src_prepare
 }
 src_compile() {
-		emake
+	emake
 }
 
 src_install() {
-		distutils-r1_src_install
-		emake INSTALL_ROOT=${D} install
+	distutils-r1_src_install
+	emake INSTALL_ROOT=${D} install
 
-		insinto /etc/xdg/autostart
-		doins ${PN}.desktop
+	insinto /etc/xdg/autostart
+	doins ${PN}.desktop
 
-		insinto /usr/share/dbus-1/services
-		doins data/com.deepin.menu.service
+	insinto /usr/share/dbus-1/services
+	doins data/com.deepin.menu.service
 
-		rm -r ${D}/usr/deepin_menu
+	rm -r ${D}/usr/deepin_menu
 }

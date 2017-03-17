@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit qmake-utils
 
@@ -26,7 +26,10 @@ DEPEND="${RDEPEND}
 	     "
 
 src_prepare() {
-		eqmake5	PREFIX=/usr
+	LIBDIR=$(get_libdir)
+	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" ${PN}.pro
+	eqmake5	PREFIX=/usr
+	default_src_prepare
 }
 
 src_install() {

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit qmake-utils
 
@@ -43,7 +43,12 @@ src_prepare() {
 	sed -i "s|-0-2||g" dde-file-manager*/dde-file-manager*.pro
 	sed -i "s|-0-2||g" usb-device-formatter/usb-device-formatter.pro
 	sed -i "s|-0-2||g" dde-dock-plugins/disk-mount/disk-mount.pro
-	eqmake5	PREFIX=/usr VERSION=${PV}
+
+	LIBDIR=$(get_libdir)
+	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro
+
+	eqmake5	PREFIX=/usr VERSION=${PV} LIB_INSTALL_DIR=/usr/$(get_libdir)
+	default_src_prepare
 }
 
 src_install() {

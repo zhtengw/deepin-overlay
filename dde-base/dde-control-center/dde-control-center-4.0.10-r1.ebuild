@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit qmake-utils
 
@@ -38,16 +38,19 @@ RDEPEND="x11-libs/gtk+:2
 		 dde-base/dde-qt5integration
 	     "
 DEPEND="${RDEPEND}
-		 dde-base/deepin-tool-kit:=
-		 dde-base/dde-qt-dbus-factory
+		 >=dde-base/deepin-tool-kit-0.2.7:=
+		 >=dde-base/dde-qt-dbus-factory-0.0.5
 	     "
 
 src_prepare() {
-		eqmake5	PREFIX=/usr DISABLE_SYS_UPDATE=YES
+	LIBDIR=$(get_libdir)
+	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" plugins/*/*.pro
+	eqmake5	PREFIX=/usr DISABLE_SYS_UPDATE=YES
+	default_src_prepare
 }
 
 src_install() {
-		emake INSTALL_ROOT=${D} install
+	emake INSTALL_ROOT=${D} install
 }
 
 pkg_postinst() {

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 
 DESCRIPTION="Deepin file manager backend"
@@ -27,6 +27,14 @@ DEPEND="${RDEPEND}
 	      "
 
 src_prepare() {
-		export GOPATH="/usr/share/gocode"
-		
+	export GOPATH="/usr/share/gocode"
+	default_src_prepare
+}
+
+#src_compile() {
+#	emake USE_GCCGO=1
+#}
+
+src_install() {
+	emake DESTDIR=${D} TARGET_DIR=${D}/usr/$(get_libdir)/deepin-daemon install
 }

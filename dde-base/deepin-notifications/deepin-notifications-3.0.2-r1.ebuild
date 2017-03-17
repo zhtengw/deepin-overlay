@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit qmake-utils
 
-DESCRIPTION="Deepin desktop environment - Session UI module"
-HOMEPAGE="https://github.com/linuxdeepin/dde-session-ui"
+DESCRIPTION="System notifications for Deepin Desktop Environment"
+HOMEPAGE="https://github.com/linuxdeepin/deepin-notifications"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
@@ -15,24 +15,22 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="x11-libs/gsettings-qt
-		 x11-misc/lightdm[qt5]
-		 x11-libs/gtk+:2
-		 x11-apps/xrandr
+RDEPEND="x11-libs/gtk+:2
 		 dev-qt/qtsvg:5
-		 dde-base/dde-daemon
-		 >dde-base/deepin-desktop-schemas-2.91.2
-		 dde-base/startdde
+		 dev-qt/qtdeclarative:5
+		 dev-qt/qtsql:5[sqlite]
 	     "
 DEPEND="${RDEPEND}
 		>=dde-base/deepin-tool-kit-0.2.2:=
-		 dde-base/dde-qt-dbus-factory:=
 	     "
 
 src_prepare() {
-		eqmake5	PREFIX=/usr
+	LIBDIR=$(get_libdir)
+	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" ${PN}.pro
+	eqmake5	PREFIX=/usr
+	default_src_prepare
 }
 
 src_install() {
-		emake INSTALL_ROOT=${D} install
+	emake INSTALL_ROOT=${D} install
 }

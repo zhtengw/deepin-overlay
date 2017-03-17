@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI="4"
+EAPI=6
 
 inherit fdo-mime eutils
 
@@ -30,5 +30,8 @@ src_prepare() {
 	# remove sudo in generate_mo.py
 	sed -e 's/sudo cp/cp/' -i src/generate_mo.py || die "sed failed"
 	
+	LIBDIR=$(get_libdir)
+	sed -i "s|{PREFIX}/lib|{PREFIX}/${LIBDIR}|g" Makefile
+	default_src_prepare
 }
 

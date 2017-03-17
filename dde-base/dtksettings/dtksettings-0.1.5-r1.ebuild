@@ -2,17 +2,22 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit qmake-utils
 
 DESCRIPTION="DtkSettings is a powerfull tool to generation config form json."
 HOMEPAGE="https://github.com/linuxdeepin/dtksettings"
-SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+if [[ "${PV}" == *9999* ]] ; then
+    inherit git-r3
+    EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
+else
+    SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+    KEYWORDS="~amd64 ~x86"
+fi
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-qt/qtmultimedia:5[widgets]
@@ -25,10 +30,11 @@ DEPEND="${RDEPEND}
 	     "
 
 src_prepare() {
-		eqmake5	
+	eqmake5	PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
+	default_src_prepare
 }
 
 src_install() {
-		emake INSTALL_ROOT=${D} install
+	emake INSTALL_ROOT=${D} install
 }
 

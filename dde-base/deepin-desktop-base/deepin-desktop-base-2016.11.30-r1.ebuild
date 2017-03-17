@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=4
+EAPI=6
 
 DESCRIPTION="Base components for Deepin Desktop"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-desktop-base"
@@ -19,10 +19,16 @@ DEPEND="dde-base/deepin-wallpapers
 		dde-base/deepin-gtk-theme
 		dde-base/deepin-sound-theme"
 
+src_prepare() {
+	LIBDIR=$(get_libdir)
+	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" Makefile
+	default_src_prepare
+}
+
 src_install() {
 	emake DESTDIR=${D} install
 
 	rm -r ${D}/etc/lsb-release ${D}/etc/systemd ${D}/usr/share/python-apt
 
-	dosym /usr/lib/deepin/desktop-version /etc/deepin-version
+	dosym /usr/$(get_libdir)/deepin/desktop-version /etc/deepin-version
 }

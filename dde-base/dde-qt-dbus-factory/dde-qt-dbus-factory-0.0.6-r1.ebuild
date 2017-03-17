@@ -2,30 +2,29 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit qmake-utils
 
-DESCRIPTION="System notifications for Deepin Desktop Environment"
-HOMEPAGE="https://github.com/linuxdeepin/deepin-notifications"
+DESCRIPTION="A repository stores auto-generated Qt5 dbus code used by DDE"
+HOMEPAGE="https://github.com/linuxdeepin/dde-qt-dbus-factory"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="GPL-3"
+LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="x11-libs/gtk+:2
-		 dev-qt/qtsvg:5
-		 dev-qt/qtdeclarative:5
-		 dev-qt/qtsql:5[sqlite]
-	     "
+RDEPEND="dev-qt/qtdbus:5
+		 dev-qt/qtcore:5"
+
 DEPEND="${RDEPEND}
-		>=dde-base/deepin-tool-kit-0.2.2:=
-	     "
+		dev-qt/qtgui:5
+		dev-lang/python"
 
 src_prepare() {
-		eqmake5	PREFIX=/usr
+	eqmake5	PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
+	default_src_prepare
 }
 
 src_install() {

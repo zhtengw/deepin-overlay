@@ -28,11 +28,15 @@ RDEPEND="dev-qt/qtmultimedia:5[gstreamer]
 	     "
 DEPEND="${RDEPEND}
 		 >=dde-base/deepin-tool-kit-0.2.0:=
+		 dde-base/dtksettings
 	     "
 
 src_prepare() {
-		sed -i "s|-0-2||g" music-player/music-player.pro
-		eqmake5	PREFIX=/usr
+	LIBDIR=$(qt5_get_libdir)
+	sed -i "s|/usr/lib|${LIBDIR}|g" plugin/netease-meta-search/netease-meta-search.pro libdmusic/libdmusic.pro
+	
+	sed -i "s|-0-2||g" music-player/music-player.pro
+	eqmake5	PREFIX=/usr
 }
 
 src_install() {

@@ -24,3 +24,6 @@ DEPEND="sys-devel/gcc[go]
 #	 export GOPATH="${S}:/usr/share/gocode"
 #}
 
+#src_compile() {
+#	emake USE_GCCGO=1
+#}

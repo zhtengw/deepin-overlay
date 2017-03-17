@@ -92,7 +92,7 @@ src_prepare() {
 src_configure() {
 	[[ $(gcc-major-version) < 5 ]] && append-flags "-std=gnu99"
 	./autogen.sh  --prefix=/usr \
-		--libexecdir=/usr/lib/deepin-mutter \
+		--libexecdir=/usr/$(get_libdir)/deepin-mutter \
 		--disable-static \
 		--disable-schemas-compile \
 		--enable-sm \
