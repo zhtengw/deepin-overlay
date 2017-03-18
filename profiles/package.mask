@@ -1,0 +1,5 @@
+# Aten Zhang <atenzd@gmail.com> (18 Mar 2017)
+# Dock and Control Center not show with dde-api-3.1.4 and dde-daemon-3.1.5
+# See https://github.com/linuxdeepin/dde-daemon/issues/34
+=dde-base/dde-api-3.1.4*
+=dde-base/dde-daemon-3.1.5*
