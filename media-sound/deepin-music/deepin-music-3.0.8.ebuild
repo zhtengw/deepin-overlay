@@ -13,23 +13,23 @@ SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="GPL-3+"
 SLOT="3"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+mp3 +flac +ogg +aac"
 
 RDEPEND="dev-qt/qtmultimedia:5[gstreamer]
-		 dev-libs/icu
-		 dev-qt/qtsvg:5
-		 dev-qt/qtconcurrent:5
-		 >dde-base/deepin-menu-2.90.1
-		 sys-devel/bison
-		 media-video/ffmpeg
-		 media-plugins/gst-plugins-taglib
-		 media-plugins/gst-plugins-mpg123
-		 media-plugins/gst-plugins-flac
-	     "
+	dev-libs/icu
+	dev-qt/qtsvg:5
+	dev-qt/qtconcurrent:5
+	>dde-base/deepin-menu-2.90.1
+	sys-devel/bison
+	media-libs/libcue
+	media-video/ffmpeg
+	>=media-libs/taglib-1.10
+	media-plugins/gst-plugins-meta:1.0[mp3=,flac=,ogg=,aac=]
+	"
 DEPEND="${RDEPEND}
-		 >=dde-base/deepin-tool-kit-0.2.0:=
-		 dde-base/dtksettings
-	     "
+	>=dde-base/deepin-tool-kit-0.2.0:=
+	dde-base/dtksettings
+	"
 
 src_prepare() {
 	LIBDIR=$(qt5_get_libdir)
@@ -40,5 +40,5 @@ src_prepare() {
 }
 
 src_install() {
-		emake INSTALL_ROOT=${D} install
+	emake INSTALL_ROOT=${D} install
 }
