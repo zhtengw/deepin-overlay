@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit qmake-utils
 
-DESCRIPTION="Deepin File Manager"
+DESCRIPTION="Deepin File Manager and Desktop module for DDE"
 HOMEPAGE="https://github.com/linuxdeepin/dde-file-manager"
 if [[ "${PV}" == *9999* ]] ; then
 	inherit git-r3
@@ -27,12 +27,16 @@ RDEPEND="x11-libs/gsettings-qt
 		 dev-qt/qtx11extras:5
 		 dev-qt/qtconcurrent:5
 		 sys-auth/polkit-qt[qt5]
-		 >dde-base/deepin-menu-2.90.1
+		 app-text/poppler
+		 dev-libs/libqtxdg
 		 dde-base/dde-daemon
 		 app-crypt/libsecret
 		 media-video/ffmpegthumbnailer
 		 net-misc/socat
+		 >=dde-base/dde-dock-4.0.5
+		 dde-base/dde-qt5integration
 		 dde-base/startdde
+		 !dde-base/dde-desktop
 	     "
 DEPEND="${RDEPEND}
 		 >=dde-base/deepin-tool-kit-0.2.4:=
@@ -42,12 +46,18 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	sed -i "s|-0-2||g" dde-file-manager*/dde-file-manager*.pro
 	sed -i "s|-0-2||g" usb-device-formatter/usb-device-formatter.pro
-	eqmake5	PREFIX=/usr VERSION=${PV}
+	sed -i "s|-0-2||g" dde-dock-plugins/disk-mount/disk-mount.pro
+	sed -i "s|-0-2||g" dde-desktop/dde-desktop-build.pri
+
+	LIBDIR=$(get_libdir)
+	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro
+
+	eqmake5	PREFIX=/usr VERSION=${PV} LIB_INSTALL_DIR=/usr/$(get_libdir)
+	default_src_prepare
 }
 
 src_install() {
 		emake INSTALL_ROOT=${D} install
-#		rm ${D}/usr/share/dbus-1/interfaces/org.freedesktop.FileManager1.xml
 		dobin ${FILESDIR}/dfmterm 
 		dobin ${FILESDIR}/x-terminal-emulator
 }

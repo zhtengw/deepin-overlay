@@ -25,6 +25,7 @@ RDEPEND="x11-libs/gsettings-qt
 		 dde-base/dde-daemon
 		 >dde-base/deepin-desktop-schemas-2.91.2
 		 >=dde-base/dde-file-manager-1.4.0
+		 !=dde-base/dde-file-manager-4*
 		 dde-base/startdde
 		 dde-base/dde-qt5integration
 	     "

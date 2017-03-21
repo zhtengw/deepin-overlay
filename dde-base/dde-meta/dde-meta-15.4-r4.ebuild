@@ -15,8 +15,10 @@ IUSE="+policykit manual terminal multimedia"
 
 RDEPEND=">=dde-base/dde-control-center-4.0.0
 		dde-base/startdde
-		dde-base/dde-file-manager
-		>=dde-base/dde-desktop-4.0.0
+		|| (
+			 =dde-base/dde-file-manager-4*
+			 >=dde-base/dde-desktop-4.0.0 
+		)
 		dde-base/dde-launcher
 		dde-base/dde-dock
 		dde-base/deepin-desktop-base
