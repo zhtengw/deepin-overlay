@@ -26,9 +26,7 @@ RDEPEND="x11-wm/deepin-metacity
 		net-wireless/bluez
 		gnome-base/gvfs
 		>sys-power/upower-0.99
-		
-		wacom? ( x11-drivers/xf86-input-wacom )
-	      "
+	"
 DEPEND="${RDEPEND}
 	      dev-go/go-dbus-generator
 	      dev-go/deepin-go-lib
