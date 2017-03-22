@@ -39,7 +39,7 @@ RDEPEND="x11-libs/gtk+:2
 	     "
 DEPEND="${RDEPEND}
 		 >=dde-base/deepin-tool-kit-0.2.7:=
-		 >=dde-base/dde-qt-dbus-factory-0.0.5
+		 >=dde-base/dde-qt-dbus-factory-0.0.7
 	     "
 
 src_prepare() {

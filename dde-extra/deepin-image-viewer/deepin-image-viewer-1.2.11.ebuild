@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 	    "
 
 src_prepare() {
-	sed -i 's|-0-2||g' viewer/viewer.pro
+#	sed -i 's|-0-2||g' viewer/viewer.pro
 	eqmake5
 }
 
