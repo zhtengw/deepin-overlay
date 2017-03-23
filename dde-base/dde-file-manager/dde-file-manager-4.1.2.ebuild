@@ -44,10 +44,10 @@ DEPEND="${RDEPEND}
 	     "
 
 src_prepare() {
-	sed -i "s|-0-2||g" dde-file-manager*/dde-file-manager*.pro
-	sed -i "s|-0-2||g" usb-device-formatter/usb-device-formatter.pro
-	sed -i "s|-0-2||g" dde-dock-plugins/disk-mount/disk-mount.pro
-	sed -i "s|-0-2||g" dde-desktop/dde-desktop-build.pri
+#	sed -i "s|-0-2||g" dde-file-manager*/dde-file-manager*.pro
+#	sed -i "s|-0-2||g" usb-device-formatter/usb-device-formatter.pro
+#	sed -i "s|-0-2||g" dde-dock-plugins/disk-mount/disk-mount.pro
+#	sed -i "s|-0-2||g" dde-desktop/dde-desktop-build.pri
 
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro
