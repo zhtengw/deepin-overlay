@@ -30,7 +30,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="sys-devel/gcc[go]
-		dev-lang/go"
+		dev-lang/go
+		!dev-go/dde-go-essential"
 
 DEPEND="${RDEPEND}
 	      dev-vcs/git
