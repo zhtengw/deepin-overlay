@@ -18,6 +18,5 @@ DEPEND="sys-devel/gcc[go]
 	dev-go/go-dbus-generator"
 
 src_prepare() {
-	sed -i 's| tp:type="String_Variant_Map"||g' xml/nm-device-gre.xml
 	export GOPATH="/usr/share/gocode"
 }
