@@ -49,6 +49,7 @@ For user with layman:
 * |-deepin-qml-widgets
 * |-deepin-shortcut-viewer
 * |-deepin-social-sharing
+* |-deepin-system-monitor
 * |-deepin-terminal
 * ***media-sound***
 * |-deepin-music
@@ -90,6 +91,8 @@ For user with layman:
 * |-cogl
 * ***media-plugins***
 * |-python-mmkeys
+* ***net-analyzer***
+* |-libnethogs
 * ***x11-themes***
 * |-flattr-icons
 * ***x11-apps***
