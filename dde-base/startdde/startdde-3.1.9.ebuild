@@ -21,6 +21,7 @@ IUSE=""
 
 RDEPEND="dde-base/dde-daemon
  		dde-base/deepin-wm-switcher
+		>=dde-base/deepin-desktop-schemas-3.1.7
 		"
 
 DEPEND="${RDEPEND}
