@@ -26,8 +26,8 @@ DEPEND="${RDEPEND}
 		dev-qt/qtdeclarative:5
 	    "
 src_prepare() {
-	LIBDIR=$(get_libdir)
-	sed -i "s|/usr/lib|/usr/${LIBDIR}|g" ${PN}.pro
+#	LIBDIR=$(get_libdir)
+#	sed -i "s|/usr/lib|/usr/${LIBDIR}|g" ${PN}.pro
 	distutils-r1_python_prepare_all
 	eqmake5
 	default_src_prepare
