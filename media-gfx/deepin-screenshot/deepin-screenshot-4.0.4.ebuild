@@ -35,6 +35,7 @@ RDEPEND="
 	dev-qt/qtsvg:5
 	dev-qt/qtmultimedia:5
 	dde-base/deepin-menu
+	dde-base/dde-daemon
 	>=dde-base/deepin-notifications-2.3.9
 
 	!media-gfx/deepin-screenshot:2
