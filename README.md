@@ -16,7 +16,6 @@ For user with layman:
 * |-dde-api
 * |-dde-control-center
 * |-dde-daemon
-* |-dde-desktop
 * |-dde-dock
 * |-dde-file-manager
 * |-dde-launcher
@@ -83,6 +82,8 @@ For user with layman:
 * |-jieba
 * |-python-ass
 * |-xpybutil
+* ***dev-perl***
+* |-XML-LibXML-PrettyPrint
 * ***dev-lang***
 * |-sassc
 * ***dev-libs***
