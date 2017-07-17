@@ -27,7 +27,7 @@ RDEPEND="x11-wm/deepin-metacity
 		sys-libs/pam
 		>sys-power/upower-0.99
 		miracast? ( net-wireless/iw )
-		bluetooth? (net-wireless/bluez)
+		bluetooth? ( net-wireless/bluez )
 	"
 DEPEND="${RDEPEND}
 	      dev-go/go-dbus-generator
