@@ -5,10 +5,7 @@
 		<email>atenzd@gmail.com</email>
 		<name>Aten Zhang</name>
 	</maintainer>
-	<use>
-		<flag name="sharing">Install <pkg>dde-extra/deepin-social-sharing</pkg> for social media sharing</flag>
-	</use>
 	<upstream>
-		<remote-id type="github">linuxdeepin/deepin-screenshot</remote-id>
+		<remote-id type="github">linuxdeepin/deepin-notifications</remote-id>
 	</upstream>
 </pkgmetadata>

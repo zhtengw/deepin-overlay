@@ -33,7 +33,6 @@
 # Masked as they are not needed any more.
 # Removal in a month
 dev-python/deepin-gsettings
-dev-python/xpybutil
 media-video/QtAV
 dev-python/python-ass
 media-plugins/python-mmkeys

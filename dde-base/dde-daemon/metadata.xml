@@ -6,9 +6,10 @@
 		<name>Aten Zhang</name>
 	</maintainer>
 	<use>
-		<flag name="sharing">Install <pkg>dde-extra/deepin-social-sharing</pkg> for social media sharing</flag>
+		<flag name="bluetooth">Enable Bluetooth Support</flag>
+		<flag name="miracast">Enable Miracast Support</flag>
 	</use>
 	<upstream>
-		<remote-id type="github">linuxdeepin/deepin-screenshot</remote-id>
+		<remote-id type="github">linuxdeepin/dde-daemon</remote-id>
 	</upstream>
 </pkgmetadata>
