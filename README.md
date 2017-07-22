@@ -82,6 +82,8 @@ For user with layman:
 * |-jieba
 * |-python-ass
 * |-xpybutil
+* ***dev-cpp***
+* |-treefrog-framework
 * ***dev-perl***
 * |-XML-LibXML-PrettyPrint
 * ***dev-lang***
