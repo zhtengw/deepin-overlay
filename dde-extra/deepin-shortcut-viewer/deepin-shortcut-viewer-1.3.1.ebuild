@@ -21,6 +21,7 @@ RDEPEND="dev-qt/qtcore:5
 		dev-qt/qtnetwork:5
 		media-libs/mesa
 		x11-libs/libxcb
+		dde-base/deepin-tool-kit
 		"
 
 DEPEND="${RDEPEND}

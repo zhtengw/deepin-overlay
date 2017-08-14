@@ -24,6 +24,7 @@ RDEPEND="x11-libs/gtk+:2
 		 dev-qt/qtx11extras:5
 		 dev-qt/qtgraphicaleffects:5
 		 dev-qt/qtgui:5
+		 dde-base/deepin-tool-kit:=
 		"
 DEPEND="${RDEPEND}
 	"
