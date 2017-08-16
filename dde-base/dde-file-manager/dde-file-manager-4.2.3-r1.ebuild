@@ -19,7 +19,7 @@ fi
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="samba +olddtk dtk34"
+IUSE="samba +dtk1"
 
 RDEPEND="sys-apps/file
 		 x11-libs/gsettings-qt
@@ -55,15 +55,13 @@ RDEPEND="sys-apps/file
 DEPEND="${RDEPEND}
 		dde-extra/deepin-gettext-tools
 
-		olddtk? ( >=dde-base/dtksettings-0.1.3
-			!dtk34? ( =dde-base/deepin-tool-kit-0.3.3:= )
-			dtk34? ( >=dde-base/deepin-tool-kit-0.3.4:= )
-		)
-		!olddtk? ( >=dde-base/dtkwidget-0.3.3:= )
+		dtk1? ( >=dde-base/dtksettings-0.1.3
+			    >=dde-base/deepin-tool-kit-0.3.4:= )
+		!dtk1? ( >=dde-base/dtkwidget-0.3.3:= )
 	    "
 
 src_prepare() {
-	if use dtk34; then
+	if use dtk1; then
 		sed -i "s|dtkwidget|dtkwidget1|g" dde-file-manager*/dde-file-manager*.pro
 		sed -i "s|dtkwidget|dtkwidget1|g" usb-device-formatter/usb-device-formatter.pro
 		sed -i "s|dtkwidget|dtkwidget1|g" dde-dock-plugins/disk-mount/disk-mount.pro

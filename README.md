@@ -37,6 +37,9 @@ For user with layman:
 * |-deepin-wallpapers
 * |-deepin-wm-switcher
 * |-dtksettings
+* |-dtkcore
+* |-dtkwidget
+* |-dtkwm
 * |-startdde
 * ***dde-extra***
 * |-dde-calendar
@@ -49,6 +52,7 @@ For user with layman:
 * |-deepin-shortcut-viewer
 * |-deepin-social-sharing
 * |-deepin-system-monitor
+* |-deepin-desktop-monitor
 * |-deepin-terminal
 * ***media-sound***
 * |-deepin-music
@@ -56,6 +60,7 @@ For user with layman:
 * ***media-video***
 * |-QtAV
 * |-deepin-movie
+* |-deepin-movie-reborn
 * ***media-gfx***
 * |-blur-effect
 * |-byzanz
