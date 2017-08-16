@@ -18,7 +18,7 @@ fi
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="olddtk"
+IUSE="dtk1"
 
 DEPEND="dev-qt/qtdbus:5
 		dev-qt/qtwidgets:5
@@ -41,13 +41,13 @@ DEPEND="dev-qt/qtdbus:5
 		"
 RDEPEND="${DEPEND}
 		>=dde-base/dtkcore-0.3.4
-		!olddtk? ( >=dde-base/dtkwidget-0.3.3 )
-		olddtk? ( <=dde-base/deepin-tool-kit-0.3.3 )
+		!dtk1? ( >=dde-base/dtkwidget-0.3.3 )
+		dtk1? ( <=dde-base/deepin-tool-kit-0.3.3 )
 		"
 
 src_prepare() {
 	sed -i "s|p->property|(*p)->property|g" src/common/actions.cpp
 	#sed -i "s|deepin-movie|deepin-movie-reborn|g" src/CMakeLists.txt
-	use olddtk && sed -i "s|IMPORTED_TARGET\ dtkwidget|IMPORTED_TARGET\ dtkwidget\ dtksettings\ dtksettingsview\ dtkcore|g" src/CMakeLists.txt
+	use dtk1 && sed -i "s|IMPORTED_TARGET\ dtkwidget|IMPORTED_TARGET\ dtkwidget\ dtksettings\ dtksettingsview\ dtkcore|g" src/CMakeLists.txt
 	default_src_prepare
 }
