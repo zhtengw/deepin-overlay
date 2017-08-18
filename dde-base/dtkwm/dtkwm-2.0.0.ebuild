@@ -6,8 +6,8 @@ EAPI=6
 
 inherit qmake-utils
 
-DESCRIPTION="Base development tool of all C++/Qt Developer work on Deepin - Widget modules"
-HOMEPAGE="https://github.com/linuxdeepin/dtkwidget"
+DESCRIPTION="Deepin graphical user interface library"
+HOMEPAGE="https://github.com/linuxdeepin/dtkwm"
 
 if [[ "${PV}" == *9999* ]] ; then
      inherit git-r3
@@ -31,20 +31,12 @@ RDEPEND="dev-qt/qtmultimedia:5[widgets]
 		 x11-libs/libxcb
 		 x11-libs/libXext
 		 x11-libs/xcb-util
-		 x11-libs/startup-notification
-		 x11-libs/gsettings-qt
 		 x11-proto/xextproto
 		 sys-libs/mtdev
-		 media-libs/freetype
-		 media-libs/fontconfig
 		 media-libs/mesa
-		 virtual/libudev
-		 !<=dde-base/deepin-tool-kit-0.3.3
 	     "
 DEPEND="${RDEPEND}
-		dev-libs/glib:2
 		dde-base/dtkcore
-		dev-qt/linguist-tools:5
 	    "
 
 src_prepare() {
