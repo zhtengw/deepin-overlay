@@ -18,7 +18,7 @@ fi
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="dtk1"
+IUSE=""
 
 DEPEND="dev-qt/qtdbus:5
 		dev-qt/qtwidgets:5
@@ -41,8 +41,7 @@ DEPEND="dev-qt/qtdbus:5
 		"
 RDEPEND="${DEPEND}
 		>=dde-base/dtkcore-0.3.4
-		!dtk1? ( >=dde-base/dtkwidget-0.3.3 )
-		dtk1? ( <=dde-base/deepin-tool-kit-0.3.3 )
+		>=dde-base/dtkwidget-0.3.4
 		"
 
 src_prepare() {
