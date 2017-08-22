@@ -25,16 +25,11 @@ RDEPEND="dev-qt/qtsvg:5
 DEPEND="${RDEPEND}
 		x11-libs/xcb-util-wm
 		x11-libs/libxcb
-		dtk1? ( >=dde-base/dtkcore-0.3.3:=
-				>=dde-base/deepin-tool-kit-0.3.4:= )
-        !dtk1? ( >=dde-base/dtkwidget-0.3.3:= )
+        >=dde-base/dtkwidget-2.0.0:=
 		dde-base/dde-qt-dbus-factory:=
 	    "
 
 src_prepare() {
-    if use dtk1; then
-        sed -i "s|dtkwidget|dtkwidget1|g" ${PN}.pro 
-    fi   
 	eqmake5	PREFIX=/usr WITHOUT_UNINSTALL_APP=YES
 }
 

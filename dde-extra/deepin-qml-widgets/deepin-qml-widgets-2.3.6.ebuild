@@ -26,7 +26,7 @@ RDEPEND="x11-libs/gtk+:2
 		 dev-qt/qtgui:5
 		"
 DEPEND="${RDEPEND}
-        >=dde-base/dtkwidget-0.3.3:=
+        >=dde-base/dtkwidget-2.0.0:=
 		"
 
 S=${WORKDIR}

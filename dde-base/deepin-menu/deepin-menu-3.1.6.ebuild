@@ -22,7 +22,7 @@ RDEPEND="dev-lang/python:2.7
 DEPEND="${RDEPEND}
 		x11-libs/libX11
 		x11-libs/libxcb
-        >=dde-base/dtkwidget-0.3.3:=
+        >=dde-base/dtkwidget-2.0.0:=
 		dde-base/dde-qt-dbus-factory
 		dev-qt/qtx11extras:5
 		dev-qt/qtdeclarative:5

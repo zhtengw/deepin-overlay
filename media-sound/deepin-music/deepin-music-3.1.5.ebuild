@@ -27,7 +27,7 @@ RDEPEND="dev-qt/qtmultimedia:5[gstreamer]
 	media-plugins/gst-plugins-meta:1.0[mp3=,flac=,ogg=,aac=]
 	"
 DEPEND="${RDEPEND}
-	>=dde-base/dtkwidget-0.3.3:=
+	>=dde-base/dtkwidget-2.0.0:=
 	"
 
 src_prepare() {

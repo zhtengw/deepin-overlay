@@ -29,14 +29,14 @@ DEPEND="${RDEPEND}
 		x11-libs/libXtst
 		dde-base/dde-qt-dbus-factory
 		x11-libs/gsettings-qt
-        dtk1? ( >=dde-base/deepin-tool-kit-0.3.4:= )
-        !dtk1? ( >=dde-base/dtkwidget-0.3.3:= )
+        dtk1? ( >=dde-base/deepin-tool-kit-1.0.0:= )
+        !dtk1? ( >=dde-base/dtkwidget-2.0.0:= )
 	    "
 
 src_prepare() {
     if use dtk1; then
-        sed -i "s|dtkwidget|dtkwidget1|g" frame/frame.pro 
-        sed -i "s|dtkwidget|dtkwidget1|g" plugins/*/*.pro
+        sed -i "s|dtkwidget|dtkwidget1\ dtkbase1\ dtkutil1|g" frame/frame.pro 
+        sed -i "s|dtkwidget|dtkwidget1\ dtkbase1|g" plugins/*/*.pro
     fi   
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" plugins/*/*.pro
