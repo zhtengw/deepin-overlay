@@ -95,6 +95,8 @@ For user with layman:
 * |-sassc
 * ***dev-libs***
 * |-libsass
+* ***dev-qt***
+* |-qtstyleplugins
 * ***media-libs***
 * |-cogl
 * ***media-plugins***
