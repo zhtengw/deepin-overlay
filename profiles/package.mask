@@ -33,8 +33,6 @@
 # Masked as they are not needed any more.
 # Removal in a month
 dev-python/deepin-gsettings
-media-video/QtAV
-dev-python/python-ass
 media-plugins/python-mmkeys
 
 # Aten Zhang <atenzd@gmail.com> (18 Jul 2017)
@@ -42,7 +40,6 @@ media-plugins/python-mmkeys
 # Removal in a month
 dev-python/deepin-utils
 x11-libs/deepin-ui
-media-video/deepin-movie
 =media-gfx/deepin-screenshot-2*
 =media-sound/deepin-music-2*
 

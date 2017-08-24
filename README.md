@@ -72,6 +72,7 @@ For user with layman:
 * |-deepin-go-lib
 * |-go-dbus-generator
 * |-go-gir-generator
+* |-go-x11-client
 * ***x11-wm***
 * |-deepin-metacity
 * |-deepin-mutter
