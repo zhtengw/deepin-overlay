@@ -31,6 +31,8 @@ DEPEND="${RDEPEND}
 	    "
 
 src_prepare() {
+	local mylrelease=$(qt5_get_bindir)/lrelease
+	sed -i -e "s:lrelease:${mylrelease}:" translate_generation.sh || die
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" dde-*/*.pro
 	eqmake5	PREFIX=/usr
