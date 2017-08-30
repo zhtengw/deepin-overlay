@@ -31,6 +31,8 @@ DEPEND="${RDEPEND}
 	"
 
 src_prepare() {
+	local mylrelease=$(qt5_get_bindir)/lrelease
+	sed -i -e "s:lrelease:${mylrelease}:" tool/translate_generation.py || die
 	LIBDIR=$(qt5_get_libdir)
 	sed -i "s|/usr/lib|${LIBDIR}|g" plugin/netease-meta-search/netease-meta-search.pro libdmusic/libdmusic.pro
 	
