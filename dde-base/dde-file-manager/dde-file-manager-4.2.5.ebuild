@@ -60,6 +60,12 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 
+	local mylrelease=$(qt5_get_bindir)/lrelease
+	sed -i -e "s:lrelease:${mylrelease}:" usb-device-formatter/generate_translations.sh || die
+	sed -i -e "s:lrelease:${mylrelease}:" dde-file-manager/generate_translations.sh || die
+	sed -i -e "s:lrelease:${mylrelease}:" dde-file-manager-lib/generate_translations.sh || die
+	sed -i -e "s:lrelease:${mylrelease}:" dde-desktop/translate_generation.sh || die
+
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro
 

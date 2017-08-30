@@ -30,6 +30,8 @@ DEPEND="${RDEPEND}
 	    "
 
 src_prepare() {
+	local mylrelease=$(qt5_get_bindir)/lrelease
+	sed -i -e "s:lrelease:${mylrelease}:" translate_generation.sh || die
 	eqmake5	PREFIX=/usr WITHOUT_UNINSTALL_APP=YES
 }
 

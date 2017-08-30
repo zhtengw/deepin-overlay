@@ -34,6 +34,8 @@ DEPEND="${RDEPEND}
 	    "
 
 src_prepare() {
+	local mylrelease=$(qt5_get_bindir)/lrelease
+	sed -i -e "s:lrelease:${mylrelease}:" translate_generation.sh || die
     if use dtk1; then
         sed -i "s|dtkwidget|dtkwidget1\ dtkbase1\ dtkutil1|g" frame/frame.pro 
         sed -i "s|dtkwidget|dtkwidget1\ dtkbase1|g" plugins/*/*.pro

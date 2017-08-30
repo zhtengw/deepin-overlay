@@ -21,6 +21,7 @@ RDEPEND="x11-wm/deepin-metacity
 		sys-power/acpid
 		sys-fs/udisks:2
 		gnome-extra/polkit-gnome
+		dev-libs/libinput
 		dde-base/deepin-desktop-schemas
 		net-misc/networkmanager
 		gnome-base/gvfs
