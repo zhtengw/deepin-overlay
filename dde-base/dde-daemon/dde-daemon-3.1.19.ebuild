@@ -36,6 +36,7 @@ DEPEND="${RDEPEND}
 		  >=dev-go/dde-go-essential-20170807
 	      >=dev-go/dbus-factory-3.0.8
 	      >=dde-base/dde-api-3.1.3
+		  dev-libs/libinput
 	      dev-db/sqlite:3
 	      "
 
