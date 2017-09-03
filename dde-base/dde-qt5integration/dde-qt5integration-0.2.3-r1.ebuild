@@ -36,13 +36,13 @@ RDEPEND="
 	dev-qt/qtstyleplugins:5
 	"
 DEPEND="${RDEPEND}
-    	>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-2.0.0:=
 		"
 
 S=${WORKDIR}/${MY_P}
 
 src_prepare() {
-	eqmake5 ${MY_PN}.pro
+	QT_SELECT=qt5 eqmake5 ${MY_PN}.pro
 	sed -i "s|cr\.deepin\.io|github\.com\/linuxdeepin|g" platformplugin/linux.pri
 }
 
