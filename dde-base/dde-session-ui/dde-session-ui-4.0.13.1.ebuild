@@ -23,12 +23,12 @@ RDEPEND="x11-libs/gsettings-qt
 		 dde-base/dde-daemon
 		 >dde-base/deepin-desktop-schemas-2.91.2
 		 dde-base/startdde
-	     "
+		"
 DEPEND="${RDEPEND}
-        >=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-2.0.0:=
 		>=dde-extra/deepin-gettext-tools-1.0.6
 		dde-base/dde-qt-dbus-factory:=
-	    "
+		"
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
