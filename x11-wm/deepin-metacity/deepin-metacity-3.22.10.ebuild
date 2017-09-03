@@ -44,6 +44,7 @@ DEPEND="${RDEPEND}
 	x11-libs/bamf
 	gnome-base/gconf
 	sys-devel/gettext
+	sys-devel/autoconf-archive
 	dev-util/itstool
 	>=dev-util/intltool-0.35
 	virtual/pkgconfig
@@ -53,7 +54,7 @@ DEPEND="${RDEPEND}
 	x11-proto/xproto"
 
 src_prepare() {
-	
+	epatch "${FILESDIR}/${PN}-3.22.10-fix-implicit-declarations.patch"
 	base_src_prepare
 	gnome2_src_prepare
 }
