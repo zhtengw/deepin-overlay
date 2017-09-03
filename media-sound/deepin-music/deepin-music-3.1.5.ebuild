@@ -33,8 +33,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	LIBDIR=$(qt5_get_libdir)
 	sed -i "s|/usr/lib|${LIBDIR}|g" plugin/netease-meta-search/netease-meta-search.pro libdmusic/libdmusic.pro
-	
-	eqmake5	PREFIX=/usr
+
+	QT_SELECT=qt5 eqmake5 PREFIX=/usr
 }
 
 src_install() {
