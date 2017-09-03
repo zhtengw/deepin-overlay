@@ -30,14 +30,13 @@ RDEPEND="dev-qt/qtmultimedia:5[widgets]
 		 x11-libs/libxcb
 		 x11-libs/xcb-util
 		 x11-libs/startup-notification
-	     "
+		"
 DEPEND="${RDEPEND}
 		dde-base/dtksettings
-	     "
+		"
 
 src_prepare() {
-	epatch ${FILESDIR}/${PN}-0.2.7-lrelease.patch
-	eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
+	QT_SELECT=qt5 eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
 	default_src_prepare
 }
 
