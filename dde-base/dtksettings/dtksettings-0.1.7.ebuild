@@ -25,12 +25,11 @@ RDEPEND="dev-qt/qtmultimedia:5[widgets]
 		 dev-qt/qtwidgets:5
 		 dev-qt/qttest:5
 		 >=dev-qt/qtcore-5.5:5
-	     "
-DEPEND="${RDEPEND}
-	     "
+		"
+DEPEND="${RDEPEND}"
 
 src_prepare() {
-	eqmake5	PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
+	QT_SELECT=qt5 eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
 	default_src_prepare
 }
 
