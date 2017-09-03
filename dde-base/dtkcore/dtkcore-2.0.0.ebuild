@@ -20,14 +20,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-qt/qtcore-5.5:5
-	    "
+RDEPEND=">=dev-qt/qtcore-5.5:5"
 DEPEND="${RDEPEND}"
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" tool/tool.pro
-	eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
+	QT_SELECT=qt5 eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
 	default_src_prepare
 }
 
