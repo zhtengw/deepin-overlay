@@ -1,0 +1,22 @@
+diff -ruNp deepin-metacity-3.22.10.orig/src/core/deepin-dbus-service.c deepin-metacity-3.22.10/src/core/deepin-dbus-service.c
+--- deepin-metacity-3.22.10.orig/src/core/deepin-dbus-service.c	2017-06-23 02:53:44.000000000 -0500
++++ deepin-metacity-3.22.10/src/core/deepin-dbus-service.c	2017-09-02 20:42:23.535133970 -0500
+@@ -11,6 +11,7 @@
+ 
+ #include <config.h>
+ #include <gio/gio.h>
++#include <stdlib.h>
+ #include <util.h>
+ #include "screen-private.h"
+ #include "deepin-dbus-service.h"
+diff -ruNp deepin-metacity-3.22.10.orig/src/core/screen.c deepin-metacity-3.22.10/src/core/screen.c
+--- deepin-metacity-3.22.10.orig/src/core/screen.c	2017-06-23 02:53:44.000000000 -0500
++++ deepin-metacity-3.22.10/src/core/screen.c	2017-09-02 20:42:04.100133960 -0500
+@@ -57,6 +57,7 @@
+ #include <locale.h>
+ #include <string.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ static char* get_screen_name (MetaDisplay *display,
+                               int          number);
