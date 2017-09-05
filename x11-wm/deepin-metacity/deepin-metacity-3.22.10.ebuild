@@ -54,7 +54,6 @@ DEPEND="${RDEPEND}
 	x11-proto/xproto"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-3.22.10-fix-implicit-declarations.patch"
 	base_src_prepare
 	gnome2_src_prepare
 }

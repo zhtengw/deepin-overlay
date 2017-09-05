@@ -85,7 +85,6 @@ RDEPEND="${COMMON_DEPEND}
 src_prepare() {
 
 #	[[ $(gcc-major-version) < 5 ]] && epatch "${FILESDIR}"/"${PN}-3.20-fix-c99-mode-gcc49.patch" 
-	epatch "${FILESDIR}/${PN}-3.20-include-math.patch"
 
 	gnome2_src_prepare
 }
