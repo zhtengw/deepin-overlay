@@ -23,7 +23,7 @@ RDEPEND="x11-wm/deepin-metacity
 		gnome-extra/polkit-gnome
 		dde-base/deepin-desktop-schemas
 		net-misc/networkmanager
-		gnome-base/gvfs
+		gnome-base/gvfs[udisks]
 		sys-libs/pam
 		>sys-power/upower-0.99
 		miracast? ( net-wireless/iw )

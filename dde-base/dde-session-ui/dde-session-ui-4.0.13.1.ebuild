@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" dde-*/*.pro
-	eqmake5	PREFIX=/usr
+	QT_SELECT=qt5 eqmake5	PREFIX=/usr
 	default_src_prepare
 }
 
