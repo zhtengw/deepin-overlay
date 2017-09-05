@@ -44,6 +44,7 @@ DEPEND="${RDEPEND}
 	x11-libs/bamf
 	gnome-base/gconf
 	sys-devel/gettext
+	sys-devel/autoconf-archive
 	dev-util/itstool
 	>=dev-util/intltool-0.35
 	virtual/pkgconfig

@@ -19,6 +19,7 @@ RDEPEND="dev-qt/qtsvg:5
 		dev-qt/qtconcurrent:5
 		dev-qt/qtgui:5
 		dev-qt/qtdbus:5
+		dev-qt/qtprintsupport:5
 		dev-qt/qtx11extras:5
 		media-libs/libraw
 		media-libs/libexif
@@ -30,6 +31,7 @@ DEPEND="${RDEPEND}
 	    "
 
 src_prepare() {
+	export QT_SELECT=qt5
 	eqmake5
 }
 
