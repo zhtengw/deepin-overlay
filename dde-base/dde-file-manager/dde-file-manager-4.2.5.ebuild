@@ -61,7 +61,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 
 	LIBDIR=$(get_libdir)
-	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro
+	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro dde-dock-plugins/trash/trash.pro
 	export QT_SELECT=qt5
 	eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
 	default_src_prepare
