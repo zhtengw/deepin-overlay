@@ -15,10 +15,21 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="x11-libs/gsettings-qt
+RDEPEND="sys-apps/systemd
+		 x11-libs/gsettings-qt
 		 x11-misc/lightdm[qt5]
 		 x11-libs/gtk+:2
+		 x11-libs/libXext
+		 x11-libs/libXtst
+		 x11-libs/libX11
+		 x11-libs/libXcursor
+		 x11-libs/libXfixes
 		 x11-apps/xrandr
+		 dev-qt/qtcore:5
+		 dev-qt/qtgui:5
+		 dev-qt/qtdbus:5
+		 dev-qt/qtx11extras:5
+		 dev-qt/qtwidgets:5
 		 dev-qt/qtsvg:5
 		 dde-base/dde-daemon
 		 >dde-base/deepin-desktop-schemas-2.91.2
@@ -28,6 +39,7 @@ DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-2.0.0:=
 		>=dde-extra/deepin-gettext-tools-1.0.6
 		dde-base/dde-qt-dbus-factory:=
+		virtual/pkgconfig
 		"
 
 src_prepare() {
