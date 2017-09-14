@@ -58,7 +58,6 @@ For user with layman:
 * |-deepin-music
 * |-deepin-voice-recorder
 * ***media-video***
-* |-QtAV
 * |-deepin-movie
 * |-deepin-movie-reborn
 * ***media-gfx***
