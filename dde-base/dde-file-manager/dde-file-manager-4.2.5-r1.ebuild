@@ -24,10 +24,14 @@ IUSE="samba"
 RDEPEND="sys-apps/file
 		 x11-libs/gsettings-qt
 		 x11-libs/gtk+:2
+		 dev-qt/qtcore:5
+		 dev-qt/qtgui:5[jpeg]
+		 dev-qt/qtwidgets:5
+		 dev-qt/qtdbus:5
 		 dev-qt/qtsvg:5
 		 dev-qt/qtx11extras:5
 		 dev-qt/qtconcurrent:5
-		 dev-qt/qtmultimedia:5
+		 dev-qt/qtmultimedia:5[widgets]
 		 dev-qt/qtdeclarative:5
 		 sys-auth/polkit-qt[qt5]
 		 app-text/poppler
