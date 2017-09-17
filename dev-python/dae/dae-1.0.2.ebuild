@@ -21,4 +21,4 @@ REQUIRED_USE="
      ${PYTHON_REQUIRED_USE}"
 
 DEPEND="dev-python/python-xlib[${PYTHON_USEDEP}]
-		dev-python/PyQt5[${PYTHON_USEDEP},webkit,declarative]"
+		dev-python/PyQt5[${PYTHON_USEDEP},webkit,declarative,gui,network,printsupport,widgets]"
