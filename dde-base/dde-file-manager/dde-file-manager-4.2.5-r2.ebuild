@@ -34,7 +34,6 @@ RDEPEND="sys-apps/file
 		 dev-qt/qtmultimedia:5[widgets]
 		 dev-qt/qtdeclarative:5
 		 sys-auth/polkit-qt[qt5]
-		 app-text/poppler
 		 dev-libs/libqtxdg
 		 app-crypt/libsecret
 		 x11-libs/libxcb
@@ -42,7 +41,8 @@ RDEPEND="sys-apps/file
 		 x11-libs/xcb-util
 		 x11-libs/xcb-util-wm
 		 dev-cpp/treefrog-framework
-		 media-video/ffmpegthumbnailer
+		 app-text/poppler
+		 media-video/ffmpegthumbnailer[png]
 		 media-libs/taglib
 		 media-video/mpv[libmpv]
 		 dde-extra/deepin-shortcut-viewer

@@ -29,7 +29,7 @@ RDEPEND="dev-qt/qtwidgets:5
 		>=dde-base/deepin-notifications-2.3.8
 		x11-libs/libXtst
 		gif? ( media-gfx/byzanz )
-		mp4? ( virtual/ffmpeg )
+		mp4? ( media-video/ffmpeg[xcb] )
 		"
 
 DEPEND="${RDEPEND}
