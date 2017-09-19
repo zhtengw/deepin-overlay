@@ -22,7 +22,7 @@ DEPEND="sys-devel/gcc[go]
 src_prepare() {
 	#export GOPATH="${S}:/usr/share/gocode"
 	## fix undefined error of SettingsBackendLike
-	epatch ${FILESDIR}/${PN}-1.0.1-SettingsBackendLike.patch
+	eapply ${FILESDIR}/${PN}-1.0.1-SettingsBackendLike.patch
 	default_src_prepare
 }
 
