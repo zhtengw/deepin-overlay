@@ -18,7 +18,6 @@ IUSE=""
 RDEPEND="sys-apps/systemd
 		 x11-libs/gsettings-qt
 		 x11-misc/lightdm[qt5]
-		 x11-libs/gtk+:2
 		 x11-libs/libXext
 		 x11-libs/libXtst
 		 x11-libs/libX11
@@ -32,7 +31,7 @@ RDEPEND="sys-apps/systemd
 		 dev-qt/qtwidgets:5
 		 dev-qt/qtsvg:5
 		 dde-base/dde-daemon
-		 >dde-base/deepin-desktop-schemas-2.91.2
+		 >=dde-base/deepin-desktop-schemas-2.91.2
 		 dde-base/startdde
 		"
 DEPEND="${RDEPEND}
@@ -45,10 +44,10 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" dde-*/*.pro
-	QT_SELECT=qt5 eqmake5	PREFIX=/usr
+	QT_SELECT=qt5 eqmake5 PREFIX=/usr
 	default_src_prepare
 }
 
 src_install() {
-		emake INSTALL_ROOT=${D} install
+	emake INSTALL_ROOT=${D} install
 }
