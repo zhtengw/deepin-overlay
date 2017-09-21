@@ -6,7 +6,7 @@ EAPI=6
 
 inherit qmake-utils
 
-DESCRIPTION="A repository stores auto-generated Qt5 dbus code used by DDE"
+DESCRIPTION="A repository stores auto-generated Qt5 D-Bus code used by DDE"
 HOMEPAGE="https://github.com/linuxdeepin/dde-qt-dbus-factory"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
