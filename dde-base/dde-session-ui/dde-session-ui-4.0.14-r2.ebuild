@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="sys-apps/systemd
+RDEPEND="sys-apps/systemd[policykit]
 		 x11-libs/gsettings-qt
 		 x11-misc/lightdm[qt5]
 		 x11-libs/libXext
