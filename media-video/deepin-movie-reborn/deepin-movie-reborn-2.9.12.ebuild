@@ -40,7 +40,7 @@ DEPEND="dev-qt/qtdbus:5
 		!media-video/deepin-movie
 		"
 RDEPEND="${DEPEND}
-		>=dde-base/dtkcore-2.0.1
+		>=dde-base/dtkcore-2.0.0
 		>=dde-base/dtkwidget-2.0.0:=
 		"
 
