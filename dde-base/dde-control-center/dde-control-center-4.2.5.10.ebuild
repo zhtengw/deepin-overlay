@@ -57,4 +57,6 @@ pkg_postinst() {
 	elog "GeoIP databases are no longer installed by dev-libs/geoip ebuild."
 	elog "You must run 'geoipupdate.sh -f' first to download the databases,"
 	elog "otherwise, dde-control-center will run abnormally."
+
+	geoipupdate.sh -f
 }

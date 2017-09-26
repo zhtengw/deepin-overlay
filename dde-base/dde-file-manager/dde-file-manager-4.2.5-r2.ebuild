@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit qmake-utils
+inherit qmake-utils fdo-mime
 
 DESCRIPTION="Deepin File Manager and Desktop module for DDE"
 HOMEPAGE="https://github.com/linuxdeepin/dde-file-manager"
@@ -78,8 +78,12 @@ src_install() {
 }
 
 pkg_postinst() {
+	fdo-mime_desktop_database_update
 	einfo "${PN} needs x-terminal-emulator command to make OpenInTermial"
 	einfo "function work. A command dfmterm is added to generate it. For"
 	einfo "example, use 'dfmterm xterm' to set xterm as the terminal when"
 	einfo "click 'Open In Terminal'"
+}
+pkg_postrm() {
+	fdo-mime_desktop_database_update
 }
