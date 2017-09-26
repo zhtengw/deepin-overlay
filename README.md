@@ -81,12 +81,9 @@ For user with layman:
 * |-deepin-wm
 * ***x11-libs***
 * |-bamf
-* |-deepin-ui
 * |-gsettings-qt
 * ***dev-python***
 * |-dae
-* |-deepin-gsettings
-* |-deepin-utils
 * |-jieba
 * |-python-ass
 * |-xpybutil
@@ -102,10 +99,6 @@ For user with layman:
 * |-qtstyleplugins
 * ***media-libs***
 * |-cogl
-* ***media-plugins***
-* |-python-mmkeys
-* ***net-analyzer***
-* |-libnethogs
 * ***net-im***
 * |-deepin-wine-QQ
 * |-deepin-wine-wechat
