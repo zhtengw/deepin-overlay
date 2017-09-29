@@ -19,5 +19,5 @@ RDEPEND="media-sound/deepin-music
 		media-gfx/deepin-screenshot
 		media-gfx/deepin-screen-recorder
 		media-sound/deepin-voice-recorder
-		dde-extra/deepin-image-viewer
+		media-gfx/deepin-image-viewer
 		"
