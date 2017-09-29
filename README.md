@@ -49,7 +49,6 @@ For user with layman:
 * |-dde-help
 * |-dde-meta-multimedia
 * |-deepin-gettext-tools
-* |-deepin-image-viewer
 * |-deepin-manual
 * |-deepin-qml-widgets
 * |-deepin-shortcut-viewer
@@ -66,6 +65,7 @@ For user with layman:
 * ***media-gfx***
 * |-blur-effect
 * |-byzanz
+* |-deepin-image-viewer
 * |-deepin-screen-recorder
 * |-deepin-screenshot
 * ***dev-go***
