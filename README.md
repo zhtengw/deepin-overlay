@@ -46,6 +46,7 @@ For user with layman:
 * |-startdde
 * ***dde-extra***
 * |-dde-calendar
+* |-deepin-clone
 * |-dde-help
 * |-dde-meta-multimedia
 * |-deepin-gettext-tools
@@ -65,6 +66,7 @@ For user with layman:
 * ***media-gfx***
 * |-blur-effect
 * |-byzanz
+* |-deepin-draw
 * |-deepin-image-viewer
 * |-deepin-screen-recorder
 * |-deepin-screenshot

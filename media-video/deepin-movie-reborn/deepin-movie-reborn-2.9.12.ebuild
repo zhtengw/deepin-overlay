@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit cmake-utils
+inherit cmake-utils xdg-utils
 DESCRIPTION="Deepin Movie Player"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-movie-reborn"
 if [[ "${PV}" == *9999* ]] ; then
@@ -47,4 +47,14 @@ RDEPEND="${DEPEND}
 src_prepare() {
 #	sed -i "s|p->property|(*p)->property|g" src/common/actions.cpp
 	default_src_prepare
+}
+
+pkg_postinst() {
+    xdg_desktop_database_update
+    xdg_mimeinfo_database_update
+}
+
+pkg_postrm() {
+    xdg_desktop_database_update
+    xdg_mimeinfo_database_update
 }
