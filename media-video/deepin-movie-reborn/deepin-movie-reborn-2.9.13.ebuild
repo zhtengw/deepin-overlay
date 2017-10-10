@@ -41,7 +41,7 @@ DEPEND="dev-qt/qtdbus:5
 		"
 RDEPEND="${DEPEND}
 		>=dde-base/dtkcore-2.0.1
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-2.0.1:=
 		"
 
 src_prepare() {

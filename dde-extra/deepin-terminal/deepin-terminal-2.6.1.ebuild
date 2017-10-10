@@ -15,7 +15,7 @@ SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="zssh"
 
 RDEPEND="
 	>=dev-libs/glib-2.32:2
@@ -25,6 +25,8 @@ RDEPEND="
 	x11-libs/vte:2.91
 	x11-libs/libwnck:3
 	dde-base/deepin-menu
+	zssh? ( net-misc/zssh
+			dev-tcltk/expect )
 	"
 DEPEND="${RDEPEND}
 	$(vala_depend)
