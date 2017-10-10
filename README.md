@@ -50,6 +50,7 @@ For user with layman:
 * |-dde-help
 * |-dde-meta-multimedia
 * |-deepin-gettext-tools
+* |-deepin-grub2-themes
 * |-deepin-manual
 * |-deepin-qml-widgets
 * |-deepin-shortcut-viewer
