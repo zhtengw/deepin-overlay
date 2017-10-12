@@ -58,6 +58,7 @@ For user with layman:
 * |-deepin-system-monitor
 * |-deepin-desktop-monitor
 * |-deepin-terminal
+* |-plymouth-theme-deepin
 * ***media-sound***
 * |-deepin-music
 * |-deepin-voice-recorder
