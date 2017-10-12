@@ -15,6 +15,8 @@ IUSE=""
 
 DEPEND="sys-devel/gcc[go]
 	dev-lang/go
+	dev-libs/libxml2
+	app-misc/jq
 	dev-go/go-dbus-generator"
 
 src_prepare() {
