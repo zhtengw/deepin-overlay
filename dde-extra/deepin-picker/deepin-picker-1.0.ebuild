@@ -8,10 +8,7 @@ inherit qmake-utils
 
 DESCRIPTION="Color picker tool for Deepin"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-picker"
-#SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-inherit git-r3
-EGIT_REPO_URI="https://cr.deepin.io/deepin-picker"
-EGIT_COMMIT="${PV}"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3+"
 SLOT="0"
