@@ -6,11 +6,7 @@ EAPI=5
 
 DESCRIPTION="Deepin GoLang X11 client Library"
 HOMEPAGE="https://github.com/linuxdeepin/go-x11-client"
-#SRC_URI="https://github.com/linuxdeepin/go-x11-client/archive/${PV}.tar.gz -> ${P}.tar.gz"
-
-inherit git-r3
-EGIT_REPO_URI="https://github.com/linuxdeepin/go-x11-client.git"
-EGIT_COMMIT="a10a839c0f79ea80d2b4309c6f2d120f98664c5a"
+SRC_URI="https://github.com/linuxdeepin/go-x11-client/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3+"
 SLOT="0"
@@ -28,7 +24,7 @@ S=${WORKDIR}
 src_prepare() {
 	export GOPATH=${WORKDIR}
 
-	go get -d -f -u -v github.com/gavv/monotime || die
+#	go get -d -f -u -v github.com/gavv/monotime || die
 #	go get -d -f -u -v golang.org/x//text || die
 	
 	git clone https://github.com/golang/text.git
