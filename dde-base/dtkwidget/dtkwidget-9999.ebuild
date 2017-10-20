@@ -14,10 +14,10 @@ if [[ "${PV}" == *9999* ]] ; then
      EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
 else
      SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	 KEYWORDS="~amd64 ~x86"
 fi
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-qt/qtmultimedia:5[widgets]
@@ -27,6 +27,7 @@ RDEPEND="dev-qt/qtmultimedia:5[widgets]
 		 dev-qt/qtwidgets:5
 		 dev-qt/qtconcurrent:5
 		 dev-qt/qtx11extras:5
+		 dev-qt/qtsvg:5
 		 >=dev-qt/qtcore-5.5:5
 		 x11-libs/libXrender
 		 x11-libs/libxcb
