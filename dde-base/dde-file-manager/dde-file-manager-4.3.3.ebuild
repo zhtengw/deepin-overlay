@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=5
 
 inherit qmake-utils xdg-utils
 
@@ -55,11 +55,10 @@ RDEPEND="sys-apps/file
 		 dde-base/startdde
 		 !dde-base/dde-desktop
 		 samba? ( net-fs/samba )
+		 >=dde-base/dtkwidget-2.0.0:=
 	     "
 DEPEND="${RDEPEND}
 		dde-extra/deepin-gettext-tools
-
-		>=dde-base/dtkwidget-2.0.0:=
 	    "
 
 src_prepare() {
