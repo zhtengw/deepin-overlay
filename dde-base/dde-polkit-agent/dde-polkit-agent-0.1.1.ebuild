@@ -22,7 +22,7 @@ RDEPEND="dev-qt/qtcore:5
 		 sys-auth/polkit-qt[qt5(-)]
 	     "
 DEPEND="${RDEPEND}
-        >=dde-base/dtkwidget-2.0.0:=
+        >=dde-base/dtkwidget-2.0.2:=
 	    "
 
 src_prepare() {

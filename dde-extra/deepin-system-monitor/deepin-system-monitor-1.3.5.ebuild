@@ -38,7 +38,7 @@ RDEPEND="sys-process/procps
 	"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.1:=
+		>=dde-base/dtkwidget-2.0.2:=
 		dde-base/dtkwm:=
 		"
 
