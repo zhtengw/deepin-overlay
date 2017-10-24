@@ -37,17 +37,13 @@ DEPEND="dev-qt/qtdbus:5
 		x11-libs/libXtst
 		media-sound/pulseaudio
 		media-video/ffmpeg
+		media-libs/libdvdnav
 		!media-video/deepin-movie
 		"
 RDEPEND="${DEPEND}
 		>=dde-base/dtkcore-2.0.0
 		>=dde-base/dtkwidget-2.0.0:=
 		"
-
-src_prepare() {
-#	sed -i "s|p->property|(*p)->property|g" src/common/actions.cpp
-	default_src_prepare
-}
 
 pkg_postinst() {
     xdg_desktop_database_update
