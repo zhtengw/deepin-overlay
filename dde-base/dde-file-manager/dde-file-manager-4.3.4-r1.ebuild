@@ -48,7 +48,7 @@ RDEPEND="sys-apps/file
 		 dde-extra/deepin-shortcut-viewer
 		 media-libs/gst-plugins-good
 		 net-misc/socat
-		 >=dde-base/dde-dock-4.2.0
+		 >=dde-base/dde-dock-4.2.0:=
 		 dde-base/dde-qt-dbus-factory
 		 dde-base/dde-qt5integration
 		 dde-base/dde-daemon

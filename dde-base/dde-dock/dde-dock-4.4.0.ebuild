@@ -11,9 +11,9 @@ HOMEPAGE="https://github.com/linuxdeepin/dde-dock"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
-SLOT="0"
+SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="dtk1"
+IUSE=""
 
 RDEPEND="dev-qt/qtsvg:5
 		 dev-qt/qtx11extras:5
@@ -29,15 +29,10 @@ DEPEND="${RDEPEND}
 		x11-libs/libXtst
 		dde-base/dde-qt-dbus-factory
 		x11-libs/gsettings-qt
-        dtk1? ( >=dde-base/deepin-tool-kit-1.0.0:= )
-        !dtk1? ( >=dde-base/dtkwidget-2.0.0:= )
+        >=dde-base/dtkwidget-2.0.1:=
 	    "
 
 src_prepare() {
-    if use dtk1; then
-        sed -i "s|dtkwidget|dtkwidget1\ dtkbase1\ dtkutil1|g" frame/frame.pro 
-        sed -i "s|dtkwidget|dtkwidget1\ dtkbase1|g" plugins/*/*.pro
-    fi   
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" plugins/*/*.pro
 	QT_SELECT=qt5 eqmake5	PREFIX=/usr
