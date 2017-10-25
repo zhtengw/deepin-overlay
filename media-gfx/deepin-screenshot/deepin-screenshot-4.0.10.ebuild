@@ -36,6 +36,7 @@ RDEPEND="
 	dev-qt/qtmultimedia:5
 	dde-base/deepin-menu
 	dde-base/dde-daemon
+	dde-extra/deepin-gettext-tools
 	>=dde-extra/deepin-shortcut-viewer-1.3.1
 	>=dde-base/deepin-notifications-2.3.9
 	!media-gfx/deepin-screenshot:2
@@ -56,6 +57,7 @@ DEPEND="${RDEPEND}
 	media-libs/freetype
 	x11-proto/xextproto
 	x11-proto/recordproto
+	>=dde-base/dtkwm-2.0.0
 	>=dde-base/dtkwidget-2.0.0:=
 	"
 
