@@ -37,6 +37,7 @@ RDEPEND="dev-qt/qtmultimedia:5[widgets]
 		 x11-libs/gsettings-qt
 		 x11-proto/xextproto
 		 sys-libs/mtdev
+		 gnome-base/librsvg:2
 		 media-libs/freetype
 		 media-libs/fontconfig
 		 media-libs/mesa
@@ -46,10 +47,13 @@ RDEPEND="dev-qt/qtmultimedia:5[widgets]
 DEPEND="${RDEPEND}
 		dev-libs/glib:2
 		dde-base/dtkcore
+		dde-base/dde-qt-dbus-factory
 		dev-qt/linguist-tools:5
 		"
 
 src_prepare() {
+	LIBDIR=$(get_libdir)
+	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" tools/svgc/svgc.pro
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
 	default_src_prepare
 }
