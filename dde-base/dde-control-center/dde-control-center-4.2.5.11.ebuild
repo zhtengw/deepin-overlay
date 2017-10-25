@@ -13,7 +13,7 @@ SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="redshift"
 
 RDEPEND="dev-qt/qtsvg:5
          dev-qt/qtsql:5
@@ -35,6 +35,7 @@ RDEPEND="dev-qt/qtsvg:5
 		 dev-libs/geoip
 		 dde-base/deepin-desktop-base
 		 dde-base/dde-qt5integration
+		 redshift? ( x11-misc/redshift )
 	     "
 DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-2.0.0:=
