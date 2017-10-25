@@ -31,6 +31,7 @@ For user with layman:
 * |-deepin-desktop-base
 * |-deepin-desktop-schemas
 * |-deepin-file-manager-backend
+* |-deepin-gettext-tools
 * |-deepin-gtk-theme
 * |-deepin-icon-theme
 * |-deepin-menu
@@ -49,7 +50,6 @@ For user with layman:
 * |-deepin-clone
 * |-dde-help
 * |-dde-meta-multimedia
-* |-deepin-gettext-tools
 * |-deepin-grub2-themes
 * |-deepin-manual
 * |-deepin-picker
