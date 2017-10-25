@@ -58,7 +58,7 @@ RDEPEND="sys-apps/file
 		 >=dde-base/dtkwidget-2.0.0:=
 	     "
 DEPEND="${RDEPEND}
-		dde-extra/deepin-gettext-tools
+		dde-base/deepin-gettext-tools
 	    "
 
 src_prepare() {

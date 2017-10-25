@@ -26,7 +26,7 @@ RDEPEND="dev-qt/qtsvg:5
 		 dev-qt/qtwidgets:5
 		 dev-libs/libqtxdg
 		 x11-libs/startup-notification
-		 dde-base/dde-daemon
+		 >=dde-base/dde-daemon-3.2.1
 		 dde-base/dde-api
 		 dde-base/dde-account-faces
 		 dde-base/dde-dock
@@ -38,10 +38,12 @@ RDEPEND="dev-qt/qtsvg:5
 	     "
 DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-2.0.0:=
-		>=dde-base/dde-qt-dbus-factory-0.3.0:=
+		>=dde-base/dde-qt-dbus-factory-0.3.1:=
 	    "
 
 src_prepare() {
+	#fix build error when DISABLE_SYS_UPDATE was defined
+	eapply ${FILESDIR}/${PN}-4.2.5.11-fix-m_updateNotifier-not-declared.patch
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" plugins/*/*.pro
 	sed -i "s|usr/lib/|usr/${LIBDIR}/|g" dialogs/reboot-reminder-dialog/reboot-reminder-dialog.pro

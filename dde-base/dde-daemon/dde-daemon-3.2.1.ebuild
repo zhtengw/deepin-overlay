@@ -12,7 +12,7 @@ SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="grub bluetooth miracast"
+IUSE="grub bluetooth"
 
 RDEPEND="x11-wm/deepin-metacity
 		x11-libs/libxkbfile
@@ -26,7 +26,7 @@ RDEPEND="x11-wm/deepin-metacity
 		gnome-base/gvfs[udisks]
 		sys-libs/pam
 		>sys-power/upower-0.99
-		miracast? ( net-wireless/iw )
+		dev-libs/libnl:3
 		bluetooth? ( net-wireless/bluez )
 		grub? ( dde-extra/deepin-grub2-themes )
 	"
@@ -36,12 +36,15 @@ DEPEND="${RDEPEND}
 	      >=dev-go/deepin-go-lib-1.1.0
 		  >=dev-go/dde-go-essential-20170807
 	      >=dev-go/dbus-factory-3.0.8
-	      >=dde-base/dde-api-3.1.3
+	      >=dde-base/dde-api-3.1.15
+		  dde-base/deepin-gettext-tools
 		  dev-libs/libinput
 	      dev-db/sqlite:3
+		  =dev-lang/python-3*
 	      "
 
 src_prepare() {
+	sed -i "s|subprocess\.run|subprocess\.call|g" misc/icons/install_to_hicolor.py
 
 	export GOPATH="${S}:/usr/share/gocode"	
 	go get -d -f -u -v github.com/msteinert/pam || die

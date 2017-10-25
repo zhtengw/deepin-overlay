@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 inherit qmake-utils
 
 DESCRIPTION="DDE system integration plugin for Qt5"
@@ -47,9 +47,13 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${MY_P}
 
 src_prepare() {
+	# Fix build error of setCursor not match with Qt version greater then 5.7
+	eapply ${FILESDIR}/${PN}-0.2.5-setCursor-not-match.patch || die
+
 	sed -i "s|\$\$VERSION|\$\$MY_VERSION|g" platformplugin/linux.pri
 	sed -i "/exists(\$\$PWD/i\isEqual(QT_MINOR_VERSION, 9) {greaterThan(QT_PATCH_VERSION, 1): MY_VERSION = 5.9.1}else{MY_VERSION = \$\$VERSION}" platformplugin/linux.pri
 	QT_SELECT=qt5 eqmake5 ${MY_PN}.pro
+	default
 }
 
 src_install() {

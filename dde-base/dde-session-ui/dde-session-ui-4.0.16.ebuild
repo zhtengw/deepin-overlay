@@ -36,7 +36,7 @@ RDEPEND="sys-apps/systemd[policykit]
 		"
 DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-2.0.0:=
-		>=dde-extra/deepin-gettext-tools-1.0.6
+		>=dde-base/deepin-gettext-tools-1.0.6
 		dde-base/dde-qt-dbus-factory:=
 		virtual/pkgconfig
 		"
