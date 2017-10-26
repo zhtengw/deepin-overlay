@@ -47,9 +47,11 @@ For user with layman:
 * |-startdde
 * ***dde-extra***
 * |-dde-calendar
-* |-deepin-clone
 * |-dde-help
 * |-dde-meta-multimedia
+* |-deepin-boot-maker
+* |-deepin-clone
+* |-deepin-desktop-monitor
 * |-deepin-grub2-themes
 * |-deepin-manual
 * |-deepin-picker
@@ -57,7 +59,6 @@ For user with layman:
 * |-deepin-shortcut-viewer
 * |-deepin-social-sharing
 * |-deepin-system-monitor
-* |-deepin-desktop-monitor
 * |-deepin-terminal
 * |-deepin-topbar
 * |-plymouth-theme-deepin
