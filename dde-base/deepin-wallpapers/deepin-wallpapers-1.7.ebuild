@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="dde-base/dde-api"
 
 src_install() {
 		insinto /usr/share/wallpapers
