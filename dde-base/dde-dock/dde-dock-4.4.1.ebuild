@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/linuxdeepin/dde-dock"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
-SLOT="0/${PV}"
+SLOT="0/4.4.0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 

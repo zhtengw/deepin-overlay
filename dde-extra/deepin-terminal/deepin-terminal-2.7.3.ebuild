@@ -29,6 +29,9 @@ RDEPEND="
 	"
 DEPEND="${RDEPEND}
 	$(vala_depend)
+	gnome-base/librsvg:2
+	dev-util/gperf
+	dev-libs/gobject-introspection
 	"
 
 src_prepare() {

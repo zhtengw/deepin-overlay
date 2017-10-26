@@ -43,8 +43,6 @@ DEPEND="${RDEPEND}
 	    "
 
 src_prepare() {
-	#fix build error when DISABLE_SYS_UPDATE was defined
-	eapply ${FILESDIR}/${PN}-4.2.5.11-fix-m_updateNotifier-not-declared.patch
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" plugins/*/*.pro
 	sed -i "s|usr/lib/|usr/${LIBDIR}/|g" dialogs/reboot-reminder-dialog/reboot-reminder-dialog.pro
