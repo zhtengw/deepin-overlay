@@ -12,7 +12,7 @@ SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="grub bluetooth"
+IUSE="grub bluetooth fprint"
 
 RDEPEND="x11-wm/deepin-metacity
 		x11-libs/libxkbfile
@@ -29,6 +29,7 @@ RDEPEND="x11-wm/deepin-metacity
 		dev-libs/libnl:3
 		bluetooth? ( net-wireless/bluez )
 		grub? ( dde-extra/deepin-grub2-themes )
+		fprint? ( sys-auth/fprintd[pam] )
 	"
 DEPEND="${RDEPEND}
 	      dev-go/go-dbus-generator
