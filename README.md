@@ -103,6 +103,7 @@ For user with layman:
 * ***dev-libs***
 * |-libsass
 * ***dev-qt***
+* |-qt5dxcb-plugin
 * |-qtstyleplugins
 * ***media-libs***
 * |-cogl
