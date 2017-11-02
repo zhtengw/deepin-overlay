@@ -24,7 +24,7 @@ RDEPEND="
 	dev-libs/granite
 	>=x11-libs/bamf-0.2.20
 	>=x11-libs/gtk+-3.4:3
-	x11-wm/deepin-mutter
+	>=x11-wm/deepin-mutter-3.20.22
 	gnome-base/gnome-desktop:3
 	dde-base/deepin-menu
 	>=dde-base/deepin-desktop-schemas-2.90.0"
