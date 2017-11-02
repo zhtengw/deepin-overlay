@@ -16,7 +16,7 @@ IUSE=""
 
 DEPEND="sys-devel/gcc[go]
 	>=dev-libs/gobject-introspection-1.52.1
-	dev-libs/libgudev[introspection]
+	virtual/libgudev[introspection]
 	dev-lang/go"
 
 src_prepare() {

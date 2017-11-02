@@ -1,0 +1,12 @@
+--- deepin-mutter-3.20.22/src/backends/native/meta-launcher.c~	2017-11-01 17:07:46.000000000 +0800
++++ deepin-mutter-3.20.22/src/backends/native/meta-launcher.c	2017-11-02 10:51:47.143095272 +0800
+@@ -46,9 +46,6 @@
+ #include "meta-cursor-renderer-native.h"
+ #include "meta-idle-monitor-native.h"
+ 
+-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GUdevDevice, g_object_unref)
+-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GUdevClient, g_object_unref)
+-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GUdevEnumerator, g_object_unref)
+ G_DEFINE_AUTOPTR_CLEANUP_FUNC(Login1Session, g_object_unref)
+ G_DEFINE_AUTOPTR_CLEANUP_FUNC(Login1Seat, g_object_unref)
+ 

@@ -61,7 +61,7 @@ COMMON_DEPEND="
 		media-libs/cogl:1.0=[kms]
 		>=media-libs/mesa-10.3[gbm]
 		sys-apps/systemd
-		virtual/libgudev
+		>=virtual/libgudev-232:=
 		x11-libs/libdrm:= )
 	wayland? (
 		>=dev-libs/wayland-1.6.90
@@ -84,7 +84,8 @@ RDEPEND="${COMMON_DEPEND}
 "
 src_prepare() {
 
-#	[[ $(gcc-major-version) < 5 ]] && epatch "${FILESDIR}"/"${PN}-3.20-fix-c99-mode-gcc49.patch" 
+	# Fix build with >=gudev-232, issue #5
+	eapply "${FILESDIR}"/3.20.22-gudev-232.patch
 
 	gnome2_src_prepare
 }
