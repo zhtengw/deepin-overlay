@@ -36,7 +36,7 @@ src_prepare() {
 # 	  sed -i 's|${GOPATH}:${CURDIR}/${GOBUILD_DIR}|${CURDIR}/${GOBUILD_DIR}:${GOPATH}|g' Makefile
 	  export GOPATH="/usr/share/gocode"
 	  LIBDIR=$(get_libdir)
-	  sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" Makefile
+	  sed -i "s|/lib/|/${LIBDIR}/|g" Makefile
 	  default_src_prepare
 }
 
@@ -46,8 +46,4 @@ src_prepare() {
 
 src_install() {
 	  emake DESTDIR="${D}" install
-	  mv ${D}/lib/systemd ${D}/usr/$(get_libdir)/systemd
-	  rm -r ${D}/lib
-	  dosym ../dde-readahead.service /usr/$(get_libdir)/systemd/system/multi-user.target.wants/dde-readahead.service
-
 }
