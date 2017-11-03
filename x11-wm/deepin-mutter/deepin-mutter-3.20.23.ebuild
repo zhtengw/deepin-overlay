@@ -61,7 +61,7 @@ COMMON_DEPEND="
 		media-libs/cogl:1.0=[kms]
 		>=media-libs/mesa-10.3[gbm]
 		sys-apps/systemd
-		>=virtual/libgudev-232:=
+		virtual/libgudev:=
 		x11-libs/libdrm:= )
 	wayland? (
 		>=dev-libs/wayland-1.6.90
@@ -82,13 +82,6 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	!x11-misc/expocity
 "
-src_prepare() {
-
-	# Fix build with >=gudev-232, issue #5
-	eapply "${FILESDIR}"/3.20.22-gudev-232.patch
-
-	gnome2_src_prepare
-}
 
 src_configure() {
 	[[ $(gcc-major-version) < 5 ]] && append-flags "-std=gnu99"
