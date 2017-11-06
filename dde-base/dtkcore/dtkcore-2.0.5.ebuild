@@ -28,9 +28,6 @@ RDEPEND=">=dev-qt/qtcore-5.5:5
 DEPEND="${RDEPEND}"
 
 src_prepare() {
-	# Fix build error of dobject.h not found
-	eapply ${FILESDIR}/2.0.2-dobject-not-found.patch
-
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" tool/settings/settings.pro
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
