@@ -22,6 +22,7 @@ SLOT="0"
 IUSE="samba"
 
 RDEPEND="sys-apps/file
+		 sys-fs/cryptsetup
 		 x11-libs/gsettings-qt
 		 x11-libs/gtk+:2
 		 dev-qt/qtcore:5
@@ -62,7 +63,6 @@ DEPEND="${RDEPEND}
 	    "
 
 src_prepare() {
-	sed -i "s|DPictureSequenceView::AutoScaleMode|true|g" dde-file-manager-lib/views/dstatusbar.cpp
 
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro dde-dock-plugins/trash/trash.pro
