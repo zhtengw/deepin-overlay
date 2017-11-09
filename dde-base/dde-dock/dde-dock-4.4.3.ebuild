@@ -35,7 +35,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" plugins/*/*.pro
-	QT_SELECT=qt5 eqmake5	PREFIX=/usr
+	export QT_SELECT=qt5
+	eqmake5	PREFIX=/usr
 	default_src_prepare
 }
 
