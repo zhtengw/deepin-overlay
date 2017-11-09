@@ -15,7 +15,7 @@ SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="zssh"
+IUSE=""
 
 RDEPEND="
 	>=dev-libs/glib-2.32:2
@@ -24,7 +24,7 @@ RDEPEND="
 	app-crypt/libsecret[vala]
 	x11-libs/libwnck:3
 	dde-base/deepin-menu
-	zssh? ( dev-tcltk/expect )
+	dev-tcltk/expect
 	"
 DEPEND="${RDEPEND}
 	$(vala_depend)
@@ -37,6 +37,7 @@ src_prepare() {
 	vala_src_prepare
 	sed -i 's|return __FILE__;|return "/usr/share/deepin-terminal/project_path.c";|' project_path.c
 	sed -i -e "/NAMES/s:valac:${VALAC}:" cmake/FindVala.cmake || die 
+	sed -i "s|lib/\${target}|$(get_libdir)/\${target}|g" CMakeLists.txt
 	cmake-utils_src_prepare
 }
 
