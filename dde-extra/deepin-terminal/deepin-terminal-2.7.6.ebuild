@@ -24,8 +24,7 @@ RDEPEND="
 	app-crypt/libsecret[vala]
 	x11-libs/libwnck:3
 	dde-base/deepin-menu
-	zssh? ( net-misc/zssh
-			dev-tcltk/expect )
+	zssh? ( dev-tcltk/expect )
 	"
 DEPEND="${RDEPEND}
 	$(vala_depend)
