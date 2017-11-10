@@ -38,7 +38,7 @@ RDEPEND="dev-qt/qtsvg:5
 		 redshift? ( x11-misc/redshift )
 	     "
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-2.0.1:=
 		>=dde-base/dde-qt-dbus-factory-0.3.1:=
 	    "
 
