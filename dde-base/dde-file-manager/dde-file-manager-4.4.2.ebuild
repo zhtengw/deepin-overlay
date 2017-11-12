@@ -34,7 +34,7 @@ RDEPEND="sys-apps/file
 		 dev-qt/qtconcurrent:5
 		 dev-qt/qtmultimedia:5[widgets]
 		 dev-qt/qtdeclarative:5
-		 sys-auth/polkit-qt[qt5]
+		 sys-auth/polkit-qt[qt5(+)]
 		 dev-libs/libqtxdg
 		 app-crypt/libsecret
 		 x11-libs/libxcb
