@@ -50,6 +50,7 @@ For user with layman:
 * |-dde-help
 * |-dde-meta-multimedia
 * |-deepin-boot-maker
+* |-deepin-calculator
 * |-deepin-clone
 * |-deepin-desktop-monitor
 * |-deepin-grub2-themes
