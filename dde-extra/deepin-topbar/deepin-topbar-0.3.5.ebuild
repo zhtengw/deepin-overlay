@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit qmake-utils
+inherit qmake-utils gnome2-utils
 
 DESCRIPTION="A Desktop Topbar with some tools"
 HOMEPAGE="https://github.com/kirigayakazushin/deepin-topbar"
@@ -52,3 +52,6 @@ src_install() {
 	emake INSTALL_ROOT=${D} install
 }
 
+pkg_preinst() { gnome2_schemas_savelist;}
+pkg_postinst() { gnome2_schemas_update; }
+pkg_postrm() { gnome2_schemas_update; }
