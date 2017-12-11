@@ -27,7 +27,7 @@ DEPEND="dev-qt/qtdbus:5
 		dev-qt/qtmultimedia:5
 		dev-qt/qtx11extras:5
 		dev-libs/openssl
-		media-video/mpv[libmpv]
+		media-video/mpv[libmpv,dvd]
 		x11-libs/libxcb
 		x11-libs/xcb-util
 		x11-libs/xcb-util-wm
