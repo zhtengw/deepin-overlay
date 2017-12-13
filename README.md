@@ -100,10 +100,6 @@ For user with layman:
 * |-treefrog-framework
 * ***dev-perl***
 * |-XML-LibXML-PrettyPrint
-* ***dev-lang***
-* |-sassc
-* ***dev-libs***
-* |-libsass
 * ***dev-qt***
 * |-qcef
 * |-qt5dxcb-plugin
