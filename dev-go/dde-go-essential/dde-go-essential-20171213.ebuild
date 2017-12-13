@@ -53,6 +53,8 @@ src_prepare() {
 		# need by dde-base/dde-daemon
 		git clone https://github.com/nfnt/resize || die
 		git clone https://github.com/go-check/check || die
+		# need by dev-go/deepin-go-lib-1.2.3
+		git clone https://github.com/cryptix/wav || die
 		
 		find ${S}/ | grep '\.git$' | xargs rm -r
 
@@ -65,7 +67,8 @@ src_prepare() {
 				${WORKDIR}/src/github.com/alecthomas/ \
 				${WORKDIR}/src/github.com/fsnotify/ \
 				${WORKDIR}/src/golang.org/x/	\
-				${WORKDIR}/src/github.com/axgle
+				${WORKDIR}/src/github.com/axgle	\
+				${WORKDIR}/src/github.com/cryptix
 
 		cp -r ${S}/xgb ${WORKDIR}/src/github.com/BurntSushi/
 		cp -r ${S}/xgbutil ${WORKDIR}/src/github.com/BurntSushi/
@@ -83,6 +86,7 @@ src_prepare() {
 		cp -r ${S}/template ${WORKDIR}/src/github.com/alecthomas/
 		cp -r ${S}/units ${WORKDIR}/src/github.com/alecthomas/
 		cp -r ${S}/fsnotify-1.4.2 ${WORKDIR}/src/github.com/fsnotify/fsnotify
+		cp -r ${S}/wav ${WORKDIR}/src/github.com/cryptix
 
 #		go get -d -f -u -v github.com/axgle/mahonia 
 #		go get -d -f -u -v gopkg.in/check.v1 || die 

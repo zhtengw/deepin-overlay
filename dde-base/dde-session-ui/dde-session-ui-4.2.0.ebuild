@@ -8,11 +8,16 @@ inherit qmake-utils
 
 DESCRIPTION="Deepin desktop environment - Session UI module"
 HOMEPAGE="https://github.com/linuxdeepin/dde-session-ui"
-SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+if [[ "${PV}" == *9999* ]] ; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
+else
+	SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~x86"
+fi
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="sys-apps/systemd[policykit]
