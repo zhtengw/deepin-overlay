@@ -23,10 +23,11 @@ DEPEND="${RDEPEND}
 		dev-lang/python"
 
 src_prepare() {
+	eapply ${FILESDIR}/0.4.2-rename-xmouseearea.patch
 	QT_SELECT=qt5 eqmake5	PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
 	default_src_prepare
 }
 
 src_install() {
-		emake INSTALL_ROOT=${D} install
+	emake INSTALL_ROOT=${D} install
 }
