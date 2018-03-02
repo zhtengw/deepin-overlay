@@ -28,6 +28,7 @@ DEPEND="${RDEPEND}
 		dev-qt/qtdeclarative:5
 	    "
 src_prepare() {
+	eapply ${FILESDIR}/${PN}-fix-with-dde-api-3.1.20.patch
 	distutils-r1_python_prepare_all
 	QT_SELECT=qt5 eqmake5
 	default_src_prepare
