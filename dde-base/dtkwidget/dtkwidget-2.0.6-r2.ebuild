@@ -35,7 +35,7 @@ RDEPEND="dev-qt/qtmultimedia:5[widgets]
 		 x11-libs/xcb-util
 		 x11-libs/startup-notification
 		 x11-libs/gsettings-qt
-		 x11-proto/xextproto
+		 x11-base/xorg-proto
 		 sys-libs/mtdev
 		 gnome-base/librsvg:2
 		 media-libs/freetype

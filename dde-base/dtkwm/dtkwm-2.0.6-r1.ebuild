@@ -31,7 +31,7 @@ RDEPEND="dev-qt/qtmultimedia:5[widgets]
 		 x11-libs/libxcb
 		 x11-libs/libXext
 		 x11-libs/xcb-util
-		 x11-proto/xextproto
+		 x11-base/xorg-proto
 		 media-libs/fontconfig
 		 media-libs/freetype
 		 sys-libs/mtdev

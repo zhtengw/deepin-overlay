@@ -32,7 +32,7 @@ DEPEND="dev-qt/qtdbus:5
 		x11-libs/xcb-util
 		x11-libs/xcb-util-wm
 		x11-base/xcb-proto
-		x11-proto/recordproto
+		x11-base/xorg-proto
 		media-video/ffmpegthumbnailer
 		x11-libs/libXtst
 		media-sound/pulseaudio

@@ -74,9 +74,7 @@ DEPEND="${COMMON_DEPEND}
 	>=dev-util/intltool-0.41
 	sys-devel/gettext
 	virtual/pkgconfig
-	x11-proto/xextproto
-	x11-proto/xineramaproto
-	x11-proto/xproto
+	x11-base/xorg-proto
 	test? ( app-text/docbook-xml-dtd:4.5 )
 "
 RDEPEND="${COMMON_DEPEND}

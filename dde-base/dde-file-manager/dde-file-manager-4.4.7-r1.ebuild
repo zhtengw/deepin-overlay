@@ -38,7 +38,7 @@ RDEPEND="sys-apps/file
 		 dev-libs/libqtxdg
 		 app-crypt/libsecret
 		 x11-libs/libxcb
-		 x11-proto/xproto
+		 x11-base/xorg-proto
 		 x11-libs/xcb-util
 		 x11-libs/xcb-util-wm
 		 dev-cpp/treefrog-framework

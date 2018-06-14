@@ -55,8 +55,7 @@ DEPEND="${RDEPEND}
 	virtual/libudev
 	media-libs/fontconfig
 	media-libs/freetype
-	x11-proto/xextproto
-	x11-proto/recordproto
+	x11-base/xorg-proto
 	>=dde-base/dtkwm-2.0.0
 	>=dde-base/dtkwidget-2.0.0:=
 	"

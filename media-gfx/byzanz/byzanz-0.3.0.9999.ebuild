@@ -26,7 +26,8 @@ RDEPEND=">=x11-libs/libXdamage-1.0
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	dev-util/intltool
-	>=x11-proto/damageproto-1.0"
+	x11-base/xorg-proto
+	"
 
 DOCS="AUTHORS ChangeLog MAINTAINERS NEWS README"
 

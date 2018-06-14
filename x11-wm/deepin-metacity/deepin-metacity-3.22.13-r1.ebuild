@@ -50,8 +50,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	test? ( app-text/docbook-xml-dtd:4.5 )
 	xinerama? ( x11-proto/xineramaproto )
-	x11-proto/xextproto
-	x11-proto/xproto"
+	x11-base/xorg-proto"
 
 src_prepare() {
 	base_src_prepare
