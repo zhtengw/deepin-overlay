@@ -40,6 +40,8 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
+	sed -i "s|\$\$QT_VERSION|\$\$MY_VERSION|g" platformplugin/linux.pri
+	sed -i "/exists(\$\$PWD/i\isEqual(QT_MINOR_VERSION, 9) {greaterThan(QT_PATCH_VERSION, 4): MY_VERSION = 5.9.4}else{MY_VERSION = \$\$QT_VERSION}" platformplugin/linux.pri 
 	QT_SELECT=qt5 eqmake5 ${PN}.pro
 	default
 }

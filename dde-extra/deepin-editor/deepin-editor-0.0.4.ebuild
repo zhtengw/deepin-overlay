@@ -22,6 +22,8 @@ RDEPEND="dev-qt/qtcore:5
 		 dev-qt/qtx11extras:5
 		 dev-qt/qtdbus:5
 		 dev-qt/qtsvg:5
+		 kde-frameworks/syntax-highlighting
+		 kde-frameworks/kcodecs
 		 x11-libs/libX11
 		 x11-libs/libXext 
 		 x11-libs/libXtst
@@ -31,6 +33,7 @@ RDEPEND="dev-qt/qtcore:5
 
 DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-2.0.6:=
+		>=dde-base/dtkwm-2.0.6
 		dev-qt/linguist-tools
 		dev-qt/qtchooser
 		virtual/pkgconfig

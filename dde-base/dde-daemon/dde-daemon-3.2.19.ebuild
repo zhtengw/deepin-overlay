@@ -37,8 +37,9 @@ DEPEND="${RDEPEND}
 	      >=dev-go/deepin-go-lib-1.1.0
 		  >=dev-go/dde-go-essential-20170807
 	      >=dev-go/dbus-factory-3.0.8
+	      dev-go/go-dbus-factory
 	      >=dde-base/dde-api-3.1.15
-		  dde-base/deepin-gettext-tools
+		  >=dde-base/deepin-gettext-tools-1.0.8
 		  dev-libs/libinput
 	      dev-db/sqlite:3
 		  =dev-lang/python-3*

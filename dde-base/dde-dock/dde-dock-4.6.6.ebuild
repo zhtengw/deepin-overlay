@@ -4,20 +4,20 @@
 
 EAPI=6
 
-inherit qmake-utils
+inherit cmake-utils
 
 DESCRIPTION="Deepin desktop environment - Dock module"
 HOMEPAGE="https://github.com/linuxdeepin/dde-dock"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
-SLOT="0/4.4.0"
+SLOT="0/4.6.0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-qt/qtsvg:5
 		 dev-qt/qtx11extras:5
-		 >dde-base/deepin-menu-2.90.1
+		 >=dde-base/deepin-menu-3.2.0
 		 dde-base/dde-daemon
 		 dde-base/dde-qt5integration
 	     "
@@ -34,12 +34,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
-	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" plugins/*/*.pro
-	export QT_SELECT=qt5
-	eqmake5	PREFIX=/usr
-	default_src_prepare
+	sed -i "s|lib/|${LIBDIR}/|g" plugins/*/CMakeLists.txt
+	cmake-utils_src_prepare
 }
 
-src_install() {
-		emake INSTALL_ROOT=${D} install
-}

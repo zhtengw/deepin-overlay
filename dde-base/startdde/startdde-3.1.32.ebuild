@@ -25,8 +25,10 @@ RDEPEND=">=dde-base/dde-daemon-3.1.17
 		"
 
 DEPEND="${RDEPEND}
+		  gnome-base/libgnome-keyring
 	      dev-lang/coffee-script
 	      dev-go/go-dbus-generator
+	      dev-go/go-dbus-factory
 	      dev-util/cmake
 		  >=dde-base/dde-api-3.1.8
 	      >=dev-go/deepin-go-lib-1.1.0

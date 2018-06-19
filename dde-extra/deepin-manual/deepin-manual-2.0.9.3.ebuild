@@ -13,7 +13,7 @@ if [[ "${PV}" == *9999* ]] ; then
 	EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
 else
 	SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS=""
+	KEYWORDS="~x86 ~amd64"
 fi
 
 LICENSE="GPL-3+"
@@ -24,16 +24,21 @@ DEPEND="dev-qt/qtcore:5
 		dev-qt/qtgui:5
 		dev-qt/qtwidgets:5
 		dev-qt/linguist-tools:5
-		dde-extra/deepin-webengine
+		dev-qt/qcef
+		dde-base/dde-qt5integration
 		dde-base/dtkwidget:=
 		virtual/pkgconfig
 	    "
 
 src_configure() {
 	local mycmakeargs=(
-		-DDMAN_MANUAL_DIR=/usr/share/dman
-		-DDMAN_RESOURCE_DIR=/usr/share/dman
+		-DCMAKE_BUILD_TYPE=Release
 	)
 
 	cmake-utils_src_configure
+}
+
+src_install() {
+	${BUILD_DIR}/src/generate-search-db
+	cmake-utils_src_install
 }

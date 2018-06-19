@@ -4,19 +4,19 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake-utils git-r3
 
 DESCRIPTION="Qt5 binding of Chromium Embedded Framework"
 HOMEPAGE="https://github.com/linuxdeepin/qcef"
 
-if [[ "${PV}" == *9999* ]] ; then
-     inherit git-r3
-     EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
-else
-     SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-	 KEYWORDS="~amd64 ~x86"
-fi
-LICENSE="GPL-3"
+#SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+
+EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
+EGIT_COMMIT="${PV}"
+EGIT_SUBMODULES=( cef )
+
+KEYWORDS="~amd64 ~x86"
+LICENSE="LGPL-3"
 SLOT="0"
 IUSE=""
 

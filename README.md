@@ -27,6 +27,7 @@ For user with layman:
 * |-dde-qt-dbus-factory
 * |-dde-qt5integration
 * |-dde-session-ui
+* |-deepin-anything
 * |-deepin-artwork-themes
 * |-deepin-desktop-base
 * |-deepin-desktop-schemas
@@ -83,6 +84,7 @@ For user with layman:
 * |-dbus-factory
 * |-dde-go-essential
 * |-deepin-go-lib
+* |-go-dbus-factory
 * |-go-dbus-generator
 * |-go-gir-generator
 * |-go-x11-client

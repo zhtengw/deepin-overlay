@@ -13,12 +13,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+policykit manual +terminal multimedia grub"
 
-RDEPEND=">=dde-base/dde-control-center-4.2.0
-		>=dde-base/startdde-3.1.10
-		>=dde-base/dde-file-manager-4.1.5
-		>=dde-base/dde-launcher-4.1.0
-		>=dde-base/dde-dock-4.3.0
-		>=dde-base/deepin-desktop-base-2016.12.1
+RDEPEND=">=dde-base/dde-control-center-4.5.0
+		>=dde-base/startdde-3.1.30
+		>=dde-base/dde-file-manager-4.4.0
+		>=dde-base/dde-launcher-4.3.0
+		>=dde-base/dde-dock-4.6.0
+		>=dde-base/deepin-desktop-base-2018.5.15
 		dde-base/dde-session-ui
 		dde-base/dde-daemon[grub?]
 		dde-base/deepin-notifications
