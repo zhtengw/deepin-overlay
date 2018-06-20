@@ -22,6 +22,7 @@ IUSE=""
 
 RDEPEND=">=dev-qt/qtcore-5.6:5
 		dev-qt/qtdbus:5
+		dev-qt/qdbus:5
 		dev-qt/qtgui:5
 		dev-qt/qtwidgets:5
 		dev-qt/qtconcurrent:5
@@ -36,6 +37,7 @@ RDEPEND=">=dev-qt/qtcore-5.6:5
 		x11-libs/xcb-util-wm
 		x11-libs/xcb-util-image
 		x11-libs/gsettings-qt
+		dde-base/dtkcore
 		dde-base/dtkwidget:=
 		dde-base/dde-qt-dbus-factory
 		"
