@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit qmake-utils
+inherit cmake-utils
 
 DESCRIPTION="Deepin desktop environment - Launcher module"
 HOMEPAGE="https://github.com/linuxdeepin/dde-launcher"
@@ -29,10 +29,11 @@ DEPEND="${RDEPEND}
 		dde-base/dde-qt-dbus-factory:=
 	    "
 
-src_prepare() {
-	QT_SELECT=qt5 eqmake5	PREFIX=/usr WITHOUT_UNINSTALL_APP=YES
+src_configure() {
+	local mycmakeargs=(
+			-DCMAKE_INSTALL_PREFIX=/usr 
+			-DWITHOUT_UNINSTALL_APP=1
+	)
+	cmake-utils_src_configure
 }
 
-src_install() {
-		emake INSTALL_ROOT=${D} install
-}
