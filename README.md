@@ -8,6 +8,11 @@ For user with layman:
 
      layman -L && layman -a deepin
 
+### Note
+Some packages of DDE are built with the private headers of Qt.
+If your DDE is broken after you upgrade Qt version, please rebuild these packages:
+     emerge --oneshot --ask dde-base/dde-qt5integration dev-qt/qt5dxcb-plugin dev-qt/qtstyleplugins
+
 
 ### Packages list
 
@@ -50,6 +55,7 @@ For user with layman:
 * |-dde-calendar
 * |-dde-file-manager-integration
 * |-dde-help
+* |-dde-introduction
 * |-dde-meta-multimedia
 * |-deepin-boot-maker
 * |-deepin-calculator
