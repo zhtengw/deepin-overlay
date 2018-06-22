@@ -35,7 +35,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	vala_src_prepare
-	sed -i 's|return __FILE__;|return "/usr/share/deepin-terminal/project_path.c";|' project_path.c
 	sed -i -e "/NAMES/s:valac:${VALAC}:" cmake/FindVala.cmake || die 
 	sed -i "s|lib/\${target}|$(get_libdir)/\${target}|g" CMakeLists.txt
 	
@@ -46,8 +45,9 @@ src_prepare() {
 }
 
 src_configure() {
-	local myeconfargs=(
+	local mycmakeargs=(
 		VALAC="${VALAC}"
+		-DTEST_BUILD=0
 	)
 	cmake-utils_src_configure
 }
