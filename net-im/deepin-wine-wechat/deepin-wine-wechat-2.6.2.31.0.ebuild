@@ -21,6 +21,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	x11-apps/xwininfo
 	app-emulation/deepin-wine
 	app-emulation/deepin-wine-helper"
 
