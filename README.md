@@ -116,6 +116,7 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-qcef
 * |-qt5dxcb-plugin
 * |-qtstyleplugins
+* |-qtxcb-private-headers
 * ***media-libs***
 * |-cogl
 * ***net-im***
