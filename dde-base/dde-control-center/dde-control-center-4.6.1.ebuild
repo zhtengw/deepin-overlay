@@ -31,6 +31,7 @@ RDEPEND="dev-qt/qtsvg:5
 		 dde-base/dde-account-faces
 		 dde-base/dde-dock
 		 dde-base/startdde
+		 dde-base/dde-network-utils
 		 dev-util/desktop-file-utils
 		 dev-libs/geoip
 		 dde-base/deepin-desktop-base

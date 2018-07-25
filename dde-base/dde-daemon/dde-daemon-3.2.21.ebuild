@@ -21,7 +21,7 @@ RDEPEND="x11-wm/deepin-metacity
 		sys-power/acpid
 		sys-fs/udisks:2
 		gnome-extra/polkit-gnome
-		dde-base/deepin-desktop-schemas
+		>=dde-base/deepin-desktop-schemas-3.2.15
 		net-misc/networkmanager
 		gnome-base/gvfs[udisks]
 		sys-libs/pam
@@ -33,12 +33,12 @@ RDEPEND="x11-wm/deepin-metacity
 	"
 DEPEND="${RDEPEND}
 	      dev-go/go-dbus-generator
-		  >=dev-go/go-x11-client-0.0.2
-	      >=dev-go/deepin-go-lib-1.1.0
+		  >=dev-go/go-x11-client-0.0.4
+	      >=dev-go/deepin-go-lib-1.2.14
 		  >=dev-go/dde-go-essential-20170807
-	      >=dev-go/dbus-factory-3.0.8
-	      dev-go/go-dbus-factory
-	      >=dde-base/dde-api-3.1.15
+	      >=dev-go/dbus-factory-3.1.17
+	      >=dev-go/go-dbus-factory-0.0.5
+	      >=dde-base/dde-api-3.1.27
 		  >=dde-base/deepin-gettext-tools-1.0.8
 		  dev-libs/libinput
 	      dev-db/sqlite:3

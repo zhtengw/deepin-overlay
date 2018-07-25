@@ -19,6 +19,7 @@ RDEPEND="dev-qt/qtsvg:5
 		 dev-qt/qtx11extras:5
 		 >=dde-base/deepin-menu-3.2.0
 		 dde-base/dde-daemon
+		 dde-base/dde-network-utils
 		 dde-base/dde-qt5integration
 	     "
 DEPEND="${RDEPEND}
