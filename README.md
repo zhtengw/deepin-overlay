@@ -30,6 +30,7 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-dde-file-manager
 * |-dde-launcher
 * |-dde-meta
+* |-dde-network-utils
 * |-dde-polkit-agent
 * |-dde-qt-dbus-factory
 * |-dde-qt5integration

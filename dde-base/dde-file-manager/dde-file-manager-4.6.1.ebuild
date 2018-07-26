@@ -48,6 +48,7 @@ RDEPEND="sys-apps/file
 		 media-video/mpv[libmpv]
 		 dde-extra/deepin-shortcut-viewer
 		 media-libs/gst-plugins-good
+		 kde-frameworks/kcodecs:5
 		 net-misc/socat
 		 >=dde-base/dde-dock-4.2.0:=
 		 dde-base/dde-qt-dbus-factory
@@ -59,6 +60,7 @@ RDEPEND="sys-apps/file
 		 >=dde-base/dtkwidget-2.0.0:=
 	     "
 DEPEND="${RDEPEND}
+		dev-libs/jemalloc
 		dde-base/deepin-anything
 		dde-base/deepin-gettext-tools
 	    "
@@ -67,6 +69,7 @@ src_prepare() {
 
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro dde-dock-plugins/trash/trash.pro
+	sed -i "s|<sys/types.h>|<sys/sysmacros.h>|g" dde-file-manager-lib/quick_search/dquicksearch.h
 	export QT_SELECT=qt5
 	eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
 	default_src_prepare
