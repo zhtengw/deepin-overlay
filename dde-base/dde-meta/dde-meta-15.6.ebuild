@@ -21,7 +21,6 @@ RDEPEND=">=dde-base/dde-control-center-4.5.0
 		>=dde-base/deepin-desktop-base-2018.5.15
 		dde-base/dde-session-ui
 		dde-base/dde-daemon[grub?]
-		dde-base/deepin-notifications
 		>=x11-wm/deepin-wm-1.9.0
 		policykit? ( dde-base/dde-polkit-agent )
 		manual? ( >=dde-extra/dde-help-15.5 )
