@@ -13,13 +13,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+policykit manual +terminal multimedia grub"
 
-RDEPEND=">=dde-base/dde-control-center-4.5.0
+RDEPEND=">=dde-base/dde-control-center-4.6.0
 		>=dde-base/startdde-3.1.30
-		>=dde-base/dde-file-manager-4.4.0
-		>=dde-base/dde-launcher-4.3.0
+		>=dde-base/dde-file-manager-4.6.0
+		>=dde-base/dde-launcher-4.4.0
 		>=dde-base/dde-dock-4.6.0
-		>=dde-base/deepin-desktop-base-2018.5.15
-		dde-base/dde-session-ui
+		>=dde-base/deepin-desktop-base-2018.7.23
+		>=dde-base/dde-session-ui-4.4.0
 		dde-base/dde-daemon[grub?]
 		>=x11-wm/deepin-wm-1.9.0
 		policykit? ( dde-base/dde-polkit-agent )
