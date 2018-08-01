@@ -46,6 +46,7 @@ RDEPEND="sys-apps/file
 		 media-video/ffmpegthumbnailer[png]
 		 media-libs/taglib
 		 media-video/mpv[libmpv]
+		 media-video/deepin-movie-reborn
 		 dde-extra/deepin-shortcut-viewer
 		 media-libs/gst-plugins-good
 		 kde-frameworks/kcodecs:5
