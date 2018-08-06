@@ -30,6 +30,7 @@ src_prepare() {
 	sed -i "s|<sys/types.h>|<sys/sysmacros.h>|g" library/src/walkdir.c
 	sed -i "s|/usr/lib/modules-load.d|/etc/modules-load.d|g" Makefile
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" Makefile
+	sed -i "s|^DEB_HOST_MULTIARCH.*||g" Makefile
 
 	default_src_prepare
 }
