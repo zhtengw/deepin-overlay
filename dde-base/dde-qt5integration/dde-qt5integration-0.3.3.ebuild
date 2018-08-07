@@ -34,7 +34,6 @@ RDEPEND="
 	dev-qt/qtsvg:5
 	media-libs/fontconfig
 	media-libs/freetype
-	x11-libs/gtk+:2
 	dev-qt/qt5dxcb-plugin
 	dev-qt/qtstyleplugins:5
 	"
