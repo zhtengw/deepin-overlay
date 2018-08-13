@@ -24,7 +24,7 @@ SLOT="0"
 IUSE=""
 
 RDEPEND="
-	>=dev-libs/libqtxdg-3.0.0
+	dev-libs/libqtxdg
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5
 	dev-qt/qtwidgets:5
