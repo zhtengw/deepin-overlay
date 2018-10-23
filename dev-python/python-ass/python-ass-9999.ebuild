@@ -14,7 +14,7 @@ EGIT_REPO_URI="https://github.com/rfw/python-ass.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 REQUIRED_USE="
