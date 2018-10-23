@@ -4,16 +4,16 @@
 
 EAPI=6
 
-inherit cmake-utils git-r3
+inherit cmake-utils
 
 DESCRIPTION="Qt5 binding of Chromium Embedded Framework"
 HOMEPAGE="https://github.com/linuxdeepin/qcef"
 
-#SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
-EGIT_COMMIT="${PV}"
-EGIT_SUBMODULES=( cef )
+#EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
+#EGIT_COMMIT="${PV}"
+#EGIT_SUBMODULES=( cef )
 
 KEYWORDS="~amd64 ~x86"
 LICENSE="LGPL-3"
