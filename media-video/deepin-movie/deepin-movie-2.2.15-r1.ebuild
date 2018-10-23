@@ -10,7 +10,7 @@ SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="GPL-3+"
 SLOT="2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 PY_TAR_VER="python_targets_python2_7"
