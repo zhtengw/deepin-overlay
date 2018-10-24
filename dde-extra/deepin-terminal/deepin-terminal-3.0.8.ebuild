@@ -15,7 +15,7 @@ SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+zssh"
 
 RDEPEND="
 	>=dev-libs/glib-2.32:2
@@ -25,6 +25,8 @@ RDEPEND="
 	x11-libs/libwnck:3
 	dde-base/deepin-menu
 	dev-tcltk/expect
+	x11-libs/vte:2.91[vala]
+	zssh? ( net-misc/zssh )
 	"
 DEPEND="${RDEPEND}
 	$(vala_depend)
@@ -37,9 +39,6 @@ src_prepare() {
 	vala_src_prepare
 	sed -i -e "/NAMES/s:valac:${VALAC}:" cmake/FindVala.cmake || die 
 	sed -i "s|lib/\${target}|$(get_libdir)/\${target}|g" CMakeLists.txt
-	
-	# Fix linking with sys-libs/ncurses[tinfo], bug #527036
-	sed -i -e 's/-ltermcap/-ltinfo/g' 3rdparty/zssh-1.5c/configure || die
 
 	cmake-utils_src_prepare
 }
@@ -48,6 +47,9 @@ src_configure() {
 	local mycmakeargs=(
 		VALAC="${VALAC}"
 		-DTEST_BUILD=0
+		-DCMAKE_INSTALL_PREFIX=/usr
+		-DCMAKE_BUILD_TYPE=Release
+		-DVERSION=${PV}
 	)
 	cmake-utils_src_configure
 }
