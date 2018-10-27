@@ -12,7 +12,7 @@ SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+#KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 DEPEND="dev-libs/glib:2
@@ -24,6 +24,9 @@ unset QT_QPA_PLATFORMTHEME
 MAKEOPTS="${MAKEOPTS} -j1"
 
 src_prepare() {
+
+	# Fix relocation error when rebuild with different Qt version
+	sed -i 's|LD_PRELOAD=../src/libgsettings-qt.so.1|LD_PRELOAD=../src/libgsettings-qt.so.1\:./libGSettingsQmlPlugin.so|g' ${S}/GSettings/gsettings-qt.pro
 
 	# Don't pre-strip
 	echo "CONFIG+=nostrip" >> "${S}"/GSettings/gsettings-qt.pro
