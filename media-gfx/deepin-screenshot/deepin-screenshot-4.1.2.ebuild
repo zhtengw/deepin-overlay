@@ -4,7 +4,7 @@
 
 EAPI="5"
 
-inherit fdo-mime eutils qmake-utils
+inherit fdo-mime eutils cmake-utils
 
 if [[ ${PV} == *9999* ]]; then
 	inherit git-r3
@@ -58,12 +58,3 @@ DEPEND="${RDEPEND}
 	>=dde-base/dtkwm-2.0.0
 	>=dde-base/dtkwidget-2.0.0:=
 	"
-
-src_prepare() {
-	QT_SELECT=qt5 eqmake5 PREFIX=/usr
-}
-
-src_install() {
-	emake INSTALL_ROOT=${D} install
-
-}

@@ -21,6 +21,7 @@ RDEPEND="dev-qt/qtsvg:5
 		 dde-base/dde-daemon
 		 dde-base/dde-network-utils
 		 dde-base/dde-qt5integration
+        >=dde-base/dtkwidget-2.0.9.5:=
 	     "
 DEPEND="${RDEPEND}
 		virtual/pkgconfig
@@ -30,7 +31,7 @@ DEPEND="${RDEPEND}
 		x11-libs/libXtst
 		dde-base/dde-qt-dbus-factory
 		x11-libs/gsettings-qt
-        >=dde-base/dtkwidget-2.0.1:=
+		dev-libs/libdbusmenu-qt
 	    "
 
 src_prepare() {

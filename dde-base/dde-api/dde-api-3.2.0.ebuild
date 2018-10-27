@@ -34,6 +34,7 @@ DEPEND="${RDEPEND}
 	      dev-go/go-dbus-generator
 	      >=dev-go/deepin-go-lib-1.2.3
 		  dev-go/go-gir-generator
+		  >=dev-go/dde-go-essential-20181026
 	      >=dev-go/dbus-factory-3.1.5"
 
 src_prepare() {

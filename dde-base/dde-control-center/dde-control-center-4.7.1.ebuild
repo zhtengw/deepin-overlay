@@ -25,6 +25,7 @@ RDEPEND="dev-qt/qtsvg:5
 		 dev-qt/qtgui:5
 		 dev-qt/qtwidgets:5
 		 dev-libs/libqtxdg
+		 kde-frameworks/networkmanager-qt
 		 x11-libs/startup-notification
 		 >=dde-base/dde-daemon-3.2.1
 		 dde-base/dde-api
@@ -44,6 +45,8 @@ DEPEND="${RDEPEND}
 	    "
 
 src_prepare() {
+	eapply ${FILESDIR}/${PN}-4.7.0-fix-segfault-update-disabled.patch || die
+
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" plugins/*/*.pro
 	sed -i "s|usr/lib/|usr/${LIBDIR}/|g" dialogs/reboot-reminder-dialog/reboot-reminder-dialog.pro
