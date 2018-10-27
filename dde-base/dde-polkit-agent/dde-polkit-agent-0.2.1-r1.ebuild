@@ -16,16 +16,20 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-qt/qtcore:5
-		 dev-qt/qtgui:5
-	   	 dev-qt/qtdbus:5
-		 dev-qt/qtwidgets:5
-		 sys-auth/polkit-qt[qt5(+)]
-	     "
+		dev-qt/qtgui:5
+		dev-qt/qtdbus:5
+		dev-qt/qtwidgets:5
+		sys-auth/polkit-qt[qt5(+)]
+		"
 DEPEND="${RDEPEND}
-        >=dde-base/dtkwidget-2.0.2:=
-	    "
+		>=dde-base/dtkwidget-2.0.2:=
+		"
 
 src_prepare() {
+
+	# Fix build error with >=dde-base/dtkwidget-2.0.9.5
+	sed -i "s|<dcombobox.h>|<QComboBox>|g" AuthDialog.h
+
 	LIBDIR=$(get_libdir)
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" ${PN}.pro
 	QT_SELECT=qt5 eqmake5	PREFIX=/usr
