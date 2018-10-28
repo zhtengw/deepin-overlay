@@ -75,6 +75,7 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-deepin-system-monitor
 * |-deepin-terminal
 * |-deepin-topbar
+* |-deepin-turbo
 * |-plymouth-theme-deepin
 * ***media-sound***
 * |-deepin-music
