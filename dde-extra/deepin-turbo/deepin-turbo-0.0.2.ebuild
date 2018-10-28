@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-qt/qtwidget:5
+RDEPEND="dev-qt/qtwidgets:5
 		sys-apps/dbus
 		sys-apps/systemd
 		"

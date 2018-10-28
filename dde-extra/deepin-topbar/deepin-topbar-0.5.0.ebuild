@@ -18,7 +18,7 @@ else
 fi
 LICENSE="GPL-3"
 SLOT="0"
-IUSE=""
+IUSE="albert"
 
 RDEPEND=">=dev-qt/qtcore-5.6:5
 		dev-qt/qtdbus:5
@@ -40,6 +40,7 @@ RDEPEND=">=dev-qt/qtcore-5.6:5
 		dde-base/dtkcore
 		dde-base/dtkwidget:=
 		dde-base/dde-qt-dbus-factory
+		albert? ( x11-misc/albert )
 		"
 DEPEND="${RDEPEND}
 		virtual/pkgconfig
