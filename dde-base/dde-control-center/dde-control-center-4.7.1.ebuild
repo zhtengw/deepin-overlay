@@ -27,7 +27,7 @@ RDEPEND="dev-qt/qtsvg:5
 		 dev-libs/libqtxdg
 		 kde-frameworks/networkmanager-qt
 		 x11-libs/startup-notification
-		 >=dde-base/dde-daemon-3.2.1
+		 >=dde-base/dde-daemon-3.3.0
 		 dde-base/dde-api
 		 dde-base/dde-account-faces
 		 dde-base/dde-dock
@@ -35,7 +35,7 @@ RDEPEND="dev-qt/qtsvg:5
 		 dde-base/dde-network-utils
 		 dev-util/desktop-file-utils
 		 dev-libs/geoip
-		 dde-base/deepin-desktop-base
+		 >=dde-base/deepin-desktop-base-2018.10.29
 		 dde-base/dde-qt5integration
 		 redshift? ( x11-misc/redshift )
 	     "

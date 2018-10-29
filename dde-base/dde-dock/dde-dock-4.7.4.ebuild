@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/linuxdeepin/dde-dock"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
-SLOT="0/4.6.0"
+SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
@@ -40,3 +40,9 @@ src_prepare() {
 	cmake-utils_src_prepare
 }
 
+#src_configure() {
+#	local mycmakeargs=(
+#		-DDOCK_TRAY_USE_NATIVE_POPUP=YES
+#		)
+#	cmake-utils_src_configure
+#}
