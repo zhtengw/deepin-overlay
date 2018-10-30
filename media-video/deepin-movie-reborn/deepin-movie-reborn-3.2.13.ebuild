@@ -38,7 +38,6 @@ DEPEND="dev-qt/qtdbus:5
 		media-sound/pulseaudio
 		media-video/ffmpeg
 		media-libs/libdvdnav
-		!media-video/deepin-movie
 		"
 RDEPEND="${DEPEND}
 		>=dde-base/dtkcore-2.0.0

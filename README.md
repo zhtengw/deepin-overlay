@@ -81,7 +81,6 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-deepin-music
 * |-deepin-voice-recorder
 * ***media-video***
-* |-deepin-movie
 * |-deepin-movie-reborn
 * ***media-gfx***
 * |-blur-effect
@@ -108,8 +107,6 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * ***dev-python***
 * |-dae
 * |-jieba
-* |-python-ass
-* |-xpybutil
 * ***dev-cpp***
 * |-treefrog-framework
 * ***dev-perl***
