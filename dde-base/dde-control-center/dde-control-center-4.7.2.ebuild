@@ -45,8 +45,6 @@ DEPEND="${RDEPEND}
 	    "
 
 src_prepare() {
-	eapply ${FILESDIR}/${PN}-4.7.0-fix-segfault-update-disabled.patch || die
-
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" plugins/*/*.pro
 	sed -i "s|usr/lib/|usr/${LIBDIR}/|g" dialogs/reboot-reminder-dialog/reboot-reminder-dialog.pro
