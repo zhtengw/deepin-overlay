@@ -6,8 +6,6 @@ EAPI=6
 
 inherit eutils gnome2 multilib virtualx autotools
 
-WANT_AUTOMAKE=1.15
-
 DESCRIPTION="A library for using 3D graphics hardware to draw pretty pictures"
 HOMEPAGE="http://www.cogl3d.org/"
 SRC_URI="https://github.com/linuxdeepin/deepin-${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
