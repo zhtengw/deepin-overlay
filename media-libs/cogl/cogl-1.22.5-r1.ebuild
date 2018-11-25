@@ -4,7 +4,9 @@
 
 EAPI=6
 
-inherit eutils gnome2 multilib virtualx
+inherit eutils gnome2 multilib virtualx autotools
+
+WANT_AUTOMAKE=1.15
 
 DESCRIPTION="A library for using 3D graphics hardware to draw pretty pictures"
 HOMEPAGE="http://www.cogl3d.org/"
@@ -82,7 +84,8 @@ src_prepare() {
 			-i Makefile.am || die
 	fi
 
-	./autogen.sh
+#	./autogen.sh
+	eautoreconf
 	gnome2_src_prepare
 }
 
@@ -91,29 +94,31 @@ src_configure() {
 	# Prefer gl over gles2 if both are selected
 	# Profiling needs uprof, which is not available in portage yet, bug #484750
 	# FIXME: Doesn't provide prebuilt docs, but they can neither be rebuilt, bug #483332
-	gnome2_src_configure \
-		--disable-examples-install \
-		--disable-maintainer-flags \
-		--enable-cairo             \
-		--enable-deprecated        \
-		--enable-gdk-pixbuf        \
-		--enable-glib              \
-		$(use_enable debug)        \
-		$(use_enable opengl glx)   \
-		$(use_enable opengl gl)    \
-		$(use_enable gles2)        \
-		$(use_enable gles2 cogl-gles2) \
-		$(use_enable gles2 xlib-egl-platform) \
-		$(usex gles2 --with-default-driver=$(usex opengl gl gles2)) \
-		$(use_enable gstreamer cogl-gst)    \
-		$(use_enable introspection) \
-		$(use_enable kms kms-egl-platform) \
-		$(use_enable pango cogl-pango) \
-		$(use_enable test unit-tests) \
-		$(use_enable wayland wayland-egl-platform) \
-		$(use_enable wayland wayland-egl-server) \
+	local myeconfargs=( 
+		--disable-examples-install 
+		--disable-maintainer-flags 
+		--enable-cairo             
+		--enable-deprecated        
+		--enable-gdk-pixbuf        
+		--enable-glib              
+		$(use_enable debug)        
+		$(use_enable opengl glx)   
+		$(use_enable opengl gl)    
+		$(use_enable gles2)        
+		$(use_enable gles2 cogl-gles2) 
+		$(use_enable gles2 xlib-egl-platform) 
+		$(usex gles2 --with-default-driver=$(usex opengl gl gles2)) 
+		$(use_enable gstreamer cogl-gst)    
+		$(use_enable introspection) 
+		$(use_enable kms kms-egl-platform) 
+		$(use_enable pango cogl-pango) 
+		$(use_enable test unit-tests) 
+		$(use_enable wayland wayland-egl-platform) 
+		$(use_enable wayland wayland-egl-server) 
 		--disable-profile
-#		$(use_enable profile)
+		)
+	gnome2_src_configure "${myeconfargs[@]}"
+
 }
 
 src_test() {
