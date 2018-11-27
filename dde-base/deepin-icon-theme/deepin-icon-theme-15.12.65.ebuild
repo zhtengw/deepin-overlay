@@ -13,12 +13,21 @@ LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-DEPEND="x11-apps/xcursorgen
-dev-util/gtk-update-icon-cache"
+DEPEND="dev-util/gtk-update-icon-cache"
 
 src_prepare() {
 
 	default_src_prepare
+}
+
+src_compile() {
+	emake hicolor-links
+}
+
+src_install() {
+	emake DESTDIR="$D" install-icons install-cursors
+	insinto /usr/share/icons/
+	doins -r Sea usr/share/icons/hicolor
 }
 
 pkg_preinst() { gnome2_icon_savelist; }
