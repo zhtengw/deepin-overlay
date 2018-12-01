@@ -7,10 +7,10 @@ EAPI=6
 inherit git-r3 gnome2 autotools flag-o-matic
 
 DESCRIPTION="Screencasting program that saves casts as GIF files"
-HOMEPAGE="https://git.gnome.org/browse/byzanz/"
-#SRC_URI="https://git.gnome.org/browse/byzanz/snapshot/byzanz-master.tar.xz -> ${P}.tar.xz"
+HOMEPAGE="https://gitlab.gnome.org/Archive/byzanz/"
+#SRC_URI="https://gitlab.gnome.org/Archive/byzanz/-/archive/master/byzanz-master.tar.gz -> ${P}.tar.gz"
 SRC_URI=""
-EGIT_REPO_URI="https://git.gnome.org/browse/byzanz"
+EGIT_REPO_URI="https://gitlab.gnome.org/Archive/byzanz.git"
 
 LICENSE="GPL-3"
 SLOT="0"
