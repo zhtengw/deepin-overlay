@@ -34,7 +34,6 @@ RDEPEND="dev-qt/qtsvg:5
 		 dde-base/startdde
 		 dde-base/dde-network-utils
 		 dev-util/desktop-file-utils
-		 dev-libs/geoip
 		 >=dde-base/deepin-desktop-base-2018.10.29
 		 dde-base/dde-qt5integration
 		 redshift? ( x11-misc/redshift )
@@ -56,10 +55,3 @@ src_install() {
 	emake INSTALL_ROOT=${D} install
 }
 
-pkg_postinst() {
-	elog "GeoIP databases are no longer installed by dev-libs/geoip ebuild."
-	elog "You must run 'geoipupdate.sh -f' first to download the databases,"
-	elog "otherwise, dde-control-center will run abnormally."
-
-	geoipupdate.sh -f
-}
