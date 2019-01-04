@@ -27,9 +27,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 
-	# Fix build error with >=dde-base/dtkwidget-2.0.9.5
-	sed -i "s|<dcombobox.h>|<QComboBox>|g" AuthDialog.h
-
 	LIBDIR=$(get_libdir)
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" ${PN}.pro
 	QT_SELECT=qt5 eqmake5	PREFIX=/usr
