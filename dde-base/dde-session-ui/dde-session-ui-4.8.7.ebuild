@@ -48,6 +48,8 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
+	# fix deepin greeter crash
+	eapply ${FILESDIR}/4.8.7-deepin-greeter-crash-fix.patch
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" dde-*/*.pro
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr

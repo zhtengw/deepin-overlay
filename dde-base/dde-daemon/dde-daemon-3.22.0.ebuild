@@ -49,7 +49,12 @@ src_prepare() {
 
 	eapply ${FILESDIR}/3.8.0-disable-tap-gesture.patch
 	export GOPATH="${S}:/usr/share/gocode"	
+
 	go get -d -f -u -v github.com/msteinert/pam || die
+#	git clone https://github.com/msteinert/pam || die
+#	mkdir -p ${WORKDIR}/src/github.com/msteinert
+#	cp -r ${S}/pam ${WORKDIR}/src/github.com/msteinert
+
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" Makefile
 	default_src_prepare
