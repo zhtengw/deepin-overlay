@@ -4,7 +4,6 @@
 
 EAPI=4
 
-
 DESCRIPTION="Convert D-Bus interfaces to go-lang or qml wrapper code"
 HOMEPAGE="https://github.com/linuxdeepin/go-dbus-generator"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
@@ -19,13 +18,6 @@ DEPEND="dev-qt/qtdeclarative:5
 	dev-go/deepin-go-lib"
 
 src_prepare() {
-	 export GOPATH="${S}:/usr/share/gocode"
+	export GOPATH="${S}:/usr/lib/go-gentoo"
 }
 
-# src_compile() {
-# 	go build -o dbus-generator
-# }
-# 
-# src_install() {
-# 	dobin dbus-generator
-# }

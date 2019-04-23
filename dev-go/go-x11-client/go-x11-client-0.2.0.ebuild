@@ -13,9 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="sys-devel/gcc[go]
-		dev-lang/go
-		>=dev-go/dde-go-essential-20170807"
+RDEPEND=">=dev-go/dde-go-essential-20170807"
 
 DEPEND="${RDEPEND}"
 
