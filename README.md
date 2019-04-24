@@ -54,6 +54,7 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-dtkwidget
 * |-dtkwm
 * |-startdde
+* |-udisks2-qt5
 * ***dde-extra***
 * |-dde-calendar
 * |-dde-file-manager-integration

@@ -18,6 +18,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="sys-libs/glibc
+	dde-base/dtkcore
+	dde-base/udisks2-qt5
 		"
 
 pkg_setup() {
