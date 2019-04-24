@@ -21,6 +21,8 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE="+gif +mp4"
 
+REQUIRED_USE="|| ( gif mp4 )"
+
 RDEPEND="dev-qt/qtwidgets:5
 		dev-qt/qtnetwork:5
 		dev-qt/qtgui:5
