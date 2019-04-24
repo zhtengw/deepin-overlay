@@ -41,7 +41,7 @@ RDEPEND="dev-qt/qtsvg:5
 		"
 DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-2.0.1:=
-		>=dde-base/dde-qt-dbus-factory-0.3.1:=
+		>=dde-base/dde-qt-dbus-factory-1.1.1:=
 		"
 
 src_prepare() {
