@@ -18,7 +18,8 @@ fi
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE=""
+IUSE="systemd elogind"
+REQUIRED_USE="^^ ( systemd elogind )"
 
 RDEPEND="
 		 x11-libs/gsettings-qt
@@ -35,7 +36,7 @@ RDEPEND="
 		 dev-qt/qtx11extras:5
 		 dev-qt/qtwidgets:5
 		 dev-qt/qtsvg:5
-		 dde-base/dde-daemon
+		 dde-base/dde-daemon[systemd?,elogind?]
 		 >=dde-base/deepin-desktop-schemas-2.91.2
 		 dde-base/startdde
 		 !dde-base/deepin-notifications
@@ -48,6 +49,12 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
+
+	if use elogind; then
+		sed -i "s|libsystemd|libelogind|g" dde-switchtogreeter/dde-switchtogreeter.pro
+		sed -i "s|systemd/sd-login.h|elogind/systemd/sd-login.h|g" dde-switchtogreeter/switchtogreeter.c
+	fi
+
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" dde-*/*.pro
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr
