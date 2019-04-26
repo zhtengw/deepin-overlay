@@ -44,9 +44,7 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-deepin-gtk-theme
 * |-deepin-icon-theme
 * |-deepin-menu
-* |-deepin-notifications
 * |-deepin-sound-theme
-* |-deepin-tool-kit
 * |-deepin-wallpapers
 * |-deepin-wm-switcher
 * |-dtksettings
@@ -94,7 +92,6 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-granite
 * ***dev-go***
 * |-dbus-factory
-* |-dde-go-essential
 * |-deepin-go-lib
 * |-go-dbus-factory
 * |-go-dbus-generator
@@ -107,9 +104,6 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * ***x11-libs***
 * |-bamf
 * |-gsettings-qt
-* ***dev-python***
-* |-dae
-* |-jieba
 * ***dev-cpp***
 * |-treefrog-framework
 * ***dev-perl***
@@ -124,8 +118,6 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * ***net-im***
 * |-deepin-wine-QQ
 * |-deepin-wine-wechat
-* ***x11-themes***
-* |-flattr-icons
 * ***x11-apps***
 * |-xcur2png
 

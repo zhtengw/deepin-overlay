@@ -39,7 +39,6 @@ RDEPEND="
 		 dde-base/dde-daemon[systemd?,elogind?]
 		 >=dde-base/deepin-desktop-schemas-2.91.2
 		 dde-base/startdde
-		 !dde-base/deepin-notifications
 		"
 DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-2.0.0:=
