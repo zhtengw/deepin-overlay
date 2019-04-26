@@ -90,6 +90,8 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-deepin-image-viewer
 * |-deepin-screen-recorder
 * |-deepin-screenshot
+* ***dev-libs***
+* |-granite
 * ***dev-go***
 * |-dbus-factory
 * |-dde-go-essential
