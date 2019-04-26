@@ -30,6 +30,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	$(vala_depend)
 	${PYTHON_DEPS}
+	x11-libs/startup-notification
 	dev-libs/libxml2[python]
 	dev-libs/libxslt[python]
 	doc? ( dev-util/gtk-doc )
