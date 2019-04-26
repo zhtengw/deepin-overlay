@@ -20,7 +20,7 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 
-RDEPEND="sys-apps/systemd[policykit]
+RDEPEND="
 		 x11-libs/gsettings-qt
 		 x11-misc/lightdm[qt5]
 		 x11-libs/libXext
