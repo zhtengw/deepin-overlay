@@ -54,7 +54,10 @@ After setting, remerge @world so the changes take effect:
 
 ### Configuring and Running DDE
 Assuming that you have setup X11 properly, now going to configure DDE.
-Configuring lightdm greeter, there are two greeter we can choose -- lightdm-gtk-greeter and lightdm-deepin-greeter. But **lightdm-deepin-greeter** runs abnormally without systemd, so we use lightdm-gtk-greeter by default.
+
+Configuring lightdm greeter: 
+
+There are two greeter we can choose -- **lightdm-gtk-greeter** and **lightdm-deepin-greeter**. But **lightdm-deepin-greeter** runs abnormally without systemd, so we use lightdm-gtk-greeter by default.
 
 ***/etc/lightdm/lightdm.conf***
 ```
