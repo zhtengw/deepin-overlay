@@ -12,10 +12,7 @@ SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="GPL-2+"
 SLOT="0"
 
-IUSE="+introspection +kms test wayland"
-REQUIRED_USE="
-	wayland? ( kms )
-"
+IUSE="+introspection test wayland"
 
 KEYWORDS="~amd64 ~x86"
 
@@ -53,16 +50,12 @@ COMMON_DEPEND="
 	x11-misc/xkeyboard-config
 
 	gnome-extra/zenity
+	>=media-libs/mesa-10.3[gbm]
+	dev-libs/libinput
+	>=media-libs/clutter-1.20[egl]
+	media-libs/cogl:1.0=[kms]
 
 	introspection? ( >=dev-libs/gobject-introspection-1.42:= )
-	kms? (
-		dev-libs/libinput
-		>=media-libs/clutter-1.20[egl]
-		media-libs/cogl:1.0=[kms]
-		>=media-libs/mesa-10.3[gbm]
-		sys-apps/systemd
-		virtual/libgudev:=
-		x11-libs/libdrm:= )
 	wayland? (
 		>=dev-libs/wayland-1.6.90
 		>=dev-libs/wayland-protocols-1.1
@@ -92,6 +85,6 @@ src_configure() {
 		--with-libcanberra \
 		--enable-compile-warnings=minimum \
 		$(use_enable introspection) \
-		$(use_enable kms native-backend) \
+		$(use_enable wayland native-backend) \
 		$(use_enable wayland)
 }

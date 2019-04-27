@@ -27,7 +27,8 @@ ${EGO_VENDOR_URI}"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="grub bluetooth"
+IUSE="grub bluetooth systemd elogind"
+REQUIRED_USE="^^ ( systemd elogind )"
 
 RDEPEND="x11-wm/deepin-metacity
 		x11-libs/libxkbfile
@@ -44,6 +45,8 @@ RDEPEND="x11-wm/deepin-metacity
 		dev-libs/libnl:3
 		bluetooth? ( net-wireless/bluez )
 		grub? ( dde-extra/deepin-grub2-themes )
+		systemd? ( sys-apps/systemd )
+		elogind? ( sys-auth/elogind )
 	"
 DEPEND="${RDEPEND}
 		dev-go/go-dbus-generator
@@ -63,6 +66,10 @@ src_prepare() {
 
 	cd ${S}/src/${EGO_PN}
 	eapply ${FILESDIR}/3.8.0-disable-tap-gesture.patch
+
+	if use elogind; then
+		sed -i "s|systemd/sd-bus.h|elogind/systemd/sd-bus.h|g" misc/pam-module/deepin_auth.c
+	fi
 
 	mkdir -p "${T}/golibdir/"
 	cp -r  "${S}/src/${EGO_PN}/vendor"  "${T}/golibdir/src"

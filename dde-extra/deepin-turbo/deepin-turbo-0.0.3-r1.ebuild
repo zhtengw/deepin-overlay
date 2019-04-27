@@ -13,17 +13,24 @@ SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="systemd elogind"
+REQUIRED_USE="^^ ( systemd elogind )"
 
 RDEPEND="dev-qt/qtwidgets:5
 		sys-apps/dbus
-		sys-apps/systemd
+		systemd? ( sys-apps/systemd )
+		elogind? ( sys-auth/elogind )
 		"
 DEPEND="${RDEPEND}
 		virtual/pkgconfig
 		"
 
 src_prepare() {
+	if use elogind; then
+		sed -i "s|lsystemd|lelogind|g" src/launcherlib/CMakeLists.txt
+		sed -i "s|systemd/sd-daemon.h|elogind/systemd/sd-daemon.h|g" src/launcherlib/daemon.cpp
+	fi
+
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/|${LIBDIR}/|g" src/*/CMakeLists.txt
 	cmake-utils_src_prepare
