@@ -30,7 +30,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="grub bluetooth systemd elogind"
 REQUIRED_USE="^^ ( systemd elogind )"
 
-RDEPEND="x11-wm/deepin-metacity
+RDEPEND="virtual/dde-wm
 		x11-libs/libxkbfile
 		app-text/iso-codes
 		sys-apps/accountsservice

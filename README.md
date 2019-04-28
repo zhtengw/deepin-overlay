@@ -184,9 +184,12 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-go-gir-generator
 * |-go-x11-client
 * ***x11-wm***
+* |-dde-kwin
 * |-deepin-metacity
 * |-deepin-mutter
 * |-deepin-wm
+* ***virtual***
+* |-dde-wm
 * ***x11-libs***
 * |-bamf
 * |-gsettings-qt
