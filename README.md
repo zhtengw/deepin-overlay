@@ -21,78 +21,8 @@ Then add the deepin overlay:
 
      # layman -L && layman -a deepin
 
-### Setting the Profile, USE flags, KEYWORDS and Updating
-First enable testing architectures. 
-Set **ACCEPT_KEYWORDS="~amd64"** in **/etc/portage/make.conf** (or **ACCEPT_KEYWORDS="~x86"** if your architecture is x86).
-
-Then set your system to use the proper profile and USE flags.
-#### For OpenRC user:
-Using the basic "desktop" profile
-
-     # eselect profile set default/linux/amd64/17.0/desktop
-     
-Add "**elogind**" USE flag in **/etc/portage/make.conf**, it's also recommended to disable support for other session trackers to avoid conflicts:
-
-***/etc/portage/make.conf***
-```
-USE="elogind -consolekit -systemd"
-```
-#### For Systemd user:
-Using the "systemd" profile
-
-     # eselect profile set default/linux/amd64/17.0/systemd
-     
-Add "**X**" USE flag in **/etc/portage/make.conf**.
-
-After setting, remerge @world so the changes take effect: 
-
-     # emerge --deep --with-bdeps=y --changed-use --update --ask --verbose @world 
-
-### Emerging Deepin Desktop Environment
-
-     # emerge --ask --verbose --keep-going dde-base/dde-meta
-
-### Configuring and Running DDE
-Assuming that you have setup X11 properly, now going to configure DDE.
-
-Configuring lightdm greeter: 
-
-There are two greeter we can choose -- **lightdm-gtk-greeter** and **lightdm-deepin-greeter**. But **lightdm-deepin-greeter** runs abnormally without systemd, so we use lightdm-gtk-greeter by default.
-
-***/etc/lightdm/lightdm.conf***
-```
-greeter-session=lightdm-gtk-greeter
-```
-
-#### For OpenRC user:
-Emerging **x11-apps/xdm** and Changing the **DISPLAYMANGER** value in the xdm configuration file to use **lightdm**.
-
-***/etc/conf.d/xdm***
-```
-DISPLAYMANAGER="lightdm"
-```
-Set **dbus**, **xdm**, **NetworkManager** and **elogind** to come up on boot, and disable **dhcpcd** if you have enabled it.
-     
-     # rc-update add dbus default 
-     # rc-update add xdm default 
-     # rc-update add NetworkManager default 
-     # rc-update del dhcpcd default 
-     # rc-update add elogind boot 
-
-Start up DDE
-     
-     # openrc
-
-#### For Systemd user:
-Enable **NetworkManager**, **lightdm** to be started at boot time.
-     
-     # systemctl enable NetworkManager
-     # systemctl enable lightdm
-
-Start up and login:
-
-     # systemctl start NetworkManager
-     # systemctl start lightdm
+### Usage
+With this Overlay, you can install the Deepin Desktop Environment([Installation Guide](https://github.com/zhtengw/deepin-overlay/wiki/Installing-Deepin-Desktop-Environment)), or just install some applications developed by Deepin Team(See [Applications List](https://github.com/zhtengw/deepin-overlay/wiki/Applications-From-Deepin-Team)).
 
 ### Note
 Some packages of DDE are built with the private headers of Qt.
