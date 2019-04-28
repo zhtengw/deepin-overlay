@@ -22,7 +22,7 @@ Then add the deepin overlay:
      # layman -L && layman -a deepin
 
 ### Usage
-With this Overlay, you can install the Deepin Desktop Environment([Installation Guide](https://github.com/zhtengw/deepin-overlay/wiki/Installing-Deepin-Desktop-Environment)), or just install some applications developed by Deepin Team(See [Applications List](https://github.com/zhtengw/deepin-overlay/wiki/Applications-From-Deepin-Team)).
+With this Overlay, you can install the **Deepin Desktop Environment**([Installation Guide](https://github.com/zhtengw/deepin-overlay/wiki/Installing-Deepin-Desktop-Environment)), or just install some applications developed by Deepin Team(See [Applications List](https://github.com/zhtengw/deepin-overlay/wiki/Applications-From-Deepin-Team)).
 
 ### Note
 Some packages of DDE are built with the private headers of Qt.
