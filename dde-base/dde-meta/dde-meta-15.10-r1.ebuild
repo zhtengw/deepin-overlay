@@ -25,7 +25,7 @@ RDEPEND=">=dde-base/dde-control-center-4.10.0
 		>=dde-base/dde-session-ui-4.9.5[systemd?,elogind?]
 		>=dde-base/dde-daemon-3.27.0[grub?,systemd?,elogind?]
 		policykit? ( dde-base/dde-polkit-agent )
-		manual? ( >=dde-extra/dde-help-15.5 )
+		manual? ( >=dde-extra/deepin-manual-2.0.19 )
 		terminal? ( dde-extra/deepin-terminal )
 		multimedia? ( dde-extra/dde-meta-multimedia )
 		turbo? ( dde-extra/deepin-turbo[systemd?,elogind?] )
