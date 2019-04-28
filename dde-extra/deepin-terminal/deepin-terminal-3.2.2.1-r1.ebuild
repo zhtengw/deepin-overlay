@@ -49,6 +49,7 @@ src_configure() {
 		-DTEST_BUILD=0
 		-DCMAKE_INSTALL_PREFIX=/usr
 		-DCMAKE_BUILD_TYPE=Release
+		-DUSE_VENDOR_LIB=0
 		-DVERSION=${PV}
 	)
 	cmake-utils_src_configure
