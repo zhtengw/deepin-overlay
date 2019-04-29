@@ -30,7 +30,7 @@ RDEPEND="
 	"
 DEPEND="${RDEPEND}
 	$(vala_depend)
-	gnome-base/librsvg:2
+	gnome-base/librsvg:2[vala]
 	dev-util/gperf
 	dev-libs/gobject-introspection
 	"
