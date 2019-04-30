@@ -34,6 +34,8 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 
 ### Packages list
 
+* ***app-accessibility***
+* |-onboard
 * ***app-emulation***
 * |-deepin-wine
 * |-deepin-wine-helper

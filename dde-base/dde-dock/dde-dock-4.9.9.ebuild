@@ -21,7 +21,8 @@ RDEPEND="dev-qt/qtsvg:5
 		 dde-base/dde-daemon
 		 dde-base/dde-network-utils
 		 dde-base/dde-qt5integration
-        >=dde-base/dtkwidget-2.0.9.5:=
+		 app-accessibility/onboard
+       	 >=dde-base/dtkwidget-2.0.9.5:=
 	     "
 DEPEND="${RDEPEND}
 		virtual/pkgconfig
