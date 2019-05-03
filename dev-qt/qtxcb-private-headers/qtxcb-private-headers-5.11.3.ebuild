@@ -8,7 +8,7 @@ inherit qt5-build
 DESCRIPTION="The Private Headers for the Qt5 Xcb"
 
 if [[ ${QT5_BUILD_TYPE} == release ]]; then
-	KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~x86 ~amd64-fbsd"
+	KEYWORDS="amd64 arm ~arm64 ~hppa ppc ppc64 x86 ~amd64-fbsd"
 fi
 
 # TODO: linuxfb
