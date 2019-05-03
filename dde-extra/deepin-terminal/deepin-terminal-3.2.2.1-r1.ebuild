@@ -25,7 +25,7 @@ RDEPEND="
 	x11-libs/libwnck:3
 	dde-base/deepin-menu
 	dev-tcltk/expect
-	x11-libs/vte:2.91[vala]
+	>=x11-libs/vte-0.50.1:2.91[vala]
 	zssh? ( net-misc/zssh )
 	"
 DEPEND="${RDEPEND}
