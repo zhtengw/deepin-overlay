@@ -59,6 +59,9 @@ COMMON_DEPEND="
 	wayland? (
 		>=dev-libs/wayland-1.6.90
 		>=dev-libs/wayland-protocols-1.1
+		sys-apps/systemd
+		virtual/libgudev:=
+		x11-libs/libdrm:=
 		>=media-libs/clutter-1.20[wayland]
 		x11-base/xorg-server[wayland] )
 "
