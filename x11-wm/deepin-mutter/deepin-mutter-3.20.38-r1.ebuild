@@ -12,7 +12,8 @@ SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="GPL-2+"
 SLOT="0"
 
-IUSE="+introspection test wayland"
+IUSE="+introspection test wayland elogind systemd"
+REQUIRED_USE="wayland? ( ^^ ( elogind systemd ) )"
 
 KEYWORDS="~amd64 ~x86"
 
@@ -59,7 +60,8 @@ COMMON_DEPEND="
 	wayland? (
 		>=dev-libs/wayland-1.6.90
 		>=dev-libs/wayland-protocols-1.1
-		sys-apps/systemd
+		systemd? ( sys-apps/systemd )
+		elogind? ( sys-auth/elogind )
 		virtual/libgudev:=
 		x11-libs/libdrm:=
 		>=media-libs/clutter-1.20[wayland]
@@ -78,6 +80,10 @@ RDEPEND="${COMMON_DEPEND}
 "
 
 src_configure() {
+	if use elogind; then
+		sed -i "s|libsystemd|libelogind|g" configure.ac
+		sed -i "s|systemd/sd-login.h|elogind/systemd/sd-login.h|g" src/backends/native/meta-launcher.c
+	fi
 	[[ $(gcc-major-version) < 5 ]] && append-flags "-std=gnu99"
 	./autogen.sh  --prefix=/usr \
 		--libdir=/usr/$(get_libdir) \
