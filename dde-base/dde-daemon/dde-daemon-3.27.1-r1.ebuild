@@ -68,12 +68,13 @@ src_prepare() {
 	eapply ${FILESDIR}/3.8.0-disable-tap-gesture.patch
 
 	if use elogind; then
+		sed -i "s|libsystemd|libelogind|g" Makefile
 		sed -i "s|systemd/sd-bus.h|elogind/systemd/sd-bus.h|g" misc/pam-module/deepin_auth.c
 	fi
 
 	mkdir -p "${T}/golibdir/"
 	cp -r  "${S}/src/${EGO_PN}/vendor"  "${T}/golibdir/src"
-	export GOPATH="$(get_golibdir_gopath):${T}/golibdir/"
+	export GOPATH="${S}:$(get_golibdir_gopath):${T}/golibdir/"
 
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" Makefile
