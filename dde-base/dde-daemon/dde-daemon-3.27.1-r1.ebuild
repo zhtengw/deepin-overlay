@@ -17,7 +17,7 @@ EGO_VENDOR=(
 "github.com/gosexy/gettext 74466a0a0c4a62fea38f44aa161d4bbfbe79dd6b"
 )
 
-inherit golang-vcs-snapshot
+inherit golang-vcs-snapshot pam
 
 DESCRIPTION="Daemon handling the DDE session settings"
 HOMEPAGE="https://github.com/linuxdeepin/dde-daemon"
@@ -83,6 +83,7 @@ src_prepare() {
 
 src_compile() {
 	cd ${S}/src/${EGO_PN}
+	export PAM_MODULE_DIR=$(getpam_mod_dir)
 	default_src_compile
 }
 
