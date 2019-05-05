@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE="metapackage"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+policykit manual +terminal multimedia grub elogind systemd turbo kwin mutter"
+IUSE="+policykit manual +terminal multimedia grub elogind systemd turbo kwin mutter extra"
 REQUIRED_USE="^^ ( systemd elogind )
 			?? ( kwin mutter )"
 
@@ -28,6 +28,7 @@ RDEPEND=">=dde-base/dde-control-center-4.10.0
 		manual? ( >=dde-extra/deepin-manual-2.0.19 )
 		terminal? ( dde-extra/deepin-terminal )
 		multimedia? ( dde-extra/dde-meta-multimedia )
+		extra? ( dde-extra/dde-meta-apps )
 		turbo? ( dde-extra/deepin-turbo[systemd?,elogind?] )
 		"
 

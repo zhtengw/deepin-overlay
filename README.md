@@ -75,6 +75,7 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-dde-calendar
 * |-dde-file-manager-integration
 * |-dde-introduction
+* |-dde-meta-apps
 * |-dde-meta-multimedia
 * |-deepin-boot-maker
 * |-deepin-calculator

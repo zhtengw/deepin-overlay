@@ -8,6 +8,7 @@
 	<use>
 		<flag name="manual">Install <pkg>dde-extra/dde-help</pkg> User Manual</flag>
 		<flag name="terminal">Install <pkg>dde-extra/deepin-terminal</pkg> Terminal Emulator</flag>
+		<flag name="extra">Install extra applicaions developed by Deepin</flag>
 		<flag name="multimedia">Install Deepin multimedia suite</flag>
 		<flag name="grub">Install Deepin themes for <pkg>sys-boot/grub</pkg></flag>
 		<flag name="turbo">Enable DTK Apps Turbo by <pkg>dde-extra/deepin-turbo</pkg></flag>
