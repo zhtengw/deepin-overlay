@@ -54,7 +54,6 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-dde-qt5integration
 * |-dde-session-ui
 * |-deepin-anything
-* |-deepin-artwork-themes
 * |-deepin-desktop-base
 * |-deepin-desktop-schemas
 * |-deepin-file-manager-backend
@@ -85,9 +84,7 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-deepin-grub2-themes
 * |-deepin-manual
 * |-deepin-picker
-* |-deepin-qml-widgets
 * |-deepin-shortcut-viewer
-* |-deepin-social-sharing
 * |-deepin-system-monitor
 * |-deepin-terminal
 * |-deepin-topbar

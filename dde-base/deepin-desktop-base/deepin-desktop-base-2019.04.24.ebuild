@@ -14,7 +14,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dde-base/deepin-wallpapers
-		dde-base/deepin-artwork-themes
 		dde-base/deepin-icon-theme
 		dde-base/deepin-gtk-theme
 		dde-base/deepin-sound-theme"
