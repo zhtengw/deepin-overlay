@@ -19,6 +19,7 @@ RDEPEND="dev-qt/qtsvg:5
 		 dev-qt/qtx11extras:5
 		 >=dde-base/deepin-menu-3.0.0
 		 dde-base/dde-daemon
+		 x11-misc/xdg-user-dirs
 		 >=dde-base/deepin-desktop-schemas-3.1.11
 		 x11-libs/gsettings-qt
 	     "
