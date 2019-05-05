@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit qmake-utils xdg-utils
+inherit qmake-utils xdg-utils systemd
 
 DESCRIPTION="Deepin File Manager and Desktop module for DDE"
 HOMEPAGE="https://github.com/linuxdeepin/dde-file-manager"
@@ -68,17 +68,21 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 
+	sed -i "s|\ systemd_service||g" dde-file-manager-daemon/dde-file-manager-daemon.pro
+
 	LIBDIR=$(get_libdir)
-	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro dde-dock-plugins/trash/trash.pro
-	sed -i "s|<sys/types.h>|<sys/sysmacros.h>|g" dde-file-manager-lib/quick_search/dquicksearch.h
+	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro
 	export QT_SELECT=qt5
 	eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
 	default_src_prepare
 }
 
 src_install() {
+		systemd_dounit ${S}/dde-file-manager-daemon/dbusservice/dde-filemanager-daemon.service
+
 		emake INSTALL_ROOT=${D} install
-		dobin ${FILESDIR}/dfmterm 
+
+		dobin ${FILESDIR}/dfmterm
 		dobin ${FILESDIR}/x-terminal-emulator
 }
 
