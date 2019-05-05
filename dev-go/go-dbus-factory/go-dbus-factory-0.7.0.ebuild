@@ -6,11 +6,14 @@ EAPI=6
 
 EGO_PN="github.com/linuxdeepin/go-dbus-factory"
 
+EGO_VENDOR=( "golang.org/x/net aaf60122140d3fcf75376d319f0554393160eb50 github.com/golang/net" )
+
 inherit golang-vcs-snapshot
 
 DESCRIPTION="Go bindings to generate D-Bus services"
 HOMEPAGE="https://github.com/linuxdeepin/go-dbus-factory"
-SRC_URI="https://github.com/linuxdeepin/go-dbus-factory/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/linuxdeepin/go-dbus-factory/archive/${PV}.tar.gz -> ${P}.tar.gz
+${EGO_VENDOR_URI}"
 
 LICENSE="GPL-3+"
 SLOT="0"
@@ -21,7 +24,10 @@ DEPEND="dev-go/deepin-go-lib"
 
 
 src_compile() {
-	export GOPATH=$(get_golibdir_gopath)
+	mkdir -p "${T}/golibdir/"
+	cp -r  "${S}/src/${EGO_PN}/vendor"  "${T}/golibdir/src"
+
+	export GOPATH="${S}:$(get_golibdir_gopath):${T}/golibdir/"
 	cd ${S}/src/${EGO_PN}
 	emake bin
 	${S}/src/${EGO_PN}/gen.sh

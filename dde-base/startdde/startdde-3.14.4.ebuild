@@ -6,6 +6,7 @@ EAPI=6
 
 EGO_PN="startdde"
 EGO_VENDOR=(
+"golang.org/x/net aaf60122140d3fcf75376d319f0554393160eb50 github.com/golang/net"
 "github.com/cryptix/wav 8bdace674401f0bd3b63c65479b6a6ff1f9d5e44"
 )
 

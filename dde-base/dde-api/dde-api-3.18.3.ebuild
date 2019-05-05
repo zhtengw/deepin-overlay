@@ -7,6 +7,7 @@ EAPI=6
 EGO_PN="pkg.deepin.io/dde/api"
 EGO_VENDOR=(
 "golang.org/x/image f315e440302883054d0c2bd85486878cb4f8572c github.com/golang/image"
+"golang.org/x/net aaf60122140d3fcf75376d319f0554393160eb50 github.com/golang/net"
 "gopkg.in/alecthomas/kingpin.v2 947dcec5ba9c011838740e680966fd7087a71d0d github.com/alecthomas/kingpin"
 "github.com/alecthomas/units 2efee857e7cfd4f3d0138cc3cbb1b4966962b93a"
 "github.com/alecthomas/template a0175ee3bccc567396460bf5acd36800cb10c49c"

@@ -17,12 +17,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-go/go-text"
+RDEPEND=""
 
 DEPEND="${RDEPEND}"
 
 src_install() {
-	rm -r ${S}/src/${EGO_PN}/debian 
+	rm -r ${S}/src/${EGO_PN}/debian
 	insinto $(get_golibdir_gopath)
 	doins -r src
 }

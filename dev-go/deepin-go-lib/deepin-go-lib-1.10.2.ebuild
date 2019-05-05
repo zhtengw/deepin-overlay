@@ -19,9 +19,7 @@ IUSE=""
 
 RDEPEND=""
 
-DEPEND="dev-go/go-net
-		>=dev-go/go-gir-generator-2.0.0
-		${RDEPEND}"
+DEPEND="${RDEPEND}"
 
 
 

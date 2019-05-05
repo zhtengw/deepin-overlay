@@ -10,6 +10,8 @@ EGO_VENDOR=(
 "github.com/axgle/mahonia 3358181d7394e26beccfae0ffde05193ef3be33a"
 "gopkg.in/alecthomas/kingpin.v2 947dcec5ba9c011838740e680966fd7087a71d0d github.com/alecthomas/kingpin"
 "golang.org/x/image f315e440302883054d0c2bd85486878cb4f8572c github.com/golang/image"
+"golang.org/x/net aaf60122140d3fcf75376d319f0554393160eb50 github.com/golang/net"
+"golang.org/x/text f21a4dfb5e38f5895301dc265a8def02365cc3d0 github.com/golang/text"
 "github.com/alecthomas/units 2efee857e7cfd4f3d0138cc3cbb1b4966962b93a"
 "github.com/alecthomas/template a0175ee3bccc567396460bf5acd36800cb10c49c"
 "github.com/cryptix/wav 8bdace674401f0bd3b63c65479b6a6ff1f9d5e44"
