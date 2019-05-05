@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dde-base/dde-daemon-3.1.17
-		dde-base/deepin-wm-switcher
+		virtual/dde-wm
 		>=dde-base/deepin-desktop-schemas-3.1.15
 		"
 
