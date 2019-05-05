@@ -29,6 +29,11 @@
 
 #--- END OF EXAMPLES --- 
 
+# Aten Zhang <atenzd@gmail.com> (05 May 2019)
+# Masked as deepin-wm-switcher is functionally replaced by startdde, and not needed any more.
+# Removal in a month
+dde-base/deepin-wm-switcher
+
 # Aten Zhang <atenzd@gmail.com> (18 Jul 2017)
 # Masked as they are not needed any more.
 # Removal in a month
