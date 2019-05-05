@@ -34,12 +34,8 @@ RDEPEND="
 	dev-qt/qtdbus:5
 	dev-qt/qtsvg:5
 	dev-qt/qtmultimedia:5
-	dde-base/deepin-menu
-	dde-base/dde-daemon
 	dde-base/deepin-gettext-tools
 	>=dde-extra/deepin-shortcut-viewer-1.3.1
-	!media-gfx/deepin-screenshot:2
-	!media-gfx/deepin-screenshot:3
 	"
 DEPEND="${RDEPEND}
 	dev-libs/glib
