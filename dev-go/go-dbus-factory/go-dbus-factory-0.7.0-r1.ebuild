@@ -30,7 +30,7 @@ src_compile() {
 	export GOPATH="${S}:$(get_golibdir_gopath):${T}/golibdir/"
 	cd ${S}/src/${EGO_PN}
 	emake bin
-	${S}/src/${EGO_PN}/gen.sh
+#	${S}/src/${EGO_PN}/gen.sh
 }
 
 src_install() {
