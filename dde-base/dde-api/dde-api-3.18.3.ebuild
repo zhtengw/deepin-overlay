@@ -18,7 +18,7 @@ EGO_VENDOR=(
 "github.com/nfnt/resize 83c6a9932646f83e3267f353373d47347b6036b2"
 )
 
-inherit golang-vcs-snapshot golang-build
+inherit golang-vcs-snapshot golang-build mount-boot
 
 DESCRIPTION="Go-lang bingdings for dde-daemon"
 HOMEPAGE="https://github.com/linuxdeepin/dde-api"
@@ -53,11 +53,6 @@ DEPEND="${RDEPEND}
 		dev-go/go-x11-client
 		>=dev-go/dbus-factory-3.1.5"
 
-#src_prepare() {
-#	sed -i "s|\${PREFIX}/share/gocode|$(get_golibdir_gopath)|g" Makefile
-#	default_src_prepare
-#}
-
 src_compile() {
 	mkdir -p "${T}/golibdir/"
 	cp -r  "${S}/src/${EGO_PN}/vendor"  "${T}/golibdir/src"
@@ -65,11 +60,6 @@ src_compile() {
 	export GOPATH="${S}:$(get_golibdir_gopath):${T}/golibdir/" 
 	cd ${S}/src/${EGO_PN}
 	emake
-#	local x
-#	for x in device graphic; do
-#	env GOPATH="${S}:$(get_golibdir_gopath):${T}/golibdir/" \
-#		go build -v -work -x ${EGO_BUILD_FLAGS} "${EGO_PN}"/${x} || die
-#	done
 }
 
 
