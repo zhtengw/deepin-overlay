@@ -40,7 +40,7 @@ RDEPEND="dev-qt/qtmultimedia:5[widgets]
 		 dev-libs/glib
 		"
 DEPEND="${RDEPEND}
-		dde-base/dtkcore
+		dde-base/dtkcore:=
 		"
 
 src_prepare() {
