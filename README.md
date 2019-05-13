@@ -63,7 +63,6 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-deepin-menu
 * |-deepin-sound-theme
 * |-deepin-wallpapers
-* |-dtksettings
 * |-dtkcore
 * |-dtkwidget
 * |-dtkwm
