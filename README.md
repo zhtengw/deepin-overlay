@@ -129,11 +129,18 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-qt5dxcb-plugin
 * |-qtstyleplugins
 * |-qtxcb-private-headers
+* ***mail-client***
+* |-deepin-wine-foxmail
 * ***media-libs***
 * |-cogl
 * ***net-im***
 * |-deepin-wine-QQ
+* |-deepin-wine-QQ-Light
+* |-deepin-wine-TIM
 * |-deepin-wine-wechat
+* |-deepin-wine-wechat-work
+* ***net-misc***
+* |-deepin-wine-thunderspeed
 * ***x11-apps***
 * |-xcur2png
 
