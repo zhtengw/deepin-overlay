@@ -122,8 +122,6 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-gsettings-qt
 * ***dev-cpp***
 * |-treefrog-framework
-* ***dev-perl***
-* |-XML-LibXML-PrettyPrint
 * ***dev-qt***
 * |-qcef
 * |-qt5dxcb-plugin
