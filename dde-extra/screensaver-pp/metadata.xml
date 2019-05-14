@@ -5,11 +5,7 @@
 		<email>atenzd@gmail.com</email>
 		<name>Aten Zhang</name>
 	</maintainer>
-	<use>
-		<flag name="avfs">Enable support for <pkg>sys-fs/avfs</pkg></flag>
-		<flag name="screensaver">Enable support for setting screensaver</flag>
-	</use>
 	<upstream>
-		<remote-id type="github">linuxdeepin/dde-file-manager</remote-id>
+		<remote-id type="github">zccrs/screensaver-pp</remote-id>
 	</upstream>
 </pkgmetadata>

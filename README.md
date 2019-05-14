@@ -83,12 +83,14 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * |-deepin-grub2-themes
 * |-deepin-manual
 * |-deepin-picker
+* |-deepin-screensaver
 * |-deepin-shortcut-viewer
 * |-deepin-system-monitor
 * |-deepin-terminal
 * |-deepin-topbar
 * |-deepin-turbo
 * |-plymouth-theme-deepin
+* |-screensaver-pp
 * ***media-sound***
 * |-deepin-music
 * |-deepin-voice-recorder
@@ -120,8 +122,6 @@ If your DDE is broken after you upgrade Qt version, please rebuild these package
 * ***x11-libs***
 * |-bamf
 * |-gsettings-qt
-* ***dev-cpp***
-* |-treefrog-framework
 * ***dev-qt***
 * |-qcef
 * |-qt5dxcb-plugin

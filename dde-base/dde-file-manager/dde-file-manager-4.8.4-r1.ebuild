@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit qmake-utils xdg-utils systemd
 
@@ -19,7 +19,7 @@ fi
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="samba avfs"
+IUSE="samba avfs screensaver"
 
 RDEPEND="sys-apps/file
 		sys-fs/cryptsetup
@@ -51,6 +51,7 @@ RDEPEND="sys-apps/file
 		dde-base/dde-qt-dbus-factory
 		dde-base/dde-qt5integration
 		>=dde-base/dtkwidget-2.0.0:=
+		screensaver? ( dde-extra/deepin-screensaver )
 		samba? ( net-fs/samba )
 		avfs? ( sys-fs/avfs )
 		"
@@ -61,13 +62,14 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
+	eapply ${FILESDIR}/${PN}-4.8.4-disable-ss.patch || die
 
 	sed -i "s|\ systemd_service||g" dde-file-manager-daemon/dde-file-manager-daemon.pro
 
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro
 	export QT_SELECT=qt5
-	eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
+	eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir) DISABLE_SCREENSAVER=$(use screensaver || echo YES)
 	default_src_prepare
 }
 

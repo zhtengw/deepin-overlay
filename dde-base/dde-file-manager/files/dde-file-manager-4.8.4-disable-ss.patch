@@ -1,0 +1,35 @@
+From d13148d06934e9b91ca8e998716bf07f9f453d93 Mon Sep 17 00:00:00 2001
+From: Aten Zhang <atenzd@gmail.com>
+Date: Tue, 14 May 2019 17:29:14 +0800
+Subject: [PATCH] Update frame.h
+
+---
+ dde-wallpaper-chooser/frame.h | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/dde-wallpaper-chooser/frame.h b/dde-wallpaper-chooser/frame.h
+index b02a9c14..6ee91853 100644
+--- a/dde-wallpaper-chooser/frame.h
++++ b/dde-wallpaper-chooser/frame.h
+@@ -79,16 +79,19 @@ public slots:
+     bool event(QEvent *event) override;
+ 
+ private:
++#if !defined(DISABLE_SCREENSAVER) || !defined(DISABLE_WALLPAPER_CAROUSEL)
++    void adjustModeSwitcherPoint();
++    DSegmentedControl *m_switchModeControl;
++#endif
++
+ #ifndef DISABLE_SCREENSAVER
+     void setMode(int mode);
+     void reLayoutTools();
+-    void adjustModeSwitcherPoint();
+ 
+     Mode m_mode = WallpaperMode;
+     QHBoxLayout *m_toolLayout;
+     QLabel *m_waitControlLabel;
+     DSegmentedControl *m_waitControl;
+-    DSegmentedControl *m_switchModeControl;
+     QCheckBox *m_lockScreenBox;
+ #else
+     const Mode m_mode = WallpaperMode;
