@@ -10,7 +10,7 @@ DESCRIPTION="Simple editor for Deepin"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-editor"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="GPL-2+"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -24,6 +24,7 @@ RDEPEND="dev-qt/qtcore:5
 		dev-qt/qtsvg:5
 		kde-frameworks/syntax-highlighting
 		kde-frameworks/kcodecs
+		sys-auth/polkit-qt[qt5(+)]
 		x11-libs/libX11
 		x11-libs/libXext
 		x11-libs/libXtst

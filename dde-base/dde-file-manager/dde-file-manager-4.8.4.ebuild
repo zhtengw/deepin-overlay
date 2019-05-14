@@ -19,52 +19,46 @@ fi
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="samba"
+IUSE="samba avfs"
 
 RDEPEND="sys-apps/file
-		 sys-fs/cryptsetup
-		 x11-libs/gsettings-qt
-		 x11-libs/gtk+:2
-		 dev-qt/qtcore:5
-		 dev-qt/qtgui:5[jpeg]
-		 dev-qt/qtwidgets:5
-		 dev-qt/qtdbus:5
-		 dev-qt/qtsvg:5
-		 dev-qt/qtx11extras:5
-		 dev-qt/qtconcurrent:5
-		 dev-qt/qtmultimedia:5[widgets]
-		 dev-qt/qtdeclarative:5
-		 sys-auth/polkit-qt[qt5(+)]
-		 dev-libs/libqtxdg
-		 app-crypt/libsecret
-		 x11-libs/libxcb
-		 x11-base/xorg-proto
-		 x11-libs/xcb-util
-		 x11-libs/xcb-util-wm
-		 dev-cpp/treefrog-framework
-		 app-text/poppler
-		 media-video/ffmpegthumbnailer[png]
-		 media-libs/taglib
-		 media-video/mpv[libmpv]
-		 media-video/deepin-movie-reborn
-		 dde-extra/deepin-shortcut-viewer
-		 media-libs/gst-plugins-good
-		 kde-frameworks/kcodecs:5
-		 net-misc/socat
-		 >=dde-base/dde-dock-4.2.0:=
-		 dde-base/dde-qt-dbus-factory
-		 dde-base/dde-qt5integration
-		 dde-base/dde-daemon
-		 dde-base/startdde
-		 !dde-base/dde-desktop
-		 samba? ( net-fs/samba )
-		 >=dde-base/dtkwidget-2.0.0:=
-	     "
+		sys-fs/cryptsetup
+		x11-libs/gsettings-qt
+		dev-qt/qtcore:5
+		dev-qt/qtgui:5[jpeg]
+		dev-qt/qtwidgets:5
+		dev-qt/qtdbus:5
+		dev-qt/qtsvg:5
+		dev-qt/qtx11extras:5
+		dev-qt/qtconcurrent:5
+		dev-qt/qtmultimedia:5[widgets]
+		dev-qt/qtdeclarative:5
+		sys-auth/polkit-qt[qt5(+)]
+		app-crypt/libsecret
+		x11-libs/libxcb
+		x11-base/xorg-proto
+		x11-libs/xcb-util
+		x11-libs/xcb-util-wm
+		dde-base/udisks2-qt5
+		app-text/poppler
+		media-video/ffmpegthumbnailer[png]
+		media-libs/taglib
+		media-video/deepin-movie-reborn
+		dde-extra/deepin-shortcut-viewer
+		kde-frameworks/kcodecs:5
+		net-misc/socat
+		>=dde-base/dde-dock-4.2.0:=
+		dde-base/dde-qt-dbus-factory
+		dde-base/dde-qt5integration
+		>=dde-base/dtkwidget-2.0.0:=
+		samba? ( net-fs/samba )
+		avfs? ( sys-fs/avfs )
+		"
 DEPEND="${RDEPEND}
 		dev-libs/jemalloc
 		dde-base/deepin-anything
 		dde-base/deepin-gettext-tools
-	    "
+		"
 
 src_prepare() {
 
@@ -87,8 +81,8 @@ src_install() {
 }
 
 pkg_postinst() {
-    xdg_desktop_database_update
-    xdg_mimeinfo_database_update
+	xdg_desktop_database_update
+	xdg_mimeinfo_database_update
 	einfo "${PN} needs x-terminal-emulator command to make OpenInTermial"
 	einfo "function work. A command dfmterm is added to generate it. For"
 	einfo "example, use 'dfmterm xterm' to set xterm as the terminal when"
@@ -96,6 +90,6 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-    xdg_desktop_database_update
-    xdg_mimeinfo_database_update
+	xdg_desktop_database_update
+	xdg_mimeinfo_database_update
 }
