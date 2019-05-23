@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-qt/qtdbus:5
-		 dev-qt/qtcore:5"
+		dev-qt/qtcore:5"
 
 DEPEND="${RDEPEND}
 		dev-qt/qtgui:5
