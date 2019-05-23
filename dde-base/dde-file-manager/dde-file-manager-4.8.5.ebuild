@@ -62,8 +62,6 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
-	eapply ${FILESDIR}/${PN}-4.8.4-disable-ss.patch || die
-
 	sed -i "s|\ systemd_service||g" dde-file-manager-daemon/dde-file-manager-daemon.pro
 
 	LIBDIR=$(get_libdir)
