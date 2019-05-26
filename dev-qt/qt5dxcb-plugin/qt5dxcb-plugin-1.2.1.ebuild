@@ -29,7 +29,7 @@ RDEPEND="
 	dev-qt/qtmultimedia:5[widgets]
 	dev-qt/qtsvg:5
 	dev-qt/qtopengl
-	dev-qt/qtxcb-private-headers
+	dev-qt/qtxcb-private-headers:5=
 	x11-libs/libxcb[xkb]
 	x11-libs/xcb-util-renderutil
 	x11-libs/xcb-util-image

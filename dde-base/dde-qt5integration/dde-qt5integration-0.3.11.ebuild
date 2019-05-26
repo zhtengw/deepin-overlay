@@ -25,7 +25,7 @@ IUSE=""
 
 RDEPEND="
 	dev-libs/libqtxdg
-	dev-qt/qtcore:5
+	dev-qt/qtcore:5=
 	dev-qt/qtgui:5
 	dev-qt/qtwidgets:5
 	dev-qt/qtdbus:5
@@ -38,7 +38,7 @@ RDEPEND="
 	dev-qt/qtstyleplugins:5
 	"
 DEPEND="${RDEPEND}
-	dev-libs/glib:2	
+	dev-libs/glib:2
 	>=dde-base/dtkwidget-2.0.0:=
 	"
 
