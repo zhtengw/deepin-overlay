@@ -5,7 +5,7 @@
 EAPI=5
 
 DESCRIPTION="Deepin Desktop Enviroment (meta package)"
-HOMEPAGE="http://www.linuxdeepin.com"
+HOMEPAGE="https://www.deepin.org"
 SRC_URI=""
 
 LICENSE="metapackage"

@@ -7,7 +7,7 @@ EAPI=5
 inherit qmake-utils eutils
 
 DESCRIPTION="Deepin System Monitor"
-HOMEPAGE="https://github.com/manateelazycat/deepin-system-monitor/"
+HOMEPAGE="https://github.com/linuxdeepin/deepin-system-monitor/"
 
 if [[ "${PV}" == *9999* ]] ; then
 	inherit git-r3

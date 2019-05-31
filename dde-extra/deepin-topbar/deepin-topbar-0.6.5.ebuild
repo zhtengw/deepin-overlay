@@ -7,13 +7,13 @@ EAPI=6
 inherit cmake-utils gnome2-utils
 
 DESCRIPTION="A Desktop Topbar with some tools"
-HOMEPAGE="https://github.com/kirigayakazushin/deepin-topbar"
+HOMEPAGE="https://github.com/justforlxz/deepin-topbar"
 
 if [[ "${PV}" == *9999* ]] ; then
      inherit git-r3
-     EGIT_REPO_URI="https://github.com/kirigayakazushin/${PN}.git"
+     EGIT_REPO_URI="https://github.com/justforlxz/${PN}.git"
 else
-     SRC_URI="https://github.com/kirigayakazushin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+     SRC_URI="https://github.com/justforlxz/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	 KEYWORDS="~amd64 ~x86"
 fi
 LICENSE="GPL-3"
