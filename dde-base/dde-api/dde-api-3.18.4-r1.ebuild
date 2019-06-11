@@ -53,6 +53,15 @@ DEPEND="${RDEPEND}
 		dev-go/go-x11-client
 		>=dev-go/dbus-factory-3.1.5"
 
+src_prepare() {
+	cd ${S}/src/${EGO_PN}
+	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
+		misc/services/*.service \
+		misc/system-services/*.service \
+		misc/systemd/system/*.service
+
+	default_src_prepare
+}
 src_compile() {
 	mkdir -p "${T}/golibdir/"
 	cp -r  "${S}/src/${EGO_PN}/vendor"  "${T}/golibdir/src"

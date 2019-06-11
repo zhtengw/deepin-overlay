@@ -55,7 +55,8 @@ src_prepare() {
 	fi
 
 	LIBDIR=$(get_libdir)
-	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" dde-*/*.pro
+	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" d*/*.pro
+	sed -i "s|/lib/|/${LIBDIR}/|g" d*/*.service dde-osd/notification/files/*.service.in misc/applications/deepin-toggle-desktop.desktop.in
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr
 	default_src_prepare
 }

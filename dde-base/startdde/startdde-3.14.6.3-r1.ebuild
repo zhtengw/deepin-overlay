@@ -46,6 +46,7 @@ src_prepare() {
 	LIBDIR=$(get_libdir)
 	cd ${S}/src/${EGO_PN}
 	sed -i "s|/lib/|/${LIBDIR}/|g" Makefile
+	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" misc/auto_launch/*.json
 	default_src_prepare
 }
 
