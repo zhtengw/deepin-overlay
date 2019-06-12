@@ -81,12 +81,27 @@ src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" Makefile
 	sed -i "s|lib/systemd|${LIBDIR}/systemd|g" Makefile
-	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" misc/dde-daemon/gesture.json \
+	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
+		misc/dde-daemon/gesture.json \
 		misc/dde-daemon/gesture/conf.json \
 		misc/dde-daemon/keybinding/system_actions.json \
+		misc/applications/deepin-toggle-desktop.desktop \
 		misc/services/*.service \
 		misc/system-services/*.service \
-		misc/systemd/services/*.service
+		misc/systemd/services/*.service \
+		grub2/modify_manger.go \
+		network/secret_agent.go \
+		network/examples/python/gen_dbus_code.sh \
+		network/nm_generator/nm_docs/NetworkManager.conf.html \
+		accounts/image_blur.go \
+		keybinding/shortcuts/system_shortcut.go \
+		bin/search/main.go \
+		bin/dde-system-daemon/main.go \
+		bin/dde-authority/fprint_transaction.go \
+		service_trigger/manager.go \
+		session/power/lid_switch.go \
+		session/power/constant.go || die
+
 
 	default_src_prepare
 }

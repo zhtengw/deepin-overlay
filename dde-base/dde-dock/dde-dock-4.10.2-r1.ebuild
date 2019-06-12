@@ -38,12 +38,11 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/|${LIBDIR}/|g" plugins/*/CMakeLists.txt
+	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
+		frame/item/showdesktopitem.cpp \
+		frame/controller/dockpluginscontroller.cpp \
+		plugins/tray/system-trays/systemtrayscontroller.cpp || die
+
 	cmake-utils_src_prepare
 }
 
-#src_configure() {
-#	local mycmakeargs=(
-#		-DDOCK_TRAY_USE_NATIVE_POPUP=YES
-#		)
-#	cmake-utils_src_configure
-#}
