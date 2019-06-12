@@ -29,7 +29,7 @@ DEPEND="${RDEPEND}"
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
-	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" tool/settings/settings.pro
+	sed -i "s|/lib/|/${LIBDIR}/|g" tools/settings/settings.pro || die
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir) DTK_VERSION=${PV}
 	default_src_prepare
 }
