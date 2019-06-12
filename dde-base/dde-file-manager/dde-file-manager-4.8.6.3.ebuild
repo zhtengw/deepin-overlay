@@ -66,6 +66,11 @@ src_prepare() {
 
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro
+	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
+		dde-file-manager-lib/gvfs/networkmanager.cpp \
+		dde-file-manager-lib/shutil/fileutils.cpp \
+		dde-desktop/main.cpp \
+		dde-zone/mainwindow.h || die
 	export QT_SELECT=qt5
 	eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir) DISABLE_SCREENSAVER=$(use screensaver || echo YES)
 	default_src_prepare
