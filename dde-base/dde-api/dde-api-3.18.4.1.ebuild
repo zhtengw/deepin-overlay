@@ -58,7 +58,10 @@ src_prepare() {
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
 		misc/services/*.service \
 		misc/system-services/*.service \
-		misc/systemd/system/*.service
+		misc/systemd/system/*.service \
+		theme_thumb/gtk/gtk.go \
+		thumbnails/gtk/gtk.go \
+		lunar-calendar/main.go || die
 
 	default_src_prepare
 }

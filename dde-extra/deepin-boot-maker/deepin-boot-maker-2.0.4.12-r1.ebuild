@@ -42,8 +42,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
-	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" src/vendor/src/libxsys/libxsys.pro src/service/service.pro 
-	sed -i "s|usr/lib/|usr/${LIBDIR}/|g" src/libdbm/libdbm.pro 
+	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" src/vendor/src/libxsys/libxsys.pro src/service/service.pro || die
+	sed -i "s|/usr/lib|/usr/${LIBDIR}|g" src/libdbm/libdbm.pro src/service/data/com.deepin.bootmaker.service || die
 	export QT_SELECT=qt5
 	eqmake5 PREFIX=/usr
 }
