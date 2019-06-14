@@ -47,7 +47,10 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
-	sed -i "s|lib/|${LIBDIR}/|g" src/dialogs/CMakeLists.txt
+	sed -i "s|lib/|${LIBDIR}/|g" src/dialogs/CMakeLists.txt || die
+	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
+		src/frame/modules/sync/syncworker.cpp \
+		src/frame/modules/update/updatework.cpp || die
 	cmake-utils_src_prepare
 }
 
