@@ -55,6 +55,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cd ${S}/src/${EGO_PN}
+	LIBDIR=$(get_libdir)
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
 		misc/services/*.service \
 		misc/system-services/*.service \
