@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=4
+EAPI=6
 
 DESCRIPTION="Deepin Wallpapers"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-wallpapers"
@@ -14,6 +14,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dde-base/dde-api"
+
+src_prepare() {
+	LIBDIR=$(get_libdir)
+	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" Makefile || die
+
+	default_src_prepare
+}
 
 src_install() {
 		insinto /usr/share/wallpapers
