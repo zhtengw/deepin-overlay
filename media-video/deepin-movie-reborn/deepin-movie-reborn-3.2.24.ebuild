@@ -44,12 +44,20 @@ RDEPEND="${DEPEND}
 		>=dde-base/dtkwidget-2.0.0:=
 		"
 
+src_prepare() {
+    LIBDIR=$(get_libdir)
+    sed -i "s|lib/|${LIBDIR}/|g" src/CMakeLists.txt || die
+    cmake-utils_src_prepare
+}
+
 pkg_postinst() {
     xdg_desktop_database_update
     xdg_mimeinfo_database_update
+    xdg_icon_cache_update
 }
 
 pkg_postrm() {
     xdg_desktop_database_update
     xdg_mimeinfo_database_update
+    xdg_icon_cache_update
 }
