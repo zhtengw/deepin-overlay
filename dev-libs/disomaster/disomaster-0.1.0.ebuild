@@ -23,7 +23,9 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
-	QT_SELECT=qt5 eqmake5   PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
+	LIBDIR=$(get_libdir)
+	sed -i "s|PREFIX/lib|PREFIX/${LIBDIR}|g" libdisomaster/libdisomaster.pro
+	QT_SELECT=qt5 eqmake5   PREFIX=/usr
 	default_src_prepare
 }
 
