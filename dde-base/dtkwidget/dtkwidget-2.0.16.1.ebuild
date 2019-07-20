@@ -46,7 +46,7 @@ RDEPEND="dev-qt/qtmultimedia:5[widgets]
 		"
 DEPEND="${RDEPEND}
 		dev-libs/glib:2
-		dde-base/dtkcore
+		dde-base/dtkcore:=
 		dde-base/dde-qt-dbus-factory
 		dev-qt/linguist-tools:5
 		"
