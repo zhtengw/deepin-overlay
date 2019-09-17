@@ -12,7 +12,8 @@ HOMEPAGE="https://github.com/linuxdeepin/qcef"
 #SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
-EGIT_COMMIT="${PV}"
+#EGIT_COMMIT="${PV}"
+EGIT_COMMIT="016fa9c"
 EGIT_SUBMODULES=( cef )
 
 KEYWORDS="~amd64 ~x86"
