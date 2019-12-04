@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=7
 
 inherit qmake-utils
 
@@ -31,6 +31,7 @@ RDEPEND="${DEPEND}
 		"
 
 src_prepare() {
+	eapply_user
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/|${LIBDIR}/|g" common.pri
 	sed -i "s|lib/|${LIBDIR}/misc/|g" xscreensaver/xscreensaver.pro
