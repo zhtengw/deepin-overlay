@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=7
 
 inherit qmake-utils
 
@@ -29,6 +29,7 @@ DEPEND="${RDEPEND}
 	    "
 
 src_prepare() {
+	eapply_user
 	sed -i "s|QT\ +=|QT\ +=\ multimediawidgets|g" src/widgets/widgets.pri
 	export QT_SELECT=qt5
 	eqmake5 $(use gui || echo DISABLE_GUI=1)
