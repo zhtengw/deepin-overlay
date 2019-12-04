@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=7
 
 inherit qmake-utils
 
@@ -31,6 +31,7 @@ DEPEND="${RDEPEND}
 	"
 
 src_prepare() {
+	eapply_user
 	LIBDIR=$(qt5_get_libdir)
 	sed -i "s|\$\${PREFIX}/lib|${LIBDIR}|g" src/vendor/mpris-qt/src/src.pro src/vendor/dbusextended-qt/src/src.pro src/plugin/netease-meta-search/netease-meta-search.pro src/libdmusic/libdmusic.pro
 
