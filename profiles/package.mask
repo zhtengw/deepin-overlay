@@ -29,6 +29,11 @@
 
 #--- END OF EXAMPLES --- 
 
+# Aten Zhang <atenzd@gmail.com> (31 Mar 2020)
+# Masked as dependency dev-vcs/bzr was masked in gentoo repos.
+# Removal in a month
+=x11-libs/gsettings-qt-0.1*
+
 # Aten Zhang <atenzd@gmail.com> (05 May 2019)
 # Masked as they are not needed any more.
 # Removal in a month
