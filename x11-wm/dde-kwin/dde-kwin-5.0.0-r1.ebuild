@@ -38,6 +38,9 @@ RDEPEND="x11-libs/gsettings-qt
 		"
 DEPEND="${RDEPEND}
 		"
+PATCHES=(                          
+    "${FILESDIR}"/${P}-override-error.patch
+)
 
 src_configure() {
 	local mycmakeargs=(
