@@ -39,7 +39,7 @@ RDEPEND="x11-libs/gsettings-qt
 DEPEND="${RDEPEND}
 		"
 PATCHES=(                          
-    "${FILESDIR}"/${P}-override-error.patch
+    "${FILESDIR}"/${P}-kwin-5.18-override-error.patch
 )
 
 src_configure() {
