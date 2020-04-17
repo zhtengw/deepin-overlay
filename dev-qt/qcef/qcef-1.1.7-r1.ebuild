@@ -49,6 +49,9 @@ RDEPEND="dev-qt/qtwebchannel:5
 DEPEND="${RDEPEND}
 		virtual/pkgconfig
 		"
+PATCHES=( 
+	"${FILESDIR}"/fixqcef.patch 
+)
 
 src_configure() {
 	local mycmakeargs=(

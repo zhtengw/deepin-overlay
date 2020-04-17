@@ -10,7 +10,8 @@ inherit cmake-utils
 DESCRIPTION="Qt5 binding of Chromium Embedded Framework"
 HOMEPAGE="https://github.com/linuxdeepin/qcef"
 
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/q/${PN}/${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://community-packages.deepin.com/deepin/pool/main/q/${PN}/${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz
+		https://github.com/linuxdeepin/cef-binary/archive/master.zip -> cef-bin.zip"
 
 #EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
 #EGIT_COMMIT="${PV}"
@@ -50,7 +51,14 @@ RDEPEND="dev-qt/qtwebchannel:5
 DEPEND="${RDEPEND}
 		virtual/pkgconfig
 		"
+PATCHES=( 
+	"${FILESDIR}"/fixqcef.patch 
+)
 
+src_unpack() {
+	default
+	mv ${WORKDIR}/cef-binary-master/* ${S}/cef/
+}
 src_configure() {
 	local mycmakeargs=(
 		-DQCEF_INSTALL_PATH=/usr/$(get_libdir)
