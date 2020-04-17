@@ -16,6 +16,10 @@ EGO_VENDOR=(
 "github.com/golang/freetype e2365dfdc4a05e4b8299a783240d4a7d5a65d4e4"
 "github.com/disintegration/imaging 5362c131d56305ce787e79a5b94ffc956df00d62"
 "github.com/nfnt/resize 83c6a9932646f83e3267f353373d47347b6036b2"
+"github.com/mattn/go-sqlite3 98a44bc"
+"github.com/rickb777/date 2248ec4"
+"github.com/rickb777/plural 7589705"
+"github.com/gosexy/gettext 74466a0"
 )
 
 inherit golang-vcs-snapshot golang-build mount-boot
@@ -47,7 +51,7 @@ RDEPEND="x11-libs/libXi
 
 DEPEND="${RDEPEND}
 		dev-go/go-dbus-generator
-		>=dev-go/deepin-go-lib-1.9.2
+		>=dev-go/deepin-go-lib-5.4.5
 		>=dev-go/go-gir-generator-2.0.0
 		dev-go/go-dbus-factory
 		dev-go/go-x11-client

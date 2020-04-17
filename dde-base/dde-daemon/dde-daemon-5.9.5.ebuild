@@ -17,6 +17,16 @@ EGO_VENDOR=(
 "github.com/cryptix/wav 8bdace674401f0bd3b63c65479b6a6ff1f9d5e44"
 "github.com/nfnt/resize 83c6a9932646f83e3267f353373d47347b6036b2"
 "github.com/gosexy/gettext 74466a0a0c4a62fea38f44aa161d4bbfbe79dd6b"
+"github.com/davecgh/go-spew 87df7c6"
+"github.com/mattn/go-sqlite3 98a44bc"
+"github.com/rickb777/date 2248ec4"
+"github.com/rickb777/plural 7589705"
+"golang.org/x/xerrors 9bdfabe github.com/golang/xerrors"
+"github.com/jinzhu/gorm 7ea143b"
+"github.com/jinzhu/inflection 196e6ce"
+"github.com/kelvins/sunrisesunset 14f1915"
+"github.com/mozillazg/go-pinyin 63be21f"
+"github.com/teambition/rrule-go c4b1bf2"
 )
 
 inherit golang-vcs-snapshot pam
@@ -53,11 +63,11 @@ RDEPEND="virtual/dde-wm
 DEPEND="${RDEPEND}
 		dev-go/go-dbus-generator
 		>=dev-go/go-gir-generator-2.0.0
-		>=dev-go/go-x11-client-0.0.4
-		>=dev-go/deepin-go-lib-1.2.14
+		>=dev-go/go-x11-client-0.6.0
+		>=dev-go/deepin-go-lib-5.4.5
 		>=dev-go/dbus-factory-3.1.17
-		>=dev-go/go-dbus-factory-0.9.0
-		>=dde-base/dde-api-3.1.27
+		>=dev-go/go-dbus-factory-1.6.5
+		>=dde-base/dde-api-5.1.13
 		>=dde-base/deepin-gettext-tools-1.0.8
 		dev-libs/libinput
 		dev-db/sqlite:3
@@ -67,7 +77,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 
 	cd ${S}/src/${EGO_PN}
-	eapply ${FILESDIR}/3.8.0-disable-tap-gesture.patch
+	eapply ${FILESDIR}/5.9.5-disable-tap-gesture.patch
 
 	if use elogind; then
 		sed -i "s|libsystemd|libelogind|g" Makefile

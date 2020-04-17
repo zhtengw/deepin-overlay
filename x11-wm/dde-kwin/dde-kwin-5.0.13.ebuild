@@ -38,6 +38,9 @@ RDEPEND="x11-libs/gsettings-qt
 		"
 DEPEND="${RDEPEND}
 		"
+
+S="${WORKDIR}/${P}+c1"
+
 PATCHES=(                          
     "${FILESDIR}"/${P}-kwin-5.18-override-error.patch
 )

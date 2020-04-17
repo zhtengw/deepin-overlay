@@ -27,27 +27,35 @@ RDEPEND="dev-qt/qtsvg:5
 		dev-libs/libqtxdg
 		kde-frameworks/networkmanager-qt
 		x11-libs/startup-notification
-		>=dde-base/dde-daemon-3.27.2.4
-		dde-base/dde-api
+		>=dde-base/dde-daemon-5.9.5
+		>=dde-base/dde-api-5.1.13
 		dde-base/dde-account-faces
-		dde-base/dde-dock
+		>=dde-base/dde-dock-5.0.27
 		dde-base/startdde
-		dde-base/dde-network-utils
+		>=dde-base/dde-network-utils-5.0.4
 		dev-util/desktop-file-utils
 		dev-libs/geoip
-		>=dde-base/deepin-desktop-base-2018.10.29
+		>=dde-base/deepin-desktop-base-2020.04.12
 		dde-base/dde-qt5integration
 		redshift? ( x11-misc/redshift )
 		!systemd? ( app-admin/openrc-settingsd )
 		"
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.1:=
-		>=dde-base/dde-qt-dbus-factory-1.1.6:=
+		>=dde-base/dtkwidget-5.1.2:=
+		>=dde-base/dde-qt-dbus-factory-5.0.16:=
 		"
+
+S="${WORKDIR}/${P}+c5"
+
+PATCHES=(
+	"${FILESDIR}/5.0.33-missing-include.patch"
+)
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
-	sed -i "s|lib/|${LIBDIR}/|g" src/dialogs/CMakeLists.txt || die
+	sed -i "s|DESTINATION\ lib|DESTINATION\ ${LIBDIR}|g" \
+		src/dialogs/CMakeLists.txt \
+		src/frame/CMakeLists.txt || die
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
 		src/frame/modules/sync/syncworker.cpp \
 		src/frame/modules/update/updatework.cpp || die

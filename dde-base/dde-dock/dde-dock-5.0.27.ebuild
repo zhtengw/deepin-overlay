@@ -30,16 +30,17 @@ DEPEND="${RDEPEND}
 		x11-libs/libxcb
 		x11-libs/xcb-util-wm
 		x11-libs/libXtst
-		dde-base/dde-qt-dbus-factory
+		>=dde-base/dde-qt-dbus-factory-5.0.16
 		x11-libs/gsettings-qt
 		dev-libs/libdbusmenu-qt
 	    "
+
+S="${WORKDIR}/${P}+c3"
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/|${LIBDIR}/|g" plugins/*/CMakeLists.txt
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
-		frame/item/showdesktopitem.cpp \
 		frame/controller/dockpluginscontroller.cpp \
 		plugins/tray/system-trays/systemtrayscontroller.cpp || die
 
