@@ -27,6 +27,8 @@ RDEPEND=">=dev-qt/qtcore-5.5:5
 	    "
 DEPEND="${RDEPEND}"
 
+S=${WORKDIR}/${PN}${SLOT}-${PV}
+
 src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|/lib/|/${LIBDIR}/|g" tools/settings/settings.pro || die

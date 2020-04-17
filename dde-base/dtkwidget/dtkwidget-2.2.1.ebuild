@@ -51,6 +51,7 @@ DEPEND="${RDEPEND}
 		dev-qt/linguist-tools:5
 		"
 
+S=${WORKDIR}/${PN}${SLOT}-${PV}
 src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" tools/svgc/svgc.pro
