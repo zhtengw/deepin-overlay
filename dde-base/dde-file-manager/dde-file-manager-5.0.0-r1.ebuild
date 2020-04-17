@@ -62,7 +62,7 @@ DEPEND="${RDEPEND}
 		dde-base/deepin-gettext-tools
 		"
 PATCHES=(                          
-    "${FILESDIR}"/${P}-qt5.14.patch
+    "${FILESDIR}"/5.0.0-qt5.14.patch
 )
 
 src_prepare() {

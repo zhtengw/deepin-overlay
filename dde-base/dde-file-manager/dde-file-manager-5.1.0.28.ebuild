@@ -33,6 +33,7 @@ RDEPEND="sys-apps/file
 		dev-qt/qtconcurrent:5
 		dev-qt/qtmultimedia:5[widgets]
 		dev-qt/qtdeclarative:5
+		dev-qt/gio-qt
 		sys-auth/polkit-qt[qt5(+)]
 		app-crypt/libsecret
 		>=dev-libs/disomaster-0.2.0
@@ -40,18 +41,19 @@ RDEPEND="sys-apps/file
 		x11-base/xorg-proto
 		x11-libs/xcb-util
 		x11-libs/xcb-util-wm
-		dde-base/udisks2-qt5
+		>=dde-base/udisks2-qt5-5.0.3
 		app-text/poppler
 		media-video/ffmpegthumbnailer[png]
 		media-libs/taglib
+		media-libs/libmediainfo
 		media-video/deepin-movie-reborn
 		dde-extra/deepin-shortcut-viewer
 		kde-frameworks/kcodecs:5
 		net-misc/socat
-		>=dde-base/dde-dock-4.2.0:=
-		dde-base/dde-qt-dbus-factory
+		>=dde-base/dde-dock-5.0.27:=
+		>=dde-base/dde-qt-dbus-factory-5.0.16
 		dde-base/dde-qt5integration
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-5.1.2:=
 		screensaver? ( dde-extra/deepin-screensaver )
 		samba? ( net-fs/samba )
 		avfs? ( sys-fs/avfs )
@@ -62,7 +64,7 @@ DEPEND="${RDEPEND}
 		dde-base/deepin-gettext-tools
 		"
 PATCHES=(                          
-    "${FILESDIR}"/${P}-qt5.14.patch
+    "${FILESDIR}"/5.1.0-disable-screensaver.patch
 )
 
 src_prepare() {
