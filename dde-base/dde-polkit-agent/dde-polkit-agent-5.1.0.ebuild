@@ -24,6 +24,7 @@ RDEPEND="dev-qt/qtcore:5
 DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-2.0.2:=
 		"
+S="${WORKDIR}/${P}+c2"
 
 src_prepare() {
 

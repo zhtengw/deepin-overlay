@@ -27,13 +27,14 @@ RDEPEND="dev-qt/qtmultimedia:5[gstreamer]
 	media-plugins/gst-plugins-meta:1.0[mp3=,flac=,ogg=,aac=]
 	"
 DEPEND="${RDEPEND}
-	>=dde-base/dtkwidget-2.0.0:=
+	>=dde-base/dtkwidget-5.1.2:=
 	"
 
 src_prepare() {
 	eapply_user
 	LIBDIR=$(qt5_get_libdir)
-	sed -i "s|\$\${PREFIX}/lib|${LIBDIR}|g" src/vendor/mpris-qt/src/src.pro src/vendor/dbusextended-qt/src/src.pro src/plugin/netease-meta-search/netease-meta-search.pro src/libdmusic/libdmusic.pro
+	sed -i "s|\$\${PREFIX}/lib|${LIBDIR}|g" src/vendor/mpris-qt/src/src.pro src/vendor/dbusextended-qt/src/src.pro src/plugin/netease-meta-search/netease-meta-search.pro src/libdmusic/libdmusic.pro || die
+	sed -i "/<QDebug>/a\#include\ <QFile>" src/music-player/core/player.cpp || die
 
 	export QT_SELECT=qt5
 	eqmake5 PREFIX=/usr
