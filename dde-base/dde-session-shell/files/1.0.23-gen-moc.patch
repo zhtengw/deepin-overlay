@@ -1,0 +1,33 @@
+--- a/CMakeLists.txt	2020-04-11 14:55:48.000000000 +0800
++++ b/CMakeLists.txt	2020-04-18 23:02:10.032891479 +0800
+@@ -273,12 +273,13 @@
+     ./src/widgets/widgetsimages.qrc
+     ./src/widgets/widgetstheme.qrc
+ )
+-
++qt5_wrap_cpp(MOC_SRCS ./src/widgets/darrowrectangle.h)
+ add_executable(
+     dde-lock
+     ${LOCK_SRCS}
+     ./src/app/dde-lock.cpp
+     ${QRCS}
++    ${MOC_SRCS}
+     ./src/dde-lock/images.qrc
+     ./src/dde-lock/logintheme.qrc
+ )
+@@ -310,6 +311,7 @@
+     ${SHUTDOWN_SRCS}
+     ./src/app/dde-shutdown.cpp
+     ${QRCS}
++    ${MOC_SRCS}
+     ./src/dde-shutdown/dde-shutdown.pro
+     ./src/dde-shutdown/image.qrc
+     ./src/dde-shutdown/qss.qrc
+@@ -342,6 +344,7 @@
+     ${GREETER_SRCS}
+     ./src/app/lightdm-deepin-greeter.cpp
+     ${QRCS}
++    ${MOC_SRCS}
+     ./src/lightdm-deepin-greeter/logintheme.qrc
+     ./src/lightdm-deepin-greeter/image.qrc
+ )

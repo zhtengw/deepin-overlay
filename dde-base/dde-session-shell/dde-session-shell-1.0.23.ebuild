@@ -4,10 +4,10 @@
 
 EAPI=6
 
-inherit qmake-utils
+inherit cmake-utils
 
-DESCRIPTION="Deepin desktop environment - Session UI module"
-HOMEPAGE="https://github.com/linuxdeepin/dde-session-ui"
+DESCRIPTION="Deepin desktop environment - Session Shell module"
+HOMEPAGE="https://github.com/linuxdeepin/dde-session-shell"
 if [[ "${PV}" == *9999* ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
@@ -36,34 +36,27 @@ RDEPEND="
 		 dev-qt/qtx11extras:5
 		 dev-qt/qtwidgets:5
 		 dev-qt/qtsvg:5
-		 >=dde-base/dde-daemon-3.27.2.4[systemd?,elogind?]
+		 dev-qt/qtxml:5
+		 >=dde-base/dde-daemon-5.9.5[systemd?,elogind?]
 		 >=dde-base/deepin-desktop-schemas-5.4.9
 		 >=dde-base/startdde-5.2.1
-		 dde-base/dde-session-shell
 		"
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-5.1.2:=
 		>=dde-base/deepin-gettext-tools-1.0.6
 		>=dde-base/dde-qt-dbus-factory-1.1.5:=
 		virtual/pkgconfig
 		"
 
 S="${WORKDIR}/${P}+c2"
+PATCHES=(
+	"${FILESDIR}/1.0.23-gen-moc.patch"
+)
 
 src_prepare() {
 
-	if use elogind; then
-		sed -i "s|libsystemd|libelogind|g" dde-switchtogreeter/dde-switchtogreeter.pro || die
-		sed -i "s|systemd/sd-login.h|elogind/systemd/sd-login.h|g" dde-switchtogreeter/switchtogreeter.c || die
-	fi
-
 	LIBDIR=$(get_libdir)
-	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" d*/*.pro || die
-	sed -i "s|/lib/|/${LIBDIR}/|g" d*/*.service dde-osd/notification/files/*.service.in misc/applications/deepin-toggle-desktop.desktop.in || die
-	QT_SELECT=qt5 eqmake5 PREFIX=/usr
-	default_src_prepare
-}
+	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" scripts/lightdm-deepin-greeter
 
-src_install() {
-	emake INSTALL_ROOT=${D} install
+	cmake-utils_src_prepare
 }
