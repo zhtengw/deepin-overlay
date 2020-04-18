@@ -49,7 +49,7 @@ RDEPEND="virtual/dde-wm
 		sys-power/acpid
 		sys-fs/udisks:2
 		gnome-extra/polkit-gnome
-		>=dde-base/deepin-desktop-schemas-3.3.0
+		>=dde-base/deepin-desktop-schemas-5.4.9
 		net-misc/networkmanager
 		gnome-base/gvfs[udisks]
 		sys-libs/pam

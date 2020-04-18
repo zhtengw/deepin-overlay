@@ -37,8 +37,8 @@ RDEPEND="
 		 dev-qt/qtwidgets:5
 		 dev-qt/qtsvg:5
 		 >=dde-base/dde-daemon-3.27.2.4[systemd?,elogind?]
-		 >=dde-base/deepin-desktop-schemas-2.91.2
-		 dde-base/startdde
+		 >=dde-base/deepin-desktop-schemas-5.4.9
+		 >=dde-base/startdde-5.2.1
 		"
 DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-2.0.0:=
@@ -46,6 +46,8 @@ DEPEND="${RDEPEND}
 		>=dde-base/dde-qt-dbus-factory-1.1.5:=
 		virtual/pkgconfig
 		"
+
+S="${WORKDIR}/${P}+c2"
 
 src_prepare() {
 

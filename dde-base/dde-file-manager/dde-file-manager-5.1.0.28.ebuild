@@ -52,7 +52,7 @@ RDEPEND="sys-apps/file
 		net-misc/socat
 		>=dde-base/dde-dock-5.0.27:=
 		>=dde-base/dde-qt-dbus-factory-5.0.16
-		dde-base/dde-qt5integration
+		>=dde-base/dde-qt5integration-5.1.0
 		>=dde-base/dtkwidget-5.1.2:=
 		screensaver? ( dde-extra/deepin-screensaver )
 		samba? ( net-fs/samba )

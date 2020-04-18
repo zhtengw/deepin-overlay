@@ -19,10 +19,10 @@ IUSE=""
 DEPEND="${RDEPEND}
 		x11-libs/libX11
 		x11-libs/libxcb
-		>=dde-base/dtkwidget-2.0.0:=
-		dde-base/dde-qt-dbus-factory
-		dde-base/dde-qt5integration
-		dde-base/dde-api
+		>=dde-base/dtkwidget-5.1.2:=
+		>=dde-base/dde-qt-dbus-factory-5.0.16
+		>=dde-base/dde-qt5integration-5.1.0
+		>=dde-base/dde-api-5.1.13
 		dev-qt/qtx11extras:5
 		dev-qt/qtdeclarative:5
 	    "

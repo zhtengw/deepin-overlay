@@ -31,12 +31,12 @@ RDEPEND="dev-qt/qtsvg:5
 		>=dde-base/dde-api-5.1.13
 		dde-base/dde-account-faces
 		>=dde-base/dde-dock-5.0.27
-		dde-base/startdde
+		>=dde-base/startdde-5.2.1
 		>=dde-base/dde-network-utils-5.0.4
 		dev-util/desktop-file-utils
 		dev-libs/geoip
 		>=dde-base/deepin-desktop-base-2020.04.12
-		dde-base/dde-qt5integration
+		>=dde-base/dde-qt5integration-5.1.0
 		redshift? ( x11-misc/redshift )
 		!systemd? ( app-admin/openrc-settingsd )
 		"

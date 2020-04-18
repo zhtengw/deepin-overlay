@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dde-base/deepin-wallpapers
-		dde-base/deepin-icon-theme
+		>=dde-base/deepin-icon-theme-2020.04.13
 		dde-base/deepin-gtk-theme
 		dde-base/deepin-sound-theme"
 S=${WORKDIR}/${P}-2

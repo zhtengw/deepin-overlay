@@ -17,12 +17,12 @@ IUSE=""
 
 RDEPEND="dev-qt/qtsvg:5
 		 dev-qt/qtx11extras:5
-		 >=dde-base/deepin-menu-3.2.0
-		 dde-base/dde-daemon
-		 dde-base/dde-network-utils
-		 dde-base/dde-qt5integration
+		 >=dde-base/deepin-menu-5.0.1
+		 >=dde-base/dde-daemon-5.9.5
+		 >=dde-base/dde-network-utils-5.0.4
+		 >=dde-base/dde-qt5integration-5.1.0
 		 app-accessibility/onboard
-       	 >=dde-base/dtkwidget-2.0.9.5:=
+       	 >=dde-base/dtkwidget-5.1.2:=
 	     "
 DEPEND="${RDEPEND}
 		virtual/pkgconfig

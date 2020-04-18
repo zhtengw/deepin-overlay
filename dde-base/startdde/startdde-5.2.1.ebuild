@@ -7,6 +7,8 @@ EAPI=6
 EGO_PN="startdde"
 EGO_VENDOR=(
 "golang.org/x/net aaf60122140d3fcf75376d319f0554393160eb50 github.com/golang/net"
+"golang.org/x/xerrors 9bdfabe github.com/golang/xerrors"
+"github.com/davecgh/go-spew 87df7c6"
 "github.com/cryptix/wav 8bdace674401f0bd3b63c65479b6a6ff1f9d5e44"
 )
 
@@ -22,9 +24,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dde-base/dde-daemon-3.1.17
+RDEPEND=">=dde-base/dde-daemon-5.9.5
 		virtual/dde-wm
-		>=dde-base/deepin-desktop-schemas-3.1.15
+		>=dde-base/deepin-desktop-schemas-5.4.9
 		"
 
 DEPEND="${RDEPEND}
@@ -35,7 +37,7 @@ DEPEND="${RDEPEND}
 		dev-go/go-dbus-factory
 		dev-util/cmake
 		>=dde-base/dde-api-3.1.8
-		>=dev-go/deepin-go-lib-1.1.0
+		>=dev-go/deepin-go-lib-5.4.5
 		>=dev-go/dbus-factory-3.1.5"
 
 src_prepare() {
@@ -49,7 +51,6 @@ src_prepare() {
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
 		misc/auto_launch/*.json \
 		startmanager.go \
-		misc/deepin-session \
 		session.go \
 		utils.go \
 		watchdog/dde_polkit_agent.go || die

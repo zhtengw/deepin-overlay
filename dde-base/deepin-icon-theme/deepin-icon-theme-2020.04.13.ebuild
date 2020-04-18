@@ -16,6 +16,7 @@ IUSE=""
 DEPEND="dev-util/gtk-update-icon-cache"
 
 src_prepare() {
+	sed -i '/v20/d' Makefile || die
 
 	default_src_prepare
 }
