@@ -38,15 +38,19 @@ RDEPEND="sys-process/procps
 	"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.2:=
+		>=dde-base/dtkwidget-5.1.2:=
 		dde-base/dtkwm:=
 		"
 
 PATCHES=(
-	"${FILESDIR}"/${P}-qt5.14.patch
+	"${FILESDIR}"/${PN}-5.0.0-qt5.14.patch
+	"${FILESDIR}"/5.6.1-u_errorName.patch
 )
 
 src_prepare() {
+	sed -i "/<DMenu>/a\#include\ <QKeyEvent>" \
+		src/gui/system_service_table_view.cpp \
+		src/gui/process_table_view.cpp || die
 	default
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr ${PN}.pro
 }

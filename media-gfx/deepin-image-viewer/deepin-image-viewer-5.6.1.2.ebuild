@@ -16,22 +16,38 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+jpeg +png +tiff raw mng jpeg2k"
 
 RDEPEND="dev-qt/qtsvg:5
-		dev-qt/qtconcurrent:5
 		dev-qt/qtgui:5
+		dev-qt/qtconcurrent:5
 		dev-qt/qtdbus:5
 		dev-qt/qtprintsupport:5
+		dev-qt/qtmultimedia:5
 		dev-qt/qtx11extras:5
+		dev-qt/qtsql:5[sqlite]
+		dev-qt/qtopengl:5
+		dev-qt/qtimageformats:5
+		media-libs/fontconfig
+		media-libs/freetype
 		media-libs/libraw
 		media-libs/libexif
+		media-libs/libglvnd
 		media-libs/freeimage[jpeg?,png?,tiff?,raw?,mng?,jpeg2k?]
+		sys-libs/mtdev
+		virtual/libudev
+		x11-base/xorg-proto
+		x11-libs/libXrender
 		"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-5.1.2:=
+		dev-qt/gio-qt
+		dde-base/udisks2-qt5
 	    "
 
 src_prepare() {
 	eapply_user
+	
+	# the same manual_icon and app_icon install in the same path
+	sed -i 's|app_icon\ ||g' viewer/viewer.pro || die
 	export QT_SELECT=qt5
 	eqmake5
 }
