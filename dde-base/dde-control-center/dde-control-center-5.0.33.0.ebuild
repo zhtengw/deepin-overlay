@@ -55,6 +55,7 @@ src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|DESTINATION\ lib|DESTINATION\ ${LIBDIR}|g" \
 		src/dialogs/CMakeLists.txt \
+		src/develop-tool/CMakeLists.txt \
 		src/frame/CMakeLists.txt || die
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
 		src/frame/modules/sync/syncworker.cpp \
@@ -65,7 +66,9 @@ src_prepare() {
 src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_INSTALL_PREFIX=/usr
-		-DDISABLE_SYS_UPDATE=YES
+		-DDISABLE_SYS_UPDATE_SOURCE_CHECK=YES
+		-DDISABLE_SYS_UPDATE_MIRRORS=YES
+		-DCVERSION=${PV}
 	)
 	cmake-utils_src_configure
 }

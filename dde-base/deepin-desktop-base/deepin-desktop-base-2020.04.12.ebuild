@@ -28,7 +28,10 @@ src_prepare() {
 src_install() {
 	emake DESTDIR=${D} install
 
-	rm -r ${D}/etc/lsb-release ${D}/etc/systemd ${D}/usr/share/python-apt
+	rm -r ${D}/etc/appstore.json ${D}/etc/lsb-release ${D}/etc/systemd ${D}/usr/share/python-apt
+
+	insinto /usr/share/deepin
+	doins -r distribution distribution.info
 
 	dosym /usr/$(get_libdir)/deepin/desktop-version /etc/deepin-version
 }

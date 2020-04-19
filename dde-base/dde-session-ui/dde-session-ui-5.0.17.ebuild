@@ -39,6 +39,7 @@ RDEPEND="
 		 >=dde-base/dde-daemon-3.27.2.4[systemd?,elogind?]
 		 >=dde-base/deepin-desktop-schemas-5.4.9
 		 >=dde-base/startdde-5.2.1
+		 >=dde-base/dde-dock-5.0.27
 		 dde-base/dde-session-shell
 		"
 DEPEND="${RDEPEND}
@@ -58,8 +59,13 @@ src_prepare() {
 	fi
 
 	LIBDIR=$(get_libdir)
-	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" d*/*.pro || die
-	sed -i "s|/lib/|/${LIBDIR}/|g" d*/*.service dde-osd/notification/files/*.service.in misc/applications/deepin-toggle-desktop.desktop.in || die
+	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" \
+		d*/*.pro \
+		d*/*.service \
+		dde-osd/notification/files/*.service.in \
+		misc/applications/deepin-toggle-desktop.desktop.in || die
+	sed -i "s|/lib/|/${LIBDIR}/|g" \
+		dde-notification-plugin/notifications/notifications.pro || die
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr
 	default_src_prepare
 }

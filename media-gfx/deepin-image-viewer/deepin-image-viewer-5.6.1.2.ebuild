@@ -49,7 +49,7 @@ src_prepare() {
 	# the same manual_icon and app_icon install in the same path
 	sed -i 's|app_icon\ ||g' viewer/viewer.pro || die
 	export QT_SELECT=qt5
-	eqmake5
+	eqmake5 DEFINES+="VERSION=${PV}"
 }
 
 src_install() {

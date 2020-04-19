@@ -33,7 +33,7 @@ src_prepare() {
 		src/monthwindow.cpp \
 		src/daymonthview.cpp || die
 	export QT_SELECT=qt5
-	eqmake5 PREFIX=/usr calendar.pro
+	eqmake5 PREFIX=/usr  DEFINES+="VERSION=${PV}" calendar.pro
 	default_src_prepare
 }
 

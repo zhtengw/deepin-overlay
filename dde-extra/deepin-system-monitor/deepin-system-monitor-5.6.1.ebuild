@@ -52,7 +52,7 @@ src_prepare() {
 		src/gui/system_service_table_view.cpp \
 		src/gui/process_table_view.cpp || die
 	default
-	QT_SELECT=qt5 eqmake5 PREFIX=/usr ${PN}.pro
+	QT_SELECT=qt5 eqmake5 PREFIX=/usr DEFINES+="VERSION=${PV}" ${PN}.pro
 }
 
 src_install() {

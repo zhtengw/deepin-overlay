@@ -32,7 +32,7 @@ src_prepare() {
 	eapply_user
 	sed -i "s|QT\ +=|QT\ +=\ multimediawidgets|g" src/widgets/widgets.pri
 	export QT_SELECT=qt5
-	eqmake5 $(use gui || echo DISABLE_GUI=1)
+	eqmake5 $(use gui || echo DISABLE_GUI=1) DEFINES+="VERSION=${PV}"
 }
 
 src_install() {

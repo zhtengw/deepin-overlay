@@ -78,7 +78,7 @@ src_prepare() {
 		dde-desktop/main.cpp \
 		dde-zone/mainwindow.h || die
 	export QT_SELECT=qt5
-	eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir) DISABLE_SCREENSAVER=$(use screensaver || echo YES)
+	eqmake5 PREFIX=/usr VERSION=${PV} DEFINES+="VERSION=${PV}" LIB_INSTALL_DIR=/usr/$(get_libdir) DISABLE_SCREENSAVER=$(use screensaver || echo YES)
 	default_src_prepare
 }
 

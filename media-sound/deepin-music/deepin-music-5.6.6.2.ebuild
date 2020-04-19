@@ -37,7 +37,7 @@ src_prepare() {
 	sed -i "/<QDebug>/a\#include\ <QFile>" src/music-player/core/player.cpp || die
 
 	export QT_SELECT=qt5
-	eqmake5 PREFIX=/usr
+	eqmake5 PREFIX=/usr DEFINES+="VERSION=${PV}"
 }
 
 src_install() {

@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	eapply_user
-	QT_SELECT=qt5 eqmake5
+	QT_SELECT=qt5 eqmake5  DEFINES+="VERSION=${PV}"
 }
 
 src_install() {

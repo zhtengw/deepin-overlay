@@ -46,7 +46,7 @@ src_prepare() {
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" src/vendor/src/libxsys/libxsys.pro src/service/service.pro || die
 	sed -i "s|/usr/lib|/usr/${LIBDIR}|g" src/libdbm/libdbm.pro src/service/data/com.deepin.bootmaker.service || die
 	export QT_SELECT=qt5
-	eqmake5 PREFIX=/usr
+	eqmake5 PREFIX=/usr DEFINES+="VERSION=${PV}"
 }
 
 src_install() {

@@ -22,14 +22,15 @@ RDEPEND="dev-qt/qtsvg:5
 		 media-libs/freetype:2
 		 media-libs/fontconfig
 		 dde-base/dde-file-manager:=
+		 !dde-extra/deepin-font-installer
 	     "
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.1:=
+		>=dde-base/dtkwidget-5.1.2:=
 	    "
 
 src_prepare() {
 	export QT_SELECT=qt5 
-	eqmake5	PREFIX=/usr
+	eqmake5	PREFIX=/usr DEFINES+="VERSION=${PV}"
 	default_src_prepare
 }
 
