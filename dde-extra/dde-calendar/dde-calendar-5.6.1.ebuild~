@@ -25,7 +25,7 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
-	sed -i "/<DPalette>/a\#include\ <QMouseEvent>" \
+	sed -i "/<QMessageBox>/a\#include\ <QMouseEvent>" \
 		src/yearwindow.cpp \
 		src/schcedulesearchview.cpp || die
 	sed -i "/<QMessageBox>/a\#include\ <QWheelEvent>" \

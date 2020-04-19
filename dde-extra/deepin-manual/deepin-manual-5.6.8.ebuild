@@ -24,9 +24,10 @@ DEPEND="dev-qt/qtcore:5
 		dev-qt/qtgui:5
 		dev-qt/qtwidgets:5
 		dev-qt/linguist-tools:5
-		dev-qt/qcef
+		>=dev-qt/qcef-1.1.8
 		dde-base/dde-qt5integration
-		dde-base/dtkwidget:=
+		>=dde-base/dtkwidget-5.1.2:=
+		dde-base/dtkgui
 		virtual/pkgconfig
 	    "
 
