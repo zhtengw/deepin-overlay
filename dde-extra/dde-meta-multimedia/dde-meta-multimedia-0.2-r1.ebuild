@@ -21,4 +21,6 @@ RDEPEND="media-sound/deepin-music
 		)
 		media-sound/deepin-voice-recorder
 		media-gfx/deepin-image-viewer
+		media-gfx/deepin-draw
+		media-gfx/deepin-album
 		"

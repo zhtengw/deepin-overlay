@@ -52,8 +52,6 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-		-DCMAKE_INSTALL_PREFIX=/usr
-		-DCMAKE_BUILD_TYPE=Release
 		-DVERSION=${PV}
 	)
 	cmake-utils_src_configure

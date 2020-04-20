@@ -33,8 +33,7 @@ RDEPEND="dev-qt/qtcore:5
 		"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.6:=
-		>=dde-base/dtkwm-2.0.6
+		>=dde-base/dtkwidget-5.1.2:=
 		dev-qt/linguist-tools
 		dev-qt/qtchooser
 		virtual/pkgconfig
@@ -42,8 +41,6 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	local mycmakeargs=(
-		-DCMAKE_INSTALL_PREFIX=/usr
-		-DCMAKE_BUILD_TYPE=Release
 		-DVERSION=${PV}
 	)
 	cmake-utils_src_configure

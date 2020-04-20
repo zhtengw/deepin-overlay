@@ -34,8 +34,8 @@ S="${WORKDIR}/${P}+c1"
 
 src_configure() {
 	local mycmakeargs=(
-			-DCMAKE_INSTALL_PREFIX=/usr 
-			-DWITHOUT_UNINSTALL_APP=1
+		-DWITHOUT_UNINSTALL_APP=1
+		-DVERSION=${PV}
 	)
 	cmake-utils_src_configure
 }

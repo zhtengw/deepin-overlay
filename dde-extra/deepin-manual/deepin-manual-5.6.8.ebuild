@@ -32,8 +32,9 @@ DEPEND="dev-qt/qtcore:5
 	    "
 
 src_configure() {
+	CMAKE_BUILD_TYPE=Release
 	local mycmakeargs=(
-		-DCMAKE_BUILD_TYPE=Release
+		-DVERSION=${PV}
 	)
 
 	cmake-utils_src_configure

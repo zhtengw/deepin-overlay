@@ -65,7 +65,6 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-		-DCMAKE_INSTALL_PREFIX=/usr
 		-DDISABLE_SYS_UPDATE_SOURCE_CHECK=YES
 		-DDISABLE_SYS_UPDATE_MIRRORS=YES
 		-DCVERSION=${PV}

@@ -48,8 +48,6 @@ src_configure() {
 	local mycmakeargs=(
 		VALAC="${VALAC}"
 		-DTEST_BUILD=0
-		-DCMAKE_INSTALL_PREFIX=/usr
-		-DCMAKE_BUILD_TYPE=Release
 		-DUSE_VENDOR_LIB=0
 		-DVERSION=${PV}
 	)

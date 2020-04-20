@@ -25,5 +25,6 @@ RDEPEND="
 	dde-extra/deepin-voice-note
 	dde-extra/deepin-system-monitor
 	dde-extra/deepin-topbar
-	media-gfx/deepin-draw
+	dde-extra/deepin-compressor
+	dde-extra/deepin-reader
 	"
