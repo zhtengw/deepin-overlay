@@ -90,7 +90,6 @@ src_prepare() {
 
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" Makefile
-	sed -i "s|lib/systemd|${LIBDIR}/systemd|g" Makefile
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
 		misc/dde-daemon/gesture.json \
 		misc/dde-daemon/gesture/conf.json \

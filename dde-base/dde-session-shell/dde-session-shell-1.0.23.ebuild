@@ -58,5 +58,9 @@ src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" scripts/lightdm-deepin-greeter
 
+	sed -i "s|FILES\ files\/deepin-greeter|PROGRAMS\ files\/deepin-greeter|g" \
+		CMakeLists.txt || die
+
 	cmake-utils_src_prepare
 }
+

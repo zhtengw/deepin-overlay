@@ -82,5 +82,5 @@ src_compile() {
 
 src_install() {
 	cd ${S}/src/${EGO_PN}
-	emake DESTDIR=${D} libdir=/$(get_libdir) SYSTEMD_LIB_DIR=/$(get_libdir) GOSITE_DIR=$(get_golibdir_gopath) install
+	emake DESTDIR=${D} libdir=/$(get_libdir) SYSTEMD_LIB_DIR=/lib GOSITE_DIR=$(get_golibdir_gopath) install
 }
