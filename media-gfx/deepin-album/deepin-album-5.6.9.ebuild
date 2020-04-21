@@ -6,7 +6,7 @@ EAPI=7
 
 inherit qmake-utils
 
-DESCRIPTION="Deepin Image Viewer"
+DESCRIPTION="Deepin Photo Manager"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-image-viewer"
 SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz"
 
