@@ -19,5 +19,6 @@ DEPEND="dev-qt/qtdeclarative:5
 
 src_prepare() {
 	export GOPATH="${S}:/usr/lib/go-gentoo"
+	default_src_prepare
 }
 
