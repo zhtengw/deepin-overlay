@@ -52,7 +52,7 @@ DEPEND="${RDEPEND}
 		virtual/pkgconfig
 		"
 PATCHES=( 
-	"${FILESDIR}"/fixqcef.patch 
+	"${FILESDIR}"/1.1.7-fix-qt5.14.patch 
 )
 
 src_unpack() {
