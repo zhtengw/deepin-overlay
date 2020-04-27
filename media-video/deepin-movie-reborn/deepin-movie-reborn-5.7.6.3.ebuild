@@ -40,8 +40,8 @@ DEPEND="dev-qt/qtdbus:5
 		media-libs/libdvdnav
 		"
 RDEPEND="${DEPEND}
-		>=dde-base/dtkcore-2.0.0
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkcore-5.1.2
+		>=dde-base/dtkwidget-5.1.2:=
 		"
 
 src_prepare() {

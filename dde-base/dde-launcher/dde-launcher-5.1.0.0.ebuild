@@ -25,7 +25,7 @@ RDEPEND="dev-qt/qtsvg:5
 DEPEND="${RDEPEND}
 		x11-libs/xcb-util-wm
 		x11-libs/libxcb
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-5.1.2:=
 		dde-base/dde-qt-dbus-factory:=
 		"
 

@@ -34,7 +34,7 @@ RDEPEND="dev-qt/qtsvg:5
 		"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-5.1.2:=
 	    "
 
 src_prepare() {

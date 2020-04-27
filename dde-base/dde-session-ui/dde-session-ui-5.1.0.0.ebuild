@@ -42,7 +42,7 @@ RDEPEND="
 		 dde-base/dde-session-shell
 		"
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-5.1.2:=
 		>=dde-base/deepin-gettext-tools-1.0.6
 		>=dde-base/dde-qt-dbus-factory-1.1.5:=
 		virtual/pkgconfig
