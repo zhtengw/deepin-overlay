@@ -10,7 +10,7 @@ inherit vala cmake-utils
 
 DESCRIPTION="Deepin Terminal"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-terminal"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="0"

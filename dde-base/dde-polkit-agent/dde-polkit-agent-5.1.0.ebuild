@@ -8,11 +8,10 @@ inherit qmake-utils
 
 DESCRIPTION="PolicyKit agent for DDE"
 HOMEPAGE="https://github.com/linuxdeepin/dde-polkit-agent"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}+c2.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-qt/qtcore:5
@@ -24,7 +23,6 @@ RDEPEND="dev-qt/qtcore:5
 DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-2.0.2:=
 		"
-S="${WORKDIR}/${P}+c2"
 
 src_prepare() {
 

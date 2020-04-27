@@ -8,16 +8,16 @@ inherit qmake-utils
 
 DESCRIPTION="Base development tool of all C++/Qt Developer work on Deepin - Core modules"
 HOMEPAGE="https://github.com/linuxdeepin/dtkcore"
-SLOT="2"
 
 if [[ "${PV}" == *9999* ]] ; then
     inherit git-r3
     EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
 else
-   	SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}${SLOT}/${PN}${SLOT}_${PV}.orig.tar.xz -> ${P}.tar.xz"
+   	SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 fi
 LICENSE="GPL-3"
+SLOT="0/${PV}"
 IUSE=""
 
 RDEPEND=">=dev-qt/qtcore-5.5:5
@@ -26,8 +26,6 @@ RDEPEND=">=dev-qt/qtcore-5.5:5
 		x11-libs/gsettings-qt
 	    "
 DEPEND="${RDEPEND}"
-
-S=${WORKDIR}/${PN}${SLOT}-${PV}
 
 src_prepare() {
 	LIBDIR=$(get_libdir)

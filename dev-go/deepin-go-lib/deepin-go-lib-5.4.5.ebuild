@@ -10,8 +10,7 @@ inherit golang-vcs-snapshot
 
 DESCRIPTION="Deepin GoLang Library"
 HOMEPAGE="https://github.com/linuxdeepin/go-lib"
-MY_PN="go-dlib"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/g/${MY_PN}/${MY_PN}_${PV}.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://github.com/linuxdeepin/go-lib/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3+"
 SLOT="0"

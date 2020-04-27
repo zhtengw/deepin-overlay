@@ -33,7 +33,7 @@ inherit golang-vcs-snapshot pam
 
 DESCRIPTION="Daemon handling the DDE session settings"
 HOMEPAGE="https://github.com/linuxdeepin/dde-daemon"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}+c1.orig.tar.xz -> ${P}.tar.xz
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz
 ${EGO_VENDOR_URI}"
 
 LICENSE="GPL-3"
@@ -49,7 +49,7 @@ RDEPEND="virtual/dde-wm
 		sys-power/acpid
 		sys-fs/udisks:2
 		gnome-extra/polkit-gnome
-		>=dde-base/deepin-desktop-schemas-5.4.9
+		>=dde-base/deepin-desktop-schemas-5.4.0
 		net-misc/networkmanager
 		gnome-base/gvfs[udisks]
 		sys-libs/pam
@@ -66,8 +66,8 @@ DEPEND="${RDEPEND}
 		>=dev-go/go-x11-client-0.6.0
 		>=dev-go/deepin-go-lib-5.4.5
 		>=dev-go/dbus-factory-3.1.17
-		>=dev-go/go-dbus-factory-1.6.5
-		>=dde-base/dde-api-5.1.13
+		>=dev-go/go-dbus-factory-1.6.0
+		>=dde-base/dde-api-5.1.1
 		>=dde-base/deepin-gettext-tools-1.0.8
 		dev-libs/libinput
 		dev-db/sqlite:3

@@ -12,8 +12,7 @@ if [[ "${PV}" == *9999* ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
 else
-	SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}+c2.orig.tar.xz -> ${P}.tar.xz"
-	KEYWORDS="~amd64 ~x86"
+	SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 fi
 
 LICENSE="GPL-3"
@@ -36,8 +35,8 @@ RDEPEND="
 		 dev-qt/qtx11extras:5
 		 dev-qt/qtwidgets:5
 		 dev-qt/qtsvg:5
-		 >=dde-base/dde-daemon-3.27.2.4[systemd?,elogind?]
-		 >=dde-base/deepin-desktop-schemas-5.4.9
+		 >=dde-base/dde-daemon-5.9.0[systemd?,elogind?]
+		 >=dde-base/deepin-desktop-schemas-5.4.0
 		 >=dde-base/startdde-5.2.1
 		 >=dde-base/dde-dock-5.0.27
 		 dde-base/dde-session-shell
@@ -49,7 +48,6 @@ DEPEND="${RDEPEND}
 		virtual/pkgconfig
 		"
 
-S="${WORKDIR}/${P}+c2"
 
 src_prepare() {
 

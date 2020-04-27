@@ -8,7 +8,7 @@ inherit qmake-utils
 
 DESCRIPTION="UDisks2 DBus interfaces binding of Qt5"
 HOMEPAGE="https://github.com/linuxdeepin/udisks2-qt5"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/u/${PN}/${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

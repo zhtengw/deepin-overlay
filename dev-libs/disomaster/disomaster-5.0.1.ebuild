@@ -8,7 +8,7 @@ inherit qmake-utils
 
 DESCRIPTION="A libisoburn wrapper class for Qt."
 HOMEPAGE="https://github.com/linuxdeepin/disomaster"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

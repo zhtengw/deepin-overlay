@@ -9,7 +9,7 @@ inherit cmake-utils
 DESCRIPTION="KWin configures on DDE"
 HOMEPAGE="https://github.com/linuxdeepin/dde-kwin"
 
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}+c1.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 KEYWORDS="~amd64 ~x86"
 
 LICENSE="GPL-3"
@@ -38,12 +38,6 @@ RDEPEND="x11-libs/gsettings-qt
 		"
 DEPEND="${RDEPEND}
 		"
-
-S="${WORKDIR}/${P}+c1"
-
-PATCHES=(                          
-    "${FILESDIR}"/${P}-kwin-5.18-override-error.patch
-)
 
 src_configure() {
 	local mycmakeargs=(

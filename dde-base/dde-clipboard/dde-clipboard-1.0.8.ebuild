@@ -8,7 +8,7 @@ inherit qmake-utils
 
 DESCRIPTION="Deepin Clipboard"
 HOMEPAGE="https://github.com/linuxdeepin/dde-clipboard"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -30,8 +30,8 @@ RDEPEND="dev-qt/qtcore:5
 		x11-libs/xcb-util-wm
 		kde-frameworks/networkmanager-qt
 		x11-libs/libX11
-		>=dde-base/dde-daemon-5.9.5
-		>=dde-base/dde-api-5.1.13
+		>=dde-base/dde-daemon-5.9.0
+		>=dde-base/dde-api-5.1.1
 		dde-base/deepin-desktop-base
 		"
 

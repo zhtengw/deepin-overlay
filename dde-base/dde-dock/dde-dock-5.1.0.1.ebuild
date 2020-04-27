@@ -8,17 +8,16 @@ inherit cmake-utils
 
 DESCRIPTION="Deepin desktop environment - Dock module"
 HOMEPAGE="https://github.com/linuxdeepin/dde-dock"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}+c3.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-qt/qtsvg:5
 		 dev-qt/qtx11extras:5
 		 >=dde-base/deepin-menu-5.0.1
-		 >=dde-base/dde-daemon-5.9.5
+		 >=dde-base/dde-daemon-5.9.0
 		 >=dde-base/dde-network-utils-5.0.4
 		 >=dde-base/dde-qt5integration-5.1.0
 		 app-accessibility/onboard
@@ -35,7 +34,6 @@ DEPEND="${RDEPEND}
 		dev-libs/libdbusmenu-qt
 	    "
 
-S="${WORKDIR}/${P}+c3"
 
 src_prepare() {
 	LIBDIR=$(get_libdir)

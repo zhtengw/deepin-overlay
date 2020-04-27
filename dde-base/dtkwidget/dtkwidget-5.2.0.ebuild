@@ -8,16 +8,16 @@ inherit qmake-utils
 
 DESCRIPTION="Base development tool of all C++/Qt Developer work on Deepin - Widget modules"
 HOMEPAGE="https://github.com/linuxdeepin/dtkwidget"
-SLOT="2"
 
 if [[ "${PV}" == *9999* ]] ; then
      inherit git-r3
      EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
 else
-     SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}${SLOT}/${PN}${SLOT}_${PV}.orig.tar.xz -> ${P}.tar.xz"
+     SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	 KEYWORDS="~amd64 ~x86"
 fi
 LICENSE="GPL-3"
+SLOT="0/${PV}"
 IUSE=""
 
 RDEPEND="dev-qt/qtmultimedia:5[widgets]
@@ -46,12 +46,11 @@ RDEPEND="dev-qt/qtmultimedia:5[widgets]
 		"
 DEPEND="${RDEPEND}
 		dev-libs/glib:2
-		dde-base/dtkcore:=
+		>=dde-base/dtkcore-5.1.2:=
 		>=dde-base/dde-qt-dbus-factory-5.0.0
 		dev-qt/linguist-tools:5
 		"
 
-S=${WORKDIR}/${PN}${SLOT}-${PV}
 src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" tools/svgc/svgc.pro

@@ -23,7 +23,7 @@ RDEPEND=">=dde-base/dde-control-center-5.0.33
 		>=dde-base/dde-dock-5.0.27
 		>=dde-base/deepin-desktop-base-2020.04.12
 		>=dde-base/dde-session-ui-5.0.17[systemd?,elogind?]
-		>=dde-base/dde-daemon-5.9.5[grub?,systemd?,elogind?]
+		>=dde-base/dde-daemon-5.9.0[grub?,systemd?,elogind?]
 		dde-base/dde-clipboard
 		policykit? ( dde-base/dde-polkit-agent 
 			dde-base/dpa-ext-gnomekeyring )

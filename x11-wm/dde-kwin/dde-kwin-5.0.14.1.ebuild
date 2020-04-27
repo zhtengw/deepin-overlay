@@ -10,7 +10,6 @@ DESCRIPTION="KWin configures on DDE"
 HOMEPAGE="https://github.com/linuxdeepin/dde-kwin"
 
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="~amd64 ~x86"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -38,7 +37,8 @@ RDEPEND="x11-libs/gsettings-qt
 		"
 DEPEND="${RDEPEND}
 		"
-PATCHES=(                          
+
+PATCHES=(
     "${FILESDIR}"/${P}-kwin-5.18-override-error.patch
 )
 

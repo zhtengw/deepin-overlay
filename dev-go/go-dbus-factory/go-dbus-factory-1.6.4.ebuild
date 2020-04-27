@@ -12,7 +12,7 @@ inherit golang-vcs-snapshot
 
 DESCRIPTION="Go bindings to generate D-Bus services"
 HOMEPAGE="https://github.com/linuxdeepin/go-dbus-factory"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/g/golang-github-linuxdeepin-${PN}/golang-github-linuxdeepin-${PN}_${PV}+c1.orig.tar.xz -> ${P}.tar.xz
+SRC_URI="https://github.com/linuxdeepin/go-dbus-factory/archive/${PV}.tar.gz -> ${P}.tar.gz
 ${EGO_VENDOR_URI}"
 
 LICENSE="GPL-3+"

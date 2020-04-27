@@ -8,11 +8,10 @@ inherit cmake-utils
 
 DESCRIPTION="Control Center of Deepin Desktop Environment"
 HOMEPAGE="https://github.com/linuxdeepin/dde-control-center"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}+c5.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE="systemd redshift"
 
 RDEPEND="dev-qt/qtsvg:5
@@ -27,8 +26,8 @@ RDEPEND="dev-qt/qtsvg:5
 		dev-libs/libqtxdg
 		kde-frameworks/networkmanager-qt
 		x11-libs/startup-notification
-		>=dde-base/dde-daemon-5.9.5
-		>=dde-base/dde-api-5.1.13
+		>=dde-base/dde-daemon-5.9.0
+		>=dde-base/dde-api-5.1.1
 		dde-base/dde-account-faces
 		>=dde-base/dde-dock-5.0.27
 		>=dde-base/startdde-5.2.1
@@ -44,8 +43,6 @@ DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-5.1.2:=
 		>=dde-base/dde-qt-dbus-factory-5.0.16:=
 		"
-
-S="${WORKDIR}/${P}+c5"
 
 PATCHES=(
 	"${FILESDIR}/5.0.33-missing-include.patch"
@@ -66,7 +63,6 @@ src_prepare() {
 src_configure() {
 	local mycmakeargs=(
 		-DDISABLE_SYS_UPDATE_SOURCE_CHECK=YES
-		-DDISABLE_SYS_UPDATE_MIRRORS=YES
 		-DCVERSION=${PV}
 	)
 	cmake-utils_src_configure

@@ -8,11 +8,10 @@ inherit cmake-utils
 
 DESCRIPTION="Deepin desktop environment - Launcher module"
 HOMEPAGE="https://github.com/linuxdeepin/dde-launcher"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}+c1.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-qt/qtsvg:5
@@ -20,7 +19,7 @@ RDEPEND="dev-qt/qtsvg:5
 		 >=dde-base/deepin-menu-5.0.1
 		 dde-base/dde-daemon
 		 x11-misc/xdg-user-dirs
-		 >=dde-base/deepin-desktop-schemas-5.4.9
+		 >=dde-base/deepin-desktop-schemas-5.4.0
 		 x11-libs/gsettings-qt
 	     "
 DEPEND="${RDEPEND}
@@ -30,7 +29,6 @@ DEPEND="${RDEPEND}
 		dde-base/dde-qt-dbus-factory:=
 		"
 
-S="${WORKDIR}/${P}+c1"
 
 src_configure() {
 	local mycmakeargs=(

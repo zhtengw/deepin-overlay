@@ -26,7 +26,7 @@ inherit golang-vcs-snapshot golang-build mount-boot
 
 DESCRIPTION="Go-lang bingdings for dde-daemon"
 HOMEPAGE="https://github.com/linuxdeepin/dde-api"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz
 ${EGO_VENDOR_URI}"
 
 LICENSE="GPL-3"

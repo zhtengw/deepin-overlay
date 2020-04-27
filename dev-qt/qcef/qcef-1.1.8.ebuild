@@ -10,7 +10,7 @@ inherit cmake-utils
 DESCRIPTION="Qt5 binding of Chromium Embedded Framework"
 HOMEPAGE="https://github.com/linuxdeepin/qcef"
 
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/q/${PN}/${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz
 		https://github.com/linuxdeepin/cef-binary/archive/master.zip -> cef-bin.zip"
 
 #EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"

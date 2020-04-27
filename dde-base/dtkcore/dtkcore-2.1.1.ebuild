@@ -29,7 +29,19 @@ DEPEND="${RDEPEND}"
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
-	sed -i "s|/lib/|/${LIBDIR}/|g" tools/settings/settings.pro || die
+
+	sed -i "s/\(dtk_.*\).prf/\1-2.prf/g" \
+		src/src.pro \
+		dtkcore.pro \
+		tools/settings/settings.pro \
+		tools/deepin-os-release/deepin-os-release.pro || die
+	mv dtk_build_config.prf dtk_build_config-2.prf
+	for prf in $(ls src/dtk_*.prf)
+	do
+		newprf=${prf%.prf}-2.prf
+		mv $prf $newprf 
+	done
+
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir) VERSION=${PV}
 	default_src_prepare
 }

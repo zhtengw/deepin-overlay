@@ -14,7 +14,7 @@ if [[ ${PV} = *9999* ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/linuxdeepin/${MY_PN}.git"
 else
-	SRC_URI="https://community-packages.deepin.com/deepin/pool/main/q/${MY_PN}/${MY_PN}_${PV}.orig.tar.xz -> ${P}.tar.xz"
+	SRC_URI="https://github.com/linuxdeepin/${MY_PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 	S=${WORKDIR}/${MY_P}
 fi
