@@ -10,6 +10,7 @@ inherit gnome2-utils golang-vcs-snapshot
 DESCRIPTION="GSettings deepin desktop-wide schemas"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-desktop-schemas"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-3+"
 SLOT="0"
 IUSE=""

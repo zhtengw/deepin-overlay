@@ -9,6 +9,7 @@ inherit cmake-utils
 DESCRIPTION="Deepin desktop environment - Dock module"
 HOMEPAGE="https://github.com/linuxdeepin/dde-dock"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+KEYWORDS="~amd64 ~x86"
 
 LICENSE="GPL-3"
 SLOT="0"
