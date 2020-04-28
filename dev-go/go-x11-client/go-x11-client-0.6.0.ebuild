@@ -10,7 +10,7 @@ inherit golang-vcs-snapshot
 
 DESCRIPTION="Deepin GoLang X11 client Library"
 HOMEPAGE="https://github.com/linuxdeepin/go-x11-client"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/g/golang-github-linuxdeepin-${PN}/golang-github-linuxdeepin-${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3+"
 SLOT="0"

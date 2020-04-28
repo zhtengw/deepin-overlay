@@ -41,6 +41,7 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
+	sed -i 's/active\ =\ VtableHook::overrideVfptrFun.*/active\ =\ 1;/' platformplugin/dhighdpi.cpp || die
 	QT_SELECT=qt5 eqmake5 ${PN}.pro
 	default
 }

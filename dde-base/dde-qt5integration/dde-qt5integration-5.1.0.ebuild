@@ -47,6 +47,7 @@ PATCHES=(
 )
 
 src_prepare() {
+	sed -i "/<DTabBar>/a\#include\ <DSpinBox>" styleplugins/chameleon/chameleonstyle.cpp || die 
 	QT_SELECT=qt5 eqmake5 ${MY_PN}.pro
 	default
 }

@@ -33,6 +33,7 @@ DEPEND="${RDEPEND}
 		gnome-base/libgnome-keyring
 		dev-lang/coffee-script
 		dev-go/go-dbus-generator
+		app-misc/ddcutil
 		>=dev-go/go-gir-generator-2.0.0
 		dev-go/go-dbus-factory
 		dev-util/cmake
@@ -43,7 +44,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	mkdir -p "${T}/golibdir/"
 	cp -r  "${S}/src/${EGO_PN}/vendor"  "${T}/golibdir/src"
-	export GOPATH="$(get_golibdir_gopath):${T}/golibdir/"
+	export GOPATH="${S}:$(get_golibdir_gopath):${T}/golibdir/"
 
 	LIBDIR=$(get_libdir)
 	cd ${S}/src/${EGO_PN}
