@@ -64,6 +64,8 @@ src_prepare() {
 src_configure() {
 	local mycmakeargs=(
 		-DDISABLE_SYS_UPDATE_SOURCE_CHECK=YES
+		-DDISABLE_SYS_UPDATE_MIRRORS=YES
+		-DDISABLE_SYS_UPDATE=YES
 		-DCVERSION=${PV}
 	)
 	cmake-utils_src_configure

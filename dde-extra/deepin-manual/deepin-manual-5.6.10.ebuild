@@ -7,13 +7,16 @@ EAPI=7
 inherit cmake-utils
 
 DESCRIPTION="Deepin User Manual"
-HOMEPAGE="https://github.com/linuxdeepin/deepin-manual"
+MY_PN=${PN#*-}
+MY_P=${MY_PN}-${PV}
+HOMEPAGE="https://github.com/linuxdeepin/manual"
 if [[ "${PV}" == *9999* ]] ; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
+	EGIT_REPO_URI="https://github.com/linuxdeepin/${MY_PN}.git"
 else
-	SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz"
+	SRC_URI="https://github.com/linuxdeepin/${MY_PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~x86 ~amd64"
+	S=${WORKDIR}/${MY_P}
 fi
 
 LICENSE="GPL-3+"
