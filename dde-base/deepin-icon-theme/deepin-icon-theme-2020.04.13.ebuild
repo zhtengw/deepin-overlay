@@ -7,7 +7,7 @@ inherit gnome2-utils
 
 DESCRIPTION="Deepin Icons"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-icon-theme"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-3+"
 SLOT="0"
