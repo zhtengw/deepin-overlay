@@ -7,8 +7,11 @@ EAPI=6
 inherit qmake-utils
 
 DESCRIPTION="Deepin Device Manager"
-HOMEPAGE="https://github.com/linuxdeepin/dde-devicemanager"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz"
+HOMEPAGE="https://github.com/linuxdeepin/dde_devicemanager"
+MY_PN=${PN/-/_}
+MY_P=${MY_PN}-${PV}
+SRC_URI="https://github.com/linuxdeepin/${MY_PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+S=${WORKDIR}/${MY_P}
 
 LICENSE="GPL-3+"
 SLOT="0"
