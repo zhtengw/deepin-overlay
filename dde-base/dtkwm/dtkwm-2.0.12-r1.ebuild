@@ -40,10 +40,14 @@ RDEPEND="dev-qt/qtmultimedia:5[widgets]
 		 dev-libs/glib
 		"
 DEPEND="${RDEPEND}
-		dde-base/dtkcore:=
+		dde-base/dtkcore:2=
 		"
 
 src_prepare() {
+	sed -i "s|dtkcore|dtkcore2|g" \
+		src/src.pro || die
+	sed -i "s|load(dtk_|load(dtk2_|g" \
+		src/src.pro || die
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir) DTK_MODULE_NAME=dtkwm
 	default_src_prepare
 }

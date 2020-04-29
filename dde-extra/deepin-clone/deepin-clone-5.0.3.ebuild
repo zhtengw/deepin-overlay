@@ -24,12 +24,16 @@ RDEPEND="dev-qt/qtcore:5
 		"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.1:=
+		>=dde-base/dtkwidget-2.0.1:2=
 		virtual/pkgconfig
 	    "
 
 src_prepare() {
 	eapply_user
+	sed -i "s|\(PKGCONFIG += dtk.*\)|\12|g" \
+		app/deepin-clone-app.pro \
+		app/src/widgets/widgets.pri \
+		honest_child/honest_child.pro || die
 	sed -i "s|QT\ +=|QT\ +=\ multimediawidgets|g" src/widgets/widgets.pri
 	export QT_SELECT=qt5
 	eqmake5 $(use gui || echo DISABLE_GUI=1) DEFINES+="VERSION=${PV}"

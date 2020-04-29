@@ -17,7 +17,7 @@ else
 	KEYWORDS="~amd64 ~x86"
 fi
 LICENSE="GPL-3"
-SLOT="0/${PV}"
+SLOT="2/${PV}"
 IUSE=""
 
 RDEPEND=">=dev-qt/qtcore-5.5:5
@@ -28,20 +28,41 @@ RDEPEND=">=dev-qt/qtcore-5.5:5
 DEPEND="${RDEPEND}"
 
 src_prepare() {
-	LIBDIR=$(get_libdir)
+	cd ${S}/cmake
+	sed -i "s/DtkCore/DtkCore2/" DtkCMake/DtkCMakeConfig.cmake || die
+	sed -i "s/DTKCORE/DTKCORE2/" DtkCMake/DtkCMakeConfig.cmake || die
+	mv Dtk/DtkConfig.cmake Dtk/Dtk2Config.cmake
+	mv DtkCMake/DtkCMakeConfig.cmake DtkCMake/Dtk2CMakeConfig.cmake
+	mv Dtk Dtk2
+	mv DtkCMake Dtk2CMake
 
-	sed -i "s/\(dtk_.*\).prf/\1-2.prf/g" \
+	cd ${S}
+	sed -i "s/\(TARGET\ =\ dtkcore\)/\12/" src/src.pro || die
+	sed -i "s/dtkcore/dtkcore2/g" \
+		src/dtk_qmake.prf \
+		src/dtk_build.prf \
+		src/dtkcore_global.h \
+		dtk_build_config.prf \
+		tools/settings/settings.pro \
+		tools/deepin-os-release/deepin-os-release.pro || die
+
+	sed -i "s/dtk\(_.*\)/dtk2\1/g" \
+		src/dtk_build.prf \
 		src/src.pro \
 		dtkcore.pro \
 		tools/settings/settings.pro \
 		tools/deepin-os-release/deepin-os-release.pro || die
-	mv dtk_build_config.prf dtk_build_config-2.prf
-	for prf in $(ls src/dtk_*.prf)
+	mv dtk_build_config.prf dtk2_build_config.prf
+
+	cd ${S}/src
+	for prf in $(ls dtk_*.prf)
 	do
-		newprf=${prf%.prf}-2.prf
+		newprf=dtk2_${prf#dtk_}
 		mv $prf $newprf 
 	done
 
+	cd ${S}
+	LIBDIR=$(get_libdir)
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir) VERSION=${PV}
 	default_src_prepare
 }
