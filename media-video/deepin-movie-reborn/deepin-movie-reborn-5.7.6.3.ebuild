@@ -7,13 +7,7 @@ EAPI=7
 inherit cmake-utils xdg-utils
 DESCRIPTION="Deepin Movie Player"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-movie-reborn"
-if [[ "${PV}" == *9999* ]] ; then
-	inherit git-r3
-	EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
-	EGIT_BRANCH="vpu"
-else
-    SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}.orig.tar.xz -> ${P}.tar.xz"
-fi
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3+"
 SLOT="3"
