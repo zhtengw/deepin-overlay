@@ -7,13 +7,15 @@ EAPI=7
 inherit qmake-utils eutils
 
 DESCRIPTION="A lightweight memo tool to make text notes and voice recordings"
-HOMEPAGE="https://github.com/linuxdeepin/deepin_voice_note"
+HOMEPAGE="https://github.com/linuxdeepin/deepin-voice-note"
 
-MY_PN=${PN//-/_}
-MY_P=${MY_PN}-${PV}
-SRC_URI="https://github.com/linuxdeepin/${MY_PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-S=${WORKDIR}/${MY_P}
-KEYWORDS="~amd64 ~x86"
+if [[ "${PV}" == *9999* ]] ; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
+else
+	SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~x86"
+fi
 
 LICENSE="GPL-3"
 SLOT="0"

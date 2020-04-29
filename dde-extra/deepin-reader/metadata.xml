@@ -6,6 +6,6 @@
 		<name>Aten Zhang</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">linuxdeepin/deepin_reader</remote-id>
+		<remote-id type="github">linuxdeepin/deepin-reader</remote-id>
 	</upstream>
 </pkgmetadata>

@@ -7,11 +7,8 @@ EAPI=7
 inherit qmake-utils
 
 DESCRIPTION="Archive Manager for Deepin"
-HOMEPAGE="https://github.com/linuxdeepin/compressor"
-MY_PN=${PN#*-}
-MY_P=${MY_PN}-${PV}
-SRC_URI="https://github.com/linuxdeepin/${MY_PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-S=${WORKDIR}/${MY_P}
+HOMEPAGE="https://github.com/linuxdeepin/deepin-compressor"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

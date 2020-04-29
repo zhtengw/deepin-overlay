@@ -7,11 +7,8 @@ EAPI=7
 inherit qmake-utils
 
 DESCRIPTION="PDF Document Viewer for Deepin"
-HOMEPAGE="https://github.com/linuxdeepin/deepin_reader"
-MY_PN=${PN//-/_}
-MY_P=${MY_PN}-${PV}
-SRC_URI="https://github.com/linuxdeepin/${MY_PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-S=${WORKDIR}/${MY_P}
+HOMEPAGE="https://github.com/linuxdeepin/deepin-reader"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

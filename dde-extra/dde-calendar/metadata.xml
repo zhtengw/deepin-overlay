@@ -6,6 +6,6 @@
 		<name>Aten Zhang</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">linuxdeepin/calendar</remote-id>
+		<remote-id type="github">linuxdeepin/dde-calendar</remote-id>
 	</upstream>
 </pkgmetadata>

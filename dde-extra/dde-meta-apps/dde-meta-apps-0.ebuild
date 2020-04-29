@@ -27,7 +27,7 @@ RDEPEND="
 	dde-extra/deepin-topbar
 	dde-extra/deepin-compressor
 	dde-extra/deepin-reader
-	dde-extra/dde-log-viewer
-	dde-extra/dde-devicemanager
+	dde-extra/deepin-log-viewer
+	dde-extra/deepin-devicemanager
 	dde-extra/dde-printer
 	"

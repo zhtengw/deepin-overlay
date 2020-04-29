@@ -6,6 +6,6 @@
 		<name>Aten Zhang</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">linuxdeepin/deepin_voice_note</remote-id>
+		<remote-id type="github">linuxdeepin/deepin-voice-note</remote-id>
 	</upstream>
 </pkgmetadata>
