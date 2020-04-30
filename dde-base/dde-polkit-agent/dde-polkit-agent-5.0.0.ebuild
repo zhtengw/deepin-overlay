@@ -22,10 +22,13 @@ RDEPEND="dev-qt/qtcore:5
 		sys-auth/polkit-qt[qt5(+)]
 		"
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.2:=
+		>=dde-base/dtkwidget-2.0.2:2=
 		"
 
 src_prepare() {
+	sed -i "s|dtkcore|dtkcore2|g" dde-polkit-agent.pro || die
+	sed -i "s|dtkwidget|dtkwidget2|g" dde-polkit-agent.pro || die
+	sed -i "s|dtk_|dtk2_|g" dde-polkit-agent.pro || die
 
 	LIBDIR=$(get_libdir)
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" ${PN}.pro

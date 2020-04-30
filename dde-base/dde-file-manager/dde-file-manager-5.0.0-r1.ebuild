@@ -51,7 +51,7 @@ RDEPEND="sys-apps/file
 		>=dde-base/dde-dock-4.2.0:=
 		dde-base/dde-qt-dbus-factory
 		dde-base/dde-qt5integration
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-2.0.0:2=
 		screensaver? ( dde-extra/deepin-screensaver )
 		samba? ( net-fs/samba )
 		avfs? ( sys-fs/avfs )
@@ -62,14 +62,24 @@ DEPEND="${RDEPEND}
 		dde-base/deepin-gettext-tools
 		"
 PATCHES=(                          
-    "${FILESDIR}"/${P}-qt5.14.patch
+    "${FILESDIR}"/5.0.0-qt5.14.patch
 )
 
 src_prepare() {
 	sed -i "s|\ systemd_service||g" dde-file-manager-daemon/dde-file-manager-daemon.pro
 
+	sed -i "s|DtkWidget|DtkWidget2|g" dde-file-manager-lib/views/dfmopticalmediawidget.h || die
+	sed -i "s|dtkwidget|dtkwidget2|g" \
+		dde-desktop/dde-desktop-build.pri \
+		dde-file-manager/dde-file-manager.pro \
+		dde-file-manager-plugins/pluginPreview/dde-image-preview-plugin/dde-image-preview-plugin.pro \
+		dde-dock-plugins/disk-mount/disk-mount.pro \
+		usb-device-formatter/usb-device-formatter.pro \
+		dde-file-manager-lib/dde-file-manager-lib.pro \
+		dde-file-manager-daemon/dde-file-manager-daemon.pro || die
+
 	LIBDIR=$(get_libdir)
-	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro
+	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" dde-dock-plugins/disk-mount/disk-mount.pro || die
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
 		dde-file-manager-lib/gvfs/networkmanager.cpp \
 		dde-file-manager-lib/shutil/fileutils.cpp \

@@ -35,13 +35,22 @@ RDEPEND="dev-qt/qtcore:5
 		"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.5:=
+		>=dde-base/dtkwidget-2.0.5:2=
 		virtual/pkgconfig
 		dev-lang/python
 	    "
 
 src_prepare() {
 	eapply_user
+	sed -i "s|dtkcore|dtkcore2|g" \
+		src/service/vendor.pri \
+		src/libdbm/vendor.pri \
+		src/app/vendor.pri || die
+	sed -i "s|dtkwidget|dtkwidget2|g" \
+		src/app/vendor.pri || die
+	sed -i "s|DTK_|DTK2_|g" \
+		src/service/vendor.pri || die
+
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" src/vendor/src/libxsys/libxsys.pro src/service/service.pro || die
 	sed -i "s|/usr/lib|/usr/${LIBDIR}|g" src/libdbm/libdbm.pro src/service/data/com.deepin.bootmaker.service || die

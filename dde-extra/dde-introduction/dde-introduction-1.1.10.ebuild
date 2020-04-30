@@ -20,7 +20,6 @@ RDEPEND="dev-qt/qtcore:5
 		dev-qt/qtwidgets:5
 		dev-qt/qtdbus:5
 		dev-qt/qtmultimedia:5[widgets]
-		>=dde-base/dde-meta-15.6
 		media-video/deepin-movie-reborn
 		"
 
@@ -31,6 +30,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	eapply_user
+	sed -i "s|dtkwidget|dtkwidget2|g" dde-introduction.pro || die
+	sed -i "s|dtk_|dtk2_|g" dde-introduction.pro || die
 	QT_SELECT=qt5 eqmake5
 }
 

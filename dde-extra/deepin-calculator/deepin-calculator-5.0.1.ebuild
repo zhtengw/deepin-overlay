@@ -22,7 +22,7 @@ RDEPEND="dev-qt/qtcore:5
 		 "
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-2.0.0:2=
 		dev-qt/linguist-tools
 		dev-qt/qtchooser
 		virtual/pkgconfig
@@ -30,6 +30,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	eapply_user
+	sed -i "s|dtkwidget|dtkwidget2|g" deepin-calculator.pro || die
 	QT_SELECT=qt5 eqmake5
 }
 

@@ -40,11 +40,21 @@ DEPEND="dev-qt/qtdbus:5
 		media-libs/libdvdnav
 		"
 RDEPEND="${DEPEND}
-		>=dde-base/dtkcore-2.0.0
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkcore-2.0.0:2
+		>=dde-base/dtkwidget-2.0.0:2=
 		"
 
 src_prepare() {
+	sed -i "s|\([dD]tk[wW]idget\)|\12|g" \
+		src/libdmr/libdmr.pc.in \
+		src/libdmr/CMakeLists.txt \
+		src/CMakeLists.txt || die
+	sed -i "s|\(dtkcore\)|\12|ig" \
+		src/libdmr/libdmr.pc.in \
+		src/CMakeLists.txt || die
+	sed -i "s|Core\ Widget|Core2\ Widget2|g" \
+		src/CMakeLists.txt || die
+
     LIBDIR=$(get_libdir)
     sed -i "s|lib/|${LIBDIR}/|g" src/CMakeLists.txt || die
     cmake-utils_src_prepare

@@ -20,9 +20,9 @@ RDEPEND="dev-qt/qtsvg:5
 		 >=dde-base/deepin-menu-3.2.0
 		 dde-base/dde-daemon
 		 dde-base/dde-network-utils
-		 dde-base/dde-qt5integration
+		 ~dde-base/dde-qt5integration-5.0.0
 		 app-accessibility/onboard
-       	 >=dde-base/dtkwidget-2.0.9.5:=
+       	 >=dde-base/dtkwidget-2.0.9.5:2=
 	     "
 DEPEND="${RDEPEND}
 		virtual/pkgconfig
@@ -37,6 +37,13 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
+	sed -i "s|DtkCMake|Dtk2CMake|g" \
+		frame/CMakeLists.txt || die
+	sed -i "s|DtkWidget|DtkWidget2|g" \
+		frame/CMakeLists.txt \
+		plugins/*/*/CMakeLists.txt \
+		plugins/*/CMakeLists.txt || die
+
 	sed -i "s|lib/|${LIBDIR}/|g" plugins/*/CMakeLists.txt
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
 		frame/item/showdesktopitem.cpp \

@@ -41,12 +41,18 @@ RDEPEND="dev-qt/qtsvg:5
 		!systemd? ( app-admin/openrc-settingsd )
 		"
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.1:=
+		>=dde-base/dtkwidget-2.0.1:2=
 		>=dde-base/dde-qt-dbus-factory-1.1.6:=
 		"
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
+	sed -i "s|\(DtkWidget\)|\12|g" \
+		src/dialogs/CMakeLists.txt \
+		src/frame/CMakeLists.txt || die
+	sed -i "s|DtkCMake|Dtk2CMake|g" \
+		CMakeLists.txt \
+		src/frame/CMakeLists.txt || die
 	sed -i "s|lib/|${LIBDIR}/|g" src/dialogs/CMakeLists.txt || die
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
 		src/frame/modules/sync/syncworker.cpp \

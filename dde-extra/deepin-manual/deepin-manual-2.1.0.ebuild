@@ -29,6 +29,12 @@ DEPEND="dev-qt/qtcore:5
 		dde-base/dtkwidget:=
 		virtual/pkgconfig
 	    "
+src_prepare() {
+	sed -i "s|\([dD]tk[wW]idget\)|\12|g" \
+		src/CMakeLists.txt || die
+
+	cmake-utils_src_prepare
+}
 
 src_configure() {
 	local mycmakeargs=(

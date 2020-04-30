@@ -1,0 +1,18 @@
+--- a/dde-wallpaper-chooser/frame.cpp	2020-04-17 20:35:01.240360201 +0800
++++ b/dde-wallpaper-chooser/frame.cpp	2020-04-17 20:37:21.442637560 +0800
+@@ -180,6 +180,7 @@
+     DBlurEffectWidget::hide();
+ }
+ 
++#ifndef DISABLE_SCREENSAVER
+ void Frame::setMode(Frame::Mode mode)
+ {
+     if (m_mode == mode)
+@@ -198,6 +199,7 @@
+     reLayoutTools();
+     refreshList();
+ }
++#endif
+ 
+ QString Frame::desktopBackground() const
+ {

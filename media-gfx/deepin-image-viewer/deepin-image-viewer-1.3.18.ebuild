@@ -27,11 +27,15 @@ RDEPEND="dev-qt/qtsvg:5
 		"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-2.0.0:2=
 	    "
 
 src_prepare() {
 	eapply_user
+
+	sed -i "s|dtkwidget|dtkwidget2|g" viewer/viewer.pro || die
+	sed -i "s|dtk_|dtk2_|g" viewer/viewer.pro || die
+
 	export QT_SELECT=qt5
 	eqmake5
 }

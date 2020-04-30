@@ -15,8 +15,12 @@ IUSE=""
 
 RDEPEND="media-sound/deepin-music
 		media-video/deepin-movie-reborn
-		media-gfx/deepin-screenshot
-		media-gfx/deepin-screen-recorder
+		|| ( >=media-gfx/deepin-screen-recorder-5.8.0
+		( media-gfx/deepin-screenshot
+		<=media-gfx/deepin-screen-recorder-5.0.0 )
+		)
 		media-sound/deepin-voice-recorder
 		media-gfx/deepin-image-viewer
+		media-gfx/deepin-draw
+		media-gfx/deepin-album
 		"

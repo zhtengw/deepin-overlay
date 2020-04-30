@@ -1,0 +1,35 @@
+--- a/src/common/han_latin.cpp	2020-03-11 14:33:40.000000000 +0800
++++ b/src/common/han_latin.cpp	2020-04-19 17:44:54.169498828 +0800
+@@ -24,13 +24,13 @@
+     QString errbuf {};
+ 
+     std::string pre {}, post {};
+-#undef u_errorName
+-#define UERRORNAME U_DEF2_ICU_ENTRY_POINT_RENAME(u_errorName, U_ICU_VERSION_SUFFIX)
++//#undef u_errorName
++//#define UERRORNAME U_DEF2_ICU_ENTRY_POINT_RENAME(u_errorName, U_ICU_VERSION_SUFFIX)
+     errbuf = QString(
+                  "Error[%1]: %2 convert %3 to PINYIN failed. [line:%4 offset:%5 "
+                  "preContext: %6 postContext: %7]")
+                  .arg(ec)
+-                 .arg(UERRORNAME(ec))
++ //                .arg(UERRORNAME(ec))
+                  .arg(words)
+                  .arg(pe.line)
+                  .arg(pe.offset)
+--- a/src/common/collator.cpp	2020-03-11 14:33:40.000000000 +0800
++++ b/src/common/collator.cpp	2020-04-19 17:44:49.829336869 +0800
+@@ -37,9 +37,10 @@
+     UErrorCode ec = U_ZERO_ERROR;
+     m_collator = icu::Collator::createInstance(ec);
+     if (U_FAILURE(ec)) {
+-#undef u_errorName
+-#define UERRORNAME U_DEF2_ICU_ENTRY_POINT_RENAME(u_errorName, U_ICU_VERSION_SUFFIX)
+-        qDebug() << QString("Create collator failed: [%1] %2").arg(ec).arg(UERRORNAME(ec));
++//#undef u_errorName
++//#define UERRORNAME U_DEF2_ICU_ENTRY_POINT_RENAME(u_errorName, U_ICU_VERSION_SUFFIX)
++        //qDebug() << QString("Create collator failed: [%1] %2").arg(ec).arg(UERRORNAME(ec));
++        qDebug() << QString("Create collator failed: [%1] %2").arg(ec);
+         m_collator = nullptr;
+     }
+ }

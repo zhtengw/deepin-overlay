@@ -1,2 +1,3 @@
-DIST dde-file-manager-4.8.8.1.tar.gz 4716647 SHA256 34670df841440e9cdc221051e70243f0480e00149ba1d7054dfa3bab00a393b4
 DIST dde-file-manager-5.0.0.tar.gz 4716718 SHA256 de6022346b074cfc87cb4fad2fccfdf433f45556fd153fb03caf5a03d5648f88
+DIST dde-file-manager-5.1.0.28.tar.gz 4573136 SHA256 dcdda64689f56a68413d8c20e8df099cf30e7baf359b19c3c0ced69325a5ed7d
+DIST dde-file-manager-5.1.1.18.tar.gz 7516627 SHA256 24201cda5256ce90fc391020e11e0588299dde00a84c88fe9bdbbfd6df0f81d4

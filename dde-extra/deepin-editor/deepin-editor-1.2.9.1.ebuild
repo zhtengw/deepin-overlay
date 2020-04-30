@@ -33,10 +33,27 @@ RDEPEND="dev-qt/qtcore:5
 		"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.6:=
+		>=dde-base/dtkwidget-2.0.6:2=
 		>=dde-base/dtkwm-2.0.6
 		dev-qt/linguist-tools
 		dev-qt/qtchooser
 		virtual/pkgconfig
 		"
 
+src_prepare() {
+	sed -i "s|\(DtkWidget\)|\12|g" \
+		CMakeLists.txt || die
+	sed -i "s|\(DtkCore\)|\12|g" \
+		CMakeLists.txt || die
+	sed -i "s|\(DTKWIDGET\)|\12|g" \
+		src/window.cpp || die
+
+	cmake-utils_src_prepare
+}
+
+src_configure() {
+	local mycmakeargs=(
+		-DVERSION=${PV}
+	)
+	cmake-utils_src_configure
+}

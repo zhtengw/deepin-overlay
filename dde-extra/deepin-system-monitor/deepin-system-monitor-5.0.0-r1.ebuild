@@ -38,7 +38,7 @@ RDEPEND="sys-process/procps
 	"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.2:=
+		>=dde-base/dtkwidget-2.0.2:2=
 		dde-base/dtkwm:=
 		"
 
@@ -48,6 +48,8 @@ PATCHES=(
 
 src_prepare() {
 	default
+	sed -i "s|dtkwidget|dtkwidget2|g" deepin-system-monitor.pro || die
+	sed -i "s|dtk_|dtk2_|g" deepin-system-monitor.pro || die
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr ${PN}.pro
 }
 

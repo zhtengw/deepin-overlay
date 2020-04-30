@@ -35,7 +35,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	eapply_user
-	QT_SELECT=qt5 eqmake5 ${PN}.pro
+	# fix build error with dtkwidget-5.1.2
+	sed -i "s/Qt::AlignVCenter,//g" src/main_window.cpp || die
+	QT_SELECT=qt5 eqmake5 DEFINES+="VERSION=${PV}" ${PN}.pro
 }
 
 src_install() {

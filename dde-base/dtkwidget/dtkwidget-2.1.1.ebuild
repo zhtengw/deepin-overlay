@@ -17,7 +17,7 @@ else
 	 KEYWORDS="~amd64 ~x86"
 fi
 LICENSE="GPL-3"
-SLOT="0/${PV}"
+SLOT="2/${PV}"
 IUSE=""
 
 RDEPEND="dev-qt/qtmultimedia:5[widgets]
@@ -52,9 +52,28 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
+	sed -i "s/\(TARGET\ =\ dtkwidget\)/\12/" src/src.pro || die
+	sed -i "s/DWIDGET_TRANSLATIONS_DIR/DWIDGET2_TRANSLATIONS_DIR/g" \
+		src/widgets/dapplication.cpp || die
+	sed -i "s/DtkWidget/DtkWidget2/g" \
+		src/src.pro || die
+	sed -i "s/dtkwidget_config/dtkwidget2_config/g" \
+		src/src.pro \
+		src/dtkwidget_global.h || die
+	sed -i "s/-ldtkwidget/-ldtkwidget2/g" \
+		examples/dwidget-examples/collections/collections.pro || die
+	sed -i "s/QT\ +=\ dtkcore/QT\ +=\ dtkcore2/g" \
+		src/src.pro \
+		tools/svgc/svgc.pro \
+		examples/dwidget-examples/collections/collections.pro || die
+	sed -i "s/load(dtk\(_.*\)/load(dtk2\1/g" \
+		src/src.pro \
+		tools/svgc/svgc.pro \
+		dtkwidget.pro || die
+
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" tools/svgc/svgc.pro
-	QT_SELECT=qt5 eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)
+	QT_SELECT=qt5 eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir) VERSION=${PV}
 	default_src_prepare
 }
 

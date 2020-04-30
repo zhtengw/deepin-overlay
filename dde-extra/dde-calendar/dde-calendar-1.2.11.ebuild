@@ -21,6 +21,12 @@ RDEPEND="dev-qt/qtcore:5
 		dev-qt/qtdbus:5"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-2.0.0:2=
 		"
 
+src_prepare() {
+	sed -i "s|\([dD]tk[wW]idget\)|\12|g" \
+		src/CMakeLists.txt || die
+
+	cmake-utils_src_prepare
+}
