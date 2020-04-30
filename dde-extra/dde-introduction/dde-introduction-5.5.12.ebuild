@@ -20,7 +20,7 @@ RDEPEND="dev-qt/qtcore:5
 		dev-qt/qtwidgets:5
 		dev-qt/qtdbus:5
 		dev-qt/qtmultimedia:5[widgets]
-		>=dde-base/dde-meta-15.6
+		>=dde-base/dde-meta-20
 		media-video/deepin-movie-reborn
 		"
 

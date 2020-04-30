@@ -27,11 +27,20 @@ RDEPEND="dev-qt/qtmultimedia:5[gstreamer]
 	media-plugins/gst-plugins-meta:1.0[mp3=,flac=,ogg=,aac=]
 	"
 DEPEND="${RDEPEND}
-	>=dde-base/dtkwidget-2.0.0:=
+	>=dde-base/dtkwidget-2.0.0:2=
 	"
 
 src_prepare() {
 	eapply_user
+	sed -i "s|dtkwidget|dtkwidget2|g" \
+		src/vendor/build.pri \
+		src/music-player/build.pri \
+		src/music-player/music-player.pro || die
+	sed -i "s|dtk_|dtk2_|g" \
+		src/music-player/music-player.pro || die
+	sed -i "s|dtkcore|dtkcore2|g" \
+		src/libdmusic/libdmusic.pro || die
+
 	LIBDIR=$(qt5_get_libdir)
 	sed -i "s|\$\${PREFIX}/lib|${LIBDIR}|g" src/vendor/mpris-qt/src/src.pro src/vendor/dbusextended-qt/src/src.pro src/plugin/netease-meta-search/netease-meta-search.pro src/libdmusic/libdmusic.pro
 

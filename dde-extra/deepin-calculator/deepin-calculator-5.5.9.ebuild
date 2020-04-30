@@ -22,7 +22,7 @@ RDEPEND="dev-qt/qtcore:5
 		 "
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-5.1.2:=
 		dev-qt/linguist-tools
 		dev-qt/qtchooser
 		virtual/pkgconfig

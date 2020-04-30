@@ -24,10 +24,14 @@ RDEPEND="dev-qt/qtsvg:5
 		 dde-base/dde-file-manager:=
 	     "
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.1:=
+		>=dde-base/dtkwidget-2.0.1:2=
 	    "
 
 src_prepare() {
+	sed -i "s|dtkwidget|dtkwidget2|g" \
+		libdeepin-font-installer/libdeepin-font-installer.pro \
+		deepin-font-installer/deepin-font-installer.pro \
+		deepin-font-preview-plugin/deepin-font-preview-plugin.pro || die
 	export QT_SELECT=qt5 
 	eqmake5	PREFIX=/usr
 	default_src_prepare

@@ -55,6 +55,8 @@ src_prepare() {
 	sed -i "s/\(TARGET\ =\ dtkwidget\)/\12/" src/src.pro || die
 	sed -i "s/DWIDGET_TRANSLATIONS_DIR/DWIDGET2_TRANSLATIONS_DIR/g" \
 		src/widgets/dapplication.cpp || die
+	sed -i "s/DtkWidget/DtkWidget2/g" \
+		src/src.pro || die
 	sed -i "s/dtkwidget_config/dtkwidget2_config/g" \
 		src/src.pro \
 		src/dtkwidget_global.h || die

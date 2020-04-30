@@ -24,11 +24,13 @@ RDEPEND="dev-qt/qtcore:5
 		"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-2.0.0:2=
 		"
 
 src_prepare() {
 	eapply_user
+	sed -i "s|dtkwidget|dtkwidget2|g" deepin-shortcut-viewer.pro || die
+	sed -i "s|dtkcore|dtkcore2|g" deepin-shortcut-viewer.pro || die
 	QT_SELECT=qt5 eqmake5
 }
 

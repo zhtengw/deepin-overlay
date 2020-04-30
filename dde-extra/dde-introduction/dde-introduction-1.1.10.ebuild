@@ -6,34 +6,33 @@ EAPI=7
 
 inherit qmake-utils
 
-DESCRIPTION="Deepin Image Viewer"
-HOMEPAGE="https://github.com/linuxdeepin/deepin-image-viewer"
+DESCRIPTION="Deepin Initialization Setup Tool"
+HOMEPAGE="https://github.com/linuxdeepin/dde-introduction"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+jpeg +png +tiff raw mng jpeg2k"
+IUSE=""
 
-RDEPEND="dev-qt/qtsvg:5
-		dev-qt/qtconcurrent:5
+RDEPEND="dev-qt/qtcore:5
 		dev-qt/qtgui:5
+		dev-qt/qtwidgets:5
 		dev-qt/qtdbus:5
-		dev-qt/qtprintsupport:5
-		dev-qt/qtx11extras:5
-		media-libs/libraw
-		media-libs/libexif
-		media-libs/freeimage[jpeg?,png?,tiff?,raw?,mng?,jpeg2k?]
+		dev-qt/qtmultimedia:5[widgets]
+		media-video/deepin-movie-reborn
 		"
 
 DEPEND="${RDEPEND}
+		dde-base/dde-qt-dbus-factory
 		>=dde-base/dtkwidget-2.0.0:=
-	    "
+		"
 
 src_prepare() {
 	eapply_user
-	export QT_SELECT=qt5
-	eqmake5
+	sed -i "s|dtkwidget|dtkwidget2|g" dde-introduction.pro || die
+	sed -i "s|dtk_|dtk2_|g" dde-introduction.pro || die
+	QT_SELECT=qt5 eqmake5
 }
 
 src_install() {

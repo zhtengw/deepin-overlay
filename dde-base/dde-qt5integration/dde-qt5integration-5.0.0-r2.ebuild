@@ -39,7 +39,7 @@ RDEPEND="
 	"
 DEPEND="${RDEPEND}
 	dev-libs/glib:2
-	>=dde-base/dtkwidget-2.0.0:=
+	>=dde-base/dtkwidget-2.0.0:2=
 	"
 
 PATCHES=(
@@ -48,6 +48,20 @@ PATCHES=(
 )
 
 src_prepare() {
+	sed -i "s|dtkwidget|dtkwidget2|g" \
+		dstyleplugin/dstyleplugin.pro \
+		imageformatplugins/svg/svg.pro \
+		iconengineplugins/svgiconengine/svgiconengine.pro \
+		platformthemeplugin/qt5deepintheme-plugin.pro || die
+	sed -i "s|dtkcore|dtkcore2|g" \
+		platformthemeplugin/qt5deepintheme-plugin.pro || die
+	sed -i "s|\(dtkwidget\)_|\12_|ig" \
+		dstyleplugin/lineedithelper.cpp \
+		dstyleplugin/tabbarhelper.cpp || die
+	sed -i "s|\(DTKWIDGET\)_|\12_|g" \
+		dstyleplugin/style.cpp \
+		dstyleplugin/pushbuttonhelper.cpp || die
+
 	QT_SELECT=qt5 eqmake5 ${MY_PN}.pro
 	default
 }

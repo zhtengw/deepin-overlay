@@ -41,13 +41,32 @@ RDEPEND="
 		 dde-base/startdde
 		"
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-2.0.0:2=
 		>=dde-base/deepin-gettext-tools-1.0.6
 		>=dde-base/dde-qt-dbus-factory-1.1.5:=
 		virtual/pkgconfig
 		"
 
 src_prepare() {
+	sed -i "s|dtkwidget|dtkwidget2|g" \
+		dde-welcome/dde-welcome.pro \
+		dde-warning-dialog/dde-warning-dialog.pro \
+		dde-offline-upgrader/dde-offline-upgrader.pro \
+		dde-osd/dde-osd.pro \
+		dde-suspend-dialog/dde-suspend-dialog.pro \
+		dde-license-dialog/dde-license-dialog.pro \
+		lightdm-deepin-greeter/lightdm-deepin-greeter.pro \
+		dnetwork-secret-dialog/dnetwork-secret-dialog.pro \
+		dde-wm-chooser/dde-wm-chooser.pro \
+		widgets/widgets.pri \
+		dmemory-warning-dialog/dmemory-warning-dialog.pro || die
+	sed -i "s|dtkcore|dtkcore2|g" \
+		dde-shutdown/dde-shutdown.pro || die
+
+	sed -i "s|dtk_|dtk2_|g" \
+		dde-session-ui.pro \
+		dde-lock/dde-lock.pro \
+		lightdm-deepin-greeter/lightdm-deepin-greeter.pro || die
 
 	if use elogind; then
 		sed -i "s|libsystemd|libelogind|g" dde-switchtogreeter/dde-switchtogreeter.pro

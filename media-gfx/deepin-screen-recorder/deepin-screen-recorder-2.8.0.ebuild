@@ -42,6 +42,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	eapply_user
+
+	sed -i "s|dtkwidget|dtkwidget2|g" \
+		deepin-screen-recorder.pro || die
 	QT_SELECT=qt5 eqmake5 ${PN}.pro
 }
 

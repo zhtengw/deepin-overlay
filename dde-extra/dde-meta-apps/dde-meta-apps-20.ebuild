@@ -19,8 +19,7 @@ RDEPEND="
 	dde-extra/deepin-calculator
 	dde-extra/deepin-clone
 	dde-extra/deepin-editor
-	|| ( dde-extra/deepin-font-manager
-	dde-extra/deepin-font-installer )
+	dde-extra/deepin-font-manager
 	dde-extra/deepin-picker
 	dde-extra/deepin-voice-note
 	dde-extra/deepin-system-monitor

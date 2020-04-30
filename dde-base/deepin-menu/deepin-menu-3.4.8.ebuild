@@ -19,7 +19,7 @@ IUSE=""
 DEPEND="${RDEPEND}
 		x11-libs/libX11
 		x11-libs/libxcb
-		>=dde-base/dtkwidget-2.0.0:=
+		>=dde-base/dtkwidget-2.0.0:2=
 		dde-base/dde-qt-dbus-factory
 		dde-base/dde-qt5integration
 		dde-base/dde-api
@@ -27,6 +27,7 @@ DEPEND="${RDEPEND}
 		dev-qt/qtdeclarative:5
 	    "
 src_prepare() {
+	sed -i "s|dtkwidget|dtkwidget2|g" deepin-menu.pro || die
 	QT_SELECT=qt5 eqmake5
 	default_src_prepare
 }

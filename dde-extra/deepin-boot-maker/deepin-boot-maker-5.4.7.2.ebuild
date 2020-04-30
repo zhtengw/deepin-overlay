@@ -35,7 +35,7 @@ RDEPEND="dev-qt/qtcore:5
 		"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.5:=
+		>=dde-base/dtkwidget-5.1.2:=
 		virtual/pkgconfig
 		dev-lang/python
 	    "

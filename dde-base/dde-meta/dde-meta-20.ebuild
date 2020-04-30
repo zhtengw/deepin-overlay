@@ -31,7 +31,7 @@ RDEPEND=">=dde-base/dde-control-center-5.0.33
 		manual? ( >=dde-extra/deepin-manual-5.6.0 )
 		terminal? ( dde-extra/deepin-terminal )
 		multimedia? ( dde-extra/dde-meta-multimedia )
-		extra? ( dde-extra/dde-meta-apps )
+		extra? ( ~dde-extra/dde-meta-apps-${PV} )
 		plymouth? ( dde-extra/plymouth-theme-deepin )
 		"
 
