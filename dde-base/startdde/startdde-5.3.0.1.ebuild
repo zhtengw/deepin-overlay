@@ -66,4 +66,9 @@ src_compile() {
 src_install() {
 	cd ${S}/src/${EGO_PN}
 	emake DESTDIR="${D}" install
+
+	rm -r ${D}/etc/X11/
+
+	exeinto /etc/X11/xinit/xinitrc.d
+	doexe ${S}/src/${EGO_PN}/misc/Xsession.d/*
 }
