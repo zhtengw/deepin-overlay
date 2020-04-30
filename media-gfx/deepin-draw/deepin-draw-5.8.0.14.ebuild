@@ -39,6 +39,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	eapply_user
+	sed -i 's|app_icon\ ||g' draw.pro || die
 	export QT_SELECT=qt5
 	eqmake5 DEFINES+="VERSION=${PV}"
 }
