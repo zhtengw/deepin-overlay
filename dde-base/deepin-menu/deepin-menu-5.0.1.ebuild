@@ -22,7 +22,7 @@ DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-5.1.2:=
 		>=dde-base/dde-qt-dbus-factory-5.0.16
 		>=dde-base/dde-qt5integration-5.1.0
-		>=dde-base/dde-api-5.1.13
+		>=dde-base/dde-api-5.1.1
 		dev-qt/qtx11extras:5
 		dev-qt/qtdeclarative:5
 	    "
