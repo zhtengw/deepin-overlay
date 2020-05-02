@@ -9,11 +9,80 @@ index e8c3577..9f387ba 100644
 +#if KWIN_EFFECT_API_VERSION_MINOR < 229
      void paintEffectFrame(EffectFrame *frame, QRegion region, double opacity, double frameOpacity) override;
 +#else
-+    void paintEffectFrame(EffectFrame *frame, QRegion region, double opacity, double frameOpacity);
++    void paintEffectFrame(EffectFrame* frame, const QRegion &region, double opacity, double frameOpacity) override;
 +#endif
  
      bool provides(Feature feature) override;
  
+diff --git a/plugins/kwineffects/blur/blur.cpp b/plugins/kwineffects/blur/blur.cpp
+index b5cae9e..118f112 100644
+--- a/plugins/kwineffects/blur/blur.cpp
++++ b/plugins/kwineffects/blur/blur.cpp
+@@ -429,8 +429,13 @@ QRegion BlurEffect::expand(const QRegion &region) const
+ {
+     QRegion expanded;
+ 
++#if KWIN_EFFECT_API_VERSION_MINOR < 229
+     for (const QRect &rect : region.rects()) {
+         expanded += expand(rect);
++#else
++    for (auto it = region.begin(); it != region.end(); ++it) {
++        expanded += expand(*it);
++#endif
+     }
+ 
+     return expanded;
+@@ -470,7 +475,12 @@ void BlurEffect::uploadRegion(QVector2D *&map, const QRegion &region, const int
+     for (int i = 0; i <= downSampleIterations; i++) {
+         const int divisionRatio = (1 << i);
+ 
++#if KWIN_EFFECT_API_VERSION_MINOR < 229
+         for (const QRect &r : region.rects()) {
++#else
++        for (auto it = region.begin(); it != region.end(); ++it) {
++            const QRect& r = *it;
++#endif
+             const QVector2D topLeft(     r.x() / divisionRatio,               r.y() / divisionRatio);
+             const QVector2D topRight(   (r.x() + r.width()) / divisionRatio,  r.y() / divisionRatio);
+             const QVector2D bottomLeft(  r.x() / divisionRatio,              (r.y() + r.height()) / divisionRatio);
+@@ -536,7 +546,12 @@ void BlurEffect::prePaintWindow(EffectWindow* w, WindowPrePaintData& data, int t
+     // to blur an area partially we have to shrink the opaque area of a window
+     QRegion newClip;
+     const QRegion oldClip = data.clip;
++#if KWIN_EFFECT_API_VERSION_MINOR < 229
+     for (const QRect &rect : data.clip.rects()) {
++#else
++    for (auto it = data.clip.begin(); it != data.clip.end(); ++it) {
++        const QRect &rect = *it;
++#endif
+         newClip |= rect.adjusted(m_expandSize, m_expandSize, -m_expandSize, -m_expandSize);
+     }
+     data.clip = newClip;
+@@ -623,7 +638,12 @@ void BlurEffect::paintWindow(EffectWindow *w, int mask, QRegion region, WindowPa
+         if (scaled) {
+             QPoint pt = shape.boundingRect().topLeft();
+             QRegion scaledShape;
++#if KWIN_EFFECT_API_VERSION_MINOR < 229
+             for (QRect r : shape.rects()) {
++#else
++            for (auto it = shape.cbegin(); it != shape.cend(); ++it) {
++                QRect r = *it;
++#endif
+                 r.moveTo(pt.x() + (r.x() - pt.x()) * data.xScale() + data.xTranslation(),
+                             pt.y() + (r.y() - pt.y()) * data.yScale() + data.yTranslation());
+                 r.setWidth(r.width() * data.xScale());
+@@ -647,7 +667,11 @@ void BlurEffect::paintWindow(EffectWindow *w, int mask, QRegion region, WindowPa
+     effects->drawWindow(w, mask, region, data);
+ }
+ 
++#if KWIN_EFFECT_API_VERSION_MINOR < 229
+ void BlurEffect::paintEffectFrame(EffectFrame *frame, QRegion region, double opacity, double frameOpacity)
++#else
++void BlurEffect::paintEffectFrame(EffectFrame* frame, const QRegion &region, double opacity, double frameOpacity)
++#endif
+ {
+     const QRect screen = effects->virtualScreenGeometry();
+     bool valid = m_renderTargetsValid && m_shader && m_shader->isValid();
 diff --git a/plugins/kwineffects/multitasking/multitasking.h b/plugins/kwineffects/multitasking/multitasking.h
 index 22d322b..f7f24d4 100644
 --- a/plugins/kwineffects/multitasking/multitasking.h
@@ -25,11 +94,27 @@ index 22d322b..f7f24d4 100644
 +#if KWIN_EFFECT_API_VERSION_MINOR < 229
      virtual void paintScreen(int mask, QRegion region, ScreenPaintData &data) override;
 +#else
-+    virtual void paintScreen(int mask, QRegion region, ScreenPaintData &data);
++    virtual void paintScreen(int mask, const QRegion& region, ScreenPaintData &data) override;
 +#endif
      virtual void postPaintScreen() override;
  
      // Window painting
+diff --git a/plugins/kwineffects/multitasking/multitasking.cpp b/plugins/kwineffects/multitasking/multitasking.cpp
+index 598acc0..2f41b95 100644
+--- a/plugins/kwineffects/multitasking/multitasking.cpp
++++ b/plugins/kwineffects/multitasking/multitasking.cpp
+@@ -652,7 +652,11 @@ void MultitaskingEffect::prePaintScreen(ScreenPrePaintData &data, int time)
+     effects->prePaintScreen(data, time);
+ }
+ 
++#if KWIN_EFFECT_API_VERSION_MINOR < 229
+ void MultitaskingEffect::paintScreen(int mask, QRegion region, ScreenPaintData &data)
++#else
++void MultitaskingEffect::paintScreen(int mask, const QRegion& region, ScreenPaintData &data)
++#endif
+ {
+     effects->paintScreen(mask, region, data);
+ 
 diff --git a/plugins/kwineffects/scissor-window/scissorwindow.h b/plugins/kwineffects/scissor-window/scissorwindow.h
 index 0dc0a98..636515b 100644
 --- a/plugins/kwineffects/scissor-window/scissorwindow.h
@@ -41,8 +126,50 @@ index 0dc0a98..636515b 100644
 +#if KWIN_EFFECT_API_VERSION_MINOR < 229
      void drawWindow(KWin::EffectWindow* w, int mask, QRegion region, KWin::WindowPaintData& data) override;
 +#else
-+    void drawWindow(KWin::EffectWindow* w, int mask, QRegion region, KWin::WindowPaintData& data);
++    void drawWindow(KWin::EffectWindow* w, int mask, const QRegion& pre_region, KWin::WindowPaintData& data) override;
 +#endif
  
  private:
      KWin::GLShader *m_shader = nullptr;
+diff --git a/plugins/kwineffects/scissor-window/scissorwindow.cpp b/plugins/kwineffects/scissor-window/scissorwindow.cpp
+index eb17483..7cba7fb 100644
+--- a/plugins/kwineffects/scissor-window/scissorwindow.cpp
++++ b/plugins/kwineffects/scissor-window/scissorwindow.cpp
+@@ -189,21 +189,37 @@ ScissorWindow::ScissorWindow(QObject *, const QVariantList &)
+     }
+ }
+ 
++#if KWIN_EFFECT_API_VERSION_MINOR < 229
+ void ScissorWindow::drawWindow(KWin::EffectWindow *w, int mask, QRegion region, KWin::WindowPaintData &data)
++#else
++void ScissorWindow::drawWindow(KWin::EffectWindow *w, int mask, const QRegion& pre_region, KWin::WindowPaintData &data)
++#endif
+ {
+     // 工作区特效会使用PAINT_WINDOW_LANCZOS绘制，此时不支持多次调用Effect::drawWindow，
+     // 否则只会显示第一次调用绘制的内容, 因此在这种模式下禁用掉窗口裁剪特效
+     if (!w->isPaintingEnabled() || (mask & PAINT_WINDOW_LANCZOS)) {
++#if KWIN_EFFECT_API_VERSION_MINOR < 229
+         return Effect::drawWindow(w, mask, region, data);
++#else
++        return Effect::drawWindow(w, mask, pre_region, data);
++#endif
+     }
+ 
+     MaskCache::TextureData mask_texture = MaskCache::instance()->getTextureByWindow(w);
+ 
+     if (!mask_texture) {
++#if KWIN_EFFECT_API_VERSION_MINOR < 229
+         return Effect::drawWindow(w, mask, region, data);
+     }
+
+     QRegion corner_region;
++#else
++        return Effect::drawWindow(w, mask, pre_region, data);
++    }
++
++    QRegion corner_region;
++    QRegion region = pre_region;
++#endif
+ 
+     if (!mask_texture->customMask) {
+         const QRect window_rect = w->geometry();
