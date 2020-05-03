@@ -20,7 +20,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-go/deepin-go-lib"
+DEPEND="dev-go/deepin-go-lib
+	>=dev-go/go-gir-generator-2.0.0"
 
 
 src_compile() {
