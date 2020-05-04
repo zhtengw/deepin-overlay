@@ -24,6 +24,7 @@ RDEPEND=">=dev-qt/qtcore-5.5:5
 		dev-qt/qtdbus
 		dev-qt/qttest
 		x11-libs/gsettings-qt
+		>=sys-apps/lshw-02.19
 	    "
 DEPEND="${RDEPEND}"
 

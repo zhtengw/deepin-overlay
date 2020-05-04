@@ -50,6 +50,9 @@ PATCHES=(
 )
 
 src_prepare() {
+	# remove after they obey -DDISABLE_SYS_UPDATE properly
+	sed -i '/new UpdateModule/i#ifndef DISABLE_SYS_UPDATE' src/frame/window/mainwindow.cpp
+	sed -i '/new UpdateModule/a#endif' src/frame/window/mainwindow.cpp
 	LIBDIR=$(get_libdir)
 	sed -i "s|DESTINATION\ lib|DESTINATION\ ${LIBDIR}|g" \
 		src/dialogs/CMakeLists.txt \
