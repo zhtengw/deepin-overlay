@@ -22,6 +22,8 @@ DEPEND="dev-libs/gobject-introspection
 	dev-libs/libgudev[introspection]"
 
 src_prepare() {
+	# fix with >=dev-libs/glib-2.63
+	sed -i "s/\"connect\"/\"connect\"\,\n\"source_new\"/" lib.in/gio-2.0/config.json || die
 	default_src_prepare
 }
 
