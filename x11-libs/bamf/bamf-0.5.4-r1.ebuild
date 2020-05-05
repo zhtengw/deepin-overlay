@@ -41,8 +41,9 @@ AUTOTOOLS_AUTORECONF=yes
 DOCS=(AUTHORS COPYING COPYING.LGPL ChangeLog NEWS README TODO)
 
 src_prepare() {
-	sed -i 's/-Werror//' configure
-	sed -i 's/tests//' Makefile.am
+#	sed -i 's/-Werror//' configure
+#	sed -i 's/tests//' Makefile.am
+	eapply "${FILESDIR}/0.5.4-add-compile-warning-flags.patch"
 
 	eapply_user
 	eautoreconf
