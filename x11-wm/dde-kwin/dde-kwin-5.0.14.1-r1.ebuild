@@ -43,6 +43,12 @@ PATCHES=(
     "${FILESDIR}"/${P}-kwin-5.18-override-error.patch
 )
 
+src_prepare() {
+	LIBDIR=$(get_libdir)
+	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" deepin-wm-dbus/deepinwmfaker.cpp || die
+	cmake-utils_src_prepare
+}
+
 src_configure() {
 	local mycmakeargs=(
 		-DPROJECT_VERSION=${PV}
