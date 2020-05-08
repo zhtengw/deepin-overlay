@@ -40,6 +40,7 @@ src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|lib/|${LIBDIR}/|g" plugins/*/CMakeLists.txt
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
+		plugins/show-desktop/showdesktopplugin.cpp \
 		frame/controller/dockpluginscontroller.cpp \
 		plugins/tray/system-trays/systemtrayscontroller.cpp || die
 
