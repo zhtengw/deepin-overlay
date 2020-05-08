@@ -34,7 +34,7 @@ RDEPEND="
 	dev-qt/qtsvg:5
 	media-libs/fontconfig
 	media-libs/freetype
-	dev-qt/qt5dxcb-plugin
+	dev-qt/dde-qt5platform-plugins
 	dev-qt/qtstyleplugins:5
 	"
 DEPEND="${RDEPEND}

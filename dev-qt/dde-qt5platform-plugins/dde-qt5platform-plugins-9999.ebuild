@@ -5,14 +5,15 @@
 EAPI=6
 inherit qmake-utils
 
-DESCRIPTION="DDE system integration plugin for Qt5"
-HOMEPAGE="https://github.com/linuxdeepin/qt5integration"
+DESCRIPTION="XCB Qt5 platform plugin for DDE"
+HOMEPAGE="https://github.com/linuxdeepin/qt5platform-plugins"
 MY_PN=${PN#*-}
 MY_P=${MY_PN}-${PV}
 
 if [[ ${PV} = *9999* ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/linuxdeepin/${MY_PN}.git"
+	KEYWORDS="~amd64 ~x86"
 else
 	SRC_URI="https://github.com/linuxdeepin/${MY_PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
@@ -24,30 +25,26 @@ SLOT="0"
 IUSE=""
 
 RDEPEND="
-	dev-libs/libqtxdg
-	dev-qt/qtcore:5=
+	dev-qt/qtcore:5
 	dev-qt/qtgui:5
 	dev-qt/qtwidgets:5
 	dev-qt/qtdbus:5
 	dev-qt/qtx11extras:5
 	dev-qt/qtmultimedia:5[widgets]
 	dev-qt/qtsvg:5
-	media-libs/fontconfig
-	media-libs/freetype
-	dev-qt/qt5dxcb-plugin
-	dev-qt/qtstyleplugins:5
+	dev-qt/qtopengl
+	dev-qt/qtxcb-private-headers:5=
+	x11-libs/libxcb[xkb]
+	x11-libs/xcb-util-renderutil
+	x11-libs/xcb-util-image
+	x11-libs/xcb-util-wm
+	x11-libs/xcb-util-keysyms
+	!<=dde-base/dde-qt5integration-0.2.7
 	"
 DEPEND="${RDEPEND}
-	dev-libs/glib:2
-	>=dde-base/dtkwidget-5.1.2:=
-	"
-
-PATCHES=(
-	"${FILESDIR}"/${PN}-5.0.0-qt5.14.patch
-)
+		"
 
 src_prepare() {
-	sed -i "/<DTabBar>/a\#include\ <DSpinBox>" styleplugins/chameleon/chameleonstyle.cpp || die 
 	QT_SELECT=qt5 eqmake5 ${MY_PN}.pro
 	default
 }
