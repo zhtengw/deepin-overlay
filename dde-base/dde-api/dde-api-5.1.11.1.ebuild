@@ -22,7 +22,7 @@ EGO_VENDOR=(
 "github.com/gosexy/gettext 74466a0"
 )
 
-inherit golang-vcs-snapshot golang-build mount-boot
+inherit golang-vcs-snapshot golang-build
 
 DESCRIPTION="Go-lang bingdings for dde-daemon"
 HOMEPAGE="https://github.com/linuxdeepin/dde-api"
