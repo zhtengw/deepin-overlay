@@ -17,7 +17,6 @@ DEPEND="dde-base/deepin-wallpapers
 		>=dde-base/deepin-icon-theme-2020.04.13
 		dde-base/deepin-gtk-theme
 		dde-base/deepin-sound-theme"
-S=${WORKDIR}/${P}-2
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
