@@ -6,7 +6,7 @@ EAPI=7
 
 DESCRIPTION="Base components for Deepin Desktop"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-desktop-base"
-SRC_URI="https://community-packages.deepin.com/deepin/pool/main/d/${PN}/${PN}_${PV}-2.orig.tar.xz -> ${P}.tar.xz"
+SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3+"
 SLOT="0"
