@@ -40,7 +40,7 @@ DEPEND="${RDEPEND}
 		"
 
 PATCHES=(
-    "${FILESDIR}"/${P}-kwin-5.18-override-error.patch
+    "${FILESDIR}"/${PN}-5.0.14.1-kwin-5.18-override-error.patch
 )
 
 src_prepare() {
