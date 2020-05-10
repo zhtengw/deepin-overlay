@@ -46,7 +46,7 @@ DEPEND="${RDEPEND}
 		"
 
 PATCHES=(
-	"${FILESDIR}/5.0.33-missing-include.patch"
+	"${FILESDIR}/5.1.0.11-missing-include.patch"
 )
 
 src_prepare() {

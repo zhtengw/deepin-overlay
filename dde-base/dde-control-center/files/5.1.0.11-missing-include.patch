@@ -1,13 +1,13 @@
 --- a/src/frame/window/search/searchwidget.cpp	2020-04-15 15:17:28.000000000 +0800
 +++ b/src/frame/window/search/searchwidget.cpp	2020-04-17 17:25:18.619152460 +0800
-@@ -31,6 +31,7 @@
+@@ -30,6 +30,7 @@
  #include <QXmlStreamReader>
  #include <QCompleter>
  #include <QRegularExpression>
 +#include <QKeyEvent>
+ #include <QPainter>
+ #include <QRect>
  
- using namespace DCC_NAMESPACE;
- using namespace DCC_NAMESPACE::search;
 --- a/src/frame/window/mainwindow.cpp	2020-04-15 15:17:28.000000000 +0800
 +++ b/src/frame/window/mainwindow.cpp	2020-04-17 17:25:08.949557840 +0800
 @@ -59,6 +59,9 @@
