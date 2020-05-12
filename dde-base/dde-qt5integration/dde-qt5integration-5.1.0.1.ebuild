@@ -42,10 +42,6 @@ DEPEND="${RDEPEND}
 	>=dde-base/dtkwidget-5.1.2:=
 	"
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-5.0.0-qt5.14.patch
-)
-
 src_prepare() {
 	sed -i "/<DTabBar>/a\#include\ <DSpinBox>" styleplugins/chameleon/chameleonstyle.cpp || die 
 	QT_SELECT=qt5 eqmake5 ${MY_PN}.pro
