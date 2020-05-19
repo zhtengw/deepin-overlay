@@ -74,6 +74,7 @@ src_compile() {
 	mkdir -p "${T}/golibdir/"
 	cp -r  "${S}/src/${EGO_PN}/vendor"  "${T}/golibdir/src"
 
+	export -n GOCACHE XDG_CACHE_HOME
 	export GOPATH="${S}:$(get_golibdir_gopath):${T}/golibdir/" 
 	cd ${S}/src/${EGO_PN}
 	emake
