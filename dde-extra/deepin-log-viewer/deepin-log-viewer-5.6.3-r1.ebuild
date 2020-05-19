@@ -10,10 +10,12 @@ DESCRIPTION="Deepin Log Viewer"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-log-viewer"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
+RESTRICT="mirror"
+
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="elogind systemd"
 
 RDEPEND="dev-qt/qtcore:5
 		dev-qt/qtwidgets:5
@@ -35,7 +37,12 @@ src_prepare() {
 	sed -i "/<QList>/a\#include\ <QIODevice>" \
 		thirdlib/docx/opc/packagereader.h || die
 
-	QT_SELECT=qt5 eqmake5 DEFINES+="VERSION=${PV}"
+	if use elogind && ! use systemd ; then
+		eapply "${FILESDIR}/${P}-elogind.patch"
+		QT_SELECT=qt5 eqmake5 DEFINES+="VERSION=${PV}" INCLUDEPATH+=/usr/include/elogind
+	else
+		QT_SELECT=qt5 eqmake5 DEFINES+="VERSION=${PV}"
+	fi
 	default_src_prepare
 }
 
