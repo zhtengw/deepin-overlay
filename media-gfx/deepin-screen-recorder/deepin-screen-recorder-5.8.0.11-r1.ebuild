@@ -41,8 +41,12 @@ DEPEND="${RDEPEND}
 		dde-base/dtkgui:=
 		"
 
+PATCHES=(
+		"${FILESDIR}/${P}-build-fix.patch"
+)
+
 src_prepare() {
-	eapply_user
+	default
 	QT_SELECT=qt5 eqmake5 screen_shot_recorder.pro
 }
 

@@ -1,0 +1,10 @@
+--- a/src/event_monitor.cpp
++++ b/src/event_monitor.cpp
+@@ -23,6 +23,7 @@
+ 
+ #include "event_monitor.h"
+ #include <X11/Xlibint.h>
++#undef min
+ #include <X11/Xutil.h>
+ #include <X11/cursorfont.h>
+ #include <X11/keysymdef.h>
