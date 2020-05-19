@@ -19,6 +19,8 @@ HOMEPAGE="https://github.com/linuxdeepin/startdde"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz
 		${EGO_VENDOR_URI}"
 
+RESTRICT="mirror"
+
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -44,6 +46,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	mkdir -p "${T}/golibdir/"
 	cp -r  "${S}/src/${EGO_PN}/vendor"  "${T}/golibdir/src"
+	export -n GOCACHE XDG_CACHE_HOME
 	export GOPATH="${S}:$(get_golibdir_gopath):${T}/golibdir/"
 
 	LIBDIR=$(get_libdir)
