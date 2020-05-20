@@ -1,16 +1,16 @@
 --- a/src/src.pro
 +++ b/src/src.pro
-@@ -6,12 +6,10 @@ TARGET = deepin-log-viewer
+@@ -6,11 +6,9 @@ TARGET = deepin-log-viewer
  TEMPLATE = app
  CONFIG += c++11 link_pkgconfig
  
 -LIBS += -lsystemd
-+LIBS += -lelogind
- 
+-
  DEFINES += USE_POLKIT ENABLE_INACTIVE_DISPLAY
  
--LIBS += -lsystemd
--
+-LIBS += -lsystemd -licui18n -licuuc
++LIBS += -lelogind -licui18n -licuuc
+ 
  include(../thirdlib/QtXlsxWriter/src/xlsx/qtxlsx.pri)
  include(../thirdlib/docx/docx.pri)
 
