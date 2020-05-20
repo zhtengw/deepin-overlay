@@ -12,6 +12,8 @@ DESCRIPTION="Generate static golang bindings for GObject"
 HOMEPAGE="https://github.com/linuxdeepin/go-gir-generator"
 SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
+RESTRICT="mirror"
+
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -24,6 +26,7 @@ DEPEND="dev-libs/gobject-introspection
 src_prepare() {
 	# fix with >=dev-libs/glib-2.63
 	sed -i "s/\"connect\"/\"connect\"\,\n\"source_new\"/" lib.in/gio-2.0/config.json || die
+	export -n GOCACHE XDG_CACHE_HOME
 	default_src_prepare
 }
 
