@@ -32,6 +32,10 @@ DEPEND="${RDEPEND}
 		virtual/pkgconfig
 		"
 
+PATCHES=(                                   
+	"${FILESDIR}"/5.6.4-u_errorName.patch
+)
+
 src_prepare() {
 
 	sed -i "/<QList>/a\#include\ <QIODevice>" \
