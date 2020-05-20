@@ -28,7 +28,6 @@ RDEPEND="dev-qt/qtcore:5
 	dev-qt/qtconcurrent:5
 	>=dde-base/dtkcore-5.1.2
 	dde-base/dtkgui
-
 	"
 DEPEND="${RDEPEND}
 	dev-util/lxqt-build-tools
@@ -37,6 +36,8 @@ DEPEND="${RDEPEND}
 	"
 
 src_prepare() {
+	sed -i "/include/a\#include\ <cwctype>" \
+		terminalwidget/lib/konsole_wcwidth.h || die
 	cmake-utils_src_prepare
 }
 
