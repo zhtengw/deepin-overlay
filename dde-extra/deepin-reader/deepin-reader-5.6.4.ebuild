@@ -42,7 +42,7 @@ src_prepare() {
 		DBService/DBService.pro || die
 
 	sed -i "/<QList>/a\#include\ <QPointF>\n\#include\ <QRectF>" \
-		application/docview/commonstruct.h || die
+		application/pdfControl/docview/commonstruct.h || die
 
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr DEFINES+="VERSION=${PV}"
 	default_src_prepare
