@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
 EGO_PN="github.com/linuxdeepin/go-dbus-factory"
 
@@ -14,6 +14,8 @@ DESCRIPTION="Go bindings to generate D-Bus services"
 HOMEPAGE="https://github.com/linuxdeepin/go-dbus-factory"
 SRC_URI="https://github.com/linuxdeepin/go-dbus-factory/archive/${PV}.tar.gz -> ${P}.tar.gz
 ${EGO_VENDOR_URI}"
+
+RESTRICT="mirror"
 
 LICENSE="GPL-3+"
 SLOT="0"
@@ -28,6 +30,7 @@ src_compile() {
 	mkdir -p "${T}/golibdir/"
 	cp -r  "${S}/src/${EGO_PN}/vendor"  "${T}/golibdir/src"
 
+	export -n GOCACHE XDG_CACHE_HOME
 	export GOPATH="${S}:$(get_golibdir_gopath):${T}/golibdir/"
 	cd ${S}/src/${EGO_PN}
 	emake bin
