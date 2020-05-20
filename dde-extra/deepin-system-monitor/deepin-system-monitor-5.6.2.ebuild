@@ -51,6 +51,12 @@ src_prepare() {
 	sed -i "/<DMenu>/a\#include\ <QKeyEvent>" \
 		src/gui/system_service_table_view.cpp \
 		src/gui/process_table_view.cpp || die
+	sed -i "/<QDebug>/a\#include\ <QUrl>" \
+		src/process/stats_collector.cpp || die
+	sed -i "s/print_err/print_err1/g" \
+		src/process/system_stat.cpp || die
+	sed -i "s/print_err/print_err2/g" \
+		src/process/desktop_entry_stat.cpp || die
 	default
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr DEFINES+="VERSION=${PV}" ${PN}.pro
 }
