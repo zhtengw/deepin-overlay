@@ -1,5 +1,5 @@
---- a/src/common/collator.cpp	2020-03-11 14:33:40.000000000 +0800
-+++ b/src/common/collator.cpp	2020-04-19 17:44:49.829336869 +0800
+--- a/application/common/collator.cpp	2020-03-11 14:33:40.000000000 +0800
++++ b/application/common/collator.cpp	2020-04-19 17:44:49.829336869 +0800
 @@ -37,9 +37,10 @@
      UErrorCode ec = U_ZERO_ERROR;
      m_collator = icu::Collator::createInstance(ec);

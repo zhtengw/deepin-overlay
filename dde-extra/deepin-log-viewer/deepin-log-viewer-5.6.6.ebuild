@@ -33,13 +33,13 @@ DEPEND="${RDEPEND}
 		"
 
 PATCHES=(                                   
-	"${FILESDIR}"/5.6.4-u_errorName.patch
+	"${FILESDIR}"/5.6.6-u_errorName.patch
 )
 
 src_prepare() {
 
 	sed -i "/<QList>/a\#include\ <QIODevice>" \
-		thirdlib/docx/opc/packagereader.h || die
+		3rdparty/docx/opc/packagereader.h || die
 
 	if use elogind && ! use systemd ; then
 		eapply "${FILESDIR}/${P}-elogind.patch"

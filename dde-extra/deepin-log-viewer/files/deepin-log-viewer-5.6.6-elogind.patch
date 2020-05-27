@@ -1,5 +1,5 @@
---- a/src/src.pro
-+++ b/src/src.pro
+--- a/application/application.pro
++++ b/application/application.pro
 @@ -6,11 +6,9 @@ TARGET = deepin-log-viewer
  TEMPLATE = app
  CONFIG += c++11 link_pkgconfig
@@ -11,6 +11,6 @@
 -LIBS += -lsystemd -licui18n -licuuc
 +LIBS += -lelogind -licui18n -licuuc
  
- include(../thirdlib/QtXlsxWriter/src/xlsx/qtxlsx.pri)
- include(../thirdlib/docx/docx.pri)
+ include(../3rdparty/QtXlsxWriter/src/xlsx/qtxlsx.pri)
+ include(../3rdparty/docx/docx.pri)
 
