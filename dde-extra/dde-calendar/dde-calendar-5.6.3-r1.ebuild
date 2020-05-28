@@ -32,6 +32,12 @@ src_prepare() {
 		src/yearwindow.cpp \
 		src/monthwindow.cpp \
 		src/daymonthview.cpp || die
+	sed -i "/<DPalette>/a\#include\ <QPainterPath>" \
+		src/customframe.cpp \
+		src/schcedulesearchview.cpp \
+		src/weekheadview.cpp \
+		src/daymonthview.cpp \
+		src/yearview.cpp || die
 	export QT_SELECT=qt5
 	eqmake5 PREFIX=/usr  DEFINES+="VERSION=${PV}" calendar.pro
 	default_src_prepare
