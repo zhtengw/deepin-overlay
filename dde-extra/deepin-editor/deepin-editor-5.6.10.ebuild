@@ -39,6 +39,16 @@ DEPEND="${RDEPEND}
 		virtual/pkgconfig
 		"
 
+src_prepare() {
+
+	sed -i "/<QPainter>/a\#include\ <QPainterPath>" \
+		src/widgets/bottombar.cpp \
+		src/thememodule/themeitemdelegate.cpp \
+		src/thememodule/themepanel.cpp || die
+
+	cmake-utils_src_prepare
+}
+
 src_configure() {
 	local mycmakeargs=(
 		-DVERSION=${PV}

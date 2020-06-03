@@ -31,6 +31,13 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	eapply_user
+
+	sed -i "/<QPainter>/a\#include <QPainterPath>" \
+		src/widgets/navigationbutton.cpp \
+		src/dvideowidget.cpp \
+		src/widgets/coverphoto.cpp || die
+
+	sed -i "s/\ qm_files//" introduction.pro || die
 	QT_SELECT=qt5 eqmake5
 }
 

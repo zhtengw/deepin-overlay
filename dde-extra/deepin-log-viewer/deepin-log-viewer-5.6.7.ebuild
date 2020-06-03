@@ -40,6 +40,15 @@ src_prepare() {
 
 	sed -i "/<QList>/a\#include\ <QIODevice>" \
 		3rdparty/docx/opc/packagereader.h || die
+	sed -i "/<QPainter>/a\#include\ <QPainterPath>" \
+		application/logperiodbutton.cpp || die
+	sed -i "/<QDebug>/a\#include\ <QPainterPath>" \
+		application/displaycontent.cpp \
+		application/logtreeview.cpp \
+		application/logviewheaderview.cpp \
+		application/logviewitemdelegate.cpp \
+		application/logdetailinfowidget.cpp \
+		application/filtercontent.cpp || die
 
 	if use elogind && ! use systemd ; then
 		eapply "${FILESDIR}/${P}-elogind.patch"

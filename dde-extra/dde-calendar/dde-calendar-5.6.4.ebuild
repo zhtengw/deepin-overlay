@@ -38,6 +38,8 @@ src_prepare() {
 		src/weekheadview.cpp \
 		src/daymonthview.cpp \
 		src/yearview.cpp || die
+	sed -i "/<DMenu>/a\#include\ <QMouseEvent>\n\#include\ <QContextMenuEvent>\n\#include\ <QDragEnterEvent>\n\#include\ <QDropEvent>" \
+		src/draginfographicsview.cpp || die
 	export QT_SELECT=qt5
 	eqmake5 PREFIX=/usr  DEFINES+="VERSION=${PV}" calendar.pro
 	default_src_prepare

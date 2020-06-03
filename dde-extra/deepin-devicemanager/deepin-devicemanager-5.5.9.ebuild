@@ -38,8 +38,15 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
+	sed -i "/DPalette/a\#include\ <QPainterPath>" \
+		src/Widget/logviewheaderview.cpp \
+		src/Widget/logviewitemdelegate.cpp \
+		src/Widget/deviceinfowidgetbase.h || die
+	sed -i "/<QList>/a\#include\ <QMap>" \
+		src/DeviceManager/DeviceManager.h || die
 	sed -i "/<QList>/a\#include\ <QFile>" \
-		src/deviceinfowidgetbase.h || die
+		src/Widget/logtreeview.cpp \
+		src/Widget/deviceinfowidgetbase.h || die
 	sed -i "/<QList>/a\#include\ <QIODevice>" \
 		thirdlib/docx/opc/packagereader.h || die
 	sed -i "/\"DSpinner\"/a\#include\ <QKeyEvent>" \

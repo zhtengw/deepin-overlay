@@ -43,6 +43,10 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
+	sed -i "/<QDebug>/a\#include <QPainterPath>" \
+		deepin-compressor/source/src/logviewheaderview.cpp \
+		deepin-compressor/source/src/openwithdialog/openwithdialog.cpp \
+		deepin-compressor/source/src/fileViewer.cpp || die
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
 		deepin-compressor/interface/pluginmanager.cpp \
 		plugin/libzipplugin/libzipplugin.pro \

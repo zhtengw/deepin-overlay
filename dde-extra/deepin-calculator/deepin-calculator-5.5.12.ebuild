@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit qmake-utils
+inherit cmake-utils
 
 DESCRIPTION="An easy to use Calculator for Deepin"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-calculator"
@@ -29,12 +29,17 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
-	eapply_user
-	sed -i "/<QList>/a\#include\ <QObject>" \
-		core/session.h || die
-	QT_SELECT=qt5 eqmake5 PREFIX=/usr  DEFINES+="VERSION=${PV}"
+	sed -i "/<QPainter>/a\#include <QPainterPath>" \
+		src/modules/simplelistdelegate.cpp \
+		src/widgets/memorybutton.cpp \
+		src/widgets/textbutton.cpp || die
+
+	cmake-utils_src_prepare
 }
 
-src_install() {
-	emake INSTALL_ROOT=${D} install
+src_configure() {
+	local mycmakeargs=(
+		-DVERSION=${PV}
+	)
+	cmake-utils_src_configure
 }

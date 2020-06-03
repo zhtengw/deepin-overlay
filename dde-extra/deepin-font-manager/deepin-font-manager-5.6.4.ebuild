@@ -29,6 +29,12 @@ DEPEND="${RDEPEND}
 	    "
 
 src_prepare() {
+	sed -i "/<QPainter>/a\#include\ <QPainterPath>" \
+		deepin-font-manager/interfaces/dfontpreviewitemdelegate.cpp \
+		deepin-font-manager/interfaces/dfontpreviewer.cpp \
+		deepin-font-manager/views/dsplitlistwidget.cpp \
+		deepin-font-manager/views/dfinstallerrorlistview.cpp || die
+
 	export QT_SELECT=qt5 
 	eqmake5	PREFIX=/usr DEFINES+="VERSION=${PV}"
 	default_src_prepare
