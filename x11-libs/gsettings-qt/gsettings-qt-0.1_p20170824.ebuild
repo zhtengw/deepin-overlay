@@ -5,7 +5,7 @@ EAPI=7
 
 EBZR_REPO_URI="lp:gsettings-qt"
 
-inherit qmake-utils bzr
+inherit qmake-utils
 
 DESCRIPTION="Qml bindings for GSettings."
 HOMEPAGE="https://launchpad.net/gsettings-qt"
