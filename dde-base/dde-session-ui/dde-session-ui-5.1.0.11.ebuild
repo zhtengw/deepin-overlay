@@ -52,6 +52,11 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 
+	sed -i "/<QPainter>/a#include <QPainterPath>" \
+		dde-osd/common.h || die
+	sed -i "/<QPointer>/a#include <QPainterPath>" \
+		dde-osd/notification-center/bubbleoverlapwidget.cpp || die
+
 	if use elogind; then
 		sed -i "s|libsystemd|libelogind|g" dde-switchtogreeter/dde-switchtogreeter.pro || die
 		sed -i "s|systemd/sd-login.h|elogind/systemd/sd-login.h|g" dde-switchtogreeter/switchtogreeter.c || die
