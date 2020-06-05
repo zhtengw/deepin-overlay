@@ -49,16 +49,16 @@ src_prepare() {
 		deepin-compressor/source/src/fileViewer.cpp || die
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
 		deepin-compressor/interface/pluginmanager.cpp \
-		plugin/libzipplugin/libzipplugin.pro \
-		plugin/clirarplugin/clirarplugin.pro \
-		plugin/cli7zplugin/cli7zplugin.pro \
-		plugin/libsinglefileplugin/xzplugin/xzplugin.pro \
-		plugin/libsinglefileplugin/gzplugin/gzplugin.pro \
-		plugin/libsinglefileplugin/bz2plugin/bz2plugin.pro \
-		plugin/clizipplugin/clizipplugin.pro \
-		plugin/cliunarchiverplugin/cliunarchiverplugin.pro \
-		plugin/libarchive/readwritelibarchiveplugin/readwritelibarchiveplugin.pro \
-		plugin/libarchive/readonlylibarchiveplugin/readonlylibarchiveplugin.pro || die
+		3rdparty/libzipplugin/libzipplugin.pro \
+		3rdparty/clirarplugin/clirarplugin.pro \
+		3rdparty/cli7zplugin/cli7zplugin.pro \
+		3rdparty/libsinglefileplugin/xzplugin/xzplugin.pro \
+		3rdparty/libsinglefileplugin/gzplugin/gzplugin.pro \
+		3rdparty/libsinglefileplugin/bz2plugin/bz2plugin.pro \
+		3rdparty/clizipplugin/clizipplugin.pro \
+		3rdparty/cliunarchiverplugin/cliunarchiverplugin.pro \
+		3rdparty/libarchive/readwritelibarchiveplugin/readwritelibarchiveplugin.pro \
+		3rdparty/libarchive/readonlylibarchiveplugin/readonlylibarchiveplugin.pro || die
 
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr DEFINES+="VERSION=${PV}"
 	default_src_prepare

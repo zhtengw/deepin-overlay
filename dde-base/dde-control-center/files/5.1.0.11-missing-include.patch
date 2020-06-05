@@ -20,3 +20,256 @@
  
  using namespace DCC_NAMESPACE;
  using namespace DCC_NAMESPACE::search;
+
+--- a/src/frame/window/modules/update/updatehistorybutton.cpp	2020-05-26 19:39:19.000000000 +0800
++++ b/src/frame/window/modules/update/updatehistorybutton.cpp	2020-06-04 11:23:19.686979828 +0800
+@@ -23,6 +23,7 @@
+ #include <QVBoxLayout>
+ #include <QDebug>
+ #include <QPainter>
++#include <QPainterPath>
+ 
+ using namespace DCC_NAMESPACE;
+ using namespace DCC_NAMESPACE::update;
+diff -ur a/src/frame/modules/accounts/avatardel.cpp b/src/frame/modules/accounts/avatardel.cpp
+--- a/src/frame/modules/accounts/avatardel.cpp	2020-06-04 14:56:48.599634830 +0800
++++ b/src/frame/modules/accounts/avatardel.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -25,6 +25,7 @@
+ 
+ #include "avatardel.h"
+ #include "avatarwidget.h"
++#include <QPainterPath>
+ #include <QPainter>
+ #include <dimagebutton.h>
+ #include <QVBoxLayout>
+diff -ur a/src/frame/modules/accounts/avatarwidget.cpp b/src/frame/modules/accounts/avatarwidget.cpp
+--- a/src/frame/modules/accounts/avatarwidget.cpp	2020-06-04 14:56:48.599634830 +0800
++++ b/src/frame/modules/accounts/avatarwidget.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -25,6 +25,7 @@
+ 
+ #include "avatarwidget.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QUrl>
+ #include <QPainter>
+diff -ur a/src/frame/modules/accounts/removeuserdialog.cpp b/src/frame/modules/accounts/removeuserdialog.cpp
+--- a/src/frame/modules/accounts/removeuserdialog.cpp	2020-06-04 14:56:48.599634830 +0800
++++ b/src/frame/modules/accounts/removeuserdialog.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -25,6 +25,7 @@
+ 
+ #include "removeuserdialog.h"
+ 
++#include <QPainterPath>
+ #include <QUrl>
+ #include <QPainter>
+ #include <QPainterPath>
+diff -ur a/src/frame/modules/accounts/useroptionitem.cpp b/src/frame/modules/accounts/useroptionitem.cpp
+--- a/src/frame/modules/accounts/useroptionitem.cpp	2020-06-04 14:56:48.609645438 +0800
++++ b/src/frame/modules/accounts/useroptionitem.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -25,6 +25,7 @@
+ 
+ #include "useroptionitem.h"
+ 
++#include <QPainterPath>
+ #include <QLabel>
+ #include <QDebug>
+ #include <QUrl>
+diff -ur a/src/frame/modules/accounts/widgets/fingerwidget.cpp b/src/frame/modules/accounts/widgets/fingerwidget.cpp
+--- a/src/frame/modules/accounts/widgets/fingerwidget.cpp	2020-06-04 14:56:48.609645438 +0800
++++ b/src/frame/modules/accounts/widgets/fingerwidget.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -25,6 +25,7 @@
+ 
+ #include "fingerwidget.h"
+ 
++#include <QPainterPath>
+ #include <DHiDPIHelper>
+ #include <DApplicationHelper>
+ 
+diff -ur a/src/frame/modules/datetime/timezone_dialog/popup_menu.cpp b/src/frame/modules/datetime/timezone_dialog/popup_menu.cpp
+--- a/src/frame/modules/datetime/timezone_dialog/popup_menu.cpp	2020-06-04 14:56:48.609645438 +0800
++++ b/src/frame/modules/datetime/timezone_dialog/popup_menu.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -29,6 +29,7 @@
+ 
+ #include "popup_menu.h"
+ 
++#include <QPainterPath>
+ #include <QApplication>
+ #include <QDebug>
+ #include <QKeyEvent>
+diff -ur a/src/frame/modules/datetime/timezone_dialog/tooltip_pin.cpp b/src/frame/modules/datetime/timezone_dialog/tooltip_pin.cpp
+--- a/src/frame/modules/datetime/timezone_dialog/tooltip_pin.cpp	2020-06-04 14:56:48.609645438 +0800
++++ b/src/frame/modules/datetime/timezone_dialog/tooltip_pin.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -29,6 +29,7 @@
+ 
+ #include "tooltip_pin.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QPainter>
+ #include <QPainterPath>
+diff -ur a/src/frame/modules/display/recognizedialog.cpp b/src/frame/modules/display/recognizedialog.cpp
+--- a/src/frame/modules/display/recognizedialog.cpp	2020-06-04 14:56:48.609645438 +0800
++++ b/src/frame/modules/display/recognizedialog.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -26,6 +26,7 @@
+ #include "recognizedialog.h"
+ #include "displaymodel.h"
+ 
++#include <QPainterPath>
+ #include <QTimer>
+ #include <QPainter>
+ #include <QScreen>
+diff -ur a/src/frame/navigationdelegate.cpp b/src/frame/navigationdelegate.cpp
+--- a/src/frame/navigationdelegate.cpp	2020-06-04 14:56:48.629666658 +0800
++++ b/src/frame/navigationdelegate.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -27,6 +27,7 @@
+ #include "navigationmodel.h"
+ #include "widgets/basiclistdelegate.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QDebug>
+ 
+diff -ur a/src/frame/quick_control/quickswitchbutton.cpp b/src/frame/quick_control/quickswitchbutton.cpp
+--- a/src/frame/quick_control/quickswitchbutton.cpp	2020-06-04 14:56:48.629666658 +0800
++++ b/src/frame/quick_control/quickswitchbutton.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -26,6 +26,7 @@
+ #include "quickswitchbutton.h"
+ #include "widgets/basiclistdelegate.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QPainter>
+ 
+diff -ur a/src/frame/widgets/basiclistdelegate.cpp b/src/frame/widgets/basiclistdelegate.cpp
+--- a/src/frame/widgets/basiclistdelegate.cpp	2020-06-04 14:56:48.639677266 +0800
++++ b/src/frame/widgets/basiclistdelegate.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -26,6 +26,7 @@
+ #include "widgets/basiclistdelegate.h"
+ #include "widgets/basiclistmodel.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ 
+ QPixmap loadPixmap(const QString &path)
+diff -ur a/src/frame/widgets/themeitempic.cpp b/src/frame/widgets/themeitempic.cpp
+--- a/src/frame/widgets/themeitempic.cpp	2020-06-04 14:56:48.639677266 +0800
++++ b/src/frame/widgets/themeitempic.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -25,6 +25,7 @@
+ 
+ #include "widgets/themeitempic.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QPainterPath>
+ 
+diff -ur a/src/frame/window/modules/accounts/accountswidget.cpp b/src/frame/window/modules/accounts/accountswidget.cpp
+--- a/src/frame/window/modules/accounts/accountswidget.cpp	2020-06-04 14:56:48.649687878 +0800
++++ b/src/frame/window/modules/accounts/accountswidget.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -26,6 +26,7 @@
+ #include "accountsdetailwidget.h"
+ #include "window/utils.h"
+ 
++#include <QPainterPath>
+ #include <DStyleOption>
+ #include <DStandardItem>
+ 
+diff -ur a/src/frame/window/modules/accounts/avataritemdelegate.cpp b/src/frame/window/modules/accounts/avataritemdelegate.cpp
+--- a/src/frame/window/modules/accounts/avataritemdelegate.cpp	2020-06-04 14:56:48.649687878 +0800
++++ b/src/frame/window/modules/accounts/avataritemdelegate.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -22,6 +22,7 @@
+ #include "avataritemdelegate.h"
+ #include "avatarlistwidget.h"
+ 
++#include <QPainterPath>
+ #include <DStyle>
+ 
+ #include <QObject>
+diff -ur a/src/frame/window/modules/commoninfo/commonbackgrounditem.cpp b/src/frame/window/modules/commoninfo/commonbackgrounditem.cpp
+--- a/src/frame/window/modules/commoninfo/commonbackgrounditem.cpp	2020-06-04 14:56:48.649687878 +0800
++++ b/src/frame/window/modules/commoninfo/commonbackgrounditem.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -23,6 +23,7 @@
+ 
+ #include "widgets/basiclistdelegate.h"
+ 
++#include <QPainterPath>
+ #include <DPalette>
+ #include <DApplicationHelper>
+ 
+diff -ur a/src/frame/window/modules/keyboard/keyboardlayoutwidget.cpp b/src/frame/window/modules/keyboard/keyboardlayoutwidget.cpp
+--- a/src/frame/window/modules/keyboard/keyboardlayoutwidget.cpp	2020-06-04 14:56:48.659698486 +0800
++++ b/src/frame/window/modules/keyboard/keyboardlayoutwidget.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -29,6 +29,7 @@
+ #include "widgets/settingsitem.h"
+ #include "widgets/translucentframe.h"
+ 
++#include <QPainterPath>
+ #include <QHBoxLayout>
+ #include <QLineEdit>
+ #include <QEvent>
+diff -ur a/src/frame/window/modules/keyboard/systemlanguagesettingwidget.cpp b/src/frame/window/modules/keyboard/systemlanguagesettingwidget.cpp
+--- a/src/frame/window/modules/keyboard/systemlanguagesettingwidget.cpp	2020-06-04 14:56:48.659698486 +0800
++++ b/src/frame/window/modules/keyboard/systemlanguagesettingwidget.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -28,6 +28,7 @@
+ #include "widgets/searchinput.h"
+ #include "widgets/translucentframe.h"
+ 
++#include <QPainterPath>
+ #include <QVBoxLayout>
+ #include <QEvent>
+ #include <QScroller>
+diff -ur a/src/frame/window/modules/personalization/personalizationgeneral.cpp b/src/frame/window/modules/personalization/personalizationgeneral.cpp
+--- a/src/frame/window/modules/personalization/personalizationgeneral.cpp	2020-06-04 14:56:48.659698486 +0800
++++ b/src/frame/window/modules/personalization/personalizationgeneral.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -27,6 +27,7 @@
+ #include "widgets/settingsitem.h"
+ #include "widgets/titlelabel.h"
+ 
++#include <QPainterPath>
+ #include <DStyle>
+ #include <DSwitchButton>
+ #include <DPalette>
+diff -ur a/src/frame/window/modules/personalization/roundcolorwidget.cpp b/src/frame/window/modules/personalization/roundcolorwidget.cpp
+--- a/src/frame/window/modules/personalization/roundcolorwidget.cpp	2020-06-04 14:56:48.659698486 +0800
++++ b/src/frame/window/modules/personalization/roundcolorwidget.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -20,6 +20,7 @@
+  */
+ #include "roundcolorwidget.h"
+ 
++#include <QPainterPath>
+ #include <DStyle>
+ 
+ #include <QColor>
+diff -ur a/src/frame/window/modules/personalization/themeitempic.cpp b/src/frame/window/modules/personalization/themeitempic.cpp
+--- a/src/frame/window/modules/personalization/themeitempic.cpp	2020-06-04 14:56:48.659698486 +0800
++++ b/src/frame/window/modules/personalization/themeitempic.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -20,6 +20,7 @@
+  */
+ #include "themeitempic.h"
+ 
++#include <QPainterPath>
+ #include <DStyle>
+ #include <DSvgRenderer>
+ 
+diff -ur a/src/frame/window/modules/sync/pages/avatarwidget.cpp b/src/frame/window/modules/sync/pages/avatarwidget.cpp
+--- a/src/frame/window/modules/sync/pages/avatarwidget.cpp	2020-06-04 14:56:48.659698486 +0800
++++ b/src/frame/window/modules/sync/pages/avatarwidget.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -20,6 +20,7 @@
+  */
+ #include "avatarwidget.h"
+ 
++#include <QPainterPath>
+ #include <QVBoxLayout>
+ #include <QPainter>
+ #include <QPaintEvent>
+diff -ur a/src/frame/window/modules/update/updatehistorybutton.cpp b/src/frame/window/modules/update/updatehistorybutton.cpp
+--- a/src/frame/window/modules/update/updatehistorybutton.cpp	2020-06-04 14:56:48.659698486 +0800
++++ b/src/frame/window/modules/update/updatehistorybutton.cpp	2020-06-04 15:22:08.040554752 +0800
+@@ -20,6 +20,7 @@
+  */
+ #include "updatehistorybutton.h"
+ 
++#include <QPainterPath>
+ #include <QVBoxLayout>
+ #include <QDebug>
+ #include <QPainter>

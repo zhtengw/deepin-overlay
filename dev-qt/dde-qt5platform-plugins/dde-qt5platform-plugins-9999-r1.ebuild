@@ -44,7 +44,12 @@ RDEPEND="
 DEPEND="${RDEPEND}
 		"
 
+PATCHES=(
+	"$FILESDIR"/fix-build-with-qt5.15.patch
+)
+
 src_prepare() {
+	sed -i 's/active\ =\ VtableHook::overrideVfptrFun.*/active\ =\ 1;/' xcb/dhighdpi.cpp || die
 	QT_SELECT=qt5 eqmake5 ${MY_PN}.pro
 	default
 }

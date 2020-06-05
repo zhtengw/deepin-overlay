@@ -23,6 +23,7 @@ IUSE=""
 DEPEND="dev-qt/qtcore:5
 		dev-qt/qtgui:5
 		dev-qt/qtwidgets:5
+		dev-qt/qtwebengine:5[widgets]
 		dev-qt/linguist-tools:5
 		>=dev-qt/qcef-1.1.8
 		dde-base/dde-qt5integration
@@ -30,6 +31,16 @@ DEPEND="dev-qt/qtcore:5
 		dde-base/dtkgui
 		virtual/pkgconfig
 	    "
+
+src_prepare() {
+	sed -i "/Painter>/a#include <QPainterPath>" \
+		src/view/widget/search_completion_delegate.cpp \
+		src/view/widget/search_button.cpp \
+		src/view/widget/search_completion_window.cpp || die
+
+	cmake-utils_src_prepare
+
+}
 
 src_configure() {
 	CMAKE_BUILD_TYPE=Release

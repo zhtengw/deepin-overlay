@@ -51,6 +51,10 @@ DEPEND="${RDEPEND}
 		dev-qt/linguist-tools:5
 		"
 
+PATCHES=(
+	"$FILESDIR/5.2.0-build-with-qt5.15.patch"
+)
+
 src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" tools/svgc/svgc.pro

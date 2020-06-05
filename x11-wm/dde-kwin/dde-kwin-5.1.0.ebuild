@@ -41,6 +41,7 @@ DEPEND="${RDEPEND}
 
 PATCHES=(
     "${FILESDIR}"/${PN}-5.0.14.1-kwin-5.18-override-error.patch
+	"${FILESDIR}"/dde-kwin-5.1.0-build-with-qt5.15.patch
 )
 
 src_prepare() {

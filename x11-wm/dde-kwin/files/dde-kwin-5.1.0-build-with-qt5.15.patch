@@ -1,0 +1,55 @@
+diff -ur dde-kwin-5.1.0.old/plugins/kdecoration/chameleonconfig.cpp dde-kwin-5.1.0/plugins/kdecoration/chameleonconfig.cpp
+--- dde-kwin-5.1.0.old/plugins/kdecoration/chameleonconfig.cpp	2020-06-05 16:34:52.581974004 +0800
++++ dde-kwin-5.1.0/plugins/kdecoration/chameleonconfig.cpp	2020-06-05 16:35:19.112561907 +0800
+@@ -28,6 +28,7 @@
+ #include "kwinutils.h"
+ #endif
+ 
++#include <QPainterPath>
+ #include <kwineffects.h>
+ 
+ #include <KConfig>
+diff -ur dde-kwin-5.1.0.old/plugins/kdecoration/chameleon.cpp dde-kwin-5.1.0/plugins/kdecoration/chameleon.cpp
+--- dde-kwin-5.1.0.old/plugins/kdecoration/chameleon.cpp	2020-06-05 16:34:52.581974004 +0800
++++ dde-kwin-5.1.0/plugins/kdecoration/chameleon.cpp	2020-06-05 16:35:19.112561907 +0800
+@@ -27,6 +27,7 @@
+ #include "kwinutils.h"
+ #endif
+ 
++#include <QPainterPath>
+ #include <KDecoration2/DecoratedClient>
+ #include <KDecoration2/DecorationSettings>
+ #include <KDecoration2/DecorationButtonGroup>
+diff -ur dde-kwin-5.1.0.old/plugins/kdecoration/chameleon.h dde-kwin-5.1.0/plugins/kdecoration/chameleon.h
+--- dde-kwin-5.1.0.old/plugins/kdecoration/chameleon.h	2020-06-05 16:34:52.581974004 +0800
++++ dde-kwin-5.1.0/plugins/kdecoration/chameleon.h	2020-06-05 16:35:19.112561907 +0800
+@@ -23,6 +23,7 @@
+ 
+ #include "chameleontheme.h"
+ 
++#include <QPainterPath>
+ #include <KDecoration2/Decoration>
+ #include <KDecoration2/DecorationButtonGroup>
+ 
+diff -ur dde-kwin-5.1.0.old/plugins/kwineffects/multitasking/multitasking.h dde-kwin-5.1.0/plugins/kwineffects/multitasking/multitasking.h
+--- dde-kwin-5.1.0.old/plugins/kwineffects/multitasking/multitasking.h	2020-06-05 16:34:52.581974004 +0800
++++ dde-kwin-5.1.0/plugins/kwineffects/multitasking/multitasking.h	2020-06-05 16:35:19.112561907 +0800
+@@ -23,6 +23,7 @@
+ #ifndef _DEEPIN_MULTITASKING_H
+ #define _DEEPIN_MULTITASKING_H 
+ 
++#include <QPainterPath>
+ #include <QObject>
+ #include <QPoint>
+ #include <QHash>
+diff -ur dde-kwin-5.1.0.old/plugins/kwineffects/scissor-window/scissorwindow.cpp dde-kwin-5.1.0/plugins/kwineffects/scissor-window/scissorwindow.cpp
+--- dde-kwin-5.1.0.old/plugins/kwineffects/scissor-window/scissorwindow.cpp	2020-06-05 16:34:52.581974004 +0800
++++ dde-kwin-5.1.0/plugins/kwineffects/scissor-window/scissorwindow.cpp	2020-06-05 16:35:19.112561907 +0800
+@@ -23,6 +23,7 @@
+ #include "kwinutils.h"
+ #endif
+ 
++#include <QPainterPath>
+ #include <kwinglutils.h>
+ #include <kwinglplatform.h>
+ #include <kwingltexture.h>

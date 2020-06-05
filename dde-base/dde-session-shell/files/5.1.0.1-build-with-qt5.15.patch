@@ -1,0 +1,55 @@
+diff -ur dde-session-shell-5.1.0.1.old/src/dde-shutdown/user/imagebutton.cpp dde-session-shell-5.1.0.1/src/dde-shutdown/user/imagebutton.cpp
+--- dde-session-shell-5.1.0.1.old/src/dde-shutdown/user/imagebutton.cpp	2020-06-04 16:56:49.406782414 +0800
++++ dde-session-shell-5.1.0.1/src/dde-shutdown/user/imagebutton.cpp	2020-06-04 16:57:08.202628299 +0800
+@@ -23,6 +23,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
++#include <QPainterPath>
+ #include <QtGui/QPainter>
+ #include <QDebug>
+ #include "imagebutton.h"
+diff -ur dde-session-shell-5.1.0.1.old/src/dde-shutdown/view/multiuserswarningview.cpp dde-session-shell-5.1.0.1/src/dde-shutdown/view/multiuserswarningview.cpp
+--- dde-session-shell-5.1.0.1.old/src/dde-shutdown/view/multiuserswarningview.cpp	2020-06-04 16:56:49.406782414 +0800
++++ dde-session-shell-5.1.0.1/src/dde-shutdown/view/multiuserswarningview.cpp	2020-06-04 16:57:08.202628299 +0800
+@@ -25,6 +25,7 @@
+ 
+ #include "multiuserswarningview.h"
+ 
++#include <QPainterPath>
+ #include <QLabel>
+ #include <QListWidget>
+ #include <QListWidgetItem>
+diff -ur dde-session-shell-5.1.0.1.old/src/widgets/darrowrectangle.cpp dde-session-shell-5.1.0.1/src/widgets/darrowrectangle.cpp
+--- dde-session-shell-5.1.0.1.old/src/widgets/darrowrectangle.cpp	2020-06-04 16:56:49.416762465 +0800
++++ dde-session-shell-5.1.0.1/src/widgets/darrowrectangle.cpp	2020-06-04 16:57:08.202628299 +0800
+@@ -24,6 +24,7 @@
+  */
+ 
+ #include "darrowrectangle.h"
++#include <QPainterPath>
+ #include <QApplication>
+ #include <dgraphicsgloweffect.h>
+ 
+diff -ur dde-session-shell-5.1.0.1.old/src/widgets/dpasswordeditex.cpp dde-session-shell-5.1.0.1/src/widgets/dpasswordeditex.cpp
+--- dde-session-shell-5.1.0.1.old/src/widgets/dpasswordeditex.cpp	2020-06-04 16:56:49.416762465 +0800
++++ dde-session-shell-5.1.0.1/src/widgets/dpasswordeditex.cpp	2020-06-04 16:57:08.202628299 +0800
+@@ -21,6 +21,7 @@
+ 
+ #include "dpasswordeditex.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QPropertyAnimation>
+ #include <DStyleHelper>
+diff -ur dde-session-shell-5.1.0.1.old/src/widgets/useravatar.cpp dde-session-shell-5.1.0.1/src/widgets/useravatar.cpp
+--- dde-session-shell-5.1.0.1.old/src/widgets/useravatar.cpp	2020-06-04 16:56:49.426742516 +0800
++++ dde-session-shell-5.1.0.1/src/widgets/useravatar.cpp	2020-06-04 16:57:08.202628299 +0800
+@@ -25,6 +25,7 @@
+ 
+ #include "useravatar.h"
+ #include "dthememanager.h"
++#include <QPainterPath>
+ #include <QUrl>
+ #include <QFile>
+ 

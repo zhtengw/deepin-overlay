@@ -36,13 +36,14 @@ DEPEND="${RDEPEND}
 		virtual/pkgconfig
 		"
 
-src_prepare() {
-	LIBDIR=$(get_libdir)
-	sed -i "s|/usr/lib|/usr/${LIBDIR}|g" \
-		DBService/DBService.pro || die
+PATCHES=(
+	"$FILESDIR/5.6.7-build-with-qt5.15.patch"
+)
 
-	sed -i "/<QList>/a\#include\ <QPointF>\n\#include\ <QRectF>" \
-		application/pdfControl/docview/commonstruct.h || die
+src_prepare() {
+
+	sed -i "/<QList>/a\#include\ <QPointF>\n\#include\ <QRectF>\n\#include\ <QSet>" \
+		src/pdfControl/docview/commonstruct.h || die
 
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr DEFINES+="VERSION=${PV}"
 	default_src_prepare

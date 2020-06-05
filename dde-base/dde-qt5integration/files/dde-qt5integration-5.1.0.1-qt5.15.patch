@@ -1,0 +1,99 @@
+diff -ur qt5integration-5.1.0.1.old/styleplugins/chameleon/chameleonstyle.cpp qt5integration-5.1.0.1/styleplugins/chameleon/chameleonstyle.cpp
+--- qt5integration-5.1.0.1.old/styleplugins/chameleon/chameleonstyle.cpp	2020-06-05 16:49:23.621487424 +0800
++++ qt5integration-5.1.0.1/styleplugins/chameleon/chameleonstyle.cpp	2020-06-05 16:49:37.535585343 +0800
+@@ -21,6 +21,7 @@
+ #include "chameleonstyle.h"
+ #include "common.h"
+ 
++#include <QPainterPath>
+ #include <DNativeSettings>
+ #include <DStyleOption>
+ #include <DApplication>
+diff -ur qt5integration-5.1.0.1.old/styleplugins/dstyleplugin/painterhelper.cpp qt5integration-5.1.0.1/styleplugins/dstyleplugin/painterhelper.cpp
+--- qt5integration-5.1.0.1.old/styleplugins/dstyleplugin/painterhelper.cpp	2020-06-05 16:49:23.631469064 +0800
++++ qt5integration-5.1.0.1/styleplugins/dstyleplugin/painterhelper.cpp	2020-06-05 16:49:37.535585343 +0800
+@@ -17,6 +17,7 @@
+ 
+ #include "painterhelper.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QDebug>
+ 
+diff -ur qt5integration-5.1.0.1.old/styleplugins/dstyleplugin/painterhelper.h qt5integration-5.1.0.1/styleplugins/dstyleplugin/painterhelper.h
+--- qt5integration-5.1.0.1.old/styleplugins/dstyleplugin/painterhelper.h	2020-06-05 16:49:23.631469064 +0800
++++ qt5integration-5.1.0.1/styleplugins/dstyleplugin/painterhelper.h	2020-06-05 16:49:37.535585343 +0800
+@@ -18,6 +18,7 @@
+ #ifndef PAINTERHELPER_H
+ #define PAINTERHELPER_H
+ 
++#include <QPainterPath>
+ #include <QBrush>
+ 
+ #include "common.h"
+diff -ur qt5integration-5.1.0.1.old/styleplugins/dstyleplugin/progressbarhelper.cpp qt5integration-5.1.0.1/styleplugins/dstyleplugin/progressbarhelper.cpp
+--- qt5integration-5.1.0.1.old/styleplugins/dstyleplugin/progressbarhelper.cpp	2020-06-05 16:49:23.631469064 +0800
++++ qt5integration-5.1.0.1/styleplugins/dstyleplugin/progressbarhelper.cpp	2020-06-05 16:49:37.535585343 +0800
+@@ -17,6 +17,7 @@
+ 
+ #include "style.h"
+ 
++#include <QPainterPath>
+ #include <QStyleOption>
+ #include <QStyleOptionProgressBarV2>
+ #include <QPainter>
+diff -ur qt5integration-5.1.0.1.old/styleplugins/dstyleplugin/pushbuttonhelper.cpp qt5integration-5.1.0.1/styleplugins/dstyleplugin/pushbuttonhelper.cpp
+--- qt5integration-5.1.0.1.old/styleplugins/dstyleplugin/pushbuttonhelper.cpp	2020-06-05 16:49:23.631469064 +0800
++++ qt5integration-5.1.0.1/styleplugins/dstyleplugin/pushbuttonhelper.cpp	2020-06-05 16:49:37.535585343 +0800
+@@ -22,6 +22,7 @@
+ #include "painterhelper.h"
+ #include "paletteextended.h"
+ 
++#include <QPainterPath>
+ #include <dtkwidget_global.h>
+ #ifdef DTKWIDGET_CLASS_DSuggestButton
+ #include <DStyleOption>
+diff -ur qt5integration-5.1.0.1.old/styleplugins/dstyleplugin/tabbarhelper.cpp qt5integration-5.1.0.1/styleplugins/dstyleplugin/tabbarhelper.cpp
+--- qt5integration-5.1.0.1.old/styleplugins/dstyleplugin/tabbarhelper.cpp	2020-06-05 16:49:23.631469064 +0800
++++ qt5integration-5.1.0.1/styleplugins/dstyleplugin/tabbarhelper.cpp	2020-06-05 16:49:37.535585343 +0800
+@@ -23,6 +23,7 @@
+ #include "paletteextended.h"
+ #include "painterhelper.h"
+ 
++#include <QPainterPath>
+ #include <dtkwidget_config.h>
+ #ifdef DTKWIDGET_CLASS_DTabBar
+ #include <DTabBar>
+diff -ur qt5integration-5.1.0.1.old/styleplugins/dstyleplugin/tabwidgethelper.cpp qt5integration-5.1.0.1/styleplugins/dstyleplugin/tabwidgethelper.cpp
+--- qt5integration-5.1.0.1.old/styleplugins/dstyleplugin/tabwidgethelper.cpp	2020-06-05 16:49:23.631469064 +0800
++++ qt5integration-5.1.0.1/styleplugins/dstyleplugin/tabwidgethelper.cpp	2020-06-05 16:49:37.535585343 +0800
+@@ -19,6 +19,7 @@
+ #include "geometryutils.h"
+ #include "painterhelper.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QTabWidget>
+ #include <QDebug>
+diff -ur qt5integration-5.1.0.1.old/styles/norwegianwoodstyle.cpp qt5integration-5.1.0.1/styles/norwegianwoodstyle.cpp
+--- qt5integration-5.1.0.1.old/styles/norwegianwoodstyle.cpp	2020-06-05 16:49:23.631469064 +0800
++++ qt5integration-5.1.0.1/styles/norwegianwoodstyle.cpp	2020-06-05 16:49:37.535585343 +0800
+@@ -38,6 +38,7 @@
+ **
+ ****************************************************************************/
+ 
++#include <QPainterPath>
+ #include <QtWidgets>
+ 
+ #include "norwegianwoodstyle.h"
+diff -ur qt5integration-5.1.0.1.old/styles/norwegianwoodstyle.h qt5integration-5.1.0.1/styles/norwegianwoodstyle.h
+--- qt5integration-5.1.0.1.old/styles/norwegianwoodstyle.h	2020-06-05 16:49:23.631469064 +0800
++++ qt5integration-5.1.0.1/styles/norwegianwoodstyle.h	2020-06-05 16:49:37.535585343 +0800
+@@ -41,6 +41,7 @@
+ #ifndef NORWEGIANWOODSTYLE_H
+ #define NORWEGIANWOODSTYLE_H
+ 
++#include <QPainterPath>
+ #include <QProxyStyle>
+ #include <QPalette>
+ 

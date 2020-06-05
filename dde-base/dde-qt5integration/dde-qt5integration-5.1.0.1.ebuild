@@ -35,7 +35,6 @@ RDEPEND="
 	media-libs/fontconfig
 	media-libs/freetype
 	dev-qt/dde-qt5platform-plugins
-	dev-qt/qtstyleplugins:5
 	"
 DEPEND="${RDEPEND}
 	dev-libs/glib:2
@@ -44,12 +43,13 @@ DEPEND="${RDEPEND}
 
 PATCHES=( 	
 	"${FILESDIR}"/${PN}-5.1.0.1-qt5.14.patch 
+	"${FILESDIR}"/${PN}-5.1.0.1-qt5.15.patch 
 )
 
 src_prepare() {
+	default
 	sed -i "/<DTabBar>/a\#include\ <DSpinBox>" styleplugins/chameleon/chameleonstyle.cpp || die 
 	QT_SELECT=qt5 eqmake5 ${MY_PN}.pro
-	default
 }
 
 src_install() {

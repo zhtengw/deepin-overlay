@@ -48,7 +48,7 @@ src_prepare() {
 		src/Widget/logtreeview.cpp \
 		src/Widget/deviceinfowidgetbase.h || die
 	sed -i "/<QList>/a\#include\ <QIODevice>" \
-		thirdlib/docx/opc/packagereader.h || die
+		3rdparty/docx/opc/packagereader.h || die
 	sed -i "/\"DSpinner\"/a\#include\ <QKeyEvent>" \
 		src/mainwindow.cpp || die
 	export QT_SELECT=qt5
