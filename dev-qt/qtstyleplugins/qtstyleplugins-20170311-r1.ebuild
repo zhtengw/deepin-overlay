@@ -14,7 +14,7 @@ SLOT="5"
 EGIT_REPO_URI="https://code.qt.io/cgit/qt/qtstyleplugins.git"
 EGIT_COMMIT="335dbece103e2cbf6c7cf819ab6672c2956b17b3"
 SRC_URI=""
-KEYWORDS="~amd64 ~x86"
+#KEYWORDS="~amd64 ~x86"
 
 IUSE=""
 

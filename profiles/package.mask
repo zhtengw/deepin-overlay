@@ -29,6 +29,11 @@
 
 #--- END OF EXAMPLES --- 
 
+# Aten Zhang <atenzd@gmail.com> (06 Jun 2020)
+# Masked as not need by dde-qt5integration any more.
+# Removal in a month
+dev-qt/qtstyleplugins
+
 # Aten Zhang <atenzd@gmail.com> (31 Mar 2020)
 # Masked as dependency dev-vcs/bzr was masked in gentoo repos.
 # Removal in a month
