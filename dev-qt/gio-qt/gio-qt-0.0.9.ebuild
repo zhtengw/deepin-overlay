@@ -6,7 +6,7 @@ EAPI=6
 inherit cmake-utils
 
 DESCRIPTION="Qt wrapper library of Gio"
-HOMEPAGE="https://github.com/linuxdeepin/gio-qt5"
+HOMEPAGE="https://github.com/linuxdeepin/gio-qt"
 
 if [[ ${PV} = *9999* ]]; then
 	inherit git-r3
