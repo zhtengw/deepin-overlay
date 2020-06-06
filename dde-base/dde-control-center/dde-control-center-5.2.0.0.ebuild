@@ -46,6 +46,7 @@ DEPEND="${RDEPEND}
 		"
 
 PATCHES=(
+	"${FILESDIR}/system-info-icon.patch"
 	"${FILESDIR}/5.1.0.11-missing-include.patch"
 )
 
