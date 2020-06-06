@@ -1,0 +1,120 @@
+diff --git a/dde-desktop/view/canvasgridview.cpp b/dde-desktop/view/canvasgridview.cpp
+index 7d5e5a8..7347449 100644
+--- a/dde-desktop/view/canvasgridview.cpp
++++ b/dde-desktop/view/canvasgridview.cpp
+@@ -9,6 +9,7 @@
+ 
+ #include "canvasgridview.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QResizeEvent>
+ #include <QDebug>
+diff --git a/dde-file-manager-lib/dialogs/openwithdialog.cpp b/dde-file-manager-lib/dialogs/openwithdialog.cpp
+index 95d8bb9..e28ef07 100644
+--- a/dde-file-manager-lib/dialogs/openwithdialog.cpp
++++ b/dde-file-manager-lib/dialogs/openwithdialog.cpp
+@@ -33,6 +33,7 @@
+ 
+ #include "singleton.h"
+ 
++#include <QPainterPath>
+ #include <QVBoxLayout>
+ #include <QHBoxLayout>
+ #include <QPushButton>
+diff --git a/dde-file-manager-lib/dialogs/propertydialog.cpp b/dde-file-manager-lib/dialogs/propertydialog.cpp
+index 740c1f7..b84bd7a 100644
+--- a/dde-file-manager-lib/dialogs/propertydialog.cpp
++++ b/dde-file-manager-lib/dialogs/propertydialog.cpp
+@@ -60,6 +60,7 @@
+ #include "views/dfmsidebar.h"
+ #include "dfmapplication.h"
+ 
++#include <QPainterPath>
+ #include <DDrawer>
+ #include <DDrawerGroup>
+ #include <DArrowLineDrawer>
+diff --git a/dde-file-manager-lib/interfaces/dfmglobal.cpp b/dde-file-manager-lib/interfaces/dfmglobal.cpp
+index 56b0140..a7ee7f7 100644
+--- a/dde-file-manager-lib/interfaces/dfmglobal.cpp
++++ b/dde-file-manager-lib/interfaces/dfmglobal.cpp
+@@ -49,6 +49,7 @@
+ #include "tag/tagmanager.h"
+ #include "shutil/mimetypedisplaymanager.h"
+ #include "dabstractfilewatcher.h"
++#include <QPainterPath>
+ #include <dfmstandardpaths.h>
+ #include "dfmapplication.h"
+ #include "dfmsettings.h"
+diff --git a/dde-file-manager-lib/interfaces/dfmstyleditemdelegate.cpp b/dde-file-manager-lib/interfaces/dfmstyleditemdelegate.cpp
+index fdf4b2d..a411bac 100644
+--- a/dde-file-manager-lib/interfaces/dfmstyleditemdelegate.cpp
++++ b/dde-file-manager-lib/interfaces/dfmstyleditemdelegate.cpp
+@@ -11,6 +11,7 @@
+ #include "dfileviewhelper.h"
+ #include "private/dstyleditemdelegate_p.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QAbstractItemView>
+ #include <QPainter>
+diff --git a/dde-file-manager-lib/interfaces/diconitemdelegate.cpp b/dde-file-manager-lib/interfaces/diconitemdelegate.cpp
+index 02a9128..70145ee 100644
+--- a/dde-file-manager-lib/interfaces/diconitemdelegate.cpp
++++ b/dde-file-manager-lib/interfaces/diconitemdelegate.cpp
+@@ -32,6 +32,7 @@
+ #include "tag/tagmanager.h"
+ #include "app/define.h"
+ 
++#include <QPainterPath>
+ #include <QLabel>
+ #include <QPainter>
+ #include <QTextEdit>
+diff --git a/dde-file-manager-lib/interfaces/dlistitemdelegate.cpp b/dde-file-manager-lib/interfaces/dlistitemdelegate.cpp
+index 3e78dc7..e5a9021 100644
+--- a/dde-file-manager-lib/interfaces/dlistitemdelegate.cpp
++++ b/dde-file-manager-lib/interfaces/dlistitemdelegate.cpp
+@@ -14,6 +14,7 @@
+ #include "private/dstyleditemdelegate_p.h"
+ #include "dfmapplication.h"
+ 
++#include <QPainterPath>
+ #include <QLabel>
+ #include <QPainter>
+ #include <QAbstractItemView>
+diff --git a/dde-file-manager-lib/views/dtabbar.cpp b/dde-file-manager-lib/views/dtabbar.cpp
+index c2ddf67..8d76b9b 100644
+--- a/dde-file-manager-lib/views/dtabbar.cpp
++++ b/dde-file-manager-lib/views/dtabbar.cpp
+@@ -29,6 +29,7 @@
+ #include "dfmevent.h"
+ #include "controllers/appcontroller.h"
+ 
++#include <QPainterPath>
+ #include <DWidgetUtil>
+ 
+ #include <QGuiApplication>
+diff --git a/dde-file-manager-lib/views/dtabbar.h b/dde-file-manager-lib/views/dtabbar.h
+index 2d3b652..0f9630d 100644
+--- a/dde-file-manager-lib/views/dtabbar.h
++++ b/dde-file-manager-lib/views/dtabbar.h
+@@ -27,6 +27,7 @@
+ 
+ #include "singleton.h"
+ #include "durl.h"
++#include <QPainterPath>
+ #include <QDebug>
+ #include "singleton.h"
+ #include <QFont>
+diff --git a/dialogs/dfmtaskwidget.cpp b/dialogs/dfmtaskwidget.cpp
+index 94069ee..133cf2e 100644
+--- a/dialogs/dfmtaskwidget.cpp
++++ b/dialogs/dfmtaskwidget.cpp
+@@ -20,6 +20,7 @@
+  */
+ #include "dfmtaskwidget.h"
+ 
++#include <QPainterPath>
+ #include <DWaterProgress>
+ #include <QVBoxLayout>
+ #include <QHBoxLayout>

@@ -65,6 +65,7 @@ DEPEND="${RDEPEND}
 		"
 PATCHES=(                          
     "${FILESDIR}"/5.1.0-disable-screensaver.patch
+    "${FILESDIR}"/5.1.1.25-build-with-qt5.15.patch
 )
 
 src_prepare() {

@@ -8,3 +8,39 @@
  #include <X11/Xutil.h>
  #include <X11/cursorfont.h>
  #include <X11/keysymdef.h>
+diff --git a/src/utils.cpp b/src/utils.cpp
+index fc661a9..09ac9b2 100755
+--- a/src/utils.cpp
++++ b/src/utils.cpp
+@@ -21,6 +21,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
++#include <QPainterPath>
+ #include <QString>
+ #include <QDir>
+ #include <QApplication>
+diff --git a/src/widgets/shapeswidget.cpp b/src/widgets/shapeswidget.cpp
+index 127620e..d4c5dcb 100755
+--- a/src/widgets/shapeswidget.cpp
++++ b/src/widgets/shapeswidget.cpp
+@@ -18,6 +18,7 @@
+  */
+ 
+ #include "shapeswidget.h"
++#include <QPainterPath>
+ #include <QApplication>
+ #include <QPainter>
+ #include <QDebug>
+diff --git a/src/widgets/tooltips.cpp b/src/widgets/tooltips.cpp
+index afd844a..ed87d50 100644
+--- a/src/widgets/tooltips.cpp
++++ b/src/widgets/tooltips.cpp
+@@ -29,6 +29,7 @@
+  */
+ #include "tooltips.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QHBoxLayout>
+ #include <QLabel>

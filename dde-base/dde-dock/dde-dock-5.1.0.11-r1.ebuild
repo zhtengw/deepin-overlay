@@ -35,6 +35,9 @@ DEPEND="${RDEPEND}
 		dev-libs/libdbusmenu-qt
 	    "
 
+PATCHES=(
+	"$FILESDIR/5.1.0.11-build-with-qt5.15.patch"
+)
 
 src_prepare() {
 	LIBDIR=$(get_libdir)

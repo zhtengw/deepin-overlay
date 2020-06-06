@@ -1,0 +1,71 @@
+diff --git a/frame/item/appitem.cpp b/frame/item/appitem.cpp
+index a19c88a..517c1a8 100644
+--- a/frame/item/appitem.cpp
++++ b/frame/item/appitem.cpp
+@@ -28,6 +28,7 @@
+ #include "components/appswingeffectbuilder.h"
+ #include "components/appspreviewprovider.h"
+ 
++#include <QPainterPath>
+ #include <X11/X.h>
+ #include <X11/Xlib.h>
+ 
+diff --git a/plugins/onboard/onboarditem.cpp b/plugins/onboard/onboarditem.cpp
+index e43a091..80a002d 100644
+--- a/plugins/onboard/onboarditem.cpp
++++ b/plugins/onboard/onboarditem.cpp
+@@ -21,6 +21,7 @@
+ 
+ #include "onboarditem.h"
+ 
++#include <QPainterPath>
+ #include <QSvgRenderer>
+ #include <QPainter>
+ #include <QMouseEvent>
+diff --git a/plugins/shutdown/shutdownwidget.cpp b/plugins/shutdown/shutdownwidget.cpp
+index 8b62a4a..f74f26d 100644
+--- a/plugins/shutdown/shutdownwidget.cpp
++++ b/plugins/shutdown/shutdownwidget.cpp
+@@ -21,6 +21,7 @@
+ 
+ #include "shutdownwidget.h"
+ 
++#include <QPainterPath>
+ #include <QSvgRenderer>
+ #include <QPainter>
+ #include <QMouseEvent>
+diff --git a/plugins/tray/fashiontray/containers/spliteranimated.cpp b/plugins/tray/fashiontray/containers/spliteranimated.cpp
+index 92d4ca1..27463f4 100644
+--- a/plugins/tray/fashiontray/containers/spliteranimated.cpp
++++ b/plugins/tray/fashiontray/containers/spliteranimated.cpp
+@@ -1,5 +1,6 @@
+ #include "spliteranimated.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QDebug>
+ 
+diff --git a/plugins/tray/fashiontray/fashiontraycontrolwidget.cpp b/plugins/tray/fashiontray/fashiontraycontrolwidget.cpp
+index b7edc11..14834e3 100644
+--- a/plugins/tray/fashiontray/fashiontraycontrolwidget.cpp
++++ b/plugins/tray/fashiontray/fashiontraycontrolwidget.cpp
+@@ -21,6 +21,7 @@
+ 
+ #include "fashiontraycontrolwidget.h"
+ 
++#include <QPainterPath>
+ #include <QMouseEvent>
+ #include <QPainter>
+ #include <DHiDPIHelper>
+diff --git a/plugins/tray/fashiontray/fashiontraywidgetwrapper.cpp b/plugins/tray/fashiontray/fashiontraywidgetwrapper.cpp
+index 30e4717..10aa055 100644
+--- a/plugins/tray/fashiontray/fashiontraywidgetwrapper.cpp
++++ b/plugins/tray/fashiontray/fashiontraywidgetwrapper.cpp
+@@ -22,6 +22,7 @@
+ #include "fashiontraywidgetwrapper.h"
+ #include "../xembedtraywidget.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QDebug>
+ #include <QMouseEvent>

@@ -1,0 +1,26 @@
+diff --git a/3rdparty/terminalwidget/CMakeLists.txt b/3rdparty/terminalwidget/CMakeLists.txt
+index 3c100f6..34ca455 100644
+--- a/3rdparty/terminalwidget/CMakeLists.txt
++++ b/3rdparty/terminalwidget/CMakeLists.txt
+@@ -58,6 +58,7 @@ endif()
+ 
+ set(TERMINALWIDGET_LIBRARY_NAME terminalwidget5)
+ 
++remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII)
+ 
+ # main library
+ 
+diff --git a/3rdparty/terminalwidget/lib/TerminalCharacterDecoder.cpp b/3rdparty/terminalwidget/lib/TerminalCharacterDecoder.cpp
+index 579dedf..558b9ff 100644
+--- a/3rdparty/terminalwidget/lib/TerminalCharacterDecoder.cpp
++++ b/3rdparty/terminalwidget/lib/TerminalCharacterDecoder.cpp
+@@ -31,6 +31,9 @@
+ // Konsole
+ #include "konsole_wcwidth.h"
+ 
++// Wide character type
++#include <cwctype>
++
+ using namespace Konsole;
+ PlainTextDecoder::PlainTextDecoder()
+  : _output(0)

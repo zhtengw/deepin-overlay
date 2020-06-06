@@ -13,11 +13,11 @@ if [[ "${PV}" == *9999* ]] ; then
 	EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
 else
 	SRC_URI="https://github.com/linuxdeepin/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~x86"
 fi
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-qt/qtcore:5
@@ -28,6 +28,7 @@ RDEPEND="dev-qt/qtcore:5
 	dev-qt/qtconcurrent:5
 	>=dde-base/dtkcore-5.1.2
 	dde-base/dtkgui
+	!dde-extra/deepin-terminal
 	"
 DEPEND="${RDEPEND}
 	dev-util/lxqt-build-tools
@@ -35,11 +36,14 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	"
 
-src_prepare() {
-	sed -i "/include/a\#include\ <cwctype>" \
-		terminalwidget/lib/konsole_wcwidth.h || die
-	cmake-utils_src_prepare
-}
+PATCHES=(
+	"$FILESDIR"/5.2.3-char.patch
+	"$FILESDIR"/5.2.3-build-with-qt5.15.patch
+)
+
+#src_prepare() {
+#	cmake-utils_src_prepare
+#}
 
 src_configure() {
 	local mycmakeargs=(

@@ -30,6 +30,9 @@ DEPEND="${RDEPEND}
 		dde-base/dde-qt-dbus-factory:=
 		"
 
+PATCHES=(
+	"$FILESDIR/5.2.0.0-build-with-qt5.15.patch"
+)
 
 src_configure() {
 	local mycmakeargs=(

@@ -1,0 +1,71 @@
+diff --git a/src/widgets/avatar.cpp b/src/widgets/avatar.cpp
+index 7ce8c3a..bb22fff 100644
+--- a/src/widgets/avatar.cpp
++++ b/src/widgets/avatar.cpp
+@@ -21,6 +21,7 @@
+ 
+ #include "avatar.h"
+ 
++#include <QPainterPath>
+ #include <QPaintEvent>
+ #include <QPainter>
+ #include <QDebug>
+diff --git a/src/widgets/miniframebutton.cpp b/src/widgets/miniframebutton.cpp
+index e364860..2ea349e 100644
+--- a/src/widgets/miniframebutton.cpp
++++ b/src/widgets/miniframebutton.cpp
+@@ -1,5 +1,6 @@
+ #include "miniframebutton.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QEvent>
+ #include <QApplication>
+diff --git a/src/widgets/miniframenavigation.cpp b/src/widgets/miniframenavigation.cpp
+index 469d028..eccdd5b 100644
+--- a/src/widgets/miniframenavigation.cpp
++++ b/src/widgets/miniframenavigation.cpp
+@@ -23,6 +23,7 @@
+ 
+ #include "miniframenavigation.h"
+ 
++#include <QPainterPath>
+ #include <QVBoxLayout>
+ #include <QProcess>
+ #include <QSignalMapper>
+diff --git a/src/widgets/miniframeswitchbtn.cpp b/src/widgets/miniframeswitchbtn.cpp
+index 1e31a0d..459f9af 100644
+--- a/src/widgets/miniframeswitchbtn.cpp
++++ b/src/widgets/miniframeswitchbtn.cpp
+@@ -21,6 +21,7 @@
+ #include "../windowedframe.h"
+ #include "../global_util/util.h"
+ 
++#include <QPainterPath>
+ #include <QHBoxLayout>
+ #include <DGuiApplicationHelper>
+ #include <DFontSizeManager>
+diff --git a/src/windowedframe.cpp b/src/windowedframe.cpp
+index 6f8c306..d0122ac 100644
+--- a/src/windowedframe.cpp
++++ b/src/windowedframe.cpp
+@@ -24,6 +24,7 @@
+ #include "global_util/util.h"
+ 
+ #if (DTK_VERSION >= DTK_VERSION_CHECK(2, 0, 8, 0))
++#include <QPainterPath>
+ #include <DDBusSender>
+ #else
+ #include <QProcess>
+diff --git a/src/windowedframe.h b/src/windowedframe.h
+index 9561f8b..84f93ac 100644
+--- a/src/windowedframe.h
++++ b/src/windowedframe.h
+@@ -36,6 +36,7 @@
+ #include "global_util/constants.h"
+ #include "global_util/calculate_util.h"
+ 
++#include <QPainterPath>
+ #include <DPlatformWindowHandle>
+ #include <DWindowManagerHelper>
+ #include <dblureffectwidget.h>
