@@ -54,9 +54,13 @@ PATCHES=(
 )
 
 src_prepare() {
+	# fix cannot auth
+	sed -i 's|common-auth|system-auth|' \
+		src/libdde-auth/authagent.cpp || die
 
 	LIBDIR=$(get_libdir)
-	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" scripts/lightdm-deepin-greeter
+	sed -i "s|lib/deepin-daemon|${LIBDIR}/deepin-daemon|g" \
+		scripts/lightdm-deepin-greeter || die
 
 	sed -i "s|FILES\ files\/deepin-greeter|PROGRAMS\ files\/deepin-greeter|g" \
 		CMakeLists.txt || die
