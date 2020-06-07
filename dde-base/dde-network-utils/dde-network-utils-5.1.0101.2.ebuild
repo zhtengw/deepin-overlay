@@ -20,6 +20,7 @@ RDEPEND="dev-qt/qtdbus:5
 	     "
 DEPEND="${RDEPEND}
 		>=dde-base/dde-qt-dbus-factory-0.3.1:=
+		x11-libs/gsettings-qt
 	    "
 
 src_prepare() {
