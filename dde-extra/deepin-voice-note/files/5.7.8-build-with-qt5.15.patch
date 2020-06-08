@@ -1,0 +1,34 @@
+diff --git a/src/views/folderimage.cpp b/src/views/folderimage.cpp
+index e8cedf2..23a45f3 100644
+--- a/src/views/folderimage.cpp
++++ b/src/views/folderimage.cpp
+@@ -1,5 +1,6 @@
+ #include "folderimage.h"
+ #include "uiutil.h"
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QDebug>
+ 
+diff --git a/src/views/waveform.cpp b/src/views/waveform.cpp
+index 4c8d0b2..f19cf34 100644
+--- a/src/views/waveform.cpp
++++ b/src/views/waveform.cpp
+@@ -21,6 +21,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */ 
+ 
++#include <QPainterPath>
+ #include <QDateTime>
+ #include <QDebug>
+ #include <QEvent>
+diff --git a/src/views/waveformreplay.cpp b/src/views/waveformreplay.cpp
+index bed4cae..9f092a1 100644
+--- a/src/views/waveformreplay.cpp
++++ b/src/views/waveformreplay.cpp
+@@ -1,5 +1,6 @@
+ 
+ 
++#include <QPainterPath>
+ #include <QDateTime>
+ #include <QDebug>
+ #include <QEvent>

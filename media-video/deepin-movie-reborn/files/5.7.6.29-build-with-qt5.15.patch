@@ -1,0 +1,192 @@
+diff --git a/src/backends/mpv/mpv_glwidget.cpp b/src/backends/mpv/mpv_glwidget.cpp
+index 6d03056..082cb82 100644
+--- a/src/backends/mpv/mpv_glwidget.cpp
++++ b/src/backends/mpv/mpv_glwidget.cpp
+@@ -32,6 +32,7 @@
+ #include "mpv_proxy.h"
+ #include "mpv_glwidget.h"
+ 
++#include <QPainterPath>
+ #include <QtX11Extras/QX11Info>
+ 
+ #include <dthememanager.h>
+diff --git a/src/common/mainwindow.cpp b/src/common/mainwindow.cpp
+index 217b926..93a7a38 100644
+--- a/src/common/mainwindow.cpp
++++ b/src/common/mainwindow.cpp
+@@ -52,6 +52,7 @@
+ #include "threadpool.h"
+ 
+ //#include <QtWidgets>
++#include <QPainterPath>
+ #include <QtDBus>
+ #include <QtX11Extras>
+ #include <QX11Info>
+diff --git a/src/common/mainwindow.h b/src/common/mainwindow.h
+index 6093870..61253ce 100644
+--- a/src/common/mainwindow.h
++++ b/src/common/mainwindow.h
+@@ -30,6 +30,7 @@
+ #ifndef _DMR_MAIN_WINDOW_H
+ #define _DMR_MAIN_WINDOW_H
+ 
++#include <QPainterPath>
+ #include <QObject>
+ #include <DMainWindow>
+ #include <DTitlebar>
+diff --git a/src/common/utility.h b/src/common/utility.h
+index abd2839..f123d58 100644
+--- a/src/common/utility.h
++++ b/src/common/utility.h
+@@ -30,6 +30,7 @@
+ #ifndef _DMR_UTILITY_H
+ #define _DMR_UTILITY_H
+ 
++#include <QPainterPath>
+ #include <QImage>
+ #include <QList>
+ 
+diff --git a/src/common/utility_x11.cpp b/src/common/utility_x11.cpp
+index 51b49b7..c80f6e5 100644
+--- a/src/common/utility_x11.cpp
++++ b/src/common/utility_x11.cpp
+@@ -29,6 +29,7 @@
+  */
+ #include "utility.h"
+ 
++#include <QPainterPath>
+ #include <QtWidgets>
+ #include <QtX11Extras/QX11Info>
+ 
+diff --git a/src/libdmr/player_engine.cpp b/src/libdmr/player_engine.cpp
+index da001d8..08b161d 100644
+--- a/src/libdmr/player_engine.cpp
++++ b/src/libdmr/player_engine.cpp
+@@ -28,6 +28,7 @@
+  * files in the program, then also delete it here.
+  */
+ #include "config.h"
++#include <QPainterPath>
+ #include <iostream>
+ #include "player_engine.h"
+ #include "playlist_model.h"
+diff --git a/src/libdmr/utils.cpp b/src/libdmr/utils.cpp
+index 248cc08..f4b99bd 100644
+--- a/src/libdmr/utils.cpp
++++ b/src/libdmr/utils.cpp
+@@ -28,6 +28,7 @@
+  * files in the program, then also delete it here.
+  */
+ #include "utils.h"
++#include <QPainterPath>
+ #include <QtDBus>
+ #include <QtWidgets>
+ 
+diff --git a/src/widgets/movieinfo_dialog.h b/src/widgets/movieinfo_dialog.h
+index b3cd1d7..6391b7c 100644
+--- a/src/widgets/movieinfo_dialog.h
++++ b/src/widgets/movieinfo_dialog.h
+@@ -30,6 +30,7 @@
+ #ifndef _DMR_MOVIE_INFO_DIALOG_H
+ #define _DMR_MOVIE_INFO_DIALOG_H
+ 
++#include <QPainterPath>
+ #include <QtWidgets>
+ #include <QGuiApplication>
+ #include <DDialog>
+diff --git a/src/widgets/notification_widget.cpp b/src/widgets/notification_widget.cpp
+index d7d7c2c..9a03fc7 100644
+--- a/src/widgets/notification_widget.cpp
++++ b/src/widgets/notification_widget.cpp
+@@ -31,6 +31,7 @@
+ #include "utility.h"
+ #include "event_relayer.h"
+ 
++#include <QPainterPath>
+ #include <DPlatformWindowHandle>
+ #include <dthememanager.h>
+ #include <dapplication.h>
+diff --git a/src/widgets/playlist_widget.cpp b/src/widgets/playlist_widget.cpp
+index 9484289..73cb651 100644
+--- a/src/widgets/playlist_widget.cpp
++++ b/src/widgets/playlist_widget.cpp
+@@ -38,6 +38,7 @@
+ #include "movieinfo_dialog.h"
+ #include "tip.h"
+ 
++#include <QPainterPath>
+ #include <DApplication>
+ #include <dimagebutton.h>
+ #include <dthememanager.h>
+diff --git a/src/widgets/playlist_widget.h b/src/widgets/playlist_widget.h
+index 0be8b4c..d6c8b74 100644
+--- a/src/widgets/playlist_widget.h
++++ b/src/widgets/playlist_widget.h
+@@ -30,6 +30,7 @@
+ #ifndef _DMR_PLAYLIST_WIDGET_H
+ #define _DMR_PLAYLIST_WIDGET_H
+ 
++#include <QPainterPath>
+ #include <DPlatformWindowHandle>
+ #include <QPushButton>
+ #include <QtWidgets>
+diff --git a/src/widgets/tip.cpp b/src/widgets/tip.cpp
+index 21d7e5a..900a625 100644
+--- a/src/widgets/tip.cpp
++++ b/src/widgets/tip.cpp
+@@ -29,6 +29,7 @@
+  */
+ #include "tip.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QHBoxLayout>
+ #include <QLabel>
+diff --git a/src/widgets/titlebar.cpp b/src/widgets/titlebar.cpp
+index a9e957f..d0579ef 100644
+--- a/src/widgets/titlebar.cpp
++++ b/src/widgets/titlebar.cpp
+@@ -31,6 +31,7 @@
+ #include "titlebar.h"
+ #include "utils.h"
+ 
++#include <QPainterPath>
+ #include <QtGui>
+ #include <DThemeManager>
+ 
+diff --git a/src/widgets/toolbox_proxy.cpp b/src/widgets/toolbox_proxy.cpp
+index f5480a5..59e2075 100644
+--- a/src/widgets/toolbox_proxy.cpp
++++ b/src/widgets/toolbox_proxy.cpp
+@@ -43,6 +43,7 @@
+ #include "utils.h"
+ 
+ //#include <QtWidgets>
++#include <QPainterPath>
+ #include <DImageButton>
+ #include <DThemeManager>
+ #include <DArrowRectangle>
+diff --git a/src/widgets/toolbox_proxy.h b/src/widgets/toolbox_proxy.h
+index a27e2a8..c2f26f3 100644
+--- a/src/widgets/toolbox_proxy.h
++++ b/src/widgets/toolbox_proxy.h
+@@ -30,6 +30,7 @@
+ #ifndef _DMR_TOOLBOX_PROXY_H
+ #define _DMR_TOOLBOX_PROXY_H
+ 
++#include <QPainterPath>
+ #include <DPlatformWindowHandle>
+ //#include <QtWidgets>
+ #include <DWidget>
+diff --git a/src/widgets/toolbutton.h b/src/widgets/toolbutton.h
+index 1cbc213..37957b9 100644
+--- a/src/widgets/toolbutton.h
++++ b/src/widgets/toolbutton.h
+@@ -31,6 +31,7 @@
+ #define _DMR_TOOLBUTTON_H 
+ 
+ //#include <QtWidgets>
++#include <QPainterPath>
+ #include <QWidget>
+ #include <QWheelEvent>
+ #include <dimagebutton.h>

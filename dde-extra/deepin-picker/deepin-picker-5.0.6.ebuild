@@ -35,10 +35,13 @@ DEPEND="${RDEPEND}
 		dev-qt/qtchooser
 		virtual/pkgconfig
 		"
+PATCHES=(
+	"$FILESDIR"/5.0.6-build-with-qt5.15.patch
+)
 
 src_prepare() {
-	eapply_user
 	QT_SELECT=qt5 eqmake5
+	default_src_prepare
 }
 
 src_install() {

@@ -1,0 +1,24 @@
+diff --git a/src/animation.cpp b/src/animation.cpp
+index 7c8b1af..c2e16fa 100644
+--- a/src/animation.cpp
++++ b/src/animation.cpp
+@@ -23,6 +23,7 @@
+ 
+ #include "animation.h"
+ #include "utils.h"
++#include <QPainterPath>
+ #include <QApplication>
+ #include <QColor>
+ #include <QPainter>
+diff --git a/src/picker.cpp b/src/picker.cpp
+index 3ad921e..6c3310e 100644
+--- a/src/picker.cpp
++++ b/src/picker.cpp
+@@ -26,6 +26,7 @@
+ #include "settings.h"
+ #include "utils.h"
+ #include "colormenu.h"
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QBitmap>
+ #include <QPixmap>

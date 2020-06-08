@@ -38,11 +38,15 @@ DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-5.1.2:=
 		"
 
+PATCHES=(
+	"$FILESDIR"/5.7.8-build-with-qt5.15.patch
+)
+
 src_prepare() {
-	eapply_user
 	sed -i "/<QList>/a\#include\ <QObject>" src/Controllers/foldercontroller.h || die
 	sed -i "/<QFrame>/a\#include\ <QMouseEvent>" src/views/leftfolderlist.cpp || die
 	QT_SELECT=qt5 eqmake5 DEFINES+="VERSION=${PV}" ${PN}.pro
+	default_src_prepare
 }
 
 src_install() {

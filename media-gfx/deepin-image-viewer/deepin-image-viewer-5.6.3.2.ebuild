@@ -43,13 +43,18 @@ DEPEND="${RDEPEND}
 		dde-base/udisks2-qt5
 	    "
 
+PATCHES=(
+	"$FILESDIR"/5.6.3.2-build-with-qt5.15.patch
+)
+
 src_prepare() {
-	eapply_user
-	
+
 	# the same manual_icon and app_icon install in the same path
 	sed -i 's|app_icon\ ||g' viewer/viewer.pro || die
 	export QT_SELECT=qt5
 	eqmake5 DEFINES+="VERSION=${PV}"
+
+	default_src_prepare
 }
 
 src_install() {

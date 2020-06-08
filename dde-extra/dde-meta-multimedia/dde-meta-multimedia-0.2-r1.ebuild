@@ -19,7 +19,7 @@ RDEPEND="media-sound/deepin-music
 		( media-gfx/deepin-screenshot
 		<=media-gfx/deepin-screen-recorder-5.0.0 )
 		)
-		media-sound/deepin-voice-recorder
+		dde-extra/deepin-voice-note
 		media-gfx/deepin-image-viewer
 		media-gfx/deepin-draw
 		media-gfx/deepin-album

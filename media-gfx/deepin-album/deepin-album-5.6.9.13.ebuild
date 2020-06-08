@@ -44,11 +44,16 @@ DEPEND="${RDEPEND}
 		dde-base/udisks2-qt5
 	    "
 
+PATCHES=(
+	"$FILESDIR"/5.6.9.13-build-with-qt5.15.patch
+)
+
 src_prepare() {
-	eapply_user
-	
+
 	export QT_SELECT=qt5
 	eqmake5 DEFINES+="VERSION=${PV}"
+
+	default_src_prepare
 }
 
 src_install() {

@@ -1,0 +1,132 @@
+diff --git a/src/music-player/view/lyricwidget.cpp b/src/music-player/view/lyricwidget.cpp
+index b522ae4..6a1922d 100644
+--- a/src/music-player/view/lyricwidget.cpp
++++ b/src/music-player/view/lyricwidget.cpp
+@@ -21,6 +21,7 @@
+ 
+ #include "lyricwidget.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QFile>
+ #include <QScrollArea>
+diff --git a/src/music-player/view/widget/cover.cpp b/src/music-player/view/widget/cover.cpp
+index 8ade80b..e918be7 100644
+--- a/src/music-player/view/widget/cover.cpp
++++ b/src/music-player/view/widget/cover.cpp
+@@ -21,6 +21,7 @@
+ 
+ #include "cover.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QPainter>
+ #include <QGraphicsDropShadowEffect>
+diff --git a/src/music-player/view/widget/delegate/musiclistdatadelegate.cpp b/src/music-player/view/widget/delegate/musiclistdatadelegate.cpp
+index 061bcdb..7855954 100644
+--- a/src/music-player/view/widget/delegate/musiclistdatadelegate.cpp
++++ b/src/music-player/view/widget/delegate/musiclistdatadelegate.cpp
+@@ -21,6 +21,7 @@
+ 
+ #include "musiclistdatadelegate.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QDebug>
+ #include <QDate>
+diff --git a/src/music-player/view/widget/delegate/musicsearchlistdelegate.cpp b/src/music-player/view/widget/delegate/musicsearchlistdelegate.cpp
+index 943eeca..93450b9 100755
+--- a/src/music-player/view/widget/delegate/musicsearchlistdelegate.cpp
++++ b/src/music-player/view/widget/delegate/musicsearchlistdelegate.cpp
+@@ -22,6 +22,7 @@
+ #include "../musicsearchlistview.h"
+ #include "util/pinyinsearch.h"
+ 
++#include <QPainterPath>
+ #include <DHiDPIHelper>
+ #include <QDebug>
+ #include <QPainter>
+diff --git a/src/music-player/view/widget/delegate/playitemdelegate.cpp b/src/music-player/view/widget/delegate/playitemdelegate.cpp
+index c66f437..c0d2aa6 100644
+--- a/src/music-player/view/widget/delegate/playitemdelegate.cpp
++++ b/src/music-player/view/widget/delegate/playitemdelegate.cpp
+@@ -22,6 +22,7 @@
+ #include "playitemdelegate.h"
+ #include "playitemdelegate_p.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QFont>
+ #include <QPainter>
+diff --git a/src/music-player/view/widget/musicpixmapbutton.cpp b/src/music-player/view/widget/musicpixmapbutton.cpp
+index 32cd78e..003c3b5 100644
+--- a/src/music-player/view/widget/musicpixmapbutton.cpp
++++ b/src/music-player/view/widget/musicpixmapbutton.cpp
+@@ -21,6 +21,7 @@
+ 
+ #include "musicpixmapbutton.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QPainter>
+ #include <QRect>
+diff --git a/src/music-player/view/widget/musictitleimage.cpp b/src/music-player/view/widget/musictitleimage.cpp
+index 98744fd..94e1bd8 100644
+--- a/src/music-player/view/widget/musictitleimage.cpp
++++ b/src/music-player/view/widget/musictitleimage.cpp
+@@ -21,6 +21,7 @@
+ 
+ #include "musictitleimage.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ 
+ MusicTitleImageWidget::MusicTitleImageWidget(QWidget *parent)
+diff --git a/src/music-player/view/widget/soundvolume.cpp b/src/music-player/view/widget/soundvolume.cpp
+index 7950730..d96b0e1 100644
+--- a/src/music-player/view/widget/soundvolume.cpp
++++ b/src/music-player/view/widget/soundvolume.cpp
+@@ -21,6 +21,7 @@
+ 
+ #include "soundvolume.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QPainter>
+ #include <QWheelEvent>
+diff --git a/src/music-player/view/widget/tooltips.cpp b/src/music-player/view/widget/tooltips.cpp
+index b5233b6..4d43b79 100644
+--- a/src/music-player/view/widget/tooltips.cpp
++++ b/src/music-player/view/widget/tooltips.cpp
+@@ -29,6 +29,7 @@
+  */
+ #include "tooltips.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QHBoxLayout>
+ #include <QLabel>
+diff --git a/src/music-player/view/widget/waveform.cpp b/src/music-player/view/widget/waveform.cpp
+index e4822be..afbbde0 100644
+--- a/src/music-player/view/widget/waveform.cpp
++++ b/src/music-player/view/widget/waveform.cpp
+@@ -21,6 +21,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QEvent>
+ #include <QPaintEvent>
+diff --git a/src/music-player/view/widget/waveformscale.cpp b/src/music-player/view/widget/waveformscale.cpp
+index 93ab300..692a546 100755
+--- a/src/music-player/view/widget/waveformscale.cpp
++++ b/src/music-player/view/widget/waveformscale.cpp
+@@ -23,6 +23,7 @@
+ 
+ #include "waveformscale.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QEvent>
+ #include <QPaintEvent>

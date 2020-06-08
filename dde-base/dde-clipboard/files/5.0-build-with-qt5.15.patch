@@ -1,0 +1,24 @@
+diff --git a/dde-clipboard/itemwidget.cpp b/dde-clipboard/itemwidget.cpp
+index cb190b6..0b2be5a 100644
+--- a/dde-clipboard/itemwidget.cpp
++++ b/dde-clipboard/itemwidget.cpp
+@@ -23,6 +23,7 @@
+ #include "pixmaplabel.h"
+ #include "refreshtimer.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QTextOption>
+ #include <QHBoxLayout>
+diff --git a/dde-clipboard/pixmaplabel.cpp b/dde-clipboard/pixmaplabel.cpp
+index 6336c6e..8d5f191 100644
+--- a/dde-clipboard/pixmaplabel.cpp
++++ b/dde-clipboard/pixmaplabel.cpp
+@@ -21,6 +21,7 @@
+ #include "pixmaplabel.h"
+ #include "constants.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QDebug>
+ #include <QTextLayout>

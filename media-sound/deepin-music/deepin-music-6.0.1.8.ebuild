@@ -30,14 +30,18 @@ DEPEND="${RDEPEND}
 	>=dde-base/dtkwidget-5.1.2:=
 	"
 
+PATCHES=(
+	"$FILESDIR"/6.0.1.8-build-with-qt5.15.patch
+)
+
 src_prepare() {
-	eapply_user
 	LIBDIR=$(qt5_get_libdir)
 	sed -i "s|\$\${PREFIX}/lib|${LIBDIR}|g" src/vendor/mpris-qt/src/src.pro src/vendor/dbusextended-qt/src/src.pro src/plugin/netease-meta-search/netease-meta-search.pro src/libdmusic/libdmusic.pro || die
 	sed -i "/<QDebug>/a\#include\ <QFile>" src/music-player/core/player.cpp || die
 
 	export QT_SELECT=qt5
 	eqmake5 PREFIX=/usr DEFINES+="VERSION=${PV}"
+	default_src_prepare
 }
 
 src_install() {

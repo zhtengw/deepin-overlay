@@ -38,6 +38,10 @@ RDEPEND="${DEPEND}
 		>=dde-base/dtkwidget-5.1.2:=
 		"
 
+PATCHES=(
+	"$FILESDIR"/5.7.6.29-build-with-qt5.15.patch
+)
+
 src_prepare() {
     LIBDIR=$(get_libdir)
     sed -i "s|lib/|${LIBDIR}/|g" src/CMakeLists.txt || die

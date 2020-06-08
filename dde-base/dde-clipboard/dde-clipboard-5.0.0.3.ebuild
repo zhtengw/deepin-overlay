@@ -43,6 +43,10 @@ DEPEND="${RDEPEND}
 		virtual/pkgconfig
 		"
 
+PATCHES=(
+	"$FILESDIR"/5.0-build-with-qt5.15.patch
+)
+
 src_prepare() {
 
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr DEFINES+="VERSION=${PV}"
