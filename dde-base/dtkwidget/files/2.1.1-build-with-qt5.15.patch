@@ -1,0 +1,311 @@
+diff --git a/examples/dwidget-examples/collections/graphicseffecttab.cpp b/examples/dwidget-examples/collections/graphicseffecttab.cpp
+index 8f8c6ea..8d399ac 100644
+--- a/examples/dwidget-examples/collections/graphicseffecttab.cpp
++++ b/examples/dwidget-examples/collections/graphicseffecttab.cpp
+@@ -17,6 +17,7 @@
+ 
+ #include "graphicseffecttab.h"
+ 
++#include <QPainterPath>
+ #include <DBlurEffectWidget>
+ 
+ #include <QLabel>
+diff --git a/examples/dwidget-examples/collections/multilistitem.cpp b/examples/dwidget-examples/collections/multilistitem.cpp
+index fb77e62..f5457c7 100644
+--- a/examples/dwidget-examples/collections/multilistitem.cpp
++++ b/examples/dwidget-examples/collections/multilistitem.cpp
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include "multilistitem.h"
++#include <QPainterPath>
+ #include <QColor>
+ 
+ DWIDGET_USE_NAMESPACE
+diff --git a/examples/dwidget-examples/collections/singlelistitem.cpp b/examples/dwidget-examples/collections/singlelistitem.cpp
+index 4c9a34c..b77be61 100644
+--- a/examples/dwidget-examples/collections/singlelistitem.cpp
++++ b/examples/dwidget-examples/collections/singlelistitem.cpp
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include "singlelistitem.h"
++#include <QPainterPath>
+ #include <QColor>
+ 
+ DWIDGET_USE_NAMESPACE
+diff --git a/src/platforms/windows/popupmenustyle.cpp b/src/platforms/windows/popupmenustyle.cpp
+index d07212b..ec96342 100644
+--- a/src/platforms/windows/popupmenustyle.cpp
++++ b/src/platforms/windows/popupmenustyle.cpp
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include "popupmenustyle.h"
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QPixmap>
+ #include <QPixmapCache>
+diff --git a/src/widgets/darrowrectangle.cpp b/src/widgets/darrowrectangle.cpp
+index e6d0f43..c3fb5aa 100644
+--- a/src/widgets/darrowrectangle.cpp
++++ b/src/widgets/darrowrectangle.cpp
+@@ -21,6 +21,7 @@
+ #include "private/darrowrectangle_p.h"
+ 
+ #ifdef Q_OS_LINUX
++#include <QPainterPath>
+ #include <X11/extensions/shape.h>
+ #include <QX11Info>
+ #endif
+diff --git a/src/widgets/dblureffectwidget.cpp b/src/widgets/dblureffectwidget.cpp
+index e490581..67d57b2 100644
+--- a/src/widgets/dblureffectwidget.cpp
++++ b/src/widgets/dblureffectwidget.cpp
+@@ -20,6 +20,7 @@
+ #include "dplatformwindowhandle.h"
+ #include "util/dwindowmanagerhelper.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QBackingStore>
+ #include <QPaintEvent>
+diff --git a/src/widgets/dblureffectwidget.h b/src/widgets/dblureffectwidget.h
+index a6d12ca..0bb6c9e 100644
+--- a/src/widgets/dblureffectwidget.h
++++ b/src/widgets/dblureffectwidget.h
+@@ -21,6 +21,7 @@
+ #include "dtkwidget_global.h"
+ #include "dobject.h"
+ 
++#include <QPainterPath>
+ #include <QWidget>
+ 
+ DWIDGET_BEGIN_NAMESPACE
+diff --git a/src/widgets/dborderlesswidget.cpp b/src/widgets/dborderlesswidget.cpp
+index 9273e03..19edec3 100644
+--- a/src/widgets/dborderlesswidget.cpp
++++ b/src/widgets/dborderlesswidget.cpp
+@@ -17,6 +17,7 @@
+ 
+ #include "dborderlesswidget.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QTimer>
+ #include <QWidget>
+diff --git a/src/widgets/dclipeffectwidget.cpp b/src/widgets/dclipeffectwidget.cpp
+index 4ede876..e332428 100644
+--- a/src/widgets/dclipeffectwidget.cpp
++++ b/src/widgets/dclipeffectwidget.cpp
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include "dclipeffectwidget.h"
++#include <QPainterPath>
+ #include <DObjectPrivate>
+ 
+ #include <QEvent>
+diff --git a/src/widgets/dclipeffectwidget.h b/src/widgets/dclipeffectwidget.h
+index 2db0ca1..2ce7371 100644
+--- a/src/widgets/dclipeffectwidget.h
++++ b/src/widgets/dclipeffectwidget.h
+@@ -21,6 +21,7 @@
+ #include "dtkwidget_global.h"
+ #include "dobject.h"
+ 
++#include <QPainterPath>
+ #include <QWidget>
+ 
+ DWIDGET_BEGIN_NAMESPACE
+diff --git a/src/widgets/dcrumbedit.cpp b/src/widgets/dcrumbedit.cpp
+index 138cfc7..4833cec 100644
+--- a/src/widgets/dcrumbedit.cpp
++++ b/src/widgets/dcrumbedit.cpp
+@@ -21,6 +21,7 @@
+ #include "dcrumbedit.h"
+ #include "dobject_p.h"
+ 
++#include <QPainterPath>
+ #include <QAbstractTextDocumentLayout>
+ #include <QPainter>
+ #include <QTextBlock>
+diff --git a/src/widgets/dgraphicsclipeffect.cpp b/src/widgets/dgraphicsclipeffect.cpp
+index 21e0a46..75e1b99 100644
+--- a/src/widgets/dgraphicsclipeffect.cpp
++++ b/src/widgets/dgraphicsclipeffect.cpp
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include "dgraphicsclipeffect.h"
++#include <QPainterPath>
+ #include <DObjectPrivate>
+ 
+ #include <QPainter>
+diff --git a/src/widgets/dgraphicsclipeffect.h b/src/widgets/dgraphicsclipeffect.h
+index ced14b6..f572b83 100644
+--- a/src/widgets/dgraphicsclipeffect.h
++++ b/src/widgets/dgraphicsclipeffect.h
+@@ -21,6 +21,7 @@
+ #include "dtkwidget_global.h"
+ #include "dobject.h"
+ 
++#include <QPainterPath>
+ #include <QGraphicsEffect>
+ 
+ DWIDGET_BEGIN_NAMESPACE
+diff --git a/src/widgets/dmainwindow.cpp b/src/widgets/dmainwindow.cpp
+index ffd6b24..71cff14 100644
+--- a/src/widgets/dmainwindow.cpp
++++ b/src/widgets/dmainwindow.cpp
+@@ -23,6 +23,7 @@
+ #include "private/dmainwindow_p.h"
+ #include "private/dapplication_p.h"
+ 
++#include <QPainterPath>
+ #include <QKeySequence>
+ #include <QShortcut>
+ #include <QWindow>
+diff --git a/src/widgets/dmainwindow.h b/src/widgets/dmainwindow.h
+index 8c75162..fc11d03 100644
+--- a/src/widgets/dmainwindow.h
++++ b/src/widgets/dmainwindow.h
+@@ -21,6 +21,7 @@
+ #include "dtkwidget_global.h"
+ #include "dobject.h"
+ 
++#include <QPainterPath>
+ #include <QMainWindow>
+ 
+ DWIDGET_BEGIN_NAMESPACE
+diff --git a/src/widgets/dplatformwindowhandle.cpp b/src/widgets/dplatformwindowhandle.cpp
+index 9845d61..3bedf5b 100644
+--- a/src/widgets/dplatformwindowhandle.cpp
++++ b/src/widgets/dplatformwindowhandle.cpp
+@@ -19,6 +19,7 @@
+ #include "dapplication.h"
+ #include "util/dwindowmanagerhelper.h"
+ 
++#include <QPainterPath>
+ #include <QWindow>
+ #include <QWidget>
+ #include <QGuiApplication>
+diff --git a/src/widgets/dplatformwindowhandle.h b/src/widgets/dplatformwindowhandle.h
+index 99b41df..7a348c4 100644
+--- a/src/widgets/dplatformwindowhandle.h
++++ b/src/widgets/dplatformwindowhandle.h
+@@ -20,6 +20,7 @@
+ 
+ #include "dtkwidget_global.h"
+ 
++#include <QPainterPath>
+ #include <QObject>
+ #include <QPainterPath>
+ #include <QColor>
+diff --git a/src/widgets/dsegmentedcontrol.cpp b/src/widgets/dsegmentedcontrol.cpp
+index 613b692..93b321b 100644
+--- a/src/widgets/dsegmentedcontrol.cpp
++++ b/src/widgets/dsegmentedcontrol.cpp
+@@ -15,6 +15,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QPainter>
+ #include <QPaintEvent>
+diff --git a/src/widgets/dsimplelistview.cpp b/src/widgets/dsimplelistview.cpp
+index 841b2d4..77f339d 100644
+--- a/src/widgets/dsimplelistview.cpp
++++ b/src/widgets/dsimplelistview.cpp
+@@ -22,6 +22,7 @@
+  */
+ 
+ #include "dsimplelistview.h"
++#include <QPainterPath>
+ #include <DObjectPrivate>
+ #include <QApplication>
+ #include <QDebug>
+diff --git a/src/widgets/dspinner.cpp b/src/widgets/dspinner.cpp
+index 014f370..95c7e88 100644
+--- a/src/widgets/dspinner.cpp
++++ b/src/widgets/dspinner.cpp
+@@ -1,5 +1,6 @@
+ #include "dspinner.h"
+ 
++#include <QPainterPath>
+ #include <QtMath>
+ #include <QPainter>
+ #include <QTimer>
+diff --git a/src/widgets/dswitchbutton.cpp b/src/widgets/dswitchbutton.cpp
+index 6a130a0..774b186 100644
+--- a/src/widgets/dswitchbutton.cpp
++++ b/src/widgets/dswitchbutton.cpp
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include "dswitchbutton.h"
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QPainterPath>
+ #include <QMouseEvent>
+diff --git a/src/widgets/dvideowidget.cpp b/src/widgets/dvideowidget.cpp
+index 8502429..6c4e665 100644
+--- a/src/widgets/dvideowidget.cpp
++++ b/src/widgets/dvideowidget.cpp
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include "dvideowidget.h"
++#include <QPainterPath>
+ #include <DObjectPrivate>
+ 
+ #include <QAbstractVideoSurface>
+diff --git a/src/widgets/dwaterprogress.cpp b/src/widgets/dwaterprogress.cpp
+index 019ef61..00cacab 100644
+--- a/src/widgets/dwaterprogress.cpp
++++ b/src/widgets/dwaterprogress.cpp
+@@ -17,6 +17,7 @@
+ 
+ #include "dwaterprogress.h"
+ 
++#include <QPainterPath>
+ #include <QtMath>
+ #include <QTimer>
+ #include <QPainter>
+diff --git a/src/widgets/private/darrowrectangle_p.h b/src/widgets/private/darrowrectangle_p.h
+index 73cd89e..8851146 100644
+--- a/src/widgets/private/darrowrectangle_p.h
++++ b/src/widgets/private/darrowrectangle_p.h
+@@ -20,6 +20,7 @@
+ 
+ #include "darrowrectangle.h"
+ 
++#include <QPainterPath>
+ #include <DObjectPrivate>
+ 
+ #include <QPointer>
+diff --git a/src/widgets/private/dblureffectwidget_p.h b/src/widgets/private/dblureffectwidget_p.h
+index 792e283..7154904 100644
+--- a/src/widgets/private/dblureffectwidget_p.h
++++ b/src/widgets/private/dblureffectwidget_p.h
+@@ -18,6 +18,7 @@
+ #ifndef DBLUREFFECTWIDGET_P_H
+ #define DBLUREFFECTWIDGET_P_H
+ 
++#include <QPainterPath>
+ #include <DObjectPrivate>
+ #include "dblureffectwidget.h"
+ 
+diff --git a/src/widgets/private/settings/shortcutedit.cpp b/src/widgets/private/settings/shortcutedit.cpp
+index 4e46c11..138d7f2 100644
+--- a/src/widgets/private/settings/shortcutedit.cpp
++++ b/src/widgets/private/settings/shortcutedit.cpp
+@@ -17,6 +17,7 @@
+ 
+ #include "shortcutedit.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
+ #include <QPainter>
+ #include <QKeySequence>

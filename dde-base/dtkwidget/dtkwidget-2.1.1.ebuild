@@ -51,7 +51,14 @@ DEPEND="${RDEPEND}
 		dev-qt/linguist-tools:5
 		"
 
+PATCHES=(
+	"$FILESDIR"/2.1.1-build-with-qt5.15.patch
+)
+
 src_prepare() {
+	default_src_prepare
+
+	# build with dtk version 2
 	sed -i "s/\(TARGET\ =\ dtkwidget\)/\12/" src/src.pro || die
 	sed -i "s/DWIDGET_TRANSLATIONS_DIR/DWIDGET2_TRANSLATIONS_DIR/g" \
 		src/widgets/dapplication.cpp || die
@@ -74,7 +81,6 @@ src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" tools/svgc/svgc.pro
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir) VERSION=${PV}
-	default_src_prepare
 }
 
 src_install() {

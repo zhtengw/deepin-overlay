@@ -30,6 +30,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	eapply_user
+	sed -i "/^\#include </a\#include <QPainterPath>" \
+		app/src/widgets/iconlabel.cpp || die
 	sed -i "s|\(PKGCONFIG += dtk.*\)|\12|g" \
 		app/deepin-clone-app.pro \
 		app/src/widgets/widgets.pri \
