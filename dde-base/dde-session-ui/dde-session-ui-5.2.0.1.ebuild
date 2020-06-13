@@ -53,9 +53,10 @@ DEPEND="${RDEPEND}
 src_prepare() {
 
 	sed -i "/<QPainter>/a#include <QPainterPath>" \
+		dde-notification-plugin/notifications/notificationswidget.cpp \
 		dde-osd/common.h || die
-	sed -i "/<QPointer>/a#include <QPainterPath>" \
-		dde-osd/notification-center/bubbleoverlapwidget.cpp || die
+	sed -i "/<QTimer>/a#include <QPainterPath>" \
+		dde-osd/notification-center/overlapwidet.cpp || die
 
 	if use elogind; then
 		sed -i "s|libsystemd|libelogind|g" dde-switchtogreeter/dde-switchtogreeter.pro || die

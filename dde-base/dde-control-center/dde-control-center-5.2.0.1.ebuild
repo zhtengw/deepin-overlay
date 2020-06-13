@@ -42,7 +42,7 @@ RDEPEND="dev-qt/qtsvg:5
 		"
 DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-5.1.2:=
-		>=dde-base/dde-qt-dbus-factory-5.0.16:=
+		>=dde-base/dde-qt-dbus-factory-5.2.0.1:=
 		"
 
 PATCHES=(
