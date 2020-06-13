@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit qmake-utils
+inherit cmake-utils
 
 DESCRIPTION="Deepin Log Viewer"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-log-viewer"
@@ -16,6 +16,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="elogind systemd"
+REQUIRED_USE="^^ ( systemd elogind )"
 
 RDEPEND="dev-qt/qtcore:5
 		dev-qt/qtwidgets:5
@@ -51,14 +52,17 @@ src_prepare() {
 		application/filtercontent.cpp || die
 
 	if use elogind && ! use systemd ; then
-		eapply "${FILESDIR}/${P}-elogind.patch"
-		QT_SELECT=qt5 eqmake5 DEFINES+="VERSION=${PV}" INCLUDEPATH+=/usr/include/elogind
-	else
-		QT_SELECT=qt5 eqmake5 DEFINES+="VERSION=${PV}"
+		sed -i "s/-lsystemd/-lelogind/" \
+			application/CMakeLists.txt || die
+		sed -i "s|systemd/|elogind/systemd/|" \
+			application/journalwork.cpp || die
 	fi
-	default_src_prepare
+	cmake-utils_src_prepare
 }
 
-src_install() {
-	emake INSTALL_ROOT=${D} install
+src_configure() {
+	local mycmakeargs=(
+		-DVERSION=${PV}
+	)
+	cmake-utils_src_configure
 }
