@@ -49,6 +49,10 @@ PATCHES=(
 )
 
 src_prepare() {
+	# https://github.com/linuxdeepin/qt5platform-plugins/issues/47
+	sed -i '/wayland/d' qt5platform-plugins.pro || die
+	sed -i 's/xcbWindow-/window-/' xcb/windoweventhook.cpp || die
+
 	sed -i 's/active\ =\ VtableHook::overrideVfptrFun.*/active\ =\ 1;/' xcb/dhighdpi.cpp || die
 	QT_SELECT=qt5 eqmake5 ${MY_PN}.pro
 	default
