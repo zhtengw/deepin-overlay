@@ -9,7 +9,7 @@ index ed68ec8..a80d964 100644
 +#if KWIN_VERSION_MIN <= 18
      return KWin::Cursor::s_self;
 +#else
-+    return nullprt;
++    return nullptr;
 +#endif
  }
  
