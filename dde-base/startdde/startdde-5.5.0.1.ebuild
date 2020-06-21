@@ -4,7 +4,7 @@
 
 EAPI=6
 
-EGO_PN="startdde"
+EGO_PN="pkg.deepin.io/dde/startdde"
 EGO_VENDOR=(
 "golang.org/x/net aaf60122140d3fcf75376d319f0554393160eb50 github.com/golang/net"
 "golang.org/x/xerrors 9bdfabe github.com/golang/xerrors"
