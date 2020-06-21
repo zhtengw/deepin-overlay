@@ -39,6 +39,18 @@ RDEPEND="x11-libs/gsettings-qt
 DEPEND="${RDEPEND}
 		"
 
+PATCHES=(
+    "${FILESDIR}"/${PN}-5.0.14.1-kwin-5.18-override-error.patch
+	"${FILESDIR}"/dde-kwin-5.1.0-build-with-qt5.15.patch
+	"${FILESDIR}"/dde-kwin-5.1.0.3-kwaylandserver-5.19.patch
+)
+
+src_prepare() {
+	LIBDIR=$(get_libdir)
+	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" deepin-wm-dbus/deepinwmfaker.cpp || die
+	cmake-utils_src_prepare
+}
+
 src_configure() {
 	local mycmakeargs=(
 		-DPROJECT_VERSION=${PV}
