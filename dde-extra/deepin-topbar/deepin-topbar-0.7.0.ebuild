@@ -37,19 +37,14 @@ RDEPEND=">=dev-qt/qtcore-5.6:5
 		x11-libs/xcb-util-wm
 		x11-libs/xcb-util-image
 		x11-libs/gsettings-qt
-		dde-base/dtkcore:2
-		dde-base/dtkwidget:2=
+		>=dde-base/dtkcore-5.1.2
+		>=dde-base/dtkwidget-5.1.2:=
 		dde-base/dde-qt-dbus-factory
 		albert? ( x11-misc/albert )
 		"
 DEPEND="${RDEPEND}
 		virtual/pkgconfig
 		"
-
-src_prepare() {
-	sed -i "s/DtkWidget/DtkWidget2/g" src/CMakeLists.txt || die
-	cmake-utils_src_prepare
-}
 
 
 pkg_preinst() { gnome2_schemas_savelist;}

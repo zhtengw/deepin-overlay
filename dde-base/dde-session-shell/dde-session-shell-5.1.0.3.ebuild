@@ -44,7 +44,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-5.1.2:=
 		>=dde-base/deepin-gettext-tools-1.0.6
-		>=dde-base/dde-qt-dbus-factory-1.1.5:=
+		>=dde-base/dde-qt-dbus-factory-5.2.0.2:=
 		virtual/pkgconfig
 		"
 

@@ -42,7 +42,6 @@ DEPEND="${RDEPEND}
 	"
 
 PATCHES=( 	
-	"${FILESDIR}"/${PN}-5.1.0.1-qt5.14.patch 
 	"${FILESDIR}"/${PN}-5.1.0.1-qt5.15.patch 
 )
 

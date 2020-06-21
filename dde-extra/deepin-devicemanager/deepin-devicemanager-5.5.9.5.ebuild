@@ -38,6 +38,8 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
+	sed -i "/<QDebug>/a\#include\ <QContextMenuEvent>\n\#include\ <QKeyEvent>" \
+		src/Widget/TextBrowser.cpp || die
 	sed -i "/DPalette/a\#include\ <QPainterPath>" \
 		src/Widget/logviewheaderview.cpp \
 		src/Widget/logviewitemdelegate.cpp \

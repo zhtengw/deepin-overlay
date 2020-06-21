@@ -29,10 +29,7 @@ RDEPEND=">=dde-base/dde-control-center-5.0.33
 			dde-base/dpa-ext-gnomekeyring )
 		turbo? ( dde-extra/deepin-turbo[systemd?,elogind?] )
 		manual? ( >=dde-extra/deepin-manual-5.6.0 )
-		terminal? (
-			|| ( dde-extra/deepin-terminal
-				dde-extra/deepin-terminal-reborn )
-			)
+		terminal? ( dde-extra/deepin-terminal )
 		multimedia? ( dde-extra/dde-meta-multimedia )
 		extra? ( ~dde-extra/dde-meta-apps-${PV} )
 		plymouth? ( dde-extra/plymouth-theme-deepin )

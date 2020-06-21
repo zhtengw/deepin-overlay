@@ -7,7 +7,7 @@ EAPI=7
 inherit cmake-utils
 
 DESCRIPTION="Deepin Terminal"
-HOMEPAGE="https://github.com/linuxdeepin/deepin-terminal-reborn"
+HOMEPAGE="https://github.com/linuxdeepin/deepin-terminal"
 if [[ "${PV}" == *9999* ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/linuxdeepin/${PN}.git"
@@ -28,7 +28,6 @@ RDEPEND="dev-qt/qtcore:5
 	dev-qt/qtconcurrent:5
 	>=dde-base/dtkcore-5.1.2
 	dde-base/dtkgui
-	!dde-extra/deepin-terminal
 	"
 DEPEND="${RDEPEND}
 	dev-util/lxqt-build-tools
