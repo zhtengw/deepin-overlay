@@ -28,6 +28,7 @@ RDEPEND="dev-qt/qtcore:5
 	dev-qt/qtconcurrent:5
 	>=dde-base/dtkcore-5.1.2
 	dde-base/dtkgui
+	!!dde-extra/deepin-terminal-old
 	"
 DEPEND="${RDEPEND}
 	dev-util/lxqt-build-tools
@@ -50,4 +51,3 @@ src_configure() {
 	)
 	cmake-utils_src_configure
 }
-
