@@ -11,9 +11,10 @@ SRC_URI=""
 LICENSE="metapackage"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="policykit manual +terminal multimedia grub plymouth elogind systemd turbo +kwin mutter extra screensaver"
+IUSE="policykit manual +terminal terminal-old multimedia grub plymouth elogind systemd turbo +kwin mutter extra screensaver"
 REQUIRED_USE="^^ ( systemd elogind )
-			?? ( kwin mutter )"
+			?? ( kwin mutter )
+			?? ( terminal terminal-old )"
 
 RDEPEND=">=dde-base/dde-control-center-5.0.33
 		virtual/dde-wm[kwin?,mutter?]
@@ -30,6 +31,7 @@ RDEPEND=">=dde-base/dde-control-center-5.0.33
 		turbo? ( dde-extra/deepin-turbo[systemd?,elogind?] )
 		manual? ( >=dde-extra/deepin-manual-5.6.0 )
 		terminal? ( dde-extra/deepin-terminal )
+		terminal-old? ( dde-extra/deepin-terminal-old )
 		multimedia? ( dde-extra/dde-meta-multimedia )
 		extra? ( ~dde-extra/dde-meta-apps-${PV} )
 		plymouth? ( dde-extra/plymouth-theme-deepin )
