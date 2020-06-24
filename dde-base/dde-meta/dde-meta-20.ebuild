@@ -38,5 +38,5 @@ RDEPEND=">=dde-base/dde-control-center-5.0.33
 		"
 
 pkg_postinst() {
-	use terminal && dfmterm deepin-terminal
+	( use terminal || use terminal-old ) && dfmterm deepin-terminal
 }
