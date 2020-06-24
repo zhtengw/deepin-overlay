@@ -30,7 +30,7 @@ RDEPEND="
 	dev-libs/json-glib
 	>=x11-libs/vte-0.50.1:2.91[vala]
 	zssh? ( net-misc/zssh )
-	!!dde-extra/deepin-terminal
+	!dde-extra/deepin-terminal
 	"
 DEPEND="${RDEPEND}
 	$(vala_depend)
