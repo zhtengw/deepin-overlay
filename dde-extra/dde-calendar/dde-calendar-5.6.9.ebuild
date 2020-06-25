@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit qmake-utils
+inherit cmake-utils
 
 DESCRIPTION="Calendar for Deepin Desktop Environment"
 HOMEPAGE="https://github.com/linuxdeepin/dde-calendar"
@@ -40,11 +40,13 @@ src_prepare() {
 		src/yearview.cpp || die
 	sed -i "/<DMenu>/a\#include\ <QMouseEvent>\n\#include\ <QContextMenuEvent>\n\#include\ <QDragEnterEvent>\n\#include\ <QDropEvent>" \
 		src/draginfographicsview.cpp || die
-	export QT_SELECT=qt5
-	eqmake5 PREFIX=/usr  DEFINES+="VERSION=${PV}" calendar.pro
-	default_src_prepare
+	cmake-utils_src_prepare
 }
 
-src_install() {
-	emake INSTALL_ROOT=${D} install
+src_configure(){
+	local mycmakeargs=(             
+		-DVERSION=${PV}
+	)
+	cmake-utils_src_configure
 }
+
