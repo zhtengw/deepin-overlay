@@ -33,6 +33,7 @@ src_prepare() {
 		deepin-font-manager/interfaces/dfontpreviewitemdelegate.cpp \
 		deepin-font-manager/interfaces/dfontpreviewer.cpp \
 		deepin-font-manager/views/dsplitlistwidget.cpp \
+		deepin-font-manager/views/dfontspinner.cpp \
 		deepin-font-manager/views/dfinstallerrorlistview.cpp || die
 
 	export QT_SELECT=qt5 
