@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit qmake-utils eutils
+inherit cmake-utils eutils
 
 DESCRIPTION="Deepin System Monitor"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-system-monitor/"
@@ -57,12 +57,14 @@ src_prepare() {
 		src/process/system_stat.cpp || die
 	sed -i "s/print_err/print_err2/g" \
 		src/process/desktop_entry_stat.cpp || die
-	default
-	QT_SELECT=qt5 eqmake5 PREFIX=/usr DEFINES+="VERSION=${PV}" ${PN}.pro
+	cmake-utils_src_prepare
 }
 
-src_install() {
-	emake INSTALL_ROOT=${D} install
+src_configure() {
+	local mycmakeargs=(
+		-DVERSION=${PV}
+	)
+	cmake-utils_src_configure
 }
 
 pkg_postinst() {
