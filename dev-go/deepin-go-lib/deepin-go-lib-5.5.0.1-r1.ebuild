@@ -22,6 +22,12 @@ RDEPEND=""
 DEPEND="${RDEPEND}"
 
 
+src_prepare() {
+	default
+
+	sed -i "s|int connect_timeout|extern int connect_timeout|g" \
+		${S}/src/${EGO_PN}/pulse/dde-pulse.h || die
+}
 
 src_install() {
 	insinto $(get_golibdir_gopath)
