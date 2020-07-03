@@ -30,6 +30,7 @@ RDEPEND="dev-qt/qtcore:5
 		dev-libs/disomaster
 		app-arch/libarchive
 		dev-libs/libzip
+		sys-libs/zlib[minizip]
 		kde-frameworks/karchive
 		"
 
