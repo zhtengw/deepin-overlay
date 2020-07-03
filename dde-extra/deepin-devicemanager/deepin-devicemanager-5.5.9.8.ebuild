@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
-inherit qmake-utils
+inherit cmake-utils
 
 DESCRIPTION="Deepin Device Manager"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-devicemanager"
@@ -39,25 +39,27 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -i "/<QDebug>/a\#include\ <QContextMenuEvent>\n\#include\ <QKeyEvent>" \
-		src/Widget/TextBrowser.cpp || die
+		deepin-devicemanager/src/Widget/TextBrowser.cpp || die
 	sed -i "/DPalette/a\#include\ <QPainterPath>" \
-		src/Widget/logviewheaderview.cpp \
-		src/Widget/logviewitemdelegate.cpp \
-		src/Widget/deviceinfowidgetbase.h || die
+		deepin-devicemanager/src/Widget/logviewheaderview.cpp \
+		deepin-devicemanager/src/Widget/logviewitemdelegate.cpp \
+		deepin-devicemanager/src/Widget/deviceinfowidgetbase.h || die
 	sed -i "/<QList>/a\#include\ <QMap>" \
-		src/DeviceManager/DeviceManager.h || die
+		deepin-devicemanager/src/DeviceManager/DeviceManager.h || die
 	sed -i "/<QList>/a\#include\ <QFile>" \
-		src/Widget/logtreeview.cpp \
-		src/Widget/deviceinfowidgetbase.h || die
+		deepin-devicemanager/src/Widget/logtreeview.cpp \
+		deepin-devicemanager/src/Widget/deviceinfowidgetbase.h || die
 	sed -i "/<QList>/a\#include\ <QIODevice>" \
-		3rdparty/docx/opc/packagereader.h || die
+		deepin-devicemanager/3rdparty/docx/opc/packagereader.h || die
 	sed -i "/\"DSpinner\"/a\#include\ <QKeyEvent>" \
-		src/mainwindow.cpp || die
-	export QT_SELECT=qt5
-	eqmake5 PREFIX=/usr  DEFINES+="VERSION=${PV}"
-	default_src_prepare
+		deepin-devicemanager/src/mainwindow.cpp || die
+	cmake-utils_src_prepare
 }
 
-src_install() {
-	emake INSTALL_ROOT=${D} install
+src_configure() {
+	local mycmakeargs=(
+		-DVERSION=${PV}
+	)
+	cmake-utils_src_configure
 }
+
