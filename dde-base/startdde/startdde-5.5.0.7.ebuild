@@ -37,7 +37,7 @@ DEPEND="${RDEPEND}
 		dev-go/go-dbus-generator
 		app-misc/ddcutil
 		>=dev-go/go-gir-generator-2.0.0
-		dev-go/go-dbus-factory
+		>=dev-go/go-dbus-factory-1.7.0.6
 		dev-util/cmake
 		>=dde-base/dde-api-5.1.1
 		>=dev-go/deepin-go-lib-5.4.5
