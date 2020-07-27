@@ -3,4 +3,4 @@ DIST github.com-davecgh-go-spew-87df7c6.tar.gz 42209 SHA256 6951f22a526d10b7fb5d
 DIST github.com-golang-net-aaf60122140d3fcf75376d319f0554393160eb50.tar.gz 965206 SHA256 c0947cd332130089b74fb701a8eaf616aaf758c3aa2f4bbf336fadda10a2370b
 DIST github.com-golang-xerrors-9bdfabe.tar.gz 13661 SHA256 7e63cc96d33f9f8c5e36d847126a48be1fc01d459fb2629ffea848ca214abb30
 DIST startdde-5.0.1.tar.gz 94034 SHA256 353be80485354261d1e911bc38084dba42179ea917987756dbf993dc7472be07
-DIST startdde-5.5.0.7.tar.gz 139235 SHA256 98fc64709a0d18fac81af2c1ad42da080e08a8c8bcedd6cd3957ad00fe6d7620
+DIST startdde-5.5.0.9.tar.gz 139364 SHA256 e3d7b59cd76d375d3923f9e9ad4c7e8918072e14ef872024912ce1cef31ead6c
