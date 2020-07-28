@@ -35,6 +35,7 @@ src_prepare() {
 	sed -i "/<QPainter>/a\#include <QPainterPath>" \
 		src/widgets/navigationbutton.h \
 		src/dvideowidget.h \
+		src/widgets/closebutton.h \
 		src/widgets/coverphoto.h || die
 
 	sed -i "s/\ qm_files//" introduction.pro || die

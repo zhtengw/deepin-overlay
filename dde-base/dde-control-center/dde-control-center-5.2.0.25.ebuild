@@ -41,12 +41,12 @@ RDEPEND="dev-qt/qtsvg:5
 		!systemd? ( app-admin/openrc-settingsd )
 		"
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-5.1.2:=
+		>=dde-base/dtkwidget-5.2.2.2:=
 		>=dde-base/dde-qt-dbus-factory-5.2.0.1:=
 		"
 
 PATCHES=(
-	"${FILESDIR}/5.1.0.11-missing-include.patch"
+	"${FILESDIR}/5.2.0.25-missing-include.patch"
 )
 
 src_prepare() {

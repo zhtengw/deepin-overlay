@@ -53,6 +53,8 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
+	sed -i "/\#include </a\#include <QPainterPath>" src/util/dwidgetutil.cpp || die
+
 	LIBDIR=$(get_libdir)
 	sed -i "s|{PREFIX}/lib/|{PREFIX}/${LIBDIR}/|g" tools/svgc/svgc.pro
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr LIB_INSTALL_DIR=/usr/$(get_libdir)

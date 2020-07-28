@@ -1,0 +1,11 @@
+diff --git a/src/theme/themeitemdelegate.cpp b/src/theme/themeitemdelegate.cpp
+index 92bc9be..2726440 100644
+--- a/src/theme/themeitemdelegate.cpp
++++ b/src/theme/themeitemdelegate.cpp
+@@ -1,5 +1,6 @@
+ #include "themeitemdelegate.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ 
+ ThemeItemDelegate::ThemeItemDelegate(QAbstractItemView *parent) : DStyledItemDelegate(parent)

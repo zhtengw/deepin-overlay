@@ -38,7 +38,7 @@ DEPEND="${RDEPEND}
 
 PATCHES=(
 	"$FILESDIR"/5.2.3-char.patch
-	"$FILESDIR"/5.2.3-build-with-qt5.15.patch
+	"$FILESDIR"/5.2.15-build-with-qt5.15.patch
 )
 
 #src_prepare() {

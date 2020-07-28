@@ -11,12 +11,12 @@
      errbuf = QString(
                   "Error[%1]: %2 convert %3 to PINYIN failed. [line:%4 offset:%5 "
                   "preContext: %6 postContext: %7]")
-                  .arg(ec)
--                 .arg(UERRORNAME(ec))
-+ //                .arg(UERRORNAME(ec))
-                  .arg(words)
-                  .arg(pe.line)
-                  .arg(pe.offset)
+              .arg(ec)
+-             .arg(UERRORNAME(ec))
++ //            .arg(UERRORNAME(ec))
+              .arg(words)
+              .arg(pe.line)
+              .arg(pe.offset)
 --- a/src/common/collator.cpp	2020-03-11 14:33:40.000000000 +0800
 +++ b/src/common/collator.cpp	2020-04-19 17:44:49.829336869 +0800
 @@ -37,9 +37,10 @@

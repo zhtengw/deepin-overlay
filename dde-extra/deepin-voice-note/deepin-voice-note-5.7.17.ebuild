@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit qmake-utils eutils
+inherit cmake-utils eutils
 
 DESCRIPTION="A lightweight memo tool to make text notes and voice recordings"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-voice-note"
@@ -38,17 +38,17 @@ DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-5.1.2:=
 		"
 
-PATCHES=(
-	"$FILESDIR"/5.7.8-build-with-qt5.15.patch
-)
-
 src_prepare() {
-	sed -i "/<QList>/a\#include\ <QObject>" src/Controllers/foldercontroller.h || die
-	sed -i "/<QFrame>/a\#include\ <QMouseEvent>" src/views/leftfolderlist.cpp || die
-	QT_SELECT=qt5 eqmake5 DEFINES+="VERSION=${PV}" ${PN}.pro
-	default_src_prepare
+	sed -i "/\#include <QPainter>/a\#include <QPainterPath>" \
+		src/views/middleviewdelegate.cpp \
+		src/views/leftviewdelegate.cpp || die
+
+	cmake-utils_src_prepare
 }
 
-src_install() {
-	emake INSTALL_ROOT=${D} install
+src_configure() {
+	local mycmakeargs=(
+		-DVERSION=${PV}
+	)
+	cmake-utils_src_configure
 }
