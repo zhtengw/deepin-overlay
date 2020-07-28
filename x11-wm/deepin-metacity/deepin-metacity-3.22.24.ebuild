@@ -20,6 +20,7 @@ RESTRICT="mirror"
 RDEPEND="x11-libs/gtk+:3
 	x11-libs/pango[X]
 	dev-libs/glib:2
+	dev-libs/json-glib
 	gnome-base/gsettings-desktop-schemas
 	x11-libs/startup-notification
 	x11-libs/libXcomposite
