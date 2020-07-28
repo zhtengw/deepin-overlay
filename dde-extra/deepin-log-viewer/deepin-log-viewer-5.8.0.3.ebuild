@@ -55,7 +55,7 @@ src_prepare() {
 		sed -i "s/-lsystemd/-lelogind/" \
 			application/CMakeLists.txt || die
 		sed -i "s|systemd/|elogind/systemd/|" \
-			application/journalwork.cpp || die
+			application/journalwork.h || die
 	fi
 	cmake-utils_src_prepare
 }
