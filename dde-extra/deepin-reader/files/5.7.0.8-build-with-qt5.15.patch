@@ -1,0 +1,98 @@
+diff -ur deepin-reader-5.7.0.8.old/src/document/DjVuModel.cpp deepin-reader-5.7.0.8/src/document/djvumodel.cpp
+--- deepin-reader-5.7.0.8.old/src/document/DjVuModel.cpp	2020-06-05 14:41:10.216415848 +0800
++++ deepin-reader-5.7.0.8/src/document/DjVuModel.cpp	2020-06-05 14:41:16.917701226 +0800
+@@ -1,5 +1,6 @@
+ #include "Application.h"
+ 
++#include <QPainterPath>
+ #include <cstdio>
+ #include <QFile>
+ #include <qmath.h>
+diff -ur deepin-reader-5.7.0.8.old/src/document/Model.h deepin-reader-5.7.0.8/src/document/model.h
+--- deepin-reader-5.7.0.8.old/src/document/Model.h	2020-06-05 14:41:10.216415848 +0800
++++ deepin-reader-5.7.0.8/src/document/Model.h	2020-06-05 14:41:16.917701226 +0800
+@@ -1,6 +1,7 @@
+ #ifndef DOCUMENTMODEL_H
+ #define DOCUMENTMODEL_H
+ 
++#include <QPainterPath>
+ #include <QList>
+ #include <QtPlugin>
+ #include <QRect>
+diff -ur deepin-reader-5.7.0.8.old/src/widgets/SlideWidget.cpp deepin-reader-5.7.0.8/src/widgets/SlideWidget.cpp
+--- deepin-reader-5.7.0.8.old/src/widgets/SlideWidget.cpp	2020-06-05 14:41:10.216415848 +0800
++++ deepin-reader-5.7.0.8/src/widgets/SlideWidget.cpp	2020-06-05 14:42:44.908824153 +0800
+@@ -23,6 +23,7 @@
+ #include <DApplication>
+ 
+ #include <QDebug>
++#include <QMouseEvent>
+ #include <QDesktopWidget>
+ #include <QPropertyAnimation>
+ #include <QTimer>
+diff -ur deepin-reader-5.7.0.8.old/src/app/Utils.cpp deepin-reader-5.7.0.8/src/utils/utils.cpp
+--- deepin-reader-5.7.0.8.old/src/app/Utils.cpp	2020-06-05 14:41:10.216415848 +0800
++++ deepin-reader-5.7.0.8/src/app/Utils.cpp	2020-06-05 14:41:16.917701226 +0800
+@@ -22,6 +22,7 @@
+ 
+ #include "Utils.h"
+ #include <QMimeDatabase>
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QStandardPaths>
+ #include <QPixmap>
+diff -ur deepin-reader-5.7.0.8.old/src/sidebar/bookmark/BookMarkDelegate.cpp deepin-reader-5.7.0.8/src/sidebar/bookmark/BookMarkDelegate.cpp
+--- deepin-reader-5.7.0.8.old/src/sidebar/bookmark/BookMarkDelegate.cpp	2020-06-05 14:41:10.216415848 +0800
++++ deepin-reader-5.7.0.8/src/sidebar/bookmark/BookMarkDelegate.cpp	2020-06-05 14:41:16.917701226 +0800
+@@ -17,6 +17,7 @@
+ #include "BookMarkDelegate.h"
+ #include "sidebar/ImageViewModel.h"
+ #include "Application.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QDebug>
+diff -ur deepin-reader-5.7.0.8.old/src/sidebar/note/NotesDelegate.cpp deepin-reader-5.7.0.8/src/sidebar/note/NotesDelegate.cpp
+--- deepin-reader-5.7.0.8.old/src/sidebar/note/NotesDelegate.cpp	2020-06-05 14:41:10.216415848 +0800
++++ deepin-reader-5.7.0.8/src/sidebar/note/NotesDelegate.cpp	2020-06-05 14:41:16.917701226 +0800
+@@ -18,6 +18,7 @@
+ #include "sidebar/ImageViewModel.h"
+ #include "Utils.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QDebug>
+ #include <QItemSelectionModel>
+diff -ur deepin-reader-5.7.0.8.old/src/sidebar/search/SearchResDelegate.cpp deepin-reader-5.7.0.8/src/sidebar/search/SearchResDelegate.cpp
+--- deepin-reader-5.7.0.8.old/src/sidebar/search/SearchResDelegate.cpp	2020-06-05 14:41:10.216415848 +0800
++++ deepin-reader-5.7.0.8/src/sidebar/search/SearchResDelegate.cpp	2020-06-05 14:41:16.917701226 +0800
+@@ -18,6 +18,7 @@
+ #include "sidebar/ImageViewModel.h"
+ #include "Utils.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QDebug>
+ #include <QItemSelectionModel>
+diff -ur deepin-reader-5.7.0.8.old/src/sidebar/thumbnail/ThumbnailDelegate.cpp deepin-reader-5.7.0.8/src/sidebar/thumbnail/ThumbnailDelegate.cpp
+--- deepin-reader-5.7.0.8.old/src/sidebar/thumbnail/ThumbnailDelegate.cpp	2020-06-05 14:41:10.216415848 +0800
++++ deepin-reader-5.7.0.8/src/sidebar/thumbnail/ThumbnailDelegate.cpp	2020-06-05 14:41:16.917701226 +0800
+@@ -18,6 +18,7 @@
+ #include "sidebar/ImageViewModel.h"
+ #include "Utils.h"
+ 
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QDebug>
+ #include <QItemSelectionModel>
+diff -ur deepin-reader-5.7.0.8.old/src/widgets/RoundColorWidget.cpp deepin-reader-5.7.0.8/src/widgets/RoundColorWidget.cpp
+--- deepin-reader-5.7.0.8.old/src/widgets/RoundColorWidget.cpp	2020-06-05 14:41:10.216415848 +0800
++++ deepin-reader-5.7.0.8/src/widgets/RoundColorWidget.cpp	2020-06-05 14:41:16.917701226 +0800
+@@ -20,6 +20,7 @@
+  */
+ #include "RoundColorWidget.h"
+ 
++#include <QPainterPath>
+ #include <DStyle>
+ 
+ #include <QColor>

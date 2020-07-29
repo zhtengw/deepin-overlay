@@ -37,14 +37,14 @@ DEPEND="${RDEPEND}
 		"
 
 PATCHES=(
-	"$FILESDIR/5.6.7-build-with-qt5.15.patch"
+	"$FILESDIR/5.7.0.8-build-with-qt5.15.patch"
 )
 
 src_prepare() {
 
-	sed -i "/<QList>/a\#include\ <QPointF>\n\#include\ <QRectF>\n\#include\ <QSet>" \
-		src/pdfControl/docview/commonstruct.h || die
-
+	LIBDIR=$(get_libdir)
+	sed -i "s|/usr/lib|/usr/${LIBDIR}|g" \
+		src/src.pro || die
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr DEFINES+="VERSION=${PV}"
 	default_src_prepare
 }
