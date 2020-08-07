@@ -8,29 +8,6 @@
  #include <QPainter>
  #include <QRect>
  
---- a/src/frame/window/mainwindow.cpp	2020-04-15 15:17:28.000000000 +0800
-+++ b/src/frame/window/mainwindow.cpp	2020-04-17 17:25:08.949557840 +0800
-@@ -59,6 +59,9 @@
- #include <QGSettings>
- #include <QScroller>
- #include <QScreen>
-+#include <QKeyEvent>
-+#include <QResizeEvent>
-+#include <QMouseEvent>
- 
- using namespace DCC_NAMESPACE;
- using namespace DCC_NAMESPACE::search;
-
---- a/src/frame/window/modules/update/updatehistorybutton.cpp	2020-05-26 19:39:19.000000000 +0800
-+++ b/src/frame/window/modules/update/updatehistorybutton.cpp	2020-06-04 11:23:19.686979828 +0800
-@@ -23,6 +23,7 @@
- #include <QVBoxLayout>
- #include <QDebug>
- #include <QPainter>
-+#include <QPainterPath>
- 
- using namespace DCC_NAMESPACE;
- using namespace DCC_NAMESPACE::update;
 diff -ur a/src/frame/modules/accounts/avatardel.cpp b/src/frame/modules/accounts/avatardel.cpp
 --- a/src/frame/modules/accounts/avatardel.cpp	2020-06-04 14:56:48.599634830 +0800
 +++ b/src/frame/modules/accounts/avatardel.cpp	2020-06-04 15:22:08.040554752 +0800

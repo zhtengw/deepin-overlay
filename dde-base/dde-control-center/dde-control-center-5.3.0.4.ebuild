@@ -35,6 +35,7 @@ RDEPEND="dev-qt/qtsvg:5
 		>=dde-base/dde-network-utils-5.0.4
 		dev-util/desktop-file-utils
 		dev-libs/geoip
+		dev-libs/libpwquality
 		>=dde-base/deepin-desktop-base-2020.04.12
 		>=dde-base/dde-qt5integration-5.1.0
 		redshift? ( x11-misc/redshift )
@@ -46,7 +47,7 @@ DEPEND="${RDEPEND}
 		"
 
 PATCHES=(
-	"${FILESDIR}/5.2.0.25-missing-include.patch"
+	"${FILESDIR}/5.3.0.4-missing-include.patch"
 )
 
 src_prepare() {

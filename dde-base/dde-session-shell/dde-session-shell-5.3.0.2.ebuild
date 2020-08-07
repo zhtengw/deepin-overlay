@@ -49,8 +49,7 @@ DEPEND="${RDEPEND}
 		"
 
 PATCHES=(
-	"${FILESDIR}/1.0.23-gen-moc.patch"
-	"${FILESDIR}/5.1.0.1-build-with-qt5.15.patch"
+	"${FILESDIR}/5.1.0.14-build-with-qt5.15.patch"
 )
 
 src_prepare() {

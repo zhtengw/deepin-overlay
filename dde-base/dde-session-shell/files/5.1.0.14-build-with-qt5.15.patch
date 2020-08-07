@@ -20,17 +20,6 @@ diff -ur dde-session-shell-5.1.0.1.old/src/dde-shutdown/view/multiuserswarningvi
  #include <QLabel>
  #include <QListWidget>
  #include <QListWidgetItem>
-diff -ur dde-session-shell-5.1.0.1.old/src/widgets/darrowrectangle.cpp dde-session-shell-5.1.0.1/src/widgets/darrowrectangle.cpp
---- dde-session-shell-5.1.0.1.old/src/widgets/darrowrectangle.cpp	2020-06-04 16:56:49.416762465 +0800
-+++ dde-session-shell-5.1.0.1/src/widgets/darrowrectangle.cpp	2020-06-04 16:57:08.202628299 +0800
-@@ -24,6 +24,7 @@
-  */
- 
- #include "darrowrectangle.h"
-+#include <QPainterPath>
- #include <QApplication>
- #include <dgraphicsgloweffect.h>
- 
 diff -ur dde-session-shell-5.1.0.1.old/src/widgets/dpasswordeditex.cpp dde-session-shell-5.1.0.1/src/widgets/dpasswordeditex.cpp
 --- dde-session-shell-5.1.0.1.old/src/widgets/dpasswordeditex.cpp	2020-06-04 16:56:49.416762465 +0800
 +++ dde-session-shell-5.1.0.1/src/widgets/dpasswordeditex.cpp	2020-06-04 16:57:08.202628299 +0800

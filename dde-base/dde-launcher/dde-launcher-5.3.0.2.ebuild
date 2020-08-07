@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 		x11-libs/xcb-util-wm
 		x11-libs/libxcb
 		>=dde-base/dtkwidget-5.1.2:=
-		dde-base/dde-qt-dbus-factory:=
+		>=dde-base/dde-qt-dbus-factory-5.3.0.1:=
 		"
 
 PATCHES=(
