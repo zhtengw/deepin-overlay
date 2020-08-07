@@ -34,9 +34,12 @@ DEPEND="dev-qt/qtcore:5
 
 src_prepare() {
 	sed -i "/Painter>/a#include <QPainterPath>" \
-		src/view/widget/search_completion_delegate.cpp \
 		src/view/widget/search_button.cpp \
 		src/view/widget/search_completion_window.cpp || die
+	sed -i "/include </a#include <QPainterPath>" \
+		src/view/widget/search_completion_delegate.cpp || die
+
+	cp src/resources/themes/common/images/deepin-manual.svg manual-assets/deepin-manual.svg
 
 	cmake-utils_src_prepare
 
