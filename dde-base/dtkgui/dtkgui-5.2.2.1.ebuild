@@ -23,7 +23,7 @@ IUSE=""
 RDEPEND="dev-qt/qtgui:5
 		"
 DEPEND="${RDEPEND}
-		~dde-base/dtkcore-${PV}:=
+		>=dde-base/dtkcore-5.2.2.1:=
 		"
 
 src_prepare() {

@@ -40,19 +40,23 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	sed -i "/<QDebug>/a\#include\ <QContextMenuEvent>\n\#include\ <QKeyEvent>" \
 		deepin-devicemanager/src/Widget/TextBrowser.cpp || die
-	sed -i "/DPalette/a\#include\ <QPainterPath>" \
-		deepin-devicemanager/src/Widget/logviewheaderview.cpp \
-		deepin-devicemanager/src/Widget/logviewitemdelegate.cpp \
-		deepin-devicemanager/src/Widget/deviceinfowidgetbase.h || die
+	sed -i "/<QDebug>/a\#include\ <QPainterPath>" \
+		deepin-devicemanager/src/Widget/logtreeview.cpp || die
 	sed -i "/<QList>/a\#include\ <QMap>" \
 		deepin-devicemanager/src/DeviceManager/DeviceManager.h || die
 	sed -i "/<QList>/a\#include\ <QFile>" \
-		deepin-devicemanager/src/Widget/logtreeview.cpp \
-		deepin-devicemanager/src/Widget/deviceinfowidgetbase.h || die
+		deepin-devicemanager/src/Widget/logtreeview.cpp || die
 	sed -i "/<QList>/a\#include\ <QIODevice>" \
 		deepin-devicemanager/3rdparty/docx/opc/packagereader.h || die
-	sed -i "/\"DSpinner\"/a\#include\ <QKeyEvent>" \
-		deepin-devicemanager/src/mainwindow.cpp || die
+	sed -i "/<QPainter>/a\#include\ <QPainterPath>" \
+		deepin-devicemanager/src/Widget/logviewheaderview.cpp \
+		deepin-devicemanager/src/Widget/logviewitemdelegate.cpp \
+		deepin-devicemanager/src/Widget/TableWidget.cpp \
+		deepin-devicemanager/src/Widget/RichTextDelegate.cpp \
+		deepin-devicemanager/src/Widget/DetailTreeView.cpp \
+		deepin-devicemanager/src/Widget/DetailViewDelegate.cpp \
+		deepin-devicemanager/src/Page/PageDetail.cpp \
+		deepin-devicemanager/src/Page/PageInfo.cpp || die
 	cmake-utils_src_prepare
 }
 
