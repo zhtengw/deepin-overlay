@@ -1,7 +1,7 @@
-diff --git a/plugins/kwin-xcb/lib/kwinutils.cpp b/plugins/kwin-xcb/lib/kwinutils.cpp
+diff --git a/plugins/platforms/lib/kwinutils.cpp b/plugins/platforms/lib/kwinutils.cpp
 index ed68ec8..a80d964 100644
---- a/plugins/kwin-xcb/lib/kwinutils.cpp
-+++ b/plugins/kwin-xcb/lib/kwinutils.cpp
+--- a/plugins/platforms/lib/kwinutils.cpp
++++ b/plugins/platforms/lib/kwinutils.cpp
 @@ -589,7 +589,11 @@ QObject *KWinUtils::tabBox()
  
  QObject *KWinUtils::cursor()

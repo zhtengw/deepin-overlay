@@ -50,13 +50,7 @@ src_prepare() {
 		deepin-devicemanager/3rdparty/docx/opc/packagereader.h || die
 	sed -i "/<QPainter>/a\#include\ <QPainterPath>" \
 		deepin-devicemanager/src/Widget/logviewheaderview.cpp \
-		deepin-devicemanager/src/Widget/logviewitemdelegate.cpp \
-		deepin-devicemanager/src/Widget/TableWidget.cpp \
-		deepin-devicemanager/src/Widget/RichTextDelegate.cpp \
-		deepin-devicemanager/src/Widget/DetailTreeView.cpp \
-		deepin-devicemanager/src/Widget/DetailViewDelegate.cpp \
-		deepin-devicemanager/src/Page/PageDetail.cpp \
-		deepin-devicemanager/src/Page/PageInfo.cpp || die
+		deepin-devicemanager/src/Widget/logviewitemdelegate.cpp || die
 	cmake-utils_src_prepare
 }
 
