@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit qmake-utils xdg-utils systemd
+inherit qmake-utils xdg-utils systemd gnome2-utils
 
 DESCRIPTION="Deepin File Manager and Desktop module for DDE"
 HOMEPAGE="https://github.com/linuxdeepin/dde-file-manager"
@@ -95,6 +95,7 @@ src_install() {
 pkg_postinst() {
 	xdg_desktop_database_update
 	xdg_mimeinfo_database_update
+	gnome2_schemas_update
 	einfo "${PN} needs x-terminal-emulator command to make OpenInTermial"
 	einfo "function work. A command dfmterm is added to generate it. For"
 	einfo "example, use 'dfmterm xterm' to set xterm as the terminal when"
@@ -104,4 +105,5 @@ pkg_postinst() {
 pkg_postrm() {
 	xdg_desktop_database_update
 	xdg_mimeinfo_database_update
+	gnome2_schemas_update
 }

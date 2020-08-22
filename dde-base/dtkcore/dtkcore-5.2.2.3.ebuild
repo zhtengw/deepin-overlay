@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit qmake-utils
+inherit qmake-utils gnome2-utils
 
 DESCRIPTION="Base development tool of all C++/Qt Developer work on Deepin - Core modules"
 HOMEPAGE="https://github.com/linuxdeepin/dtkcore"
@@ -39,3 +39,10 @@ src_install() {
 	emake INSTALL_ROOT=${D} install
 }
 
+pkg_postinst() {
+	gnome2_schemas_update
+}
+
+pkg_postrm() {
+	gnome2_schemas_update
+}

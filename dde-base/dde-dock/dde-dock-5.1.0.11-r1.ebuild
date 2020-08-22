@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake-utils gnome2-utils
 
 DESCRIPTION="Deepin desktop environment - Dock module"
 HOMEPAGE="https://github.com/linuxdeepin/dde-dock"
@@ -50,3 +50,10 @@ src_prepare() {
 	cmake-utils_src_prepare
 }
 
+pkg_postinst() {
+	gnome2_schemas_update
+}
+
+pkg_postrm() {
+	gnome2_schemas_update
+}

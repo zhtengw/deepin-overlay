@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit qmake-utils
+inherit qmake-utils gnome2-utils
 
 DESCRIPTION="Deepin desktop environment - Session UI module"
 HOMEPAGE="https://github.com/linuxdeepin/dde-session-ui"
@@ -77,4 +77,12 @@ src_prepare() {
 
 src_install() {
 	emake INSTALL_ROOT=${D} install
+}
+
+pkg_postinst() {
+	gnome2_schemas_update
+}
+
+pkg_postrm() {
+	gnome2_schemas_update
 }
