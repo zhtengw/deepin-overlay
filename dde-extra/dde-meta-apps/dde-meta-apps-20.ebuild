@@ -17,7 +17,6 @@ RDEPEND="
 	dde-extra/dde-calendar
 	dde-extra/deepin-boot-maker
 	dde-extra/deepin-calculator
-	#dde-extra/deepin-clone
 	dde-extra/deepin-editor
 	dde-extra/deepin-font-manager
 	dde-extra/deepin-picker
