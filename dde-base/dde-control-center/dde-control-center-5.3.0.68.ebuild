@@ -53,15 +53,13 @@ PATCHES=(
 src_prepare() {
 
 	# remove after they obey -DDISABLE_SYS_UPDATE properly
-	sed -i '/new UpdateModule/i#ifndef DISABLE_SYS_UPDATE' src/frame/window/mainwindow.cpp
-	sed -i '/new UpdateModule/a#endif' src/frame/window/mainwindow.cpp
+	sed -i '/new UpdateModule/i#ifndef DISABLE_SYS_UPDATE' src/frame/window/mainwindow.cpp || die
+	sed -i '/new UpdateModule/a#endif' src/frame/window/mainwindow.cpp || die
 	LIBDIR=$(get_libdir)
 	sed -i "s|DESTINATION\ lib|DESTINATION\ ${LIBDIR}|g" \
-		src/dialogs/CMakeLists.txt \
 		src/develop-tool/CMakeLists.txt \
 		src/frame/CMakeLists.txt || die
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" \
-		src/frame/modules/sync/syncworker.cpp \
 		src/frame/modules/update/updatework.cpp || die
 	cmake-utils_src_prepare
 }
