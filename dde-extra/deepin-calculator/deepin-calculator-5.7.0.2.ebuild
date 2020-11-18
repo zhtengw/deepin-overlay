@@ -30,10 +30,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -i "/<QPainter>/a\#include <QPainterPath>" \
-		src/modules/simplelistdelegate.cpp \
-		src/widgets/memorybutton.cpp \
-		src/widgets/equalbutton.cpp \
-		src/widgets/textbutton.cpp || die
+		src/views/simplelistdelegate.cpp || die
 
 	cmake-utils_src_prepare
 }

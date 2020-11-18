@@ -39,6 +39,9 @@ src_prepare() {
 		src/Printer/ui/dprintersshowwindow.h || die
 	sed -i "/<QTimer>/a\#include\ <QFile>" \
 		src/Printer/vendor/zdrivermanager.cpp || die
+
+	sed -i "s|const std::runtime_error &e|\.\.\.|g" src/cppcups/cupssnmp.cpp || die
+
 	export QT_SELECT=qt5
 	eqmake5 PREFIX=/usr  DEFINES+="VERSION=${PV}"
 	default_src_prepare
