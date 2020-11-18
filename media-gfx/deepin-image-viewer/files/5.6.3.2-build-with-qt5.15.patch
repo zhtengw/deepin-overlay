@@ -22,42 +22,6 @@ index 0ca73c2..41f6df3 100755
  #include <dtitlebar.h>
  #include <dwindowclosebutton.h>
  #include <dwindowmaxbutton.h>
-diff --git a/viewer/module/album/albumdelegate.cpp b/viewer/module/album/albumdelegate.cpp
-index 9a16b58..57f5116 100755
---- a/viewer/module/album/albumdelegate.cpp
-+++ b/viewer/module/album/albumdelegate.cpp
-@@ -19,6 +19,7 @@
- #include "controller/dbmanager.h"
- #include "utils/imageutils.h"
- #include "utils/baseutils.h"
-+#include <QPainterPath>
- #include <QDateTime>
- #include <QLineEdit>
- #include <QPainter>
-diff --git a/viewer/module/timeline/mvc/timelinedelegate.cpp b/viewer/module/timeline/mvc/timelinedelegate.cpp
-index b950d74..277164b 100644
---- a/viewer/module/timeline/mvc/timelinedelegate.cpp
-+++ b/viewer/module/timeline/mvc/timelinedelegate.cpp
-@@ -19,6 +19,7 @@
- #include "utils/baseutils.h"
- #include "application.h"
- 
-+#include <QPainterPath>
- #include <QDateTime>
- #include <QDebug>
- #include <QHBoxLayout>
-diff --git a/viewer/module/timeline/mvc/timelineview.cpp b/viewer/module/timeline/mvc/timelineview.cpp
-index 81c91d6..ce6234f 100644
---- a/viewer/module/timeline/mvc/timelineview.cpp
-+++ b/viewer/module/timeline/mvc/timelineview.cpp
-@@ -24,6 +24,7 @@
- #include "utils/baseutils.h"
- #include "utils/imageutils.h"
- #include "widgets/scrollbar.h"
-+#include <QPainterPath>
- #include <QDebug>
- #include <QFileInfo>
- #include <QHeaderView>
 diff --git a/viewer/module/view/contents/imageinfowidget.cpp b/viewer/module/view/contents/imageinfowidget.cpp
 index f10b9d7..641452c 100644
 --- a/viewer/module/view/contents/imageinfowidget.cpp

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
 inherit cmake-utils
 
@@ -40,15 +40,16 @@ DEPEND="${RDEPEND}
 		"
 
 PATCHES=(
-    "${FILESDIR}"/${PN}-5.0.14.1-kwin-5.18-override-error.patch
 	"${FILESDIR}"/dde-kwin-5.1.0-build-with-qt5.15.patch
 	"${FILESDIR}"/dde-kwin-5.1.0.3-tabbox-rename.patch
-	"${FILESDIR}"/dde-kwin-5.1.0.20-kwaylandserver-5.19.patch
 )
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
 	sed -i "s|/usr/lib/|/usr/${LIBDIR}/|g" deepin-wm-dbus/deepinwmfaker.cpp || die
+
+	sed -i "s/m_blurManager->create/\/\/m_blurManager->create/g" plugins/kwineffects/blur/blur.cpp || die
+
 	cmake-utils_src_prepare
 }
 

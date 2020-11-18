@@ -1,3 +1,6 @@
+DIST github.com-fsnotify-fsnotify-7f4cf4d.tar.gz 31933 SHA256 c80ad5a145d4b1caee51ecd6663c88b193e7b45505d45dedc84f2c1ce29f1b66
+DIST github.com-godbus-dbus-e0a146e.tar.gz 69432 SHA256 6b76ccb6c76aa842bca59f36c60ed07a423efcb9d15a939c49ff9731b6aab067
 DIST github.com-golang-net-aaf60122140d3fcf75376d319f0554393160eb50.tar.gz 965206 SHA256 c0947cd332130089b74fb701a8eaf616aaf758c3aa2f4bbf336fadda10a2370b
+DIST github.com-golang-sys-cc9327a.tar.gz 1088048 SHA256 1b52cb249403e650c10473a2302870dc4e82f3fa6cfb6c55942f6b1049e8d3d7
 DIST go-dbus-factory-0.9.0.tar.gz 150414 SHA256 cb579b321100e70291e18f85ee158edacfa4a937a9184061dee09972cd1ffd5f
-DIST go-dbus-factory-1.7.0.6.tar.gz 216382 SHA256 9429fb8ca80b3c127929159dd9da4360153526ff4210df3d3291a528a7c33856
+DIST go-dbus-factory-1.8.0.26.tar.gz 222208 SHA256 f57f2c4f44e57ee5fb9b410d25ef097b38fb18011f711e8e74b8941419f46bdd

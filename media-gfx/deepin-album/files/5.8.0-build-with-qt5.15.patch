@@ -1,0 +1,69 @@
+diff --git a/deepin-album/album/frame/extensionpanel.cpp b/deepin-album/album/frame/extensionpanel.cpp
+index 69ff448..dcf00c5 100644
+--- a/deepin-album/album/frame/extensionpanel.cpp
++++ b/deepin-album/album/frame/extensionpanel.cpp
+@@ -14,6 +14,7 @@
+  * You should have received a copy of the GNU General Public License
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
++#include <QPainterPath>
+ #include "extensionpanel.h"
+ #include <QPainter>
+ #include "application.h"
+diff --git a/deepin-album/album/frame/toptoolbar.cpp b/deepin-album/album/frame/toptoolbar.cpp
+index f6f8073..e91612a 100644
+--- a/deepin-album/album/frame/toptoolbar.cpp
++++ b/deepin-album/album/frame/toptoolbar.cpp
+@@ -15,6 +15,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
++#include <QPainterPath>
+ #include "toptoolbar.h"
+ #include "application.h"
+ #include "controller/configsetter.h"
+diff --git a/deepin-album/album/module/view/contents/ttbcontent.cpp b/deepin-album/album/module/view/contents/ttbcontent.cpp
+index 1f95a63..307df73 100644
+--- a/deepin-album/album/module/view/contents/ttbcontent.cpp
++++ b/deepin-album/album/module/view/contents/ttbcontent.cpp
+@@ -14,6 +14,7 @@
+  * You should have received a copy of the GNU General Public License
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
++#include <QPainterPath>
+ #include "ttbcontent.h"
+ #include "application.h"
+ #include "utils/baseutils.h"
+diff --git a/deepin-album/album/thumbnail/thumbnaildelegate.cpp b/deepin-album/album/thumbnail/thumbnaildelegate.cpp
+index a789f41..70598ff 100644
+--- a/deepin-album/album/thumbnail/thumbnaildelegate.cpp
++++ b/deepin-album/album/thumbnail/thumbnaildelegate.cpp
+@@ -14,6 +14,7 @@
+  * You should have received a copy of the GNU General Public License
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
++#include <QPainterPath>
+ #include "thumbnaildelegate.h"
+ #include "utils/imageutils.h"
+ #include "utils/baseutils.h"
+diff --git a/deepin-album/album/widgets/dialogs/imginfodialog.cpp b/deepin-album/album/widgets/dialogs/imginfodialog.cpp
+index 9b12d06..d36d4bf 100644
+--- a/deepin-album/album/widgets/dialogs/imginfodialog.cpp
++++ b/deepin-album/album/widgets/dialogs/imginfodialog.cpp
+@@ -14,6 +14,7 @@
+  * You should have received a copy of the GNU General Public License
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
++#include <QPainterPath>
+ #include "imginfodialog.h"
+ #include "application.h"
+ #include "controller/signalmanager.h"
+diff --git a/deepin-album/album/widgets/dialogs/dfmdarrowlineexpand.cpp b/deepin-album/album/widgets/dialogs/dfmdarrowlineexpand.cpp
+index 2f7c0f7..35587f2 100644
+--- a/deepin-album/album/widgets/dialogs/dfmdarrowlineexpand.cpp
++++ b/deepin-album/album/widgets/dialogs/dfmdarrowlineexpand.cpp
+@@ -5,3 +5,4 @@
++#include <QPainterPath>
+ #include <QPainter>
+ 
+ DFMDArrowLineExpand::DFMDArrowLineExpand()

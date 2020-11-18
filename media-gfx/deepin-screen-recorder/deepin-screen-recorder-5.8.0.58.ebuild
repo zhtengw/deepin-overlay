@@ -42,10 +42,11 @@ DEPEND="${RDEPEND}
 		"
 
 PATCHES=(
-		"${FILESDIR}/${P}-build-fix.patch"
+		"${FILESDIR}/${PN}-5.8.0.11-build-fix.patch"
 )
 
 src_prepare() {
+	sed -i "/include <X11\/Xlibint.h>/a #undef min" src/screen_shot_event.cpp || die
 	default
 	QT_SELECT=qt5 eqmake5 screen_shot_recorder.pro
 }

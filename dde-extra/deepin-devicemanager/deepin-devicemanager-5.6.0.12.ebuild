@@ -22,6 +22,7 @@ RDEPEND="dev-qt/qtcore:5
 		dev-qt/qtsvg:5
 		dev-qt/qtxml:5
 		net-print/cups
+		net-libs/zeromq
 		sys-apps/smartmontools
 		sys-apps/dmidecode
 		sys-apps/hwinfo
@@ -49,6 +50,14 @@ src_prepare() {
 	sed -i "/<QList>/a\#include\ <QIODevice>" \
 		deepin-devicemanager/3rdparty/docx/opc/packagereader.h || die
 	sed -i "/<QPainter>/a\#include\ <QPainterPath>" \
+		deepin-devicemanager/src/Page/PageInfo.cpp \
+		deepin-devicemanager/src/Page/PageDetail.cpp \
+		deepin-devicemanager/src/Widget/CmdButtonWidget.cpp \
+		deepin-devicemanager/src/Widget/DetailViewDelegate.cpp \
+		deepin-devicemanager/src/Widget/RichTextDelegate.cpp \
+		deepin-devicemanager/src/Widget/DeviceListView.cpp \
+		deepin-devicemanager/src/Widget/DetailTreeView.cpp \
+		deepin-devicemanager/src/Widget/TableWidget.cpp \
 		deepin-devicemanager/src/Widget/logviewheaderview.cpp \
 		deepin-devicemanager/src/Widget/logviewitemdelegate.cpp || die
 	cmake-utils_src_prepare

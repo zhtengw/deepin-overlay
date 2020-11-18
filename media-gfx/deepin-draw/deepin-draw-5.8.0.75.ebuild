@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit qmake-utils xdg-utils
+inherit cmake-utils xdg-utils
 
 DESCRIPTION="Deepin Painting Tool"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-draw"
@@ -34,18 +34,9 @@ RDEPEND="dev-qt/qtsvg:5
 		"
 
 DEPEND="${RDEPEND}
-		>=dde-base/dtkwidget-2.0.0:=
-	    "
+		>=dde-base/dtkwidget-5.1.2:=
+		"
 
-src_prepare() {
-	eapply_user
-	export QT_SELECT=qt5
-	eqmake5
-}
-
-src_install() {
-	emake INSTALL_ROOT=${D} install
-}
 
 pkg_postinst() {
 	xdg_desktop_database_update

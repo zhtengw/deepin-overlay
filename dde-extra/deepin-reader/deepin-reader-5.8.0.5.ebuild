@@ -25,6 +25,8 @@ RDEPEND="dev-qt/qtcore:5
 		kde-frameworks/karchive
 		x11-libs/libX11
 		media-libs/tiff
+		media-libs/openjpeg:2
+		media-libs/libjpeg-turbo
 		app-text/djvu
 		app-text/libspectre
 		"
@@ -37,14 +39,16 @@ DEPEND="${RDEPEND}
 		"
 
 PATCHES=(
-	"$FILESDIR/5.7.0.8-build-with-qt5.15.patch"
+	"$FILESDIR/5.8.0.5-build-with-qt5.15.patch"
 )
 
 src_prepare() {
 
 	LIBDIR=$(get_libdir)
 	sed -i "s|/usr/lib|/usr/${LIBDIR}|g" \
+		3rdparty/deepin-pdfium/src/src.pro \
 		src/src.pro || die
+	sed -i "s/LIBS\ +=\ /LIBS\ +=\ -ljpeg\ /g" 3rdparty/deepin-pdfium/src/3rdparty/pdfium/pdfium.pri || die
 	QT_SELECT=qt5 eqmake5 PREFIX=/usr DEFINES+="VERSION=${PV}"
 	default_src_prepare
 }

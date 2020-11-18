@@ -94,6 +94,16 @@ index 7950730..d96b0e1 100644
  #include <QDebug>
  #include <QPainter>
  #include <QWheelEvent>
+diff --git a/music/music-player/view/widget/soundpixmapbutton.cpp b/music/music-player/view/widget/soundpixmapbutton.cpp
+index 7950730..d96b0e1 100644
+--- a/music/music-player/view/widget/soundpixmapbutton.cpp
++++ b/music/music-player/view/widget/soundpixmapbutton.cpp
+@@ -17,4 +17,5 @@
+ 
+ #include "soundvolume.h"
+ 
++#include <QPainterPath>
+ #include <QDebug>
 diff --git a/music/music-player/view/widget/tooltips.cpp b/music/music-player/view/widget/tooltips.cpp
 index b5233b6..4d43b79 100644
 --- a/music/music-player/view/widget/tooltips.cpp

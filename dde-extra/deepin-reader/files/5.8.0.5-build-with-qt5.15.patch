@@ -1,13 +1,13 @@
 diff -ur deepin-reader-5.7.0.8.old/src/document/DjVuModel.cpp deepin-reader-5.7.0.8/src/document/djvumodel.cpp
---- deepin-reader-5.7.0.8.old/src/document/DjVuModel.cpp	2020-06-05 14:41:10.216415848 +0800
-+++ deepin-reader-5.7.0.8/src/document/DjVuModel.cpp	2020-06-05 14:41:16.917701226 +0800
-@@ -1,5 +1,6 @@
+--- deepin-reader-5.8.0.5.old/src/document/DjVuModel.cpp	2020-06-05 14:41:10.216415848 +0800
++++ deepin-reader-5.8.0.5/src/document/DjVuModel.cpp	2020-06-05 14:41:16.917701226 +0800
+@@ -22,5 +22,6 @@
  #include "Application.h"
  
 +#include <QPainterPath>
- #include <cstdio>
  #include <QFile>
- #include <qmath.h>
+ #if defined(Q_OS_WIN) && defined(DJVU_STATIC)
+
 diff -ur deepin-reader-5.7.0.8.old/src/document/Model.h deepin-reader-5.7.0.8/src/document/model.h
 --- deepin-reader-5.7.0.8.old/src/document/Model.h	2020-06-05 14:41:10.216415848 +0800
 +++ deepin-reader-5.7.0.8/src/document/Model.h	2020-06-05 14:41:16.917701226 +0800
@@ -20,12 +20,12 @@ diff -ur deepin-reader-5.7.0.8.old/src/document/Model.h deepin-reader-5.7.0.8/sr
  #include <QtPlugin>
  #include <QRect>
 diff -ur deepin-reader-5.7.0.8.old/src/widgets/SlideWidget.cpp deepin-reader-5.7.0.8/src/widgets/SlideWidget.cpp
---- deepin-reader-5.7.0.8.old/src/widgets/SlideWidget.cpp	2020-06-05 14:41:10.216415848 +0800
-+++ deepin-reader-5.7.0.8/src/widgets/SlideWidget.cpp	2020-06-05 14:42:44.908824153 +0800
-@@ -23,6 +23,7 @@
+--- deepin-reader-5.8.0.5.old/src/widgets/SlideWidget.cpp	2020-06-05 14:41:10.216415848 +0800
++++ deepin-reader-5.8.0.5/src/widgets/SlideWidget.cpp	2020-06-05 14:42:44.908824153 +0800
+@@ -30,6 +30,7 @@
  #include <DApplication>
+ #include <DTitlebar>
  
- #include <QDebug>
 +#include <QMouseEvent>
  #include <QDesktopWidget>
  #include <QPropertyAnimation>
@@ -41,17 +41,6 @@ diff -ur deepin-reader-5.7.0.8.old/src/app/Utils.cpp deepin-reader-5.7.0.8/src/u
  #include <QPainter>
  #include <QStandardPaths>
  #include <QPixmap>
-diff -ur deepin-reader-5.7.0.8.old/src/sidebar/bookmark/BookMarkDelegate.cpp deepin-reader-5.7.0.8/src/sidebar/bookmark/BookMarkDelegate.cpp
---- deepin-reader-5.7.0.8.old/src/sidebar/bookmark/BookMarkDelegate.cpp	2020-06-05 14:41:10.216415848 +0800
-+++ deepin-reader-5.7.0.8/src/sidebar/bookmark/BookMarkDelegate.cpp	2020-06-05 14:41:16.917701226 +0800
-@@ -17,6 +17,7 @@
- #include "BookMarkDelegate.h"
- #include "sidebar/ImageViewModel.h"
- #include "Application.h"
- 
-+#include <QPainterPath>
- #include <QPainter>
- #include <QDebug>
 diff -ur deepin-reader-5.7.0.8.old/src/sidebar/note/NotesDelegate.cpp deepin-reader-5.7.0.8/src/sidebar/note/NotesDelegate.cpp
 --- deepin-reader-5.7.0.8.old/src/sidebar/note/NotesDelegate.cpp	2020-06-05 14:41:10.216415848 +0800
 +++ deepin-reader-5.7.0.8/src/sidebar/note/NotesDelegate.cpp	2020-06-05 14:41:16.917701226 +0800

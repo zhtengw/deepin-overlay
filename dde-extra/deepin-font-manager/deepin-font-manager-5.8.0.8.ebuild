@@ -35,8 +35,14 @@ src_prepare() {
 		deepin-font-manager/views/dsplitlistwidget.cpp \
 		deepin-font-manager/views/dfontspinner.cpp \
 		deepin-font-manager/views/dfinstallerrorlistview.cpp || die
+	sed -i "/<DMenu>/a\#include\ <QContextMenuEvent>\n\#include\ <QDragEnterEvent>\n\#include\ <QDropEvent>\n\#include\ <QFocusEvent>\n\#include <QKeyEvent>\n\#include\ <QMouseEvent>" \
+		deepin-font-manager/views/dfontmgrmainwindow.cpp || die
+	sed -i "/<QMenu>/a\#include\ <QFocusEvent>\n\#include <QKeyEvent>\n\#include\ <QMouseEvent>" \
+		deepin-font-manager/interfaces/dfontpreviewlistview.cpp || die
+	sed -i "/<QHBoxLayout>/a\#include <QKeyEvent>" \
+		deepin-font-manager/views/dfdeletedialog.cpp || die
 
-	export QT_SELECT=qt5 
+	export QT_SELECT=qt5
 	eqmake5	PREFIX=/usr DEFINES+="VERSION=${PV}"
 	default_src_prepare
 }

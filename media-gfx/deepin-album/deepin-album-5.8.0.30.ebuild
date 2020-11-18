@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit qmake-utils
+inherit cmake-utils
 
 DESCRIPTION="Deepin Photo Manager"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-album"
@@ -42,20 +42,23 @@ DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-5.1.2:=
 		dev-qt/gio-qt
 		dde-base/udisks2-qt5
-	    "
+		"
 
 PATCHES=(
-	"$FILESDIR"/5.6.9.13-build-with-qt5.15.patch
+	"$FILESDIR"/5.8.0-build-with-qt5.15.patch
 )
 
 src_prepare() {
+	LIBDIR=$(get_libdir)
+	sed -i "s|/lib\([/)]\)|/${LIBDIR}\1|g" \
+		libUnionImage/CMakeLists.txt || die
 
-	export QT_SELECT=qt5
-	eqmake5 DEFINES+="VERSION=${PV}"
-
-	default_src_prepare
+	cmake-utils_src_prepare
 }
 
-src_install() {
-	emake INSTALL_ROOT=${D} install
+src_configure() {
+	local mycmakeargs=(
+		-DVERSION=${PV}
+	)
+	cmake-utils_src_configure
 }

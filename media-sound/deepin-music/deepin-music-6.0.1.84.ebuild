@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit qmake-utils
+inherit cmake-utils
 
 DESCRIPTION="Deepin Music Player"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-music"
@@ -23,6 +23,7 @@ RDEPEND="dev-qt/qtmultimedia:5[gstreamer]
 	sys-devel/bison
 	media-libs/libcue
 	media-video/ffmpeg
+	media-video/vlc
 	>=media-libs/taglib-1.10
 	media-plugins/gst-plugins-meta:1.0[mp3=,flac=,ogg=,aac=]
 	"
@@ -31,19 +32,6 @@ DEPEND="${RDEPEND}
 	"
 
 PATCHES=(
-	"$FILESDIR"/6.0.1.8-build-with-qt5.15.patch
+	"$FILESDIR"/6.0.1.84-build-with-qt5.15.patch
 )
 
-src_prepare() {
-	LIBDIR=$(qt5_get_libdir)
-	sed -i "s|\$\${PREFIX}/lib|${LIBDIR}|g" src/vendor/mpris-qt/src/src.pro src/vendor/dbusextended-qt/src/src.pro src/plugin/netease-meta-search/netease-meta-search.pro src/libdmusic/libdmusic.pro || die
-	sed -i "/<QDebug>/a\#include\ <QFile>" src/music-player/core/player.cpp || die
-
-	export QT_SELECT=qt5
-	eqmake5 PREFIX=/usr DEFINES+="VERSION=${PV}"
-	default_src_prepare
-}
-
-src_install() {
-	emake INSTALL_ROOT=${D} install
-}
