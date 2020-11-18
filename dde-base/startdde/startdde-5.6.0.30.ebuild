@@ -10,6 +10,9 @@ EGO_VENDOR=(
 "golang.org/x/xerrors 9bdfabe github.com/golang/xerrors"
 "github.com/davecgh/go-spew 87df7c6"
 "github.com/cryptix/wav 8bdace674401f0bd3b63c65479b6a6ff1f9d5e44"
+"github.com/godbus/dbus e0a146e"
+"github.com/fsnotify/fsnotify 7f4cf4d"
+"golang.org/x/sys cc9327a github.com/golang/sys"
 )
 
 inherit golang-vcs-snapshot
@@ -39,13 +42,17 @@ DEPEND="${RDEPEND}
 		>=dev-go/go-gir-generator-2.0.0
 		>=dev-go/go-dbus-factory-1.7.0.6
 		dev-util/cmake
-		>=dde-base/dde-api-5.1.1
+		>=dde-base/dde-api-5.3.0.1
 		>=dev-go/deepin-go-lib-5.4.5
 		>=dev-go/dbus-factory-3.1.5"
 
 src_prepare() {
 	mkdir -p "${T}/golibdir/"
 	cp -r  "${S}/src/${EGO_PN}/vendor"  "${T}/golibdir/src"
+
+	rm -r "${S}/src/${EGO_PN}/vendor/github.com/godbus"
+	rm -r "${S}/src/${EGO_PN}/vendor/github.com/fsnotify"
+
 	export -n GOCACHE XDG_CACHE_HOME
 	export GOPATH="${S}:$(get_golibdir_gopath):${T}/golibdir/"
 
