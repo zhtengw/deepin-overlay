@@ -37,14 +37,13 @@ RDEPEND=">=dde-base/dde-daemon-5.9.0
 DEPEND="${RDEPEND}
 		gnome-base/libgnome-keyring
 		dev-lang/coffee-script
-		dev-go/go-dbus-generator
 		app-misc/ddcutil
 		>=dev-go/go-gir-generator-2.0.0
-		>=dev-go/go-dbus-factory-1.7.0.6
+		>=dev-go/go-dbus-factory-1.8.0.0
 		dev-util/cmake
 		>=dde-base/dde-api-5.3.0.1
 		>=dev-go/deepin-go-lib-5.4.5
-		>=dev-go/dbus-factory-3.1.5"
+		"
 
 src_prepare() {
 	mkdir -p "${T}/golibdir/"

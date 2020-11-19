@@ -66,11 +66,9 @@ RDEPEND="virtual/dde-wm
 		elogind? ( sys-auth/elogind )
 	"
 DEPEND="${RDEPEND}
-		dev-go/go-dbus-generator
 		>=dev-go/go-gir-generator-2.0.0
 		>=dev-go/go-x11-client-0.6.0
 		>=dev-go/deepin-go-lib-5.4.5
-		>=dev-go/dbus-factory-3.1.17
 		>=dev-go/go-dbus-factory-1.8.0.0
 		>=dde-base/dde-api-5.3.0.1
 		>=dde-base/deepin-gettext-tools-1.0.8

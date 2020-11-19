@@ -53,12 +53,11 @@ RDEPEND="x11-libs/libXi
 		"
 
 DEPEND="${RDEPEND}
-		dev-go/go-dbus-generator
 		>=dev-go/deepin-go-lib-5.4.5
 		>=dev-go/go-gir-generator-2.0.0
 		dev-go/go-dbus-factory
 		dev-go/go-x11-client
-		>=dev-go/dbus-factory-3.1.5"
+		"
 
 src_prepare() {
 	cd ${S}/src/${EGO_PN}
