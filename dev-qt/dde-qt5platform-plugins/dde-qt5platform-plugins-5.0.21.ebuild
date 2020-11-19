@@ -34,6 +34,7 @@ RDEPEND="
 	dev-qt/qtsvg:5
 	dev-qt/qtopengl
 	dev-qt/qtxcb-private-headers:5=
+	dev-libs/dde-wayland
 	x11-libs/libxcb[xkb]
 	x11-libs/xcb-util-renderutil
 	x11-libs/xcb-util-image
@@ -44,15 +45,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 		"
 
-PATCHES=(
-	"$FILESDIR"/fix-build-with-qt5.15.patch
-)
-
 src_prepare() {
-	# https://github.com/linuxdeepin/qt5platform-plugins/issues/47
-	sed -i '/wayland/d' qt5platform-plugins.pro || die
-	sed -i 's/xcbWindow-/window-/' xcb/windoweventhook.cpp || die
-
 	sed -i 's/active\ =\ VtableHook::overrideVfptrFun.*/active\ =\ 1;/' xcb/dhighdpi.cpp || die
 	QT_SELECT=qt5 eqmake5 ${MY_PN}.pro
 	default
