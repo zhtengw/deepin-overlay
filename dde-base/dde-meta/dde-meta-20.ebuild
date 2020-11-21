@@ -11,13 +11,13 @@ SRC_URI=""
 LICENSE="metapackage"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="policykit manual +terminal terminal-old multimedia grub plymouth elogind systemd turbo +kwin mutter extra screensaver"
+IUSE="policykit manual +terminal terminal-old multimedia grub plymouth elogind systemd turbo kwin +mutter extra screensaver"
 REQUIRED_USE="^^ ( systemd elogind )
-			?? ( kwin mutter )
+			?? ( mutter kwin )
 			?? ( terminal terminal-old )"
 
 RDEPEND=">=dde-base/dde-control-center-5.0.33
-		virtual/dde-wm[kwin?,mutter?]
+		virtual/dde-wm[mutter?,kwin?]
 		>=dde-base/startdde-5.2.1
 		>=dde-base/dde-file-manager-5.1.0[screensaver?]
 		>=dde-base/dde-launcher-5.0.16

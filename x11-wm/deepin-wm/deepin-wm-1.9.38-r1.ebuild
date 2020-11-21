@@ -35,6 +35,7 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}/${PN}-old-clutter-vapi.patch"
 	"${FILESDIR}/${PN}-vala-0.44.patch"
+	"${FILESDIR}/${PN}-vala-0.48.patch"
 )
 
 src_prepare() {

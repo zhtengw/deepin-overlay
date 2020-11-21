@@ -1,0 +1,26 @@
+diff --git a/src/WindowManager.vala b/src/WindowManager.vala
+index abbbe1e..d9cb32d 100644
+--- a/src/WindowManager.vala
++++ b/src/WindowManager.vala
+@@ -1213,9 +1213,9 @@ namespace Gala
+         {
+             var screen = get_screen ();
+             foreach (var background in backgrounds) {
+-                background.set_blurred (on);
+-                background.set_rounds (6);
+-                background.set_radius (9);
++                background.value.set_blurred (on);
++                background.value.set_rounds (6);
++                background.value.set_radius (9);
+             }
+         }
+ 
+@@ -1704,7 +1704,7 @@ namespace Gala
+         public void set_transient_background (string uri)
+         {
+             foreach (var bg in backgrounds) {
+-                bg.set_transient_background (uri);
++                bg.value.set_transient_background (uri);
+             }
+         }
+ 
