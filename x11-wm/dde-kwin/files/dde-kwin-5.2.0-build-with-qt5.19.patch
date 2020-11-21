@@ -1,0 +1,16 @@
+diff --git a/plugins/platforms/lib/kwinutils.cpp b/plugins/platforms/lib/kwinutils.cpp
+index ed68ec8..a80d964 100644
+--- a/plugins/platforms/lib/kwinutils.cpp
++++ b/plugins/platforms/lib/kwinutils.cpp
+@@ -589,7 +589,11 @@ QObject *KWinUtils::tabBox()
+ 
+ QObject *KWinUtils::cursor()
+ {
++#if KWIN_VERSION_MIN <= 18
+     return KWin::Cursor::s_self;
++#else
++    return nullptr;
++#endif
+ }
+ 
+ QObject *KWinUtils::virtualDesktop()

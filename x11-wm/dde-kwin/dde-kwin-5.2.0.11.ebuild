@@ -42,6 +42,7 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/dde-kwin-5.1.0-build-with-qt5.15.patch
 	"${FILESDIR}"/dde-kwin-5.1.0.3-tabbox-rename.patch
+	"${FILESDIR}"/dde-kwin-5.2.0-build-with-qt5.19.patch
 )
 
 src_prepare() {

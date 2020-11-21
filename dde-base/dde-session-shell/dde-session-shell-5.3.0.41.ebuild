@@ -67,3 +67,9 @@ src_prepare() {
 	cmake-utils_src_prepare
 }
 
+src_install() {
+	cmake-utils_src_install
+
+	fperms 0755 /usr/bin/dde-lock-wapper
+	fperms 0755 /usr/bin/dde-shutdown-wapper
+}
