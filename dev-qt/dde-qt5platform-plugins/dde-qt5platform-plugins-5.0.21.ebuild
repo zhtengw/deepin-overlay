@@ -35,6 +35,7 @@ RDEPEND="
 	dev-qt/qtopengl
 	dev-qt/qtxcb-private-headers:5=
 	dev-libs/dde-wayland
+	kde-frameworks/kwayland
 	x11-libs/libxcb[xkb]
 	x11-libs/xcb-util-renderutil
 	x11-libs/xcb-util-image
