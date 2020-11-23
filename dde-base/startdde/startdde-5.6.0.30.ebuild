@@ -44,6 +44,7 @@ DEPEND="${RDEPEND}
 		>=dde-base/dde-api-5.3.0.1
 		>=dev-go/deepin-go-lib-5.4.5
 		"
+BDEPEND="app-misc/jq"
 
 src_prepare() {
 	mkdir -p "${T}/golibdir/"
