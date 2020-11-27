@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
-inherit qmake-utils
+inherit cmake-utils
 
 DESCRIPTION="Install and Uninstall Font File for Users"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-font-manager"
@@ -42,12 +42,12 @@ src_prepare() {
 	sed -i "/<QHBoxLayout>/a\#include <QKeyEvent>" \
 		deepin-font-manager/views/dfdeletedialog.cpp || die
 
-	export QT_SELECT=qt5
-	eqmake5	PREFIX=/usr DEFINES+="VERSION=${PV}"
-	default_src_prepare
+	cmake-utils_src_prepare
 }
 
-src_install() {
-	emake INSTALL_ROOT=${D} install
+src_configure() {
+	local mycmakeargs=(
+		-DVERSION=${PV}
+	)
+	cmake-utils_src_configure
 }
-

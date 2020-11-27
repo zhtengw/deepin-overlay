@@ -31,6 +31,7 @@ RDEPEND="dev-qt/qtcore:5
 	!dde-extra/deepin-terminal-old
 	"
 DEPEND="${RDEPEND}
+	dev-cpp/gtest
 	dev-util/lxqt-build-tools
 	>=dde-base/dtkwidget-5.1.2:=
 	virtual/pkgconfig

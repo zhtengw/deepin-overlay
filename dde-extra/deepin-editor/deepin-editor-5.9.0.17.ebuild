@@ -34,12 +34,14 @@ RDEPEND="dev-qt/qtcore:5
 
 DEPEND="${RDEPEND}
 		>=dde-base/dtkwidget-5.1.2:=
+		dev-cpp/gtest
 		dev-qt/linguist-tools
 		dev-qt/qtchooser
 		virtual/pkgconfig
 		"
 
 src_prepare() {
+	sed -i "s|-DCMAKE|-DCMAKE_INSTALL_LIBDIR=\$path/../lib/lib -DCMAKE|" third/uchartdet_install.sh || die
 
 	sed -i "/<QPainter>/a\#include\ <QPainterPath>" \
 		src/widgets/bottombar.cpp \
