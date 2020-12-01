@@ -42,7 +42,7 @@ src_prepare() {
 		src/customWidget/customframe.cpp || die
 	sed -i "/\#include\ <QPainter>/a\#include\ <QPainterPath>\n\#include\ <QMouseEvent>" \
 		src/widget/dayWidget/daymonthview.cpp \
-		src/widget/schcedulesearchview.cpp || die
+		src/widget/schedulesearchview.cpp || die
 	sed -i "/\#include\ <QPainter>/a\#include\ <QPainterPath>" \
 		src/widget/yearWidget/yearview.cpp \
 		src/widget/weekWidget/weekheadview.cpp || die
