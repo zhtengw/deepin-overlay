@@ -43,9 +43,16 @@ PATCHES=(
 )
 
 src_prepare() {
-    LIBDIR=$(get_libdir)
-    sed -i "s|lib/|${LIBDIR}/|g" src/CMakeLists.txt || die
-    cmake-utils_src_prepare
+	# mpv remove qthelper.hpp since 0.33.0
+	cp "$FILESDIR/qthelper.hpp" src/common/
+	sed -i "s|<mpv/qthelper.hpp>|\"qthelper.hpp\"|g" \
+		src/libdmr/compositing_manager.cpp \
+		src/backends/mpv/mpv_glwidget.h \
+		src/backends/mpv/mpv_proxy.h || die
+
+	LIBDIR=$(get_libdir)
+	sed -i "s|lib/|${LIBDIR}/|g" src/CMakeLists.txt || die
+	cmake-utils_src_prepare
 }
 
 src_configure() {
