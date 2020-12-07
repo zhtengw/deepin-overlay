@@ -8,7 +8,7 @@ inherit unpacker versionator
 DESCRIPTION="Tencent WeChat for Linux by Deepin"
 HOMEPAGE="https://www.deepin.org"
 
-COMMON_URI="http://packages.deepin.com/deepin/pool/non-free/d"
+COMMON_URI="http://uos-packages.deepin.com/uos/pool/non-free/d"
 MY_PN="deepin.com.wechat"
 MY_PV=$(replace_version_separator 4 'deepin' )
 
