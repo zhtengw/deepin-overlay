@@ -8,7 +8,7 @@ inherit unpacker versionator
 DESCRIPTION="Deepin Version of Wine"
 HOMEPAGE="https://www.deepin.org"
 
-COMMON_URI="http://community-packages.deepin.com/deepin/pool/non-free/d"
+COMMON_URI="http://uos-packages.deepin.com/uos/pool/non-free/d"
 DWV=$(replace_version_separator 2 '-' $(replace_version_separator 3 '~'))
 
 SRC_URI="${COMMON_URI}/deepin-wine/deepin-fonts-wine_${DWV}_all.deb
