@@ -4,7 +4,7 @@
 
 EAPI="5"
 
-inherit fdo-mime eutils cmake-utils
+inherit eutils cmake-utils
 
 if [[ ${PV} == *9999* ]]; then
 	inherit git-r3
