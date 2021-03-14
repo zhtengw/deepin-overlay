@@ -3,13 +3,13 @@
 
 EAPI=7
 
-inherit unpacker versionator
+inherit unpacker
 
 DESCRIPTION="Deepin Version of Wine"
 HOMEPAGE="https://www.deepin.org"
 
 COMMON_URI="http://community-packages.deepin.com/deepin/pool/non-free/d"
-DWV=$(replace_version_separator 2 '-' $(replace_version_separator 3 '~'))
+DWV=$(ver_rs 2 '-' $(ver_rs 3 '~'))
 
 SRC_URI="${COMMON_URI}/deepin-wine/deepin-fonts-wine_${DWV}_all.deb
 	${COMMON_URI}/deepin-wine/deepin-libwine_${DWV}_i386.deb

@@ -3,16 +3,15 @@
 
 EAPI=7
 
-inherit unpacker versionator
+inherit unpacker
 
 DESCRIPTION="Tencent WeChat for Linux by Deepin"
 HOMEPAGE="https://www.deepin.org"
 
 COMMON_URI="http://packages.deepin.com/deepin/pool/non-free/d"
 MY_PN="deepin.com.wechat"
-MY_PV=$(replace_version_separator 4 'deepin' )
+MY_PV=$(ver_rs 4 'deepin' )
 
-SRC_URI="${COMMON_URI}/${MY_PN}/${MY_PN}_${MY_PV}_i386.deb"
 
 LICENSE="Tencent"
 SLOT="0"

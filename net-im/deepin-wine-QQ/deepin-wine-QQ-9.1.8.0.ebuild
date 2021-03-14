@@ -3,14 +3,14 @@
 
 EAPI=7
 
-inherit unpacker versionator
+inherit unpacker
 
 DESCRIPTION="Tencent QQ for Linux by Deepin"
 HOMEPAGE="https://www.deepin.org"
 
 COMMON_URI="http://packages.deepin.com/deepin/pool/non-free/d"
 QQPN="deepin.com.qq.im"
-QQ_PV=$(replace_version_separator 3 'deepin' )
+QQ_PV=$(ver_rs 3 'deepin' )
 
 SRC_URI="${COMMON_URI}/${QQPN}/${QQPN}_${QQ_PV}_i386.deb"
 

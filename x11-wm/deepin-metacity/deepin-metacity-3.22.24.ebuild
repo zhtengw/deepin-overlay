@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit eutils gnome2 versionator
+inherit eutils gnome2
 
 DESCRIPTION="Legacy window manager for Deepin"
 HOMEPAGE="https://github.com/linuxdeepin/deepin-metacity"
