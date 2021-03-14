@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 inherit gnome2 flag-o-matic autotools
 
 DESCRIPTION="Deepin fork version of mutter"
