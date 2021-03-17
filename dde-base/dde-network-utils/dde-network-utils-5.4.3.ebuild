@@ -25,7 +25,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	LIBDIR=$(get_libdir)
-	sed -i "s|PREFIX/lib|{PREFIX}/${LIBDIR}|g" ${PN}.pro
+	sed -i "s|PREFIX/lib|{PREFIX}/${LIBDIR}|g" ${PN}/${PN}.pro
 	QT_SELECT=qt5 eqmake5	PREFIX=/usr
 	default_src_prepare
 }

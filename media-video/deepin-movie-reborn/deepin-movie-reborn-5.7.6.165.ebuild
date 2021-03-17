@@ -40,6 +40,7 @@ RDEPEND="${DEPEND}
 
 PATCHES=(
 	"$FILESDIR"/5.7.6.29-build-with-qt5.15.patch
+	"$FILESDIR"/5.7.6.165-libavformat-version-check.patch
 )
 
 src_prepare() {

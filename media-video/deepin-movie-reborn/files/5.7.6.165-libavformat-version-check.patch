@@ -1,0 +1,26 @@
+From 7bff486b84a6c9e8602ef2fb201cfa602d6ca1d8 Mon Sep 17 00:00:00 2001
+From: justforlxz <justforlxz@gmail.com>
+Date: Thu, 26 Nov 2020 16:53:44 +0800
+Subject: [PATCH] fix: wrong ffmpeg version check
+
+It seems that the version should not be restricted
+
+Log:
+Issue: Closes #59
+---
+ src/libdmr/playlist_model.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/libdmr/playlist_model.cpp b/src/libdmr/playlist_model.cpp
+index 1d3b5c64..c552f739 100644
+--- a/src/libdmr/playlist_model.cpp
++++ b/src/libdmr/playlist_model.cpp
+@@ -1700,7 +1700,7 @@ static int open_codec_context(int *stream_idx,
+ 
+     stream_index = ret;
+     st = fmt_ctx->streams[stream_index];
+-#if LIBAVFORMAT_VERSION_MAJOR >= 57 && LIBAVFORMAT_VERSION_MINOR <= 25
++#if LIBAVFORMAT_VERSION_MAJOR >= 57
+     *dec_ctx = st->codecpar;
+     dec = avcodec_find_decoder((*dec_ctx)->codec_id);
+ #else
